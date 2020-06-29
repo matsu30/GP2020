@@ -37,13 +37,13 @@ function init() {
         light.position.set( 0.5, 1, 0.75 );
         scene.add( light );
 
-        // controls = new THREE.PointerLockControls( camera, document.body );
+        controls = new THREE.PointerLockControls( camera, document.body );
 
 
 
         //---------開始時------------------------------------------------------
-        var blocker = document.getElementById( 'blocker' );
-        var instructions = document.getElementById( 'instructions' );
+        // var blocker = document.getElementById( 'blocker' );
+        // var instructions = document.getElementById( 'instructions' );
 
         //開始時にクリックすると、controlsがロックされる
         // instructions.addEventListener( 'click', function () {
@@ -61,7 +61,7 @@ function init() {
         //     instructions.style.display = '';
         // } );
 
-        // scene.add( controls.getObject() );
+        scene.add( controls.getObject() );
 
 
 
@@ -236,7 +236,7 @@ function animate() {
     //controlsがロックされているとき。つまり開始しているとき。
     // if ( controls.isLocked === true ) {
 
-        // raycaster.ray.origin.copy( controls.getObject().position );
+        raycaster.ray.origin.copy( controls.getObject().position );
         raycaster.ray.origin.y -= 10;
 
         var intersections = raycaster.intersectObjects( objects );
@@ -266,16 +266,16 @@ function animate() {
 
         }
 
-        // controls.moveRight( - velocity.x * delta );
-        // controls.moveForward( - velocity.z * delta );
+        controls.moveRight( - velocity.x * delta );
+        controls.moveForward( - velocity.z * delta );
 
-        // controls.getObject().position.y += ( velocity.y * delta ); // new behavior
+        controls.getObject().position.y += ( velocity.y * delta ); // new behavior
 
-        // if ( controls.getObject().position.y < 10 ) {
-        //     velocity.y = 0;
-        //     controls.getObject().position.y = 10;
-        //     canJump = true;
-        // }
+        if ( controls.getObject().position.y < 10 ) {
+            velocity.y = 0;
+            controls.getObject().position.y = 10;
+            canJump = true;
+        }
 
         prevTime = time;
 
