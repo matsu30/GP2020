@@ -12,7 +12,7 @@ function init() {
     antialias: true
   });
   renderer.setSize(width, height);
-  renderer.setClearColor(0x868686);
+  renderer.setClearColor(0xfffffff);
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.localClippingEnabled = true;
 
@@ -28,7 +28,7 @@ function init() {
 
   // カメラを作成
   // new THREE.OrthographicCamera(left, right, top, bottom, near, far)
-  const camera = new THREE.OrthographicCamera(-480, +480, 270, -270, 1, 1000);
+  const camera = new THREE.OrthographicCamera(-960, +960, 540, -540, 1, 100);
   
 
   // カメラの初期座標を設定
@@ -46,24 +46,43 @@ function init() {
   //オブジェクトの作成
   //======================================
 
-  const Geome1 = new THREE.BoxGeometry(1000, 300, 10);
-  const Geome2 = new THREE.BoxGeometry(100, 100, 10);
+  var texture1  = new THREE.ImageUtils.loadTexture('img/1-1-1.png');
+  var texture2  = new THREE.ImageUtils.loadTexture('img/1-1-2.png');
+  var texture3  = new THREE.ImageUtils.loadTexture('img/1-1-3.png');
+  var texture4  = new THREE.ImageUtils.loadTexture('img/1-1-4.png');
+  var texture5  = new THREE.ImageUtils.loadTexture('img/1-1-5.png');
 
-  const sphere1 = new THREE.MeshLambertMaterial( {
-    color: 0xD2D2D2,
-  });
-  const sphere2 = new THREE.MeshLambertMaterial( {
-    color: 0x2d2d2d,
-  });
+  var texture6 = new THREE.ImageUtils.loadTexture('img/CharaMove.png');
+
+  const Geome1 = new THREE.PlaneBufferGeometry(1750, 380);
+  const Geome2 = new THREE.PlaneBufferGeometry(230, 50);
+  const Geome3 = new THREE.PlaneBufferGeometry(530, 620);
+  const Geome4 = new THREE.PlaneBufferGeometry(300, 400);
+  const Geome5 = new THREE.PlaneBufferGeometry(1920, 470);
+  const Geome6 = new THREE.PlaneBufferGeometry(164, 319);
+
+  const sphere1 = new THREE.MeshBasicMaterial( {map: texture1, transparent: true} );
+  const sphere2 = new THREE.MeshBasicMaterial( {map: texture2, transparent: true} );
+  const sphere3 = new THREE.MeshBasicMaterial( {map: texture3, transparent: true} );
+  const sphere4 = new THREE.MeshBasicMaterial( {map: texture4, transparent: true} );
+  const sphere5 = new THREE.MeshBasicMaterial( {map: texture5, transparent: true, alphaTest:1} );
+  const sphere6 = new THREE.MeshBasicMaterial( {map: texture6, transparent: true} );
 
   const mesh1 = new THREE.Mesh(Geome1, sphere1);
   const mesh2 = new THREE.Mesh(Geome2, sphere2);
+  const mesh3 = new THREE.Mesh(Geome3, sphere3);
+  const mesh4 = new THREE.Mesh(Geome4, sphere4);
+  const mesh5 = new THREE.Mesh(Geome5, sphere5);
+  const mesh6 = new THREE.Mesh(Geome6, sphere6);
 
-  scene.add( mesh1 );
-  scene.add( mesh2 );
-  mesh1.position.set(0,-300,10)
-  mesh2.position.set(-300,-100,0)
+  scene.add( mesh1, mesh2, mesh3, mesh4, mesh5, mesh6);
 
+  mesh1.position.set(-100,-350,50)
+  mesh2.position.set(220,-270,40)
+  mesh3.position.set(330,20,30)
+  mesh4.position.set(220,-70,20)
+  mesh5.position.set(0,-300,10)
+  mesh6.position.set(-700,-130,45)
   //======================================
   //オブジェクトの制御
   //======================================
@@ -73,20 +92,14 @@ function init() {
     function handleKeydown(event){
         var keyCode = event.keyCode;
         if (keyCode == 39) {
-            mesh2.position.x += 10;
+            mesh6.position.x += 10;
         } else if (keyCode == 37) {
-            mesh2.position.x -= 10;
+            mesh6.position.x -= 10;
         } else if (keyCode == 32) {
-            mesh2.position.y += 10;
+            mesh6.position.y += 10;
         };
     };
 
-    // gsap.to(
-    //     graph
-    //     graph, { duration: 
-    //     2.5
-    //     2.5, ease: 
-    //     CustomEase.create("custom", "M0,0 C0.2,0 0.4,0.392 0.57,0.512 0.789,0.666 0.954,0.112 1,0 "), y: -500 });
  
 
   //======================================

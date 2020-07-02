@@ -19,8 +19,10 @@ var direction = new THREE.Vector3();
 var vertex = new THREE.Vector3();
 var color = new THREE.Color();
 
-var characterGeometry = new THREE.PlaneBufferGeometry( 15, 15 );
-var characterMaterial = new THREE.MeshBasicMaterial( {color: 0x00ff00, side: THREE.DoubleSide} );
+var texture1  = new THREE.ImageUtils.loadTexture('img/1-1-3.png');
+
+var characterGeometry = new THREE.PlaneBufferGeometry( 10.6, 12.4 );
+var characterMaterial = new THREE.MeshBasicMaterial( {map: texture1, transparent: true} );
 var character = new THREE.Mesh( characterGeometry, characterMaterial );
 
 //---------素材並べた----------------------
