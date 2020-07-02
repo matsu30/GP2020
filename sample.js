@@ -19,6 +19,10 @@ var direction = new THREE.Vector3();
 var vertex = new THREE.Vector3();
 var color = new THREE.Color();
 
+var characterGeometry = new THREE.PlaneBufferGeometry( 15, 15 );
+var characterMaterial = new THREE.MeshBasicMaterial( {color: 0x00ff00, side: THREE.DoubleSide} );
+var character = new THREE.Mesh( characterGeometry, characterMaterial );
+
 //---------素材並べた----------------------
 
 init();
@@ -27,7 +31,7 @@ animate();
 function init() {
 
         camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 1000 );
-        camera.position.y = 10;
+        camera.position.z = 100;
 
         scene = new THREE.Scene();
         scene.background = new THREE.Color( 0xffffff );
@@ -141,7 +145,7 @@ function init() {
         floorGeometry.rotateX( - Math.PI / 2 );
 
 
-        // 頂点を変えるらしい
+        // 頂点を変える
         var position = floorGeometry.attributes.position;
 
         for ( var i = 0, l = position.count; i < l; i ++ ) {
@@ -156,7 +160,7 @@ function init() {
 
         }
 
-        // 各面に一点の頂点があるらしい。まぁせやな。
+        // 各面に一点の頂点がある。
         floorGeometry = floorGeometry.toNonIndexed(); 
         position = floorGeometry.attributes.position;
 
@@ -197,12 +201,18 @@ function init() {
             var box = new THREE.Mesh( boxGeometry, boxMaterial );
             box.position.x = Math.floor( Math.random() * 20 - 10 ) * 20;
             box.position.y = Math.floor( Math.random() * 20 ) * 20 + 10;
-            box.position.z = Math.floor( Math.random() * 20 - 10 ) * 20;
+            //box.position.z = Math.floor( Math.random() * 20 - 10 ) * 20;
 
             scene.add( box );
             objects.push( box );
 
         }
+
+        
+        //---------character-------------------------------------
+        character.position.z = camera.position.z - 15;
+        character.position.y = 10;
+        scene.add( character );
 
 
         //---------renderer--------------------------------------
@@ -216,6 +226,7 @@ function init() {
         window.addEventListener( 'resize', onWindowResize, false );
 
 };
+
 
 
 function onWindowResize() {
@@ -277,10 +288,25 @@ function animate() {
             canJump = true;
         }
 
+
+        //console.log(controls.getObject().position)
         prevTime = time;
 
     // }
 
+
+        character.position.x = controls.getObject().position.x;
+        character.position.y = controls.getObject().position.y;
+        character.position.z = controls.getObject().position.z - 50;
+
+
+        //console.log(character.position)
+
+
     renderer.render( scene, camera );
 
 }
+       
+
+
+
