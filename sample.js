@@ -1,17 +1,9 @@
 
 //---------素材並べる----------------------
 
-var camera, scene, light, renderer, controls;
+var camera, scene, light, renderer;
 
 var objects = [];
-
-var raycaster;
-
-var moveForward = false;
-var moveBackward = false;
-var moveLeft = false;
-var moveRight = false;
-var canJump = false;
 
 var prevTime = performance.now();
 var velocity = new THREE.Vector3();
@@ -48,11 +40,6 @@ function init() {
 
         scene.add(starring.body);
 
-        controls = new THREE.PointerLockControls( camera, document.body );
-
-        scene.add( controls.getObject() );
-
-
 
 
         //--------開始-----------------------------------------------------------
@@ -62,34 +49,28 @@ function init() {
 
             switch ( event.keyCode ) {
 
-                case 38: // up
-                case 87: // w
-                    starring.moveForward = true;
-                    moveForward = true;
-                    break;
+                // case 38: // up
+                // case 87: // w
+                //     starring.moveForward = true;
+                //     break;
 
                 case 37: // left
                 case 65: // a
                     starring.moveLeft = true;
-                    moveLeft = true;
                     break;
 
-                case 40: // down
-                case 83: // s
-                    starring.moveBackward = true;
-                    moveBackward = true;
-                    break;
+                // case 40: // down
+                // case 83: // s
+                //     starring.moveBackward = true;
+                //     break;
 
                 case 39: // right
                 case 68: // d
                     starring.moveRight = true;
-                    moveRight = true;
                     break;
 
                 case 32: // space
-                    if ( canJump === true ) velocity.y += 350;
                     starring.jump();
-                    canJump = false;
                     break;
 
             }
@@ -101,28 +82,24 @@ function init() {
 
             switch ( event.keyCode ) {
 
-                case 38: // up
-                case 87: // w
-                    starring.moveForward = false;
-                    moveForward = false;
-                    break;
+                // case 38: // up
+                // case 87: // w
+                //     starring.moveForward = false;
+                //     break;
 
                 case 37: // left
                 case 65: // a
                     starring.moveLeft = false;
-                    moveLeft = false;
                     break;
 
-                case 40: // down
-                case 83: // s
-                    starring.moveBackward = false;
-                    moveBackward = false;
-                    break;
+                // case 40: // down
+                // case 83: // s
+                //     starring.moveBackward = false;
+                //     break;
 
                 case 39: // right
                 case 68: // d
                     starring.moveRight = false;
-                    moveRight = false;
                     break;
 
             }
@@ -131,10 +108,8 @@ function init() {
 
         document.addEventListener( 'keydown', onKeyDown, false );
         document.addEventListener( 'keyup', onKeyUp, false );
-
-        raycaster = new THREE.Raycaster( new THREE.Vector3(), new THREE.Vector3( 0, - 1, 0 ), 0, 10 );
     
-    
+   
         //--------------床----------------------------------------
 　      var floorGeometry = new THREE.PlaneBufferGeometry( 2000, 2000, 100, 100 );
         floorGeometry.rotateX( - Math.PI / 2 );
@@ -223,7 +198,6 @@ function init() {
 };
 
 
-
 function onWindowResize() {
 
     camera.aspect = window.innerWidth / window.innerHeight;
@@ -239,68 +213,14 @@ function animate() {
 
     requestAnimationFrame( animate );
  
-        starring.animate(objects);
+    starring.animate(objects);
 
-        const cameraPosition = starring.body.position.clone().add(new THREE.Vector3(0, 0, 100));
-        camera.position.lerp(cameraPosition, 0.2);
-
-        raycaster.ray.origin.copy( controls.getObject().position );
-        raycaster.ray.origin.y -= 10;
-
-        var intersections = raycaster.intersectObjects( objects );
-
-        var onObject = intersections.length > 0;
-
-        var time = performance.now();
-        var delta = ( time - prevTime ) / 1000;
-
-        velocity.x -= velocity.x * 10.0 * delta;
-        velocity.z -= velocity.z * 10.0 * delta;
-
-        velocity.y -= 9.8 * 100.0 * delta; // 100.0 = mass
-
-        direction.z = Number( moveForward ) - Number( moveBackward );
-        direction.x = Number( moveRight ) - Number( moveLeft );
-        direction.normalize(); // これにより、すべての方向に一貫した動きが保証されます
-
-        // A||Bとは、Aが正しい場合はAを返し、そうでない場合Bを返す。真偽値問われた場合、どちらかが正しければtrue、そうでなければfalse。
-        if ( moveForward || moveBackward ) velocity.z -= direction.z * 400.0 * delta;
-        if ( moveLeft || moveRight ) velocity.x -= direction.x * 400.0 * delta;
-
-        if ( onObject === true ) {
-
-            velocity.y = Math.max( 0, velocity.y );
-            canJump = true;
-
-        }
-
-        // controls.moveRight( - velocity.x * delta );
-        // controls.moveForward( - velocity.z * delta );
-
-        // controls.getObject().position.y += ( velocity.y * delta ); // new behavior
-
-        // if ( controls.getObject().position.y < 10 ) {
-        //     velocity.y = 0;
-        //     controls.getObject().position.y = 10;
-        //     canJump = true;
-        // }
-
-
-        //console.log(controls.getObject().position)
-        prevTime = time;
-
-
-        // character.position.x = controls.getObject().position.x;
-        // character.position.y = controls.getObject().position.y;
-        // character.position.z = controls.getObject().position.z - 50;
-
-
-        //console.log(character.position)
-
+    const cameraPosition = starring.body.position.clone().add(new THREE.Vector3(0, 0, 100));
+    camera.position.lerp(cameraPosition, 0.2);
 
     renderer.render( scene, camera );
 
-}
+};
        
 
 
