@@ -31,8 +31,4 @@ class Obstacle{
 
     }
 
-    hoge() {
-        console.log("Obstacle hoge")
-    }
-    
 }

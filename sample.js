@@ -15,20 +15,14 @@ var characterMaterial = new THREE.MeshBasicMaterial( {map: texture1, transparent
 var character = new THREE.Mesh( characterGeometry, characterMaterial );
 
 const starring = new Starring();
-const obstacle = new Obstacle({
-    x: 20,
-    y: 0,
-    z: 0
-});
+// const obstacle = new Obstacle({
+//     x: 20,
+//     y: 0,
+//     z: 0
+// });
 
-const obstacle1 = new Obstacle({
-    color: 0xff2323,
-    x: -20,
-    y: 0,
-    z: 0
-});
+// console.log(obstacle);
 
-console.log(obstacle);
 
 //---------素材並べた----------------------
 
@@ -49,11 +43,9 @@ function init() {
         scene.add( light );
 
         scene.add(starring.body);
-        scene.add(obstacle.mesh);
-        scene.add(obstacle1.mesh);
+        // scene.add(obstacle.mesh);
 
-        objects.push(obstacle.mesh);
-        objects.push(obstacle1.mesh);
+        // objects.push(obstacle.mesh);
 
 
         //--------開始-----------------------------------------------------------
@@ -162,35 +154,67 @@ function init() {
 
 
         //--------object--------------------------------------
-        var boxGeometry = new THREE.BoxBufferGeometry( 20, 20, 20 );
+        // var boxGeometry = new THREE.BoxBufferGeometry( 20, 20, 20 );
 
-        // 各面に一点の頂点があるのは床と同じ。色も同じように定義する。
-        boxGeometry = boxGeometry.toNonIndexed();
-        position = boxGeometry.attributes.position;
+        // // 各面に一点の頂点があるのは床と同じ。色も同じように定義する。
+        // boxGeometry = boxGeometry.toNonIndexed();
+        // position = boxGeometry.attributes.position;
 
-        colors = [];
-        for ( var i = 0, l = position.count; i < l; i ++ ) {
+        // colors = [];
+        // for ( var i = 0, l = position.count; i < l; i ++ ) {
 
-            color.setHSL( Math.random() * 0.3 + 0.5, 0.75, Math.random() * 0.25 + 0.75 );
-            colors.push( color.r, color.g, color.b );
+        //     color.setHSL( Math.random() * 0.3 + 0.5, 0.75, Math.random() * 0.25 + 0.75 );
+        //     colors.push( color.r, color.g, color.b );
 
+        // }
+        // boxGeometry.setAttribute( 'color', new THREE.Float32BufferAttribute( colors, 3 ) );
+
+        // for ( var i = 0; i < 50; i ++ ) {
+
+        //     var boxMaterial = new THREE.MeshPhongMaterial( { specular: 0xffffff, flatShading: true, vertexColors: true } );
+        //     boxMaterial.color.setHSL( Math.random() * 0.2 + 0.5, 0.75, Math.random() * 0.25 + 0.75 );
+
+        //     var box = new THREE.Mesh( boxGeometry, boxMaterial );
+        //     box.position.x = Math.floor( Math.random() * 20 - 10 ) * 20;
+        //     box.position.y = Math.floor( Math.random() * 20 ) * 20 + 10;
+        //     box.position.z = Math.floor( Math.random() * 20 - 10 ) * 20;
+
+        //     scene.add( box );
+        //     objects.push( box );
+
+        // }
+
+        const obstacleKeydata = {
+            width: 20,
+            height: 20,
+            depth: 20,
+        };
+
+        const maxY = obstacleKeydata.height * (MAP.length - 1);
+        const offsetY = obstacleKeydata.height / 2;
+
+        for (let i = 0; i < MAP.length; i++){
+            for (let j = 0; j < MAP[0].length; j++){
+                const value = MAP[i][j];
+
+                if (value === 1){
+                    //障害物を作る
+                    const obstacle = new Obstacle({
+                        width: obstacleKeydata.width,
+                        height: obstacleKeydata.height,
+                        depth: obstacleKeydata.depth,
+                        x: obstacleKeydata.width * j,
+                        y: maxY - obstacleKeydata.height * i + offsetY,
+                        z: 0,                        
+                    });
+                    scene.add(obstacle.mesh);
+                    objects.push(obstacle.mesh);
+                }
+
+                //console.log(`${i}番目の配列の${j}番目 値は${MAP[i][j]}`)
+            }
         }
-        boxGeometry.setAttribute( 'color', new THREE.Float32BufferAttribute( colors, 3 ) );
 
-        for ( var i = 0; i < 50; i ++ ) {
-
-            var boxMaterial = new THREE.MeshPhongMaterial( { specular: 0xffffff, flatShading: true, vertexColors: true } );
-            boxMaterial.color.setHSL( Math.random() * 0.2 + 0.5, 0.75, Math.random() * 0.25 + 0.75 );
-
-            var box = new THREE.Mesh( boxGeometry, boxMaterial );
-            box.position.x = Math.floor( Math.random() * 20 - 10 ) * 20;
-            box.position.y = Math.floor( Math.random() * 20 ) * 20 + 10;
-            box.position.z = Math.floor( Math.random() * 20 - 10 ) * 20;
-
-            scene.add( box );
-            objects.push( box );
-
-        }
 
         
         //---------character-------------------------------------
