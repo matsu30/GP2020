@@ -25,6 +25,9 @@ var characterGeometry = new THREE.PlaneBufferGeometry( 10.6, 12.4 );
 var characterMaterial = new THREE.MeshBasicMaterial( {map: texture1, transparent: true} );
 var character = new THREE.Mesh( characterGeometry, characterMaterial );
 
+const starring = new Starring();
+console.log(starring);
+
 //---------素材並べた----------------------
 
 init();
@@ -44,28 +47,6 @@ function init() {
         scene.add( light );
 
         controls = new THREE.PointerLockControls( camera, document.body );
-
-
-
-        //---------開始時------------------------------------------------------
-        // var blocker = document.getElementById( 'blocker' );
-        // var instructions = document.getElementById( 'instructions' );
-
-        //開始時にクリックすると、controlsがロックされる
-        // instructions.addEventListener( 'click', function () {
-        //     controls.lock();
-        // }, false );
-
-        //controlsがロックされていると、開始画面が消える
-        // controls.addEventListener( 'lock', function () {
-        //     instructions.style.display = 'none';
-        //     blocker.style.display = 'none';
-        // } );
-
-        // controls.addEventListener( 'unlock', function () {
-        //     blocker.style.display = 'block';
-        //     instructions.style.display = '';
-        // } );
 
         scene.add( controls.getObject() );
 
@@ -246,8 +227,6 @@ function animate() {
 
     requestAnimationFrame( animate );
 
-    //controlsがロックされているとき。つまり開始しているとき。
-    // if ( controls.isLocked === true ) {
 
         raycaster.ray.origin.copy( controls.getObject().position );
         raycaster.ray.origin.y -= 10;
@@ -293,8 +272,6 @@ function animate() {
 
         //console.log(controls.getObject().position)
         prevTime = time;
-
-    // }
 
 
         character.position.x = controls.getObject().position.x;
