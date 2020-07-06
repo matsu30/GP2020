@@ -46,9 +46,12 @@ function init() {
         light.position.set( 0.5, 1, 0.75 );
         scene.add( light );
 
+        scene.add(starring.body);
+
         controls = new THREE.PointerLockControls( camera, document.body );
 
         scene.add( controls.getObject() );
+
 
 
 
@@ -61,26 +64,31 @@ function init() {
 
                 case 38: // up
                 case 87: // w
+                    starring.moveForward = true;
                     moveForward = true;
                     break;
 
                 case 37: // left
                 case 65: // a
+                    starring.moveLeft = true;
                     moveLeft = true;
                     break;
 
                 case 40: // down
                 case 83: // s
+                    starring.moveBackward = true;
                     moveBackward = true;
                     break;
 
                 case 39: // right
                 case 68: // d
+                    starring.moveRight = true;
                     moveRight = true;
                     break;
 
                 case 32: // space
                     if ( canJump === true ) velocity.y += 350;
+                    starring.jump();
                     canJump = false;
                     break;
 
@@ -95,21 +103,25 @@ function init() {
 
                 case 38: // up
                 case 87: // w
+                    starring.moveForward = false;
                     moveForward = false;
                     break;
 
                 case 37: // left
                 case 65: // a
+                    starring.moveLeft = false;
                     moveLeft = false;
                     break;
 
                 case 40: // down
                 case 83: // s
+                    starring.moveBackward = false;
                     moveBackward = false;
                     break;
 
                 case 39: // right
                 case 68: // d
+                    starring.moveRight = false;
                     moveRight = false;
                     break;
 
@@ -176,7 +188,7 @@ function init() {
         }
         boxGeometry.setAttribute( 'color', new THREE.Float32BufferAttribute( colors, 3 ) );
 
-        for ( var i = 0; i < 500; i ++ ) {
+        for ( var i = 0; i < 50; i ++ ) {
 
             var boxMaterial = new THREE.MeshPhongMaterial( { specular: 0xffffff, flatShading: true, vertexColors: true } );
             boxMaterial.color.setHSL( Math.random() * 0.2 + 0.5, 0.75, Math.random() * 0.25 + 0.75 );
@@ -226,7 +238,11 @@ function onWindowResize() {
 function animate() {
 
     requestAnimationFrame( animate );
+ 
+        starring.animate(objects);
 
+        const cameraPosition = starring.body.position.clone().add(new THREE.Vector3(0, 0, 100));
+        camera.position.lerp(cameraPosition, 0.2);
 
         raycaster.ray.origin.copy( controls.getObject().position );
         raycaster.ray.origin.y -= 10;
@@ -258,25 +274,25 @@ function animate() {
 
         }
 
-        controls.moveRight( - velocity.x * delta );
-        controls.moveForward( - velocity.z * delta );
+        // controls.moveRight( - velocity.x * delta );
+        // controls.moveForward( - velocity.z * delta );
 
-        controls.getObject().position.y += ( velocity.y * delta ); // new behavior
+        // controls.getObject().position.y += ( velocity.y * delta ); // new behavior
 
-        if ( controls.getObject().position.y < 10 ) {
-            velocity.y = 0;
-            controls.getObject().position.y = 10;
-            canJump = true;
-        }
+        // if ( controls.getObject().position.y < 10 ) {
+        //     velocity.y = 0;
+        //     controls.getObject().position.y = 10;
+        //     canJump = true;
+        // }
 
 
         //console.log(controls.getObject().position)
         prevTime = time;
 
 
-        character.position.x = controls.getObject().position.x;
-        character.position.y = controls.getObject().position.y;
-        character.position.z = controls.getObject().position.z - 50;
+        // character.position.x = controls.getObject().position.x;
+        // character.position.y = controls.getObject().position.y;
+        // character.position.z = controls.getObject().position.z - 50;
 
 
         //console.log(character.position)
