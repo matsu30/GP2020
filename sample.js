@@ -5,9 +5,6 @@ var camera, scene, light, renderer;
 
 var objects = [];
 
-var prevTime = performance.now();
-var velocity = new THREE.Vector3();
-var direction = new THREE.Vector3();
 var vertex = new THREE.Vector3();
 var color = new THREE.Color();
 
@@ -18,7 +15,20 @@ var characterMaterial = new THREE.MeshBasicMaterial( {map: texture1, transparent
 var character = new THREE.Mesh( characterGeometry, characterMaterial );
 
 const starring = new Starring();
-console.log(starring);
+const obstacle = new Obstacle({
+    x: 20,
+    y: 0,
+    z: 0
+});
+
+const obstacle1 = new Obstacle({
+    color: 0xff2323,
+    x: -20,
+    y: 0,
+    z: 0
+});
+
+console.log(obstacle);
 
 //---------素材並べた----------------------
 
@@ -39,7 +49,11 @@ function init() {
         scene.add( light );
 
         scene.add(starring.body);
+        scene.add(obstacle.mesh);
+        scene.add(obstacle1.mesh);
 
+        objects.push(obstacle.mesh);
+        objects.push(obstacle1.mesh);
 
 
         //--------開始-----------------------------------------------------------
@@ -171,7 +185,7 @@ function init() {
             var box = new THREE.Mesh( boxGeometry, boxMaterial );
             box.position.x = Math.floor( Math.random() * 20 - 10 ) * 20;
             box.position.y = Math.floor( Math.random() * 20 ) * 20 + 10;
-            //box.position.z = Math.floor( Math.random() * 20 - 10 ) * 20;
+            box.position.z = Math.floor( Math.random() * 20 - 10 ) * 20;
 
             scene.add( box );
             objects.push( box );
