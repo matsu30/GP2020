@@ -8,12 +8,6 @@ var objects = [];
 var vertex = new THREE.Vector3();
 var color = new THREE.Color();
 
-var texture1  = new THREE.ImageUtils.loadTexture('img/1-1-3.png');
-
-var characterGeometry = new THREE.PlaneBufferGeometry( 10.6, 12.4 );
-var characterMaterial = new THREE.MeshBasicMaterial( {map: texture1, transparent: true} );
-var character = new THREE.Mesh( characterGeometry, characterMaterial );
-
 const starring = new Starring();
 // const obstacle = new Obstacle({
 //     x: 20,
@@ -42,6 +36,8 @@ function init() {
         light.position.set( 0.5, 1, 0.75 );
         scene.add( light );
 
+        starring.body.position.x = 20;
+        starring.body.position.y = 220;
         scene.add(starring.body);
         // scene.add(obstacle.mesh);
 
@@ -216,11 +212,40 @@ function init() {
         }
 
 
-        
-        //---------character-------------------------------------
-        character.position.z = camera.position.z - 15;
-        character.position.y = 10;
-        scene.add( character );
+        const S1 = new Obstacle({
+            y: 210,
+            transparent: true,
+            opacity: 0,
+        })
+        const S2 = new Obstacle({
+            y: 230,
+            transparent: true,
+            opacity: 0,
+        })
+        const S3 = new Obstacle({
+            y: 250,
+            transparent: true,
+            opacity: 0,
+        })
+
+        scene.add(S1.mesh);
+        objects.push(S1.mesh);
+        scene.add(S2.mesh);
+        objects.push(S2.mesh);
+        scene.add(S3.mesh);
+        objects.push(S3.mesh);
+
+        //---------tevture-------------------------------------
+        var texture111  = new THREE.ImageUtils.loadTexture('img/1-1-1.png');
+
+        var Geometry111 = new THREE.PlaneBufferGeometry( 20, 5 );
+        var Material111 = new THREE.MeshBasicMaterial( {map: texture111, transparent: true} );
+        var Img111 = new THREE.Mesh( Geometry111, Material111 );
+        Img111.position.x = 20;
+        Img111.position.y = 208;
+        Img111.position.z = 80;
+
+        scene.add( Img111 );
 
 
         //---------renderer--------------------------------------

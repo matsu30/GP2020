@@ -1,13 +1,15 @@
 class Obstacle{
 
     constructor(keydata){
-        console.log("Obstacle constructor", keydata);
+        //console.log("Obstacle constructor", keydata);
 
         const defaults = {
             width: 20,
             height: 20,
             depth: 20,
             color: 0x000000,
+            transparent: true,
+            opacity: 1,
             x: 0,
             y: 0,
             z: 0
@@ -22,6 +24,8 @@ class Obstacle{
         );
         const material = new THREE.MeshBasicMaterial({
             color: this.keydata.color,
+            transparent: this.keydata.transparent,
+            opacity: this.keydata.opacity,
         });
         this.mesh = new THREE.Mesh( boxGeometry, material );
         
