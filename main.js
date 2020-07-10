@@ -25,7 +25,7 @@ animate();
 
 function init() {
 
-        camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 1000 );
+        camera = new THREE.OrthographicCamera(-120, +120, +67.5, -67.5, 1, 100);
         camera.position.z = 100;
 
         scene = new THREE.Scene();
@@ -213,19 +213,33 @@ function init() {
 
 
         const S1 = new Obstacle({
-            y: 210,
-            transparent: true,
-            opacity: 0,
+            height: 60,
+            y: 230,
         })
         const S2 = new Obstacle({
-            y: 230,
-            transparent: true,
-            opacity: 0,
+            height: 5,
+            x: 119,
+            y: 202,
         })
         const S3 = new Obstacle({
-            y: 250,
-            transparent: true,
-            opacity: 0,
+            width: 5,
+            height: 75,
+            x: 153,
+            y: 220,
+        })
+        const S4 = new Obstacle({
+            width: 52,
+            depth: 2,
+            x: 130,
+            y: 257,
+        })
+
+        const S5 = new Obstacle({
+            width: 30,
+            height: 20,
+            depth: 2,
+            x: 89,
+            y: 230,
         })
 
         scene.add(S1.mesh);
@@ -234,18 +248,69 @@ function init() {
         objects.push(S2.mesh);
         scene.add(S3.mesh);
         objects.push(S3.mesh);
+        scene.add(S4.mesh);
+        objects.push(S4.mesh);
+        scene.add(S5.mesh);
+        objects.push(S5.mesh);
 
-        //---------tevture-------------------------------------
+        //---------texture-------------------------------------
         var texture111  = new THREE.ImageUtils.loadTexture('img/1-1-1.png');
-
-        var Geometry111 = new THREE.PlaneBufferGeometry( 20, 5 );
+        var Geometry111 = new THREE.PlaneBufferGeometry( 203, 50 );
         var Material111 = new THREE.MeshBasicMaterial( {map: texture111, transparent: true} );
         var Img111 = new THREE.Mesh( Geometry111, Material111 );
-        Img111.position.x = 20;
-        Img111.position.y = 208;
-        Img111.position.z = 80;
-
+        Img111.position.x = 90;
+        Img111.position.y = 192;
+        Img111.position.z = 90;
         scene.add( Img111 );
+
+        var texture112  = new THREE.ImageUtils.loadTexture('img/1-1-2.png');
+        var Geometry112 = new THREE.PlaneBufferGeometry( 21, 7 );
+        var Material112 = new THREE.MeshBasicMaterial( {map: texture112, transparent: true} );
+        var Img112 = new THREE.Mesh( Geometry112, Material112 );
+        Img112.position.x = 119;
+        Img112.position.y = 203;
+        Img112.position.z = 80;
+        scene.add( Img112 );
+
+        var texture113f  = new THREE.ImageUtils.loadTexture('img/1-1-3-1.png');
+        var Geometry113f = new THREE.PlaneBufferGeometry( 53, 75 );
+        var Material113f = new THREE.MeshBasicMaterial( {map: texture113f, transparent: true} );
+        var Img113f = new THREE.Mesh( Geometry113f, Material113f );
+        Img113f.position.x = 130;
+        Img113f.position.y = 230;
+        Img113f.position.z = 30;
+        scene.add( Img113f );
+
+        var texture113b  = new THREE.ImageUtils.loadTexture('img/1-1-3-2.png');
+        var Geometry113b = new THREE.PlaneBufferGeometry( 70, 95 );
+        var Material113b = new THREE.MeshBasicMaterial( {map: texture113b, transparent: true} );
+        var Img113b = new THREE.Mesh( Geometry113b, Material113b );
+        Img113b.position.x = 108;
+        Img113b.position.y = 193;
+        Img113b.position.z = 2;
+        scene.add( Img113b );
+
+        var texture113  = new THREE.ImageUtils.loadTexture('img/1-1-3.png');
+        var Geometry113 = new THREE.PlaneBufferGeometry( 53, 75 );
+        var Material113 = new THREE.MeshBasicMaterial( {map: texture113, transparent: true} );
+        var Img113 = new THREE.Mesh( Geometry113, Material113 );
+        Img113.position.x = 130;
+        Img113.position.y = 230;
+        Img113.position.z = 3;
+        scene.add( Img113 );
+
+        var texture114  = new THREE.ImageUtils.loadTexture('img/1-1-4.png');
+        var Geometry114 = new THREE.PlaneBufferGeometry( 40, 50 );
+        var Material114 = new THREE.MeshBasicMaterial( {map: texture114, transparent: true} );
+        var Img114 = new THREE.Mesh( Geometry114, Material114 );
+        Img114.position.x = 120;
+        Img114.position.y = 220;
+        Img114.position.z = 0;
+        scene.add( Img114 );
+
+        
+
+
 
 
         //---------renderer--------------------------------------
@@ -278,7 +343,7 @@ function animate() {
  
     starring.animate(objects);
 
-    const cameraPosition = starring.body.position.clone().add(new THREE.Vector3(0, 0, 100));
+    const cameraPosition = starring.body.position.clone().add(new THREE.Vector3(0, 30, 100));
     camera.position.lerp(cameraPosition, 0.2);
 
     renderer.render( scene, camera );

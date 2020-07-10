@@ -7,9 +7,9 @@ class Obstacle{
             width: 20,
             height: 20,
             depth: 20,
-            color: 0x000000,
+            color: 0xffffff,
             transparent: true,
-            opacity: 1,
+            opacity: 0,
             x: 0,
             y: 0,
             z: 0
