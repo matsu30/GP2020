@@ -37,7 +37,7 @@ function init() {
         scene.add( light );
 
         starring.body.position.x = 20;
-        starring.body.position.y = 220;
+        starring.body.position.y = 640;
         scene.add(starring.body);
         // scene.add(obstacle.mesh);
 
@@ -211,35 +211,68 @@ function init() {
             }
         }
 
+        const StepObstacleKeydata = {
+            width: 20,
+            height: 10,
+            depth: 20,
+        };
+
+        const StepMaxY = StepObstacleKeydata.height * (STEP.length - 1);
+        const StepOffsetY = StepObstacleKeydata.height / 2;
+
+        for (let i = 0; i < STEP.length; i++){
+            for (let j = 0; j <STEP[0].length; j++){
+                const value = STEP[i][j];
+
+                if (value === 1){
+                    //障害物を作る
+                    const obstacle = new Obstacle({
+                        width: StepObstacleKeydata.width,
+                        height: StepObstacleKeydata.height,
+                        depth: StepObstacleKeydata.depth,
+                        x: StepObstacleKeydata.width * j,
+                        y: StepMaxY - StepObstacleKeydata.height * i + StepOffsetY,
+                        z: 0,                        
+                    });
+                    scene.add(obstacle.mesh);
+                    objects.push(obstacle.mesh);
+                }
+
+                //console.log(`${i}番目の配列の${j}番目 値は${STEP[i][j]}`)
+            }
+        }
 
         const S1 = new Obstacle({
             height: 60,
-            y: 230,
+            y: 230+440,
         })
         const S2 = new Obstacle({
             height: 5,
             x: 119,
-            y: 202,
+            y: 202+440,
         })
         const S3 = new Obstacle({
             width: 5,
             height: 75,
             x: 153,
-            y: 220,
+            y: 220+440,
         })
         const S4 = new Obstacle({
             width: 52,
             depth: 2,
             x: 130,
-            y: 257,
+            y: 262+440,
         })
 
         const S5 = new Obstacle({
             width: 30,
-            height: 20,
+            height: 2,
             depth: 2,
             x: 89,
-            y: 230,
+            y: 239+440,
+            // z: 80,
+            // opacity: 1,
+            // color: 0xfff66f,
         })
 
         scene.add(S1.mesh);
@@ -254,30 +287,39 @@ function init() {
         objects.push(S5.mesh);
 
         //---------texture-------------------------------------
-        var texture111  = new THREE.ImageUtils.loadTexture('img/1-1-1.png');
-        var Geometry111 = new THREE.PlaneBufferGeometry( 203, 50 );
+        var texture111  = new THREE.ImageUtils.loadTexture('img/1-1-1-2.png');
+        var Geometry111 = new THREE.PlaneBufferGeometry( 203, 658 );
         var Material111 = new THREE.MeshBasicMaterial( {map: texture111, transparent: true} );
         var Img111 = new THREE.Mesh( Geometry111, Material111 );
         Img111.position.x = 90;
-        Img111.position.y = 192;
+        Img111.position.y = 328;
         Img111.position.z = 90;
         scene.add( Img111 );
+
+        var texture111b  = new THREE.ImageUtils.loadTexture('img/1-1-1-3.png');
+        var Geometry111b = new THREE.PlaneBufferGeometry( 203, 658 );
+        var Material111b = new THREE.MeshBasicMaterial( {map: texture111b, transparent: true} );
+        var Img111b = new THREE.Mesh( Geometry111b, Material111b );
+        Img111b.position.x = 90;
+        Img111b.position.y = 328;
+        Img111b.position.z = 2;
+        scene.add( Img111b );
 
         var texture112  = new THREE.ImageUtils.loadTexture('img/1-1-2.png');
         var Geometry112 = new THREE.PlaneBufferGeometry( 21, 7 );
         var Material112 = new THREE.MeshBasicMaterial( {map: texture112, transparent: true} );
         var Img112 = new THREE.Mesh( Geometry112, Material112 );
         Img112.position.x = 119;
-        Img112.position.y = 203;
+        Img112.position.y = 203+440;
         Img112.position.z = 80;
         scene.add( Img112 );
 
         var texture113f  = new THREE.ImageUtils.loadTexture('img/1-1-3-1.png');
-        var Geometry113f = new THREE.PlaneBufferGeometry( 53, 75 );
+        var Geometry113f = new THREE.PlaneBufferGeometry( 53, 85 );
         var Material113f = new THREE.MeshBasicMaterial( {map: texture113f, transparent: true} );
         var Img113f = new THREE.Mesh( Geometry113f, Material113f );
         Img113f.position.x = 130;
-        Img113f.position.y = 230;
+        Img113f.position.y = 230+440;
         Img113f.position.z = 30;
         scene.add( Img113f );
 
@@ -286,16 +328,16 @@ function init() {
         var Material113b = new THREE.MeshBasicMaterial( {map: texture113b, transparent: true} );
         var Img113b = new THREE.Mesh( Geometry113b, Material113b );
         Img113b.position.x = 108;
-        Img113b.position.y = 193;
+        Img113b.position.y = 193+440;
         Img113b.position.z = 2;
         scene.add( Img113b );
 
         var texture113  = new THREE.ImageUtils.loadTexture('img/1-1-3.png');
-        var Geometry113 = new THREE.PlaneBufferGeometry( 53, 75 );
+        var Geometry113 = new THREE.PlaneBufferGeometry( 53, 85 );
         var Material113 = new THREE.MeshBasicMaterial( {map: texture113, transparent: true} );
         var Img113 = new THREE.Mesh( Geometry113, Material113 );
         Img113.position.x = 130;
-        Img113.position.y = 230;
+        Img113.position.y = 230+440;
         Img113.position.z = 3;
         scene.add( Img113 );
 
@@ -304,10 +346,27 @@ function init() {
         var Material114 = new THREE.MeshBasicMaterial( {map: texture114, transparent: true} );
         var Img114 = new THREE.Mesh( Geometry114, Material114 );
         Img114.position.x = 120;
-        Img114.position.y = 220;
+        Img114.position.y = 220+440;
         Img114.position.z = 0;
         scene.add( Img114 );
 
+        var texture121  = new THREE.ImageUtils.loadTexture('img/1-2-1.png');
+        var Geometry121 = new THREE.PlaneBufferGeometry( 203, 658 );
+        var Material121 = new THREE.MeshBasicMaterial( {map: texture121, transparent: true} );
+        var Img121 = new THREE.Mesh( Geometry121, Material121 );
+        Img121.position.x = 230;
+        Img121.position.y = 328;
+        Img121.position.z = 89;
+        scene.add( Img121 );
+
+        var texture122  = new THREE.ImageUtils.loadTexture('img/1-2-2.png');
+        var Geometry122 = new THREE.PlaneBufferGeometry( 203, 30);
+        var Material122 = new THREE.MeshBasicMaterial( {map: texture122, transparent: true} );
+        var Img122 = new THREE.Mesh( Geometry122, Material122 );
+        Img122.position.x = 300;
+        Img122.position.y = 167;
+        Img122.position.z = 91;
+        scene.add( Img122 );
         
 
 

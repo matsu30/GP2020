@@ -6,8 +6,8 @@ class Starring {
    */
   constructor(keydata) {
     const defaults = {
-      width: 9,
-      height: 20,
+      width: 12,
+      height: 25,
       depth: 10,
     };
 
