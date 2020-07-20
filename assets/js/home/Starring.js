@@ -12,6 +12,8 @@ class Starring {
     };
 
     this.keydata = Object.assign(defaults, keydata);
+    this.SKELETON_FILE = "skeleton.json";
+    this.ATLAS_FILE = "skeleton.atlas";
 
     const geometry = new THREE.BoxBufferGeometry(
       this.keydata.width,
@@ -46,13 +48,59 @@ class Starring {
     this.clock = new THREE.Clock();
 
     //spineを使う準備をする
-    this.assetManager = new spine.threejs.AssetManager('assets/spine/');
+    this.assetManager = new spine.threejs.AssetManager("assets/spine/right/");
+    this.skeletonMesh = undefined;
   }
 
-  load(){
-    this.assetManager.loadText('right/skeleton.json', (path) => {
-      console.log(` [Starring] ${path} Load Complete.`)
+  load() {
+    const promise0 = new Promise((resolve) => {
+      this.assetManager.loadText(this.SKELETON_FILE, (path) => {
+        // load 成功
+        console.log(`[Starring] ${path} Load Complete.`);
+        resolve();
+      });
     });
+
+    const promise1 = new Promise((resolve) => {
+      this.assetManager.loadTextureAtlas(this.ATLAS_FILE, (path) => {
+        // load 成功
+        console.log(`[Starring] ${path} Load Complete.`);
+        resolve();
+      });
+    });
+
+    (async () => {
+      await Promise.all([promise0, promise1]);
+
+      // Load the texture atlas using name.atlas and name.png from the AssetManager.
+      // The function passed to TextureAtlas is used to resolve relative paths.
+      const atlas = this.assetManager.get(this.ATLAS_FILE);
+
+      // Create a AtlasAttachmentLoader that resolves region, mesh, boundingbox and path attachments
+      const atlasLoader = new spine.AtlasAttachmentLoader(atlas);
+      
+      const skeletonJson = new spine.SkeletonJson(atlasLoader);
+
+      // Set the scale to apply during parsing, parse the file, and create a new skeleton.
+      skeletonJson.scale = 0.1;
+      const skeletonData = skeletonJson.readSkeletonData(
+        this.assetManager.get(this.SKELETON_FILE)
+      );
+
+      // Create a SkeletonMesh from the data and attach it to the scene
+      this.skeletonMesh = new spine.threejs.SkeletonMesh(
+        skeletonData,
+        (parameters) => {
+          parameters.depthTest = false;
+        }
+      );
+
+      // よくわからんけど animation っていう名前のアニメーションが入ってる
+      this.skeletonMesh.state.setAnimation(0, "animation", true);
+      this.body.add(this.skeletonMesh);
+
+      console.log("[Starring] Spine Aseets Load Complete.");
+    })();
   }
 
   animate(objects) {
@@ -121,6 +169,11 @@ class Starring {
       this.body.position.y = y;
       this._playerVelocity.y = 0;
       this._canJump = true;
+    }
+
+    // update the animation
+    if (this.skeletonMesh) {
+      this.skeletonMesh.update(delta);
     }
   }
 
