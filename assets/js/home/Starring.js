@@ -44,6 +44,15 @@ class Starring {
     this.PLAYERSPEED = 500.0;
 
     this.clock = new THREE.Clock();
+
+    //spineを使う準備をする
+    this.assetManager = new spine.threejs.AssetManager('assets/spine/');
+  }
+
+  load(){
+    this.assetManager.loadText('right/skeleton.json', (path) => {
+      console.log(` [Starring] ${path} Load Complete.`)
+    });
   }
 
   animate(objects) {

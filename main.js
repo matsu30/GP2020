@@ -36,6 +36,7 @@ function init() {
         light.position.set( 0.5, 1, 0.75 );
         scene.add( light );
 
+        starring.load();
         starring.body.position.x = 20;
         starring.body.position.y = 640;
         scene.add(starring.body);
