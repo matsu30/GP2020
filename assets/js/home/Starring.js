@@ -48,7 +48,7 @@ class Starring {
     this.clock = new THREE.Clock();
 
     //spineを使う準備をする
-    this.assetManager = new spine.threejs.AssetManager("assets/spine/right");
+    this.assetManager = new spine.threejs.AssetManager("assets/spine/right/");
     this.skeletonMesh = undefined;
   }
 
@@ -57,7 +57,7 @@ class Starring {
       this.assetManager.loadText(this.SKELETON_FILE, (path) => {
         //load成功
         console.log(`[Starring] ${path} Load Complete.`);
-        resolve;
+        resolve();
       });
     });
 
@@ -75,16 +75,16 @@ class Starring {
 
     const atlas = this.assetManager.get(this.ATLAS_FILE);
 
-    const atlasLoder = new spine.AtlasAttachmentLoder(atlas);
+    const atlasLoader = new spine.AtlasAttachmentLoader(atlas);
 
-    const skeletonJson = new spine.SkeletonJson(atlasLoder);
+    const skeletonJson = new spine.SkeletonJson(atlasLoader);
 
     skeletonJson.scale = 0.1;
     const skeletonData = skeletonJson.readSkeletonData(
       this.assetManager.get(this.SKELETON_FILE)
     );
 
-    this.skeletonMesh = new spine.threejs.skeletonMesh(
+    this.skeletonMesh = new spine.threejs.SkeletonMesh(
       skeletonData,
       (parameters) => {
         parameters.depthTest = false;
@@ -169,6 +169,11 @@ class Starring {
       this._playerVelocity.y = 0;
       this._canJump = true;
     }
+
+    if (this.skeletonMesh){
+      this.skeletonMesh.update(delta);
+    }
+
   }
 
   jump() {
