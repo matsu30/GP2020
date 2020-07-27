@@ -7,11 +7,13 @@ class Starring {
   constructor(keydata) {
     const defaults = {
       width: 12,
-      height: 25,
+      height: 24,
       depth: 10,
     };
 
     this.keydata = Object.assign(defaults, keydata);
+    this.SKELETON_FILE = "skeleton.json";
+    this.ATLAS_FILE = "skeleton.atlas";
 
     const geometry = new THREE.BoxBufferGeometry(
       this.keydata.width,
@@ -46,14 +48,59 @@ class Starring {
     this.clock = new THREE.Clock();
 
     //spineを使う準備をする
-    this.assetManager = new spine.threejs.AssetManager('assets/spine/');
+    this.assetManager = new spine.threejs.AssetManager("assets/spine/right");
+    this.skeletonMesh = undefined;
   }
 
   load(){
-    this.assetManager.loadText('right/skeleton.json', (path) => {
-      console.log(` [Starring] ${path} Load Complete.`)
+    const promise0 = new Promise((resolve) => {
+      this.assetManager.loadText(this.SKELETON_FILE, (path) => {
+        //load成功
+        console.log(`[Starring] ${path} Load Complete.`);
+        resolve;
+      });
     });
-  }
+
+    const promise1 = new Promise((resolve) => {
+      this.assetManager.loadTextureAtlas(this.ATLAS_FILE, (path) => {
+        // load 成功
+        console.log(`[Starring] ${path} Load Complete.`);
+        resolve();
+      });
+    });
+
+
+  (async() => {
+    await Promise.all([promise0, promise1]);
+
+    const atlas = this.assetManager.get(this.ATLAS_FILE);
+
+    const atlasLoder = new spine.AtlasAttachmentLoder(atlas);
+
+    const skeletonJson = new spine.SkeletonJson(atlasLoder);
+
+    skeletonJson.scale = 0.1;
+    const skeletonData = skeletonJson.readSkeletonData(
+      this.assetManager.get(this.SKELETON_FILE)
+    );
+
+    this.skeletonMesh = new spine.threejs.skeletonMesh(
+      skeletonData,
+      (parameters) => {
+        parameters.depthTest = false;
+      }
+    );
+
+    this.skeletonMesh.state.setAnimation(0, "animation", true);
+    this.body.add(this.skeletonMesh);
+
+    console.log("[Starring] Spine Aseets Load Complete.");
+
+  })();
+
+  };
+
+
 
   animate(objects) {
     // 1コマ前から経過した時間を取得する

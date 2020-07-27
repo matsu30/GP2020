@@ -1,100 +1,59 @@
 
 skeleton.png
-size: 1438,632
-format: RGBA8888
-filter: Linear,Linear
-repeat: none
-chara
-  rotate: false
-  xy: 1221, 2
-  size: 149, 313
-  orig: 170, 320
-  offset: 11, 2
-  index: -1
-kuro
-  rotate: true
-  xy: 769, 19
-  size: 300, 450
-  orig: 300, 450
-  offset: 0, 0
-  index: -1
-newmove
-  rotate: false
-  xy: 1274, 317
-  size: 162, 313
-  orig: 164, 319
-  offset: 2, 0
-  index: -1
-skeleton
-  rotate: false
-  xy: 2, 6
-  size: 765, 313
-  orig: 769, 317
-  offset: 2, 2
-  index: -1
-skeleton2
-  rotate: false
-  xy: 2, 321
-  size: 1270, 309
-  orig: 1274, 313
-  offset: 2, 2
-  index: -1
-
-skeleton2.png
 size: 1274,313
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
-001/001
+001
   rotate: true
   xy: 639, 149
   size: 162, 313
   orig: 170, 320
   offset: 7, 0
   index: -1
-001/002
+002
   rotate: true
   xy: 954, 2
   size: 146, 313
   orig: 170, 320
   offset: 7, 0
   index: -1
-001/003
+003
   rotate: true
   xy: 318, 149
   size: 162, 319
   orig: 170, 320
   offset: 7, 0
   index: -1
-001/004
+004
   rotate: true
   xy: 954, 150
   size: 161, 318
   orig: 170, 320
   offset: 8, 0
   index: -1
-001/005
+005
   rotate: true
   xy: 2, 2
   size: 144, 313
   orig: 170, 320
   offset: 7, 0
   index: -1
-001/006
+006
   rotate: true
   xy: 2, 148
   size: 163, 314
   orig: 170, 320
   offset: 6, 0
   index: -1
-001/007
+007
   rotate: true
   xy: 633, 3
   size: 144, 313
   orig: 170, 320
   offset: 8, 0
   index: -1
-001/008
+008
   rotate: true
   xy: 318, 2
   size: 145, 313

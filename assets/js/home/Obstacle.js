@@ -6,7 +6,7 @@ class Obstacle{
         const defaults = {
             width: 20,
             height: 20,
-            depth: 6,
+            depth: 12,
             color: 0xf99fff,
             transparent: true,
             opacity: 0,
