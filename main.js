@@ -37,10 +37,10 @@ function init() {
         scene.add( light );
 
         starring.load();
-        starring.body.position.x = 20;
-        starring.body.position.y = 640;
-        // starring.body.position.x = 800;
-        // starring.body.position.y = 300;
+        // starring.body.position.x = 20;
+        // starring.body.position.y = 640;
+        starring.body.position.x = 1000;
+        starring.body.position.y = 1000;
         scene.add(starring.body);
         // scene.add(obstacle.mesh);
 

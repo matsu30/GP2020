@@ -7,7 +7,7 @@ class Starring {
   constructor(keydata) {
     const defaults = {
       width: 12,
-      height: 24,
+      height: 20,
       depth: 10,
     };
 
@@ -20,9 +20,10 @@ class Starring {
       this.keydata.height,
       this.keydata.depth
     );
-    var textureSta  = new THREE.ImageUtils.loadTexture('img/move.png');
+    //var textureSta  = new THREE.ImageUtils.loadTexture('img/move.png');
     const material = new THREE.MeshBasicMaterial({
-      map: textureSta, transparent: true,
+      //map: textureSta,
+      transparent: true, opacity: 0,
     });
 
     this.body = new THREE.Mesh(geometry, material);

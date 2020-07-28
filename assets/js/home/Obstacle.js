@@ -9,7 +9,7 @@ class Obstacle{
             depth: 12,
             color: 0xf99fff,
             transparent: true,
-            opacity: 0,
+            opacity: 1,
             x: 0,
             y: 0,
             z: 0
