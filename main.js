@@ -440,7 +440,7 @@ function init() {
         const Nstep = new Illusttexture({
             texture:'img/nStep.png',
             width: 460,
-            depth: 460,
+            height: 460,
             x: 1000,
             y: 410,
             z: 3,
@@ -448,7 +448,7 @@ function init() {
 
         scene.add(Nstep.mesh);
         objects.push(Nstep.mesh);
-
+    
 
         //---------renderer--------------------------------------
         renderer = new THREE.WebGLRenderer( { antialias: true } );

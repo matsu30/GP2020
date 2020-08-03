@@ -9,7 +9,9 @@ class Illusttexture{
             height: 20,
             x: 0,
             y: 0,
-            z: 0
+            z: 0,
+            transparent: true,
+            opacity: 1,
         };
 
         this.keydata = Object.assign({}, defaults, keydata);
@@ -23,8 +25,8 @@ class Illusttexture{
         );
         const material = new THREE.MeshBasicMaterial({
             map: texture,
-            transparent: true,
-            opacity: 1,
+            transparent: this.keydata.transparent,
+            opacity: this.keydata.opacity,
         });
         this.mesh = new THREE.Mesh( geometry, material );
 
