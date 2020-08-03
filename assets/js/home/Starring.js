@@ -6,9 +6,9 @@ class Starring {
    */
   constructor(keydata) {
     const defaults = {
-      width: 12,
-      height: 20,
-      depth: 10,
+      width: 20,
+      height: 30,
+      depth: 1,
     };
 
     this.keydata = Object.assign(defaults, keydata);
