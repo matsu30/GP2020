@@ -39,8 +39,8 @@ function init() {
         starring.load();
         // starring.body.position.x = 20;
         // starring.body.position.y = 640;
-        starring.body.position.x = 1000;
-        starring.body.position.y = 1000;
+        starring.body.position.x = 900;
+        starring.body.position.y = 300;
         scene.add(starring.body);
         // scene.add(obstacle.mesh);
 
@@ -428,15 +428,26 @@ function init() {
         ImgBack3.position.z = 0;
         scene.add( ImgBack3 );
 
-        var textureNStep  = new THREE.ImageUtils.loadTexture('img/nStep.png');
-        var GeometryNStep = new THREE.PlaneBufferGeometry( 460, 460 );
-        var MaterialNStep = new THREE.MeshBasicMaterial( {map: textureNStep, transparent: true} );
-        var ImgNStep = new THREE.Mesh( GeometryNStep, MaterialNStep );
-        ImgNStep.position.x = 1000;
-        ImgNStep.position.y = 410;
-        ImgNStep.position.z = 3;
-        scene.add( ImgNStep );
+        // var textureNStep  = new THREE.ImageUtils.loadTexture('img/nStep.png');
+        // var GeometryNStep = new THREE.PlaneBufferGeometry( 460, 460 );
+        // var MaterialNStep = new THREE.MeshBasicMaterial( {map: textureNStep, transparent: true} );
+        // var ImgNStep = new THREE.Mesh( GeometryNStep, MaterialNStep );
+        // ImgNStep.position.x = 1000;
+        // ImgNStep.position.y = 410;
+        // ImgNStep.position.z = 3;
+        // scene.add( ImgNStep );
 
+        const Nstep = new Illusttexture({
+            texture:'img/nStep.png',
+            width: 460,
+            depth: 460,
+            x: 1000,
+            y: 410,
+            z: 3,
+        })
+
+        scene.add(Nstep.mesh);
+        objects.push(Nstep.mesh);
 
 
         //---------renderer--------------------------------------
