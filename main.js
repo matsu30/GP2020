@@ -25,7 +25,7 @@ animate();
 
 function init() {
 
-        camera = new THREE.OrthographicCamera(-120, +120, +67.5, -67.5, 1, 100);
+        camera = new THREE.OrthographicCamera(-120, +120, +67.5, -67.5, 1, 150);
         camera.position.z = 100;
 
         scene = new THREE.Scene();
@@ -39,13 +39,14 @@ function init() {
         starring.load();
         // starring.body.position.x = 20;
         // starring.body.position.y = 640;
-        starring.body.position.x = 900;
-        starring.body.position.y = 300;
+        starring.body.position.x = 1300;
+        starring.body.position.y = 1300;
+        // starring.body.position.z = 10;
         scene.add(starring.body);
         // scene.add(obstacle.mesh);
 
         // objects.push(obstacle.mesh);
-
+console.log(starring.body.position)
 
         //--------開始-----------------------------------------------------------
 
@@ -404,40 +405,44 @@ function init() {
         var ImgBack = new THREE.Mesh( GeometryBack, MaterialBack );
         ImgBack.position.x = 500;
         ImgBack.position.y = 395;
-        ImgBack.position.z = 3;
+        ImgBack.position.z = -1;
         scene.add( ImgBack );
 
         var ImgBack_2 = new THREE.Mesh( GeometryBack, MaterialBack );
         ImgBack_2.position.x = 900;
         ImgBack_2.position.y = 395;
-        ImgBack_2.position.z = 3;
+        ImgBack_2.position.z = -1;
         scene.add( ImgBack_2 );
 
         var ImgBack_3 = new THREE.Mesh( GeometryBack, MaterialBack );
         ImgBack_3.position.x = 1300;
         ImgBack_3.position.y = 395;
-        ImgBack_3.position.z = 3;
+        ImgBack_3.position.z = -1;
         scene.add( ImgBack_3 );
 
-        var textureBack3  = new THREE.ImageUtils.loadTexture('img/Back02.png');
-        var GeometryBack3 = new THREE.PlaneBufferGeometry( 400, 475 );
-        var MaterialBack3 = new THREE.MeshBasicMaterial( {map: textureBack3, transparent: true} );
-        var ImgBack3 = new THREE.Mesh( GeometryBack3, MaterialBack3 );
-        ImgBack3.position.x = 1000;
-        ImgBack3.position.y = 700;
-        ImgBack3.position.z = 0;
-        scene.add( ImgBack3 );
+        // var textureBack3  = new THREE.ImageUtils.loadTexture('img/Back02.png');
+        // var GeometryBack3 = new THREE.PlaneBufferGeometry( 400, 475 );
+        // var MaterialBack3 = new THREE.MeshBasicMaterial( {map: textureBack3, transparent: true} );
+        // var ImgBack3 = new THREE.Mesh( GeometryBack3, MaterialBack3 );
+        // ImgBack3.position.x = 1000;
+        // ImgBack3.position.y = 700;
+        // ImgBack3.position.z = 0;
+        // scene.add( ImgBack3 );
 
-        // var textureNStep  = new THREE.ImageUtils.loadTexture('img/nStep.png');
-        // var GeometryNStep = new THREE.PlaneBufferGeometry( 460, 460 );
-        // var MaterialNStep = new THREE.MeshBasicMaterial( {map: textureNStep, transparent: true} );
-        // var ImgNStep = new THREE.Mesh( GeometryNStep, MaterialNStep );
-        // ImgNStep.position.x = 1000;
-        // ImgNStep.position.y = 410;
-        // ImgNStep.position.z = 3;
-        // scene.add( ImgNStep );
+        //Nルートへの階段
+        // const nStep = new Illusttexture({
+        //     texture:'img/nStep.png',
+        //     width: 460,
+        //     height: 460,
+        //     x: 1000,
+        //     y: 410,
+        //     z: 3,
+        // })
+        // scene.add(nStep.mesh);
+        // objects.push(nStep.mesh);
 
-        const Nstep = new Illusttexture({
+        //Nルートへの階段
+        const nStep = new Illusttexture({
             texture:'img/nStep.png',
             width: 460,
             height: 460,
@@ -445,9 +450,8 @@ function init() {
             y: 410,
             z: 3,
         })
-
-        scene.add(Nstep.mesh);
-        objects.push(Nstep.mesh);
+        scene.add(nStep.mesh);
+        objects.push(nStep.mesh);
     
 
         //---------renderer--------------------------------------
