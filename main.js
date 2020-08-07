@@ -290,156 +290,182 @@ console.log(starring.body.position)
         scene.add(S5.mesh);
         objects.push(S5.mesh);
 
-        //---------texture-------------------------------------
-        // var texture111  = new THREE.ImageUtils.loadTexture('img/1-1-1-2.png');
-        // var Geometry111 = new THREE.PlaneBufferGeometry( 580, 656 );
-        // var Material111 = new THREE.MeshBasicMaterial( {map: texture111, transparent: true} );
-        // var Img111 = new THREE.Mesh( Geometry111, Material111 );
-        // Img111.position.x = 91;
-        // Img111.position.y = 328;
-        // Img111.position.z = 90;
-        // scene.add( Img111 );
+        //---------texture------------------------------------
+        const texture111 = new Illusttexture({
+            texture:'img/1-1-1-2.png',
+            width: 580,
+            height: 656,
+            x: 91,
+            y: 328,
+            z: 90,
+        })
+        scene.add(texture111.mesh);
+        objects.push(texture111.mesh);
 
-        // var texture111b  = new THREE.ImageUtils.loadTexture('img/1-1-1-3.png');
-        // var Geometry111b = new THREE.PlaneBufferGeometry( 580, 656 );
-        // var Material111b = new THREE.MeshBasicMaterial( {map: texture111b, transparent: true} );
-        // var Img111b = new THREE.Mesh( Geometry111b, Material111b );
-        // Img111b.position.x = 91;
-        // Img111b.position.y = 328;
-        // Img111b.position.z = 2;
-        // scene.add( Img111b );
+        const texture111b = new Illusttexture({
+            texture:'img/1-1-1-3.png',
+            width: 580,
+            height: 656,
+            x: 91,
+            y: 328,
+            z: 2,
+        })
+        scene.add(texture111b.mesh);
+        objects.push(texture111b.mesh);
 
-        // var texture112  = new THREE.ImageUtils.loadTexture('img/1-1-2.png');
-        // var Geometry112 = new THREE.PlaneBufferGeometry( 25, 33 );
-        // var Material112 = new THREE.MeshBasicMaterial( {map: texture112, transparent: true} );
-        // var Img112 = new THREE.Mesh( Geometry112, Material112 );
-        // Img112.position.x = 119;
-        // Img112.position.y = 215+440;
-        // Img112.position.z = 80;
-        // scene.add( Img112 );
+        const texture112 = new Illusttexture({
+            texture:'img/1-1-2.png',
+            width: 25,
+            height: 33,
+            x: 119,
+            y: 655,
+            z: 80,
+        })
+        scene.add(texture112.mesh);
+        objects.push(texture112.mesh);
 
-        // var texture113f  = new THREE.ImageUtils.loadTexture('img/1-1-3-1.png');
-        // var Geometry113f = new THREE.PlaneBufferGeometry( 100, 125 );
-        // var Material113f = new THREE.MeshBasicMaterial( {map: texture113f, transparent: true} );
-        // var Img113f = new THREE.Mesh( Geometry113f, Material113f );
-        // Img113f.position.x = 130;
-        // Img113f.position.y = 260+440;
-        // Img113f.position.z = 30;
-        // scene.add( Img113f );
+        const texture113f = new Illusttexture({
+            texture:'img/1-1-3-1.png',
+            width: 100,
+            height: 125,
+            x: 130,
+            y: 700,
+            z: 30,
+        })
+        scene.add(texture113f.mesh);
+        objects.push(texture113f.mesh);
 
-        // var texture113b  = new THREE.ImageUtils.loadTexture('img/1-1-3-2.png');
-        // var Geometry113b = new THREE.PlaneBufferGeometry( 130, 130 );
-        // var Material113b = new THREE.MeshBasicMaterial( {map: texture113b, transparent: true} );
-        // var Img113b = new THREE.Mesh( Geometry113b, Material113b );
-        // Img113b.position.x = 107;
-        // Img113b.position.y = 226.5+440;
-        // Img113b.position.z = 2;
-        // scene.add( Img113b );
+        const texture113b = new Illusttexture({
+            texture:'img/1-1-3-2.png',
+            width: 130,
+            height: 130,
+            x: 107,
+            y: 666.5,
+            z: 2,
+        })
+        scene.add(texture113b.mesh);
+        objects.push(texture113b.mesh);
 
-        // var texture113  = new THREE.ImageUtils.loadTexture('img/1-1-3.png');
-        // var Geometry113 = new THREE.PlaneBufferGeometry( 100, 125 );
-        // var Material113 = new THREE.MeshBasicMaterial( {map: texture113, transparent: true} );
-        // var Img113 = new THREE.Mesh( Geometry113, Material113 );
-        // Img113.position.x = 130;
-        // Img113.position.y = 260+440;
-        // Img113.position.z = 3;
-        // scene.add( Img113 );
+        const texture113 = new Illusttexture({
+            texture:'img/1-1-3.png',
+            width: 100,
+            height: 125,
+            x: 130,
+            y: 700,
+            z: 3,
+        })
+        scene.add(texture113.mesh);
+        objects.push(texture113.mesh);
 
-        // var texture114  = new THREE.ImageUtils.loadTexture('img/1-1-4.png');
-        // var Geometry114 = new THREE.PlaneBufferGeometry( 40, 50 );
-        // var Material114 = new THREE.MeshBasicMaterial( {map: texture114, transparent: true} );
-        // var Img114 = new THREE.Mesh( Geometry114, Material114 );
-        // Img114.position.x = 120;
-        // Img114.position.y = 220+440;
-        // Img114.position.z = 0;
-        // scene.add( Img114 );
+        const texture114 = new Illusttexture({
+            texture:'img/1-1-4.png',
+            width: 40,
+            height: 50,
+            x: 120,
+            y: 660,
+            z: 0,
+        })
+        scene.add(texture114.mesh);
+        objects.push(texture114.mesh);
 
-        // var texture121  = new THREE.ImageUtils.loadTexture('img/1-2-1.png');
-        // var Geometry121 = new THREE.PlaneBufferGeometry( 580, 658 );
-        // var Material121 = new THREE.MeshBasicMaterial( {map: texture121, transparent: true} );
-        // var Img121 = new THREE.Mesh( Geometry121, Material121 );
-        // Img121.position.x = 230;
-        // Img121.position.y = 328;
-        // Img121.position.z = 89;
-        // scene.add( Img121 );
+        const texture121 = new Illusttexture({
+            texture:'img/1-2-1.png',
+            width: 580,
+            height: 658,
+            x: 230,
+            y: 328,
+            z: 89,
+        })
+        scene.add(texture121.mesh);
+        objects.push(texture121.mesh);
 
-        var texture122  = new THREE.ImageUtils.loadTexture('img/1-2-2.png');
-        var Geometry122 = new THREE.PlaneBufferGeometry( 200, 200);
-        var Material122 = new THREE.MeshBasicMaterial( {map: texture122, transparent: true} );
-        var Img122 = new THREE.Mesh( Geometry122, Material122 );
-        Img122.position.x = 270;
-        Img122.position.y = 254;
-        Img122.position.z = 91;
-        scene.add( Img122 );
+        const texture122 = new Illusttexture({
+            texture:'img/1-2-2.png',
+            width: 200,
+            height: 200,
+            x: 270,
+            y: 254,
+            z: 91,
+        })
+        scene.add(texture122.mesh);
+        objects.push(texture122.mesh);
 
-        var Img1221 = new THREE.Mesh( Geometry122, Material122 );
-        Img1221.position.x = 460;
-        Img1221.position.y = 254;
-        Img1221.position.z = 91;
-        scene.add( Img1221 );
+        const texture1221 = new Illusttexture({
+            texture:'img/1-2-2.png',
+            width: 200,
+            height: 200,
+            x: 460,
+            y: 254,
+            z: 91,
+        })
+        scene.add(texture1221.mesh);
+        objects.push(texture1221.mesh);
 
-        var Img1222 = new THREE.Mesh( Geometry122, Material122 );
-        Img1222.position.x = 650;
-        Img1222.position.y = 254;
-        Img1222.position.z = 91;
-        scene.add( Img1222 );
+        const texture1222 = new Illusttexture({
+            texture:'img/1-2-2.png',
+            width: 200,
+            height: 200,
+            x: 650,
+            y: 254,
+            z: 91,
+        })
+        scene.add(texture1222.mesh);
+        objects.push(texture1222.mesh);
 
-        var Img1223 = new THREE.Mesh( Geometry122, Material122 );
-        Img1223.position.x = 840;
-        Img1223.position.y = 254;
-        Img1223.position.z = 91;
-        scene.add( Img1223 );
-        
-        var textureNA1  = new THREE.ImageUtils.loadTexture('img/NA-1.png');
-        var GeometryNA1 = new THREE.PlaneBufferGeometry( 300, 550 );
-        var MaterialNA1 = new THREE.MeshBasicMaterial( {map: textureNA1, transparent: true} );
-        var ImgNA1 = new THREE.Mesh( GeometryNA1, MaterialNA1 );
-        ImgNA1.position.x = 560;
-        ImgNA1.position.y = 451;
-        ImgNA1.position.z = 4;
-        scene.add( ImgNA1 );
+        const texture1223 = new Illusttexture({
+            texture:'img/1-2-2.png',
+            width: 200,
+            height: 200,
+            x: 840,
+            y: 254,
+            z: 91,
+        })
+        scene.add(texture1223.mesh);
+        objects.push(texture1223.mesh);
 
-        var textureBack  = new THREE.ImageUtils.loadTexture('img/Back01.png');
-        var GeometryBack = new THREE.PlaneBufferGeometry( 400, 475 );
-        var MaterialBack = new THREE.MeshBasicMaterial( {map: textureBack, transparent: true} );
-        var ImgBack = new THREE.Mesh( GeometryBack, MaterialBack );
-        ImgBack.position.x = 500;
-        ImgBack.position.y = 395;
-        ImgBack.position.z = -1;
-        scene.add( ImgBack );
+        const textureNA1 = new Illusttexture({
+            texture:'img/NA-1.png',
+            width: 300,
+            height: 550,
+            x: 560,
+            y: 451,
+            z: 4,
+        })
+        scene.add(textureNA1.mesh);
+        objects.push(textureNA1.mesh);
 
-        var ImgBack_2 = new THREE.Mesh( GeometryBack, MaterialBack );
-        ImgBack_2.position.x = 900;
-        ImgBack_2.position.y = 395;
-        ImgBack_2.position.z = -1;
-        scene.add( ImgBack_2 );
+        const ImgBack = new Illusttexture({
+            texture:'img/Back01.png',
+            width: 400,
+            height: 475,
+            x: 500,
+            y: 395,
+            z: -1,
+        })
+        scene.add(ImgBack.mesh);
+        objects.push(ImgBack.mesh);
 
-        var ImgBack_3 = new THREE.Mesh( GeometryBack, MaterialBack );
-        ImgBack_3.position.x = 1300;
-        ImgBack_3.position.y = 395;
-        ImgBack_3.position.z = -1;
-        scene.add( ImgBack_3 );
+        const ImgBack_2 = new Illusttexture({
+            texture:'img/Back01.png',
+            width: 400,
+            height: 475,
+            x: 900,
+            y: 395,
+            z: -1,
+        })
+        scene.add(ImgBack_2.mesh);
+        objects.push(ImgBack_2.mesh);
 
-        // var textureBack3  = new THREE.ImageUtils.loadTexture('img/Back02.png');
-        // var GeometryBack3 = new THREE.PlaneBufferGeometry( 400, 475 );
-        // var MaterialBack3 = new THREE.MeshBasicMaterial( {map: textureBack3, transparent: true} );
-        // var ImgBack3 = new THREE.Mesh( GeometryBack3, MaterialBack3 );
-        // ImgBack3.position.x = 1000;
-        // ImgBack3.position.y = 700;
-        // ImgBack3.position.z = 0;
-        // scene.add( ImgBack3 );
-
-        //Nルートへの階段
-        // const nStep = new Illusttexture({
-        //     texture:'img/nStep.png',
-        //     width: 460,
-        //     height: 460,
-        //     x: 1000,
-        //     y: 410,
-        //     z: 3,
-        // })
-        // scene.add(nStep.mesh);
-        // objects.push(nStep.mesh);
+        const ImgBack_3 = new Illusttexture({
+            texture:'img/Back01.png',
+            width: 400,
+            height: 475,
+            x: 1300,
+            y: 395,
+            z: -1,
+        })
+        scene.add(ImgBack_3.mesh);
+        objects.push(ImgBack_3.mesh);
 
         //Nルートへの階段
         const nStep = new Illusttexture({
