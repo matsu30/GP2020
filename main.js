@@ -39,8 +39,8 @@ function init() {
         starring.load();
         // starring.body.position.x = 20;
         // starring.body.position.y = 640;
-        starring.body.position.x = 1300;
-        starring.body.position.y = 1300;
+        starring.body.position.x = 2000;
+        starring.body.position.y = 200;
         // starring.body.position.z = 10;
         scene.add(starring.body);
         // scene.add(obstacle.mesh);
@@ -379,7 +379,7 @@ console.log(starring.body.position)
         scene.add(texture121.mesh);
         objects.push(texture121.mesh);
 
-        const texture122 = new Illusttexture({
+        const yuka1 = new Illusttexture({
             texture:'img/1-2-2.png',
             width: 200,
             height: 200,
@@ -387,10 +387,10 @@ console.log(starring.body.position)
             y: 254,
             z: 91,
         })
-        scene.add(texture122.mesh);
-        objects.push(texture122.mesh);
+        scene.add(yuka1.mesh);
+        objects.push(yuka1.mesh);
 
-        const texture1221 = new Illusttexture({
+        const yuka2 = new Illusttexture({
             texture:'img/1-2-2.png',
             width: 200,
             height: 200,
@@ -398,10 +398,10 @@ console.log(starring.body.position)
             y: 254,
             z: 91,
         })
-        scene.add(texture1221.mesh);
-        objects.push(texture1221.mesh);
+        scene.add(yuka2.mesh);
+        objects.push(yuka2.mesh);
 
-        const texture1222 = new Illusttexture({
+        const yuka3 = new Illusttexture({
             texture:'img/1-2-2.png',
             width: 200,
             height: 200,
@@ -409,10 +409,10 @@ console.log(starring.body.position)
             y: 254,
             z: 91,
         })
-        scene.add(texture1222.mesh);
-        objects.push(texture1222.mesh);
+        scene.add(yuka3.mesh);
+        objects.push(yuka3.mesh);
 
-        const texture1223 = new Illusttexture({
+        const yuka4 = new Illusttexture({
             texture:'img/1-2-2.png',
             width: 200,
             height: 200,
@@ -420,8 +420,96 @@ console.log(starring.body.position)
             y: 254,
             z: 91,
         })
-        scene.add(texture1223.mesh);
-        objects.push(texture1223.mesh);
+        scene.add(yuka4.mesh);
+        objects.push(yuka4.mesh);
+
+        const yuka5 = new Illusttexture({
+            texture:'img/1-2-2.png',
+            width: 200,
+            height: 200,
+            x: 1030,
+            y: 254,
+            z: 91,
+        })
+        scene.add(yuka5.mesh);
+        objects.push(yuka5.mesh);
+
+        const yuka6 = new Illusttexture({
+            texture:'img/1-2-2.png',
+            width: 200,
+            height: 200,
+            x: 1220,
+            y: 254,
+            z: 91,
+        })
+        scene.add(yuka6.mesh);
+        objects.push(yuka6.mesh);
+
+        const yuka7 = new Illusttexture({
+            texture:'img/1-2-2.png',
+            width: 200,
+            height: 200,
+            x: 1410,
+            y: 254,
+            z: 91,
+        })
+        scene.add(yuka7.mesh);
+        objects.push(yuka7.mesh);
+
+        const yuka8 = new Illusttexture({
+            texture:'img/1-2-2.png',
+            width: 200,
+            height: 200,
+            x: 1600,
+            y: 254,
+            z: 91,
+        })
+        scene.add(yuka8.mesh);
+        objects.push(yuka8.mesh);
+
+        const yuka9 = new Illusttexture({
+            texture:'img/1-2-2.png',
+            width: 200,
+            height: 200,
+            x: 1790,
+            y: 254,
+            z: 91,
+        })
+        scene.add(yuka9.mesh);
+        objects.push(yuka9.mesh);
+
+        const yuka10 = new Illusttexture({
+            texture:'img/1-2-2.png',
+            width: 200,
+            height: 200,
+            x: 1980,
+            y: 254,
+            z: 91,
+        })
+        scene.add(yuka10.mesh);
+        objects.push(yuka10.mesh);
+
+        const yuka11 = new Illusttexture({
+            texture:'img/1-2-2.png',
+            width: 200,
+            height: 200,
+            x: 2170,
+            y: 254,
+            z: 91,
+        })
+        scene.add(yuka11.mesh);
+        objects.push(yuka11.mesh);
+
+        const yuka12 = new Illusttexture({
+            texture:'img/1-2-2.png',
+            width: 200,
+            height: 200,
+            x: 2360,
+            y: 254,
+            z: 91,
+        })
+        scene.add(yuka12.mesh);
+        objects.push(yuka12.mesh);
 
         const textureNA1 = new Illusttexture({
             texture:'img/NA-1.png',
@@ -429,7 +517,7 @@ console.log(starring.body.position)
             height: 550,
             x: 560,
             y: 451,
-            z: 4,
+            z: -1,
         })
         scene.add(textureNA1.mesh);
         objects.push(textureNA1.mesh);
@@ -440,7 +528,7 @@ console.log(starring.body.position)
             height: 475,
             x: 500,
             y: 395,
-            z: -1,
+            z: -3,
         })
         scene.add(ImgBack.mesh);
         objects.push(ImgBack.mesh);
@@ -451,7 +539,7 @@ console.log(starring.body.position)
             height: 475,
             x: 900,
             y: 395,
-            z: -1,
+            z: -3,
         })
         scene.add(ImgBack_2.mesh);
         objects.push(ImgBack_2.mesh);
@@ -462,10 +550,55 @@ console.log(starring.body.position)
             height: 475,
             x: 1300,
             y: 395,
-            z: -1,
+            z: -3,
         })
         scene.add(ImgBack_3.mesh);
         objects.push(ImgBack_3.mesh);
+
+        const ImgBack_4 = new Illusttexture({
+            texture:'img/Back01.png',
+            width: 400,
+            height: 475,
+            x: 1700,
+            y: 395,
+            z: -3,
+        })
+        scene.add(ImgBack_4.mesh);
+        objects.push(ImgBack_4.mesh);
+
+        const ImgBack_5 = new Illusttexture({
+            texture:'img/Back01.png',
+            width: 400,
+            height: 475,
+            x: 2100,
+            y: 395,
+            z: -3,
+        })
+        scene.add(ImgBack_5.mesh);
+        objects.push(ImgBack_5.mesh);
+
+        const ImgBack_6 = new Illusttexture({
+            texture:'img/Back01.png',
+            width: 400,
+            height: 475,
+            x: 2500,
+            y: 395,
+            z: -3,
+        })
+        scene.add(ImgBack_6.mesh);
+        objects.push(ImgBack_6.mesh);
+
+        //Aルート終わり
+        const A3 = new Illusttexture({
+            texture:'img/A-3.png',
+            width: 200,
+            height: 200,
+            x: 2088,
+            y: 280,
+            z: 5,
+        })
+        scene.add(A3.mesh);
+        objects.push(A3.mesh);
 
         //Nルートへの階段
         const nStep = new Illusttexture({
@@ -474,11 +607,65 @@ console.log(starring.body.position)
             height: 460,
             x: 1000,
             y: 410,
-            z: 3,
+            z: -1,
         })
         scene.add(nStep.mesh);
         objects.push(nStep.mesh);
     
+        const N3 = new Illusttexture({
+            texture:'img/1-1-1-2.png',
+            width: 580,
+            height: 656,
+            x: 2330,
+            y: 328,
+            z: 90,
+        })
+        scene.add(N3.mesh);
+        objects.push(N3.mesh);
+
+        const N3a = new Illusttexture({
+            texture:'img/1-1-2.png',
+            width: 25,
+            height: 33,
+            x: 2358,
+            y: 655,
+            z: -1,
+        })
+        scene.add(N3a.mesh);
+        objects.push(N3a.mesh);
+
+        const N3b = new Illusttexture({
+            texture:'img/1-1-3.png',
+            width: 100,
+            height: 125,
+            x: 2369,
+            y: 700,
+            z: -2,
+        })
+        scene.add(N3b.mesh);
+        objects.push(N3b.mesh);
+
+        const N3c = new Illusttexture({
+            texture:'img/1-1-4.png',
+            width: 45,
+            height: 45,
+            x: 2360,
+            y: 660,
+            z: -3,
+        })
+        scene.add(N3c.mesh);
+        objects.push(N3c.mesh);
+
+        const N3d = new Illusttexture({
+            texture:'img/1-1-4.png',
+            width: 45,
+            height: 50,
+            x: 2415,
+            y: 25,
+            z: 0,
+        })
+        scene.add(N3d.mesh);
+        objects.push(N3d.mesh);
 
         //---------renderer--------------------------------------
         renderer = new THREE.WebGLRenderer( { antialias: true } );
