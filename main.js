@@ -25,8 +25,11 @@ animate();
 
 function init() {
 
-        camera = new THREE.OrthographicCamera(-120, +120, +67.5, -67.5, 1, 150);
-        camera.position.z = 100;
+        // camera = new THREE.OrthographicCamera(-120, +120, +67.5, -67.5, 1, 150);
+        // camera.position.z = 100;
+
+        camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 0.1, 1000 );
+        camera.position.z = 500;
 
         scene = new THREE.Scene();
         scene.background = new THREE.Color( 0xffffff );
@@ -493,23 +496,12 @@ console.log(starring.body.position)
             texture:'img/1-2-2.png',
             width: 200,
             height: 200,
-            x: 2170,
+            x: 2130,
             y: 254,
             z: 91,
         })
         scene.add(yuka11.mesh);
         objects.push(yuka11.mesh);
-
-        const yuka12 = new Illusttexture({
-            texture:'img/1-2-2.png',
-            width: 200,
-            height: 200,
-            x: 2360,
-            y: 254,
-            z: 91,
-        })
-        scene.add(yuka12.mesh);
-        objects.push(yuka12.mesh);
 
         const textureNA1 = new Illusttexture({
             texture:'img/NA-1.png',
@@ -669,7 +661,7 @@ console.log(starring.body.position)
 
         //---------renderer--------------------------------------
         renderer = new THREE.WebGLRenderer( { antialias: true } );
-        renderer.setPixelRatio( window.devicePixelRatio );
+        //renderer.setPixelRatio( window.devicePixelRatio );
         renderer.setSize( window.innerWidth, window.innerHeight );
         document.body.appendChild( renderer.domElement );
 
@@ -681,6 +673,11 @@ console.log(starring.body.position)
 
 
 function onWindowResize() {
+
+    camera.left = window.innerWidth / -2;
+    camera.right = window.innerWidth / 2;
+    camera.top = window.innerHeight / 2;
+    camera.bottom = window.innerHeight / -2;
 
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
