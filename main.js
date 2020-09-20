@@ -43,7 +43,7 @@ function init() {
         // starring.body.position.x = 20;
         // starring.body.position.y = 640;
         starring.body.position.x = 2000;
-        starring.body.position.y = 200;
+        starring.body.position.y = 100;
         // starring.body.position.z = 10;
         scene.add(starring.body);
         // scene.add(obstacle.mesh);
@@ -249,29 +249,29 @@ console.log(starring.body.position)
             }
         }
 
-        const S1 = new Obstacle({
+        const Start1 = new Obstacle({
             height: 60,
             y: 230+440,
         })
-        const S2 = new Obstacle({
+        const Start2 = new Obstacle({
             height: 5,
             x: 119,
             y: 202+440,
         })
-        const S3 = new Obstacle({
+        const Start3 = new Obstacle({
             width: 5,
             height: 75,
             x: 153,
             y: 220+440,
         })
-        const S4 = new Obstacle({
+        const Start4 = new Obstacle({
             width: 52,
             depth: 2,
             x: 130,
             y: 262+440,
         })
 
-        const S5 = new Obstacle({
+        const Start5 = new Obstacle({
             width: 30,
             height: 2,
             depth: 2,
@@ -282,16 +282,16 @@ console.log(starring.body.position)
             // color: 0xfff66f,
         })
 
-        scene.add(S1.mesh);
-        objects.push(S1.mesh);
-        scene.add(S2.mesh);
-        objects.push(S2.mesh);
-        scene.add(S3.mesh);
-        objects.push(S3.mesh);
-        scene.add(S4.mesh);
-        objects.push(S4.mesh);
-        scene.add(S5.mesh);
-        objects.push(S5.mesh);
+        scene.add(Start1.mesh);
+        objects.push(Start1.mesh);
+        scene.add(Start2.mesh);
+        objects.push(Start2.mesh);
+        scene.add(Start3.mesh);
+        objects.push(Start3.mesh);
+        scene.add(Start4.mesh);
+        objects.push(Start4.mesh);
+        scene.add(Start5.mesh);
+        objects.push(Start5.mesh);
 
         //---------texture------------------------------------
         const texture111 = new Illusttexture({
@@ -503,6 +503,28 @@ console.log(starring.body.position)
         scene.add(yuka11.mesh);
         objects.push(yuka11.mesh);
 
+        const yuka12 = new Illusttexture({
+            texture:'img/1-2-2.png',
+            width: 200,
+            height: 200,
+            x: 2400,
+            y: 254,
+            z: 99,
+        })
+        scene.add(yuka12.mesh);
+        objects.push(yuka12.mesh);
+
+        const yuka13 = new Illusttexture({
+            texture:'img/1-2-2.png',
+            width: 200,
+            height: 200,
+            x: 2590,
+            y: 254,
+            z: 99,
+        })
+        scene.add(yuka13.mesh);
+        objects.push(yuka13.mesh);
+
         const textureNA1 = new Illusttexture({
             texture:'img/NA-1.png',
             width: 300,
@@ -573,12 +595,34 @@ console.log(starring.body.position)
             texture:'img/Back01.png',
             width: 400,
             height: 475,
-            x: 2500,
+            x: 2900,
             y: 395,
             z: -3,
         })
         scene.add(ImgBack_6.mesh);
         objects.push(ImgBack_6.mesh);
+
+        const ImgBack_7 = new Illusttexture({
+            texture:'img/Back01.png',
+            width: 400,
+            height: 475,
+            x: 3300,
+            y: 395,
+            z: -3,
+        })
+        scene.add(ImgBack_7.mesh);
+        objects.push(ImgBack_7.mesh);
+
+        const ImgBack_8 = new Illusttexture({
+            texture:'img/Back01.png',
+            width: 400,
+            height: 475,
+            x: 2500,
+            y: 395,
+            z: -3,
+        })
+        scene.add(ImgBack_8.mesh);
+        objects.push(ImgBack_8.mesh);
 
         //Aルート終わり
         const A3 = new Illusttexture({
@@ -648,16 +692,162 @@ console.log(starring.body.position)
         scene.add(N3c.mesh);
         objects.push(N3c.mesh);
 
-        const N3d = new Illusttexture({
+        //Sルート
+        const SKT1 = new Illusttexture({
+            texture:'img/S-1.png',
+            width: 500,
+            height: 500,
+            x: 800,
+            y: 250,
+            z: -10,
+        })
+        scene.add(SKT1.mesh);
+        objects.push(SKT1.mesh);
+
+        const S1 = new Illusttexture({
+            texture:'img/S-1.png',
+            width: 400,
+            height: 400,
+            x: 1500,
+            y: -53,
+            z: -10,
+        })
+        scene.add(S1.mesh);
+        objects.push(S1.mesh);
+
+        const ImgBack_S1 = new Illusttexture({
+            texture:'img/Back01.png',
+            width: 400,
+            height: 475,
+            x: 2000,
+            y: -60,
+            z: -3,
+        })
+        scene.add(ImgBack_S1.mesh);
+        objects.push(ImgBack_S1.mesh);
+
+        const ImgBack_S2 = new Illusttexture({
+            texture:'img/Back01.png',
+            width: 400,
+            height: 475,
+            x: 2400,
+            y: -60,
+            z: 95,
+        })
+        scene.add(ImgBack_S2.mesh);
+        objects.push(ImgBack_S2.mesh);
+
+        const ImgBack_S3 = new Illusttexture({
+            texture:'img/Back01.png',
+            width: 400,
+            height: 475,
+            x: 2800,
+            y: -60,
+            z: -10,
+        })
+        scene.add(ImgBack_S3.mesh);
+        objects.push(ImgBack_S3.mesh);
+
+        const ImgBack_S4 = new Illusttexture({
+            texture:'img/Back01.png',
+            width: 400,
+            height: 475,
+            x: 3200,
+            y: -60,
+            z: -10,
+        })
+        scene.add(ImgBack_S4.mesh);
+        objects.push(ImgBack_S4.mesh);
+
+        const ImgBack_S5 = new Illusttexture({
+            texture:'img/Back01.png',
+            width: 400,
+            height: 475,
+            x: 3600,
+            y: -60,
+            z: -10,
+        })
+        scene.add(ImgBack_S5.mesh);
+        objects.push(ImgBack_S5.mesh);
+
+        const S_eye = new Illusttexture({
+            texture:'img/eye.png',
+            width: 200,
+            height: 200,
+            x: 2000,
+            y: 20,
+            z: 99,
+        })
+        scene.add(S_eye.mesh);
+        objects.push(S_eye.mesh);
+
+        const S_2b = new Illusttexture({
+            texture:'img/S-2b.png',
+            width: 400,
+            height: 400,
+            x: 2800,
+            y: 200,
+            z: -10,
+        })
+        scene.add(S_2b.mesh);
+        objects.push(S_2b.mesh);
+
+        const S_2f = new Illusttexture({
+            texture:'img/S-2f.png',
+            width: 400,
+            height: 400,
+            x: 2800,
+            y: 200,
+            z: 10,
+        })
+        scene.add(S_2f.mesh);
+        objects.push(S_2f.mesh);
+
+        const S3 = new Illusttexture({
+            texture:'img/1-1-1-2.png',
+            width: 580,
+            height: 656,
+            x: 2330+800,
+            y: 326,
+            z: 90,
+        })
+        scene.add(S3.mesh);
+        objects.push(S3.mesh);
+
+        const S3a = new Illusttexture({
+            texture:'img/1-1-2.png',
+            width: 25,
+            height: 33,
+            x: 2358+800,
+            y: 653,
+            z: -1,
+        })
+        scene.add(S3a.mesh);
+        objects.push(S3a.mesh);
+
+        const S3b = new Illusttexture({
+            texture:'img/1-1-3.png',
+            width: 100,
+            height: 125,
+            x: 2369+800,
+            y: 698,
+            z: -2,
+        })
+        scene.add(S3b.mesh);
+        objects.push(S3b.mesh);
+
+        const S3c = new Illusttexture({
             texture:'img/1-1-4.png',
             width: 45,
-            height: 50,
-            x: 2415,
-            y: 25,
-            z: 0,
+            height: 45,
+            x: 2360+670,
+            y: 660,
+            z: -3,
         })
-        scene.add(N3d.mesh);
-        objects.push(N3d.mesh);
+        scene.add(S3c.mesh);
+        objects.push(S3c.mesh);
+
+
 
         //---------renderer--------------------------------------
         renderer = new THREE.WebGLRenderer( { antialias: true } );
