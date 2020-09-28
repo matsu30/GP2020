@@ -42,8 +42,8 @@ function init() {
         starring.load();
         // starring.body.position.x = 20;
         // starring.body.position.y = 640;
-        starring.body.position.x = 2000;
-        starring.body.position.y = 100;
+        starring.body.position.x = 1500;
+        starring.body.position.y = 10;
         // starring.body.position.z = 10;
         scene.add(starring.body);
         // scene.add(obstacle.mesh);
@@ -636,7 +636,7 @@ console.log(starring.body.position)
         scene.add(A3.mesh);
         objects.push(A3.mesh);
 
-        //Nルートへの階段
+        //Nルート
         const nStep = new Illusttexture({
             texture:'img/nStep.png',
             width: 460,
@@ -647,6 +647,17 @@ console.log(starring.body.position)
         })
         scene.add(nStep.mesh);
         objects.push(nStep.mesh);
+
+        const nCharactor = new Illusttexture({
+            texture:'img/N-chara.png',
+            width: 300,
+            height: 300,
+            x: 1600,
+            y: 730,
+            z: 10,
+        })
+        scene.add(nCharactor.mesh);
+        objects.push(nCharactor.mesh);
     
         const N3 = new Illusttexture({
             texture:'img/1-1-1-2.png',
