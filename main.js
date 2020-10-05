@@ -25,11 +25,11 @@ animate();
 
 function init() {
 
-        // camera = new THREE.OrthographicCamera(-120, +120, +67.5, -67.5, 1, 150);
-        // camera.position.z = 100;
+        camera = new THREE.OrthographicCamera(-120, +120, +67.5, -67.5, 1, 150);
+        camera.position.z = 100;
 
-        camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 0.1, 1000 );
-        camera.position.z = 500;
+        // camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 0.1, 1000 );
+        // camera.position.z = 500;
 
         scene = new THREE.Scene();
         scene.background = new THREE.Color( 0xffffff );
@@ -40,11 +40,11 @@ function init() {
         scene.add( light );
 
         starring.load();
-        starring.body.position.x = 2000;
-        starring.body.position.y = 200;
+        starring.body.position.x = 60;
+        starring.body.position.y = 660;
         // starring.body.position.x = 1500;
         // starring.body.position.y = 10;
-        // starring.body.position.z = 10;
+        starring.body.position.z = 0;
         scene.add(starring.body);
         // scene.add(obstacle.mesh);
 
@@ -294,7 +294,7 @@ console.log(starring.body.position)
         objects.push(Start5.mesh);
 
         //---------texture------------------------------------
-        const texture111 = new Illusttexture({
+        const textureBuillding01F = new Illusttexture({
             texture:'img/start01.png',
             width: 205,
             height: 665,
@@ -308,16 +308,16 @@ console.log(starring.body.position)
             repeatX: 0.35,
             repeatY: 1,
         })
-        scene.add(texture111.mesh);
-        objects.push(texture111.mesh);
+        scene.add(textureBuillding01F.mesh);
+        objects.push(textureBuillding01F.mesh);
 
-        const texture111b = new Illusttexture({
+        const textureBuillding01B = new Illusttexture({
             texture:'img/back01.png',
             width: 190,
             height: 630,
             x: 95,
             y: 315,
-            z: 2,
+            z: -10,
             offsetX: 0,
             offsetY: 0,
             centerX: 0.531,
@@ -325,63 +325,93 @@ console.log(starring.body.position)
             repeatX: 1,
             repeatY: 1,
         })
-        scene.add(texture111b.mesh);
-        objects.push(texture111b.mesh);
+        scene.add(textureBuillding01B.mesh);
+        objects.push(textureBuillding01B.mesh);
 
-        // const texture112 = new Illusttexture({
-        //     texture:'img/1-1-2.png',
-        //     width: 25,
-        //     height: 33,
-        //     x: 119,
-        //     y: 655,
-        //     z: 80,
-        // })
-        // scene.add(texture112.mesh);
-        // objects.push(texture112.mesh);
+        const textureStartF = new Illusttexture({
+            texture:'img/start02.png',
+            width: 56,
+            height: 85,
+            x: 129,
+            y: 673,
+            z: 50,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0,
+            centerY: 0.423,
+            repeatX: 0.27,
+            repeatY: 0.35,
+        })
+        scene.add(textureStartF.mesh);
+        objects.push(textureStartF.mesh);
 
-        // const texture113f = new Illusttexture({
-        //     texture:'img/1-1-3-1.png',
-        //     width: 100,
-        //     height: 125,
-        //     x: 130,
-        //     y: 700,
-        //     z: 30,
-        // })
-        // scene.add(texture113f.mesh);
-        // objects.push(texture113f.mesh);
+        const textureStartB = new Illusttexture({
+            texture:'img/start02.png',
+            width: 56,
+            height: 85,
+            x: 129,
+            y: 673,
+            z: -1,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0,
+            centerY: 1,
+            repeatX: 0.27,
+            repeatY: 0.35,
+        })
+        scene.add(textureStartB.mesh);
+        objects.push(textureStartB.mesh);
 
-        // const texture113b = new Illusttexture({
-        //     texture:'img/1-1-3-2.png',
-        //     width: 130,
-        //     height: 130,
-        //     x: 107,
-        //     y: 666.5,
-        //     z: 2,
-        // })
-        // scene.add(texture113b.mesh);
-        // objects.push(texture113b.mesh);
+        const textureStartL = new Illusttexture({
+            texture:'img/start02.png',
+            width: 75,
+            height: 55,
+            x: 110,
+            y: 655,
+            z: -2,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0.4,
+            centerY: 1,
+            repeatX: 0.3,
+            repeatY: 0.3,
+        })
+        scene.add(textureStartL.mesh);
+        objects.push(textureStartL.mesh);
 
-        // const texture113 = new Illusttexture({
-        //     texture:'img/1-1-3.png',
-        //     width: 100,
-        //     height: 125,
-        //     x: 130,
-        //     y: 700,
-        //     z: 3,
-        // })
-        // scene.add(texture113.mesh);
-        // objects.push(texture113.mesh);
+        const textureTotsu = new Illusttexture({
+            texture:'img/start02.png',
+            width: 45,
+            height: 30,
+            x: 127,
+            y: 631,
+            z: 50,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0.34,
+            centerY: 0.68,
+            repeatX: 0.2,
+            repeatY: 0.1,
+        })
+        scene.add(textureTotsu.mesh);
+        objects.push(textureTotsu.mesh);
 
-        // const texture114 = new Illusttexture({
-        //     texture:'img/1-1-4.png',
-        //     width: 40,
-        //     height: 50,
-        //     x: 120,
-        //     y: 660,
-        //     z: 0,
-        // })
-        // scene.add(texture114.mesh);
-        // objects.push(texture114.mesh);
+        const textureStartK = new Illusttexture({
+            texture:'img/start02.png',
+            width: 60,
+            height: 70,
+            x: 135,
+            y: 655,
+            z: -10,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0.5,
+            centerY: 0.35,
+            repeatX: 0.4,
+            repeatY: 0.5,
+        })
+        scene.add(textureStartK.mesh);
+        objects.push(textureStartK.mesh);
 
         const texture121 = new Illusttexture({
             texture:'img/start01.png',
