@@ -44,7 +44,7 @@ class Starring {
     this._playerVelocity = new THREE.Vector3();
 
     // 主人公の移動速度
-    this.PLAYERSPEED = 500.0;
+    this.PLAYERSPEED = 2500.0;
 
     this.clock = new THREE.Clock();
 
