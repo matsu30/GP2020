@@ -40,7 +40,7 @@ function init() {
         scene.add( light );
 
         starring.load();
-        starring.body.position.x = 3600;
+        starring.body.position.x = 2800;
         starring.body.position.y = 100;
         // starring.body.position.x = 1500;
         // starring.body.position.y = 10;
@@ -1972,7 +1972,7 @@ console.log(starring.body.position)
             height: 130,
             x: 1000,
             y: 64,
-            z: -15,
+            z: -37,
             offsetX: 0,
             offsetY: 0,
             centerX: 0,
@@ -1989,7 +1989,7 @@ console.log(starring.body.position)
             height: 45,
             x: 1005,
             y: 101,
-            z: -15,
+            z: -36,
             offsetX: 0,
             offsetY: 0,
             centerX: 0.2,
@@ -2006,7 +2006,7 @@ console.log(starring.body.position)
             height: 30,
             x: 999,
             y: 12.8,
-            z: -16,
+            z: -38,
             offsetX: 0,
             offsetY: 0,
             centerX: 0.1,
@@ -2023,7 +2023,7 @@ console.log(starring.body.position)
             height: 50,
             x: 1010,
             y: 20,
-            z: -17,
+            z: -39,
             offsetX: 0,
             offsetY: 0,
             centerX: 0.35,
@@ -2040,7 +2040,7 @@ console.log(starring.body.position)
             height: 130,
             x: 1800,
             y: 65,
-            z: -17,
+            z: -39,
             offsetX: 0,
             offsetY: 0,
             centerX: 0,
@@ -2057,7 +2057,7 @@ console.log(starring.body.position)
             height: 100,
             x: 1715,
             y: -3,
-            z: 5,
+            z: -38,
             offsetX: 0,
             offsetY: 0,
             centerX: 0,
@@ -2074,7 +2074,7 @@ console.log(starring.body.position)
             height: 50,
             x: 2060,
             y: 22,
-            z: -20,
+            z: -39,
             offsetX: 0,
             offsetY: 0,
             centerX: 0.61,
@@ -2091,7 +2091,7 @@ console.log(starring.body.position)
             height: 160,
             x: 2200,
             y: 75,
-            z: -17,
+            z: -39,
             offsetX: 0,
             offsetY: 0,
             centerX: 0,
@@ -2101,6 +2101,312 @@ console.log(starring.body.position)
         })
         scene.add(LaboratoryH.mesh);
         objects.push(LaboratoryH.mesh);
+
+        const Hit02H = new Illusttexture({
+            texture:'img/charactor.png',
+            width: 15,
+            height: 50,
+            x: 2400,
+            y: 20,
+            z: -39,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0.62,
+            centerY: 0.55,
+            repeatX: 0.06,
+            repeatY: 0.2,
+        })
+        scene.add(Hit02H.mesh);
+        objects.push(Hit02H.mesh);
+
+        const Hit03H = new Illusttexture({
+            texture:'img/charactor.png',
+            width: 15,
+            height: 50,
+            x: 2390,
+            y: 20,
+            z: -39,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0.55,
+            centerY: 0.55,
+            repeatX: 0.06,
+            repeatY: 0.2,
+        })
+        scene.add(Hit03H.mesh);
+        objects.push(Hit03H.mesh);
+
+        const Hit04H = new Illusttexture({
+            texture:'img/charactor.png',
+            width: 13,
+            height: 49,
+            x: 2380,
+            y: 19,
+            z: -39,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0.47,
+            centerY: 0.55,
+            repeatX: 0.06,
+            repeatY: 0.2,
+        })
+        scene.add(Hit04H.mesh);
+        objects.push(Hit04H.mesh);
+
+        const Hit05H = new Illusttexture({
+            texture:'img/charactor.png',
+            width: 15,
+            height: 50,
+            x: 2370,
+            y: 20,
+            z: -39,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0.40,
+            centerY: 0.55,
+            repeatX: 0.064,
+            repeatY: 0.2,
+        })
+        scene.add(Hit05H.mesh);
+        objects.push(Hit05H.mesh);
+
+        const Hit06H = new Illusttexture({
+            texture:'img/charactor.png',
+            width: 15,
+            height: 51,
+            x: 2350,
+            y: 19,
+            z: -39,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0.31,
+            centerY: 0.55,
+            repeatX: 0.06,
+            repeatY: 0.2,
+        })
+        scene.add(Hit06H.mesh);
+        objects.push(Hit06H.mesh);
+
+        const Hit07H = new Illusttexture({
+            texture:'img/charactor.png',
+            width: 15,
+            height: 50,
+            x: 2330,
+            y: 19,
+            z: -39,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0.24,
+            centerY: 0.55,
+            repeatX: 0.06,
+            repeatY: 0.2,
+        })
+        scene.add(Hit07H.mesh);
+        objects.push(Hit07H.mesh);
+
+        const Hit08H = new Illusttexture({
+            texture:'img/charactor.png',
+            width: 14,
+            height: 28,
+            x: 2310,
+            y: 12,
+            z: -39,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0.15,
+            centerY: 0.585,
+            repeatX: 0.06,
+            repeatY: 0.12,
+        })
+        scene.add(Hit08H.mesh);
+        objects.push(Hit08H.mesh);
+
+        const Hit09H = new Illusttexture({
+            texture:'img/charactor.png',
+            width: 24,
+            height: 50,
+            x: 2830,
+            y: 20,
+            z: -39,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0,
+            centerY: 0,
+            repeatX: 0.1,
+            repeatY: 0.2,
+        })
+        scene.add(Hit09H.mesh);
+        objects.push(Hit09H.mesh);
+
+        const Hit10H = new Illusttexture({
+            texture:'img/charactor.png',
+            width: 20,
+            height: 40,
+            x: 3100,
+            y: 10,
+            z: -39,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0.5,
+            centerY: 1,
+            repeatX: 0.1,
+            repeatY: 0.2,
+        })
+        scene.add(Hit10H.mesh);
+        objects.push(Hit10H.mesh);
+
+        const Hit11H = new Illusttexture({
+            texture:'img/charactor.png',
+            width: 18,
+            height: 27,
+            x: 3150,
+            y: 15,
+            z: -39,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 1,
+            centerY: 0.58,
+            repeatX: 0.08,
+            repeatY: 0.1,
+        })
+        scene.add(Hit11H.mesh);
+        objects.push(Hit11H.mesh);
+
+        const Hit12H = new Illusttexture({
+            texture:'img/charactor.png',
+            width: 18,
+            height: 27,
+            x: 3200,
+            y: 15,
+            z: -39,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0.9,
+            centerY: 0.58,
+            repeatX: 0.08,
+            repeatY: 0.1,
+        })
+        scene.add(Hit12H.mesh);
+        objects.push(Hit12H.mesh);
+
+        const Hit13H = new Illusttexture({
+            texture:'img/charactor.png',
+            width: 19,
+            height: 28,
+            x: 3250,
+            y: 13,
+            z: -39,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 1,
+            centerY: 0.4,
+            repeatX: 0.1,
+            repeatY: 0.14,
+        })
+        scene.add(Hit13H.mesh);
+        objects.push(Hit13H.mesh);
+
+        const Hit14H = new Illusttexture({
+            texture:'img/charactor.png',
+            width: 45,
+            height: 24,
+            x: 3300,
+            y: 7,
+            z: -39,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0.8,
+            centerY: 0.6,
+            repeatX: 0.2,
+            repeatY: 0.1,
+        })
+        scene.add(Hit14H.mesh);
+        objects.push(Hit14H.mesh);
+
+        const Hit15H = new Illusttexture({
+            texture:'img/charactor.png',
+            width: 45,
+            height: 24,
+            x: 3350,
+            y: 3,
+            z: -39,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0.8,
+            centerY: 0.35,
+            repeatX: 0.2,
+            repeatY: 0.1,
+        })
+        scene.add(Hit15H.mesh);
+        objects.push(Hit15H.mesh);
+
+        const Hit03aA_H = new Illusttexture({
+            texture:'img/charactor.png',
+            width: 24,
+            height: 40,
+            x: 2610,
+            y: 18,
+            z: -39,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 1,
+            centerY: 0,
+            repeatX: 0.09,
+            repeatY: 0.15,
+        })
+        scene.add(Hit03aA_H.mesh);
+        objects.push(Hit03aA_H.mesh);
+
+        const Hit03bA_H = new Illusttexture({
+            texture:'img/charactor.png',
+            width: 24,
+            height: 40,
+            x: 2620,
+            y: 18,
+            z: -39,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0.9,
+            centerY: 0,
+            repeatX: 0.09,
+            repeatY: 0.15,
+        })
+        scene.add(Hit03bA_H.mesh);
+        objects.push(Hit03bA_H.mesh);
+
+        const Hit03cA_H = new Illusttexture({
+            texture:'img/charactor.png',
+            width: 24,
+            height: 40,
+            x: 2630,
+            y: 18,
+            z: -39,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0.817,
+            centerY: 0,
+            repeatX: 0.09,
+            repeatY: 0.15,
+        })
+        scene.add(Hit03cA_H.mesh);
+        objects.push(Hit03cA_H.mesh);
+
+        const Hit03dA_H = new Illusttexture({
+            texture:'img/charactor.png',
+            width: 24,
+            height: 40,
+            x: 2640,
+            y: 18,
+            z: -39,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0.735,
+            centerY: 0,
+            repeatX: 0.09,
+            repeatY: 0.15,
+        })
+        scene.add(Hit03dA_H.mesh);
+        objects.push(Hit03dA_H.mesh);
 
         //---------renderer--------------------------------------
         renderer = new THREE.WebGLRenderer( { antialias: true } );
