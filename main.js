@@ -40,8 +40,8 @@ function init() {
         scene.add( light );
 
         starring.load();
-        starring.body.position.x = 1600;
-        starring.body.position.y = 800;
+        starring.body.position.x = 3600;
+        starring.body.position.y = 100;
         // starring.body.position.x = 1500;
         // starring.body.position.y = 10;
         starring.body.position.z = 0;
@@ -1743,6 +1743,124 @@ console.log(starring.body.position)
         scene.add(deskT01.mesh);
         objects.push(deskT01.mesh);
 
+        const Hit01K = new Illusttexture({
+            texture:'img/charactor.png',
+            width: 25,
+            height: 40,
+            x: 1630,
+            y: 14.5,
+            z: -19,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0.1,
+            centerY: 0,
+            repeatX: 0.1,
+            repeatY: 0.15,
+        })
+        scene.add(Hit01K.mesh);
+        objects.push(Hit01K.mesh);
+
+        const Hit01aTK = new Illusttexture({
+            texture:'img/charactor.png',
+            width: 18,
+            height: 46,
+            x: 2440,
+            y: 17,
+            z: -17,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0.765,
+            centerY: 0.15,
+            repeatX: 0.08,
+            repeatY: 0.2,
+        })
+        scene.add(Hit01aTK.mesh);
+        objects.push(Hit01aTK.mesh);
+
+        const Hit01bTK = new Illusttexture({
+            texture:'img/charactor.png',
+            width: 18,
+            height: 46,
+            x: 2430,
+            y: 17,
+            z: -17,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0.765,
+            centerY: 0.15,
+            repeatX: 0.08,
+            repeatY: 0.2,
+        })
+        scene.add(Hit01bTK.mesh);
+        objects.push(Hit01bTK.mesh);
+
+        const Hit01cTK = new Illusttexture({
+            texture:'img/charactor.png',
+            width: 18,
+            height: 46,
+            x: 2420,
+            y: 17,
+            z: -17,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0.765,
+            centerY: 0.15,
+            repeatX: 0.08,
+            repeatY: 0.2,
+        })
+        scene.add(Hit01cTK.mesh);
+        objects.push(Hit01cTK.mesh);
+
+        const Hit02TK = new Illusttexture({
+            texture:'img/charactor.png',
+            width: 25,
+            height: 40,
+            x: 2475,
+            y: 35,
+            z: -15,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0.2,
+            centerY: 0,
+            repeatX: 0.1,
+            repeatY: 0.15,
+        })
+        scene.add(Hit02TK.mesh);
+        objects.push(Hit02TK.mesh);
+
+        const haihuTK = new Illusttexture({
+            texture:'img/charactor.png',
+            width: 45,
+            height: 55,
+            x: 2470,
+            y: 18,
+            z: -15,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0.37,
+            centerY: 0,
+            repeatX: 0.16,
+            repeatY: 0.15,
+        })
+        scene.add(haihuTK.mesh);
+        objects.push(haihuTK.mesh);
+
+        const Hit03TK = new Illusttexture({
+            texture:'img/charactor.png',
+            width: 22,
+            height: 46,
+            x: 2100,
+            y: 19,
+            z: -15,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0.6,
+            centerY: 0,
+            repeatX: 0.1,
+            repeatY: 0.2,
+        })
+        scene.add(Hit03TK.mesh);
+        objects.push(Hit03TK.mesh);
 
         const soukoKT = new Illusttexture({
             texture:'img/haikei01.png',
@@ -1760,6 +1878,23 @@ console.log(starring.body.position)
         })
         scene.add(soukoKT.mesh);
         objects.push(soukoKT.mesh);
+
+        const Hit01T = new Illusttexture({
+            texture:'img/charactor.png',
+            width: 35,
+            height: 25,
+            x: 2750,
+            y: 6,
+            z: -15,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0.37,
+            centerY: 0.15,
+            repeatX: 0.15,
+            repeatY: 0.1,
+        })
+        scene.add(Hit01T.mesh);
+        objects.push(Hit01T.mesh);
 
         const T02 = new Illusttexture({
             texture:'img/haikei01.png',
@@ -1794,6 +1929,23 @@ console.log(starring.body.position)
         })
         scene.add(deskT02.mesh);
         objects.push(deskT02.mesh);
+
+        const Hit02K = new Illusttexture({
+            texture:'img/charactor.png',
+            width: 25,
+            height: 40,
+            x: 3628,
+            y: 29,
+            z: -14,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0.1,
+            centerY: 0,
+            repeatX: 0.1,
+            repeatY: 0.15,
+        })
+        scene.add(Hit02K.mesh);
+        objects.push(Hit02K.mesh);
 
         //Hルート
 
@@ -1915,6 +2067,23 @@ console.log(starring.body.position)
         })
         scene.add(CemeteryIriH.mesh);
         objects.push(CemeteryIriH.mesh);
+
+        const Hit01H = new Illusttexture({
+            texture:'img/charactor.png',
+            width: 20,
+            height: 50,
+            x: 2060,
+            y: 22,
+            z: -20,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0.61,
+            centerY: 0.25,
+            repeatX: 0.08,
+            repeatY: 0.2,
+        })
+        scene.add(Hit01H.mesh);
+        objects.push(Hit01H.mesh);
 
         const LaboratoryH = new Illusttexture({
             texture:'img/haikei01.png',
