@@ -40,8 +40,8 @@ function init() {
         scene.add( light );
 
         starring.load();
-        starring.body.position.x = 2800;
-        starring.body.position.y = 100;
+        starring.body.position.x = 50;
+        starring.body.position.y = 1000;
         // starring.body.position.x = 1500;
         // starring.body.position.y = 10;
         starring.body.position.z = 0;
@@ -212,7 +212,19 @@ console.log(starring.body.position)
                     });
                     scene.add(obstacle.mesh);
                     objects.push(obstacle.mesh);
-                }
+                } 
+                //else if (value === 2){
+                //     const obstacle = new Obstacle({
+                //         width: StepObstacleKeydata.width,
+                //         height: StepObstacleKeydata.height,
+                //         depth: StepObstacleKeydata.depth,
+                //         x: StepObstacleKeydata.width * j,
+                //         y: StepMaxY - StepObstacleKeydata.height * i + StepOffsetY,
+                //         z: -10,                        
+                //     });
+                //     scene.add(obstacle.mesh);
+                //     objects.push(obstacle.mesh);
+                // }
 
                 //console.log(`${i}番目の配列の${j}番目 値は${MAP[i][j]}`)
             }
@@ -243,7 +255,7 @@ console.log(starring.body.position)
                     });
                     scene.add(obstacle.mesh);
                     objects.push(obstacle.mesh);
-                }
+                } 
 
                 //console.log(`${i}番目の配列の${j}番目 値は${STEP[i][j]}`)
             }
@@ -1030,7 +1042,7 @@ console.log(starring.body.position)
             texture:'img/charactor.png',
             width: 24,
             height: 40,
-            x: 740,
+            x: 540,
             y: 198,
             z: -1,
             offsetX: 0,
@@ -1047,7 +1059,7 @@ console.log(starring.body.position)
             texture:'img/charactor.png',
             width: 24,
             height: 40,
-            x: 760,
+            x: 560,
             y: 198,
             z: -1,
             offsetX: 0,
@@ -1064,7 +1076,7 @@ console.log(starring.body.position)
             texture:'img/charactor.png',
             width: 24,
             height: 40,
-            x: 780,
+            x: 580,
             y: 198,
             z: -1,
             offsetX: 0,
@@ -1081,7 +1093,7 @@ console.log(starring.body.position)
             texture:'img/charactor.png',
             width: 24,
             height: 40,
-            x: 800,
+            x: 600,
             y: 198,
             z: -1,
             offsetX: 0,
