@@ -192,6 +192,18 @@ function init() {
             }
         }
 
+        const eventObstacle = new Obstacle({
+            width: 20,
+            height: 20,
+            depth: 20,
+            color: 0x000000,
+            x: obstacleKeydata.width * 0,
+            y: maxY - obstacleKeydata.height * -1 + offsetY,
+            z: -10,
+        });
+        scene.add(eventObstacle);
+        objects.push(eventObstacle);
+
         // const Start1 = new Obstacle({
         //     height: 60,
         //     y: 230+440,

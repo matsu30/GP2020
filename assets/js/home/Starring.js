@@ -210,7 +210,7 @@ class Starring {
 
     for (let i = 0, len = intersectObjects.length; i < len; i++) {
       if (
-        intersectObjects[i].collier &&
+        intersectObjects[i].object.collider &&
         intersectObjects[i].distance < collisionDistanceZ &&
         this.moveForward
       ) {
@@ -224,7 +224,7 @@ class Starring {
 
     for (let i = 0, len = intersectObjects.length; i < len; i++) {
       if (
-        intersectObjects[i].collier &&
+        intersectObjects[i].object.collider &&
         intersectObjects[i].distance < collisionDistanceZ &&
         this.moveBackward
       ) {
@@ -238,20 +238,24 @@ class Starring {
 
     for (let i = 0, len = intersectObjects.length; i < len; i++) {
       if (
-        intersectObjects[i].collier &&
-        intersectObjects[i].distance < collisionDistanceX && this.moveLeft) {
+        intersectObjects[i].object.collider &&
+        intersectObjects[i].distance < collisionDistanceX &&
+        this.moveLeft) {
         result.left = true;
       }
     }
 
     // 右方向との衝突判定
     raycaster.set(this.body.position, rightVector);
+
     intersectObjects = raycaster.intersectObjects(objects);
 
     for (let i = 0, len = intersectObjects.length; i < len; i++) {
+      console.log(intersectObjects[i].object.collider)
       if (
-        intersectObjects[i].collier &&
-        intersectObjects[i].distance < collisionDistanceX && this.moveRight) {
+        intersectObjects[i].object.collider &&
+        intersectObjects[i].distance < collisionDistanceX &&
+        this.moveRight) {
         result.right = true;
       }
     }

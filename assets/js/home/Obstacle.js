@@ -37,6 +37,8 @@ class Obstacle extends THREE.Mesh {
         this.position.y = keydata.y;
         this.position.z = keydata.z;
 
+        this.collider = keydata.collider;
+        
     }
 
 
