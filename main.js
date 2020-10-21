@@ -49,7 +49,7 @@ function init() {
         // scene.add(obstacle.mesh);
 
         // objects.push(obstacle.mesh);
-console.log(starring.body.position)
+        console.log(starring.body.position)
 
         //--------開始-----------------------------------------------------------
 
@@ -141,8 +141,8 @@ console.log(starring.body.position)
                         y: maxY - obstacleKeydata.height * i + offsetY,
                         z: -10,                        
                     });
-                    scene.add(obstacle.mesh);
-                    objects.push(obstacle.mesh);
+                    scene.add(obstacle);
+                    objects.push(obstacle);
                 } 
                 //else if (value === 2){
                 //     const obstacle = new Obstacle({
@@ -184,8 +184,8 @@ console.log(starring.body.position)
                         y: StepMaxY - StepObstacleKeydata.height * i + StepOffsetY,
                         z: -10,                        
                     });
-                    scene.add(obstacle.mesh);
-                    objects.push(obstacle.mesh);
+                    scene.add(obstacle);
+                    objects.push(obstacle);
                 } 
 
                 //console.log(`${i}番目の配列の${j}番目 値は${STEP[i][j]}`)
@@ -227,14 +227,14 @@ console.log(starring.body.position)
 
         // scene.add(Start1.mesh);
         // objects.push(Start1.mesh);
-        scene.add(Start2.mesh);
-        objects.push(Start2.mesh);
-        scene.add(Start3.mesh);
-        objects.push(Start3.mesh);
-        scene.add(Start4.mesh);
-        objects.push(Start4.mesh);
-        scene.add(Start5.mesh);
-        objects.push(Start5.mesh);
+        scene.add(Start2);
+        objects.push(Start2);
+        scene.add(Start3);
+        objects.push(Start3);
+        scene.add(Start4);
+        objects.push(Start4);
+        scene.add(Start5);
+        objects.push(Start5);
 
         //---------texture------------------------------------
         const textureBuillding01F = new Illusttexture({

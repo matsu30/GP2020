@@ -1,4 +1,4 @@
-class Obstacle{
+class Obstacle extends THREE.Mesh {
 
     constructor(keydata){
         //console.log("Obstacle constructor", keydata);
@@ -7,6 +7,9 @@ class Obstacle{
             width: 20,
             height: 20,
             depth: 20,
+            // 障害物として機能するかの真偽値
+            // false の場合は交差の判定はするが、通過できる
+            collider: true, 
             color: 0xf99fff,
             transparent: true,
             opacity: 0.5,
@@ -15,24 +18,32 @@ class Obstacle{
             z: 0
         };
 
-        this.keydata = Object.assign({}, defaults, keydata)
+        keydata = Object.assign({}, defaults, keydata)
 
         const boxGeometry = new THREE.BoxBufferGeometry(
-            this.keydata.width,
-            this.keydata.height,
-            this.keydata.depth,
+            keydata.width,
+            keydata.height,
+            keydata.depth,
         );
         const material = new THREE.MeshBasicMaterial({
-            color: this.keydata.color,
-            transparent: this.keydata.transparent,
-            opacity: this.keydata.opacity,
+            color: keydata.color,
+            transparent: keydata.transparent,
+            opacity: keydata.opacity,
         });
-        this.mesh = new THREE.Mesh( boxGeometry, material );
-        
-        this.mesh.position.x = this.keydata.x;
-        this.mesh.position.y = this.keydata.y;
-        this.mesh.position.z = this.keydata.z;
 
+        super( boxGeometry, material );
+        
+        this.position.x = keydata.x;
+        this.position.y = keydata.y;
+        this.position.z = keydata.z;
+
+    }
+
+
+    // 主人公と交差したときの処理
+    // クラスの中にある関数のことをメソッドとよぶ
+    onCollsion() {
+        console.log(`交差しました`);
     }
 
 }

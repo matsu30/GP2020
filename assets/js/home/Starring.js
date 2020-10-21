@@ -115,6 +115,7 @@ class Starring {
       this.body.position,
       new THREE.Vector3(0, -1, 0)
     );
+    //交差を調べるTHREE.Meshの配列を引数に渡す
     const intersectObjects = raycaster.intersectObjects(objects);
     
     let y = 0;
@@ -209,6 +210,7 @@ class Starring {
 
     for (let i = 0, len = intersectObjects.length; i < len; i++) {
       if (
+        intersectObjects[i].collier &&
         intersectObjects[i].distance < collisionDistanceZ &&
         this.moveForward
       ) {
@@ -222,6 +224,7 @@ class Starring {
 
     for (let i = 0, len = intersectObjects.length; i < len; i++) {
       if (
+        intersectObjects[i].collier &&
         intersectObjects[i].distance < collisionDistanceZ &&
         this.moveBackward
       ) {
@@ -234,7 +237,9 @@ class Starring {
     intersectObjects = raycaster.intersectObjects(objects);
 
     for (let i = 0, len = intersectObjects.length; i < len; i++) {
-      if (intersectObjects[i].distance < collisionDistanceX && this.moveLeft) {
+      if (
+        intersectObjects[i].collier &&
+        intersectObjects[i].distance < collisionDistanceX && this.moveLeft) {
         result.left = true;
       }
     }
@@ -244,7 +249,9 @@ class Starring {
     intersectObjects = raycaster.intersectObjects(objects);
 
     for (let i = 0, len = intersectObjects.length; i < len; i++) {
-      if (intersectObjects[i].distance < collisionDistanceX && this.moveRight) {
+      if (
+        intersectObjects[i].collier &&
+        intersectObjects[i].distance < collisionDistanceX && this.moveRight) {
         result.right = true;
       }
     }
