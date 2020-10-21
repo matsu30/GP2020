@@ -321,7 +321,6 @@ console.log(starring.body.position)
             repeatY: 1,
         })
         scene.add(textureBuillding01F.mesh);
-        objects.push(textureBuillding01F.mesh);
 
         const textureBuillding01B = new Illusttexture({
             texture:'img/back01.png',
@@ -338,7 +337,6 @@ console.log(starring.body.position)
             repeatY: 1,
         })
         scene.add(textureBuillding01B.mesh);
-        objects.push(textureBuillding01B.mesh);
 
         const textureStartF = new Illusttexture({
             texture:'img/start02.png',
@@ -355,7 +353,6 @@ console.log(starring.body.position)
             repeatY: 0.35,
         })
         scene.add(textureStartF.mesh);
-        objects.push(textureStartF.mesh);
 
         const textureStartB = new Illusttexture({
             texture:'img/start02.png',
@@ -372,7 +369,6 @@ console.log(starring.body.position)
             repeatY: 0.35,
         })
         scene.add(textureStartB.mesh);
-        objects.push(textureStartB.mesh);
 
         const textureStartL = new Illusttexture({
             texture:'img/start02.png',
@@ -389,7 +385,6 @@ console.log(starring.body.position)
             repeatY: 0.3,
         })
         scene.add(textureStartL.mesh);
-        objects.push(textureStartL.mesh);
 
         const textureTotsu = new Illusttexture({
             texture:'img/start02.png',
@@ -406,7 +401,6 @@ console.log(starring.body.position)
             repeatY: 0.1,
         })
         scene.add(textureTotsu.mesh);
-        objects.push(textureTotsu.mesh);
 
         const textureStartK = new Illusttexture({
             texture:'img/start02.png',
@@ -423,7 +417,6 @@ console.log(starring.body.position)
             repeatY: 0.5,
         })
         scene.add(textureStartK.mesh);
-        objects.push(textureStartK.mesh);
 
         const textureStartR = new Illusttexture({
             texture:'img/start01.png',
@@ -440,7 +433,6 @@ console.log(starring.body.position)
             repeatY: 1,
         })
         scene.add(textureStartR.mesh);
-        objects.push(textureStartR.mesh);
 
         const yuka1 = new Illusttexture({
             texture:'img/start02.png',
@@ -455,7 +447,6 @@ console.log(starring.body.position)
             repeatY: 0.145,
         })
         scene.add(yuka1.mesh);
-        objects.push(yuka1.mesh);
 
         const yuka2 = new Illusttexture({
             texture:'img/start02.png',
@@ -470,7 +461,6 @@ console.log(starring.body.position)
             repeatY: 0.145,
         })
         scene.add(yuka2.mesh);
-        objects.push(yuka2.mesh);
 
         const yuka3 = new Illusttexture({
             texture:'img/start02.png',
@@ -485,7 +475,6 @@ console.log(starring.body.position)
             repeatY: 0.145,
         })
         scene.add(yuka3.mesh);
-        objects.push(yuka3.mesh);
 
         const yuka4 = new Illusttexture({
             texture:'img/start02.png',
@@ -500,7 +489,6 @@ console.log(starring.body.position)
             repeatY: 0.145,
         })
         scene.add(yuka4.mesh);
-        objects.push(yuka4.mesh);
 
         const yuka5 = new Illusttexture({
             texture:'img/start02.png',
@@ -515,7 +503,6 @@ console.log(starring.body.position)
             repeatY: 0.145,
         })
         scene.add(yuka5.mesh);
-        objects.push(yuka5.mesh);
 
         const yuka6 = new Illusttexture({
             texture:'img/start02.png',
@@ -530,7 +517,6 @@ console.log(starring.body.position)
             repeatY: 0.145,
         })
         scene.add(yuka6.mesh);
-        objects.push(yuka6.mesh);
 
         const yuka7 = new Illusttexture({
             texture:'img/start02.png',
@@ -545,7 +531,6 @@ console.log(starring.body.position)
             repeatY: 0.145,
         })
         scene.add(yuka7.mesh);
-        objects.push(yuka7.mesh);
 
         const yuka8 = new Illusttexture({
             texture:'img/start02.png',
@@ -560,7 +545,6 @@ console.log(starring.body.position)
             repeatY: 0.145,
         })
         scene.add(yuka8.mesh);
-        objects.push(yuka8.mesh);
 
         const yuka9 = new Illusttexture({
             texture:'img/start02.png',
@@ -575,7 +559,6 @@ console.log(starring.body.position)
             repeatY: 0.145,
         })
         scene.add(yuka9.mesh);
-        objects.push(yuka9.mesh);
 
         const yuka10 = new Illusttexture({
             texture:'img/start02.png',
@@ -590,7 +573,6 @@ console.log(starring.body.position)
             repeatY: 0.145,
         })
         scene.add(yuka10.mesh);
-        objects.push(yuka10.mesh);
 
         const yuka11 = new Illusttexture({
             texture:'img/start02.png',
@@ -605,7 +587,6 @@ console.log(starring.body.position)
             repeatY: 0.145,
         })
         scene.add(yuka11.mesh);
-        objects.push(yuka11.mesh);
 
         const yuka12 = new Illusttexture({
             texture:'img/start02.png',
@@ -620,7 +601,6 @@ console.log(starring.body.position)
             repeatY: 0.145,
         })
         scene.add(yuka12.mesh);
-        objects.push(yuka12.mesh);
 
         const yuka13 = new Illusttexture({
             texture:'img/start02.png',
@@ -635,7 +615,6 @@ console.log(starring.body.position)
             repeatY: 0.145,
         })
         scene.add(yuka13.mesh);
-        objects.push(yuka13.mesh);
 
         const yuka20 = new Illusttexture({
             texture:'img/start02.png',
@@ -650,7 +629,6 @@ console.log(starring.body.position)
             repeatY: 0.145,
         })
         scene.add(yuka20.mesh);
-        objects.push(yuka20.mesh);
 
         const yuka21 = new Illusttexture({
             texture:'img/start02.png',
@@ -665,7 +643,6 @@ console.log(starring.body.position)
             repeatY: 0.145,
         })
         scene.add(yuka21.mesh);
-        objects.push(yuka21.mesh);
 
         const yuka22 = new Illusttexture({
             texture:'img/start02.png',
@@ -680,7 +657,6 @@ console.log(starring.body.position)
             repeatY: 0.145,
         })
         scene.add(yuka22.mesh);
-        objects.push(yuka22.mesh);
 
         const yuka23 = new Illusttexture({
             texture:'img/start02.png',
@@ -695,7 +671,6 @@ console.log(starring.body.position)
             repeatY: 0.145,
         })
         scene.add(yuka23.mesh);
-        objects.push(yuka23.mesh);
 
         const yuka24 = new Illusttexture({
             texture:'img/start02.png',
@@ -710,7 +685,6 @@ console.log(starring.body.position)
             repeatY: 0.145,
         })
         scene.add(yuka24.mesh);
-        objects.push(yuka24.mesh);
 
         const yuka25 = new Illusttexture({
             texture:'img/start02.png',
@@ -725,7 +699,6 @@ console.log(starring.body.position)
             repeatY: 0.145,
         })
         scene.add(yuka25.mesh);
-        objects.push(yuka25.mesh);
 
         const yuka26 = new Illusttexture({
             texture:'img/start02.png',
@@ -740,7 +713,6 @@ console.log(starring.body.position)
             repeatY: 0.145,
         })
         scene.add(yuka26.mesh);
-        objects.push(yuka26.mesh);
 
         const yuka27 = new Illusttexture({
             texture:'img/start02.png',
@@ -755,7 +727,6 @@ console.log(starring.body.position)
             repeatY: 0.145,
         })
         scene.add(yuka27.mesh);
-        objects.push(yuka27.mesh);
 
         const yuka28 = new Illusttexture({
             texture:'img/start02.png',
@@ -770,7 +741,6 @@ console.log(starring.body.position)
             repeatY: 0.145,
         })
         scene.add(yuka28.mesh);
-        objects.push(yuka28.mesh);
 
         const yuka29 = new Illusttexture({
             texture:'img/start02.png',
@@ -785,7 +755,6 @@ console.log(starring.body.position)
             repeatY: 0.145,
         })
         scene.add(yuka29.mesh);
-        objects.push(yuka29.mesh);
 
         const yuka210 = new Illusttexture({
             texture:'img/start02.png',
@@ -800,7 +769,6 @@ console.log(starring.body.position)
             repeatY: 0.145,
         })
         scene.add(yuka210.mesh);
-        objects.push(yuka210.mesh);
 
         const yuka211 = new Illusttexture({
             texture:'img/start02.png',
@@ -815,7 +783,6 @@ console.log(starring.body.position)
             repeatY: 0.145,
         })
         scene.add(yuka211.mesh);
-        objects.push(yuka211.mesh);
 
         const yuka212 = new Illusttexture({
             texture:'img/start02.png',
@@ -830,7 +797,7 @@ console.log(starring.body.position)
             repeatY: 0.145,
         })
         scene.add(yuka212.mesh);
-        objects.push(yuka212.mesh);
+
 
         const yuka213 = new Illusttexture({
             texture:'img/start02.png',
@@ -845,7 +812,6 @@ console.log(starring.body.position)
             repeatY: 0.145,
         })
         scene.add(yuka213.mesh);
-        objects.push(yuka213.mesh);
 
         const yuka214 = new Illusttexture({
             texture:'img/start02.png',
@@ -860,7 +826,6 @@ console.log(starring.body.position)
             repeatY: 0.145,
         })
         scene.add(yuka214.mesh);
-        objects.push(yuka214.mesh);
 
         const yuka215 = new Illusttexture({
             texture:'img/start02.png',
@@ -875,7 +840,6 @@ console.log(starring.body.position)
             repeatY: 0.145,
         })
         scene.add(yuka215.mesh);
-        objects.push(yuka215.mesh);
 
         const yuka216 = new Illusttexture({
             texture:'img/start02.png',
@@ -890,7 +854,6 @@ console.log(starring.body.position)
             repeatY: 0.145,
         })
         scene.add(yuka216.mesh);
-        objects.push(yuka216.mesh);
 
         const yuka217 = new Illusttexture({
             texture:'img/start02.png',
@@ -905,7 +868,6 @@ console.log(starring.body.position)
             repeatY: 0.145,
         })
         scene.add(yuka217.mesh);
-        objects.push(yuka217.mesh);
 
         const yuka218 = new Illusttexture({
             texture:'img/start02.png',
@@ -920,7 +882,6 @@ console.log(starring.body.position)
             repeatY: 0.145,
         })
         scene.add(yuka218.mesh);
-        objects.push(yuka218.mesh);
 
         const yuka219 = new Illusttexture({
             texture:'img/start02.png',
@@ -935,7 +896,6 @@ console.log(starring.body.position)
             repeatY: 0.145,
         })
         scene.add(yuka219.mesh);
-        objects.push(yuka219.mesh);
 
         const textureNA1 = new Illusttexture({
             texture:'img/NA-1.png',
@@ -946,7 +906,6 @@ console.log(starring.body.position)
             z: -1,
         })
         scene.add(textureNA1.mesh);
-        objects.push(textureNA1.mesh);
 
         const ImgBack = new Illusttexture({
             texture:'img/Back01.png',
@@ -957,7 +916,6 @@ console.log(starring.body.position)
             z: -3,
         })
         scene.add(ImgBack.mesh);
-        objects.push(ImgBack.mesh);
 
         const ImgBack_2 = new Illusttexture({
             texture:'img/Back01.png',
@@ -968,7 +926,6 @@ console.log(starring.body.position)
             z: -3,
         })
         scene.add(ImgBack_2.mesh);
-        objects.push(ImgBack_2.mesh);
 
         const ImgBack_3 = new Illusttexture({
             texture:'img/Back01.png',
@@ -979,7 +936,6 @@ console.log(starring.body.position)
             z: -3,
         })
         scene.add(ImgBack_3.mesh);
-        objects.push(ImgBack_3.mesh);
 
         const ImgBack_4 = new Illusttexture({
             texture:'img/Back01.png',
@@ -990,7 +946,6 @@ console.log(starring.body.position)
             z: -3,
         })
         scene.add(ImgBack_4.mesh);
-        objects.push(ImgBack_4.mesh);
 
         const ImgBack_5 = new Illusttexture({
             texture:'img/Back01.png',
@@ -1001,7 +956,7 @@ console.log(starring.body.position)
             z: -3,
         })
         scene.add(ImgBack_5.mesh);
-        objects.push(ImgBack_5.mesh);
+
 
         //Aルート
         const Hit01A = new Illusttexture({
@@ -1019,7 +974,6 @@ console.log(starring.body.position)
             repeatY: 0.1,
         })
         scene.add(Hit01A.mesh);
-        objects.push(Hit01A.mesh);
 
         const Hit02A = new Illusttexture({
             texture:'img/charactor.png',
@@ -1036,7 +990,6 @@ console.log(starring.body.position)
             repeatY: 0.14,
         })
         scene.add(Hit02A.mesh);
-        objects.push(Hit02A.mesh);
 
         const Hit03aA = new Illusttexture({
             texture:'img/charactor.png',
@@ -1053,7 +1006,6 @@ console.log(starring.body.position)
             repeatY: 0.15,
         })
         scene.add(Hit03aA.mesh);
-        objects.push(Hit03aA.mesh);
 
         const Hit03bA = new Illusttexture({
             texture:'img/charactor.png',
@@ -1070,7 +1022,6 @@ console.log(starring.body.position)
             repeatY: 0.15,
         })
         scene.add(Hit03bA.mesh);
-        objects.push(Hit03bA.mesh);
 
         const Hit03cA = new Illusttexture({
             texture:'img/charactor.png',
@@ -1087,7 +1038,6 @@ console.log(starring.body.position)
             repeatY: 0.15,
         })
         scene.add(Hit03cA.mesh);
-        objects.push(Hit03cA.mesh);
 
         const Hit03dA = new Illusttexture({
             texture:'img/charactor.png',
@@ -1104,7 +1054,6 @@ console.log(starring.body.position)
             repeatY: 0.15,
         })
         scene.add(Hit03dA.mesh);
-        objects.push(Hit03dA.mesh);
 
         const Hit04A = new Illusttexture({
             texture:'img/charactor.png',
@@ -1121,7 +1070,6 @@ console.log(starring.body.position)
             repeatY: 0.06,
         })
         scene.add(Hit04A.mesh);
-        objects.push(Hit04A.mesh);
 
         const Hit05A = new Illusttexture({
             texture:'img/charactor.png',
@@ -1138,7 +1086,6 @@ console.log(starring.body.position)
             repeatY: 0.1,
         })
         scene.add(Hit05A.mesh);
-        objects.push(Hit05A.mesh);
 
         const Hit06A = new Illusttexture({
             texture:'img/charactor.png',
@@ -1155,7 +1102,6 @@ console.log(starring.body.position)
             repeatY: 0.14,
         })
         scene.add(Hit06A.mesh);
-        objects.push(Hit06A.mesh);
 
         const Hit07A = new Illusttexture({
             texture:'img/charactor.png',
@@ -1172,7 +1118,6 @@ console.log(starring.body.position)
             repeatY: 0.086,
         })
         scene.add(Hit07A.mesh);
-        objects.push(Hit07A.mesh);
 
         const Hit08A = new Illusttexture({
             texture:'img/charactor.png',
@@ -1189,7 +1134,6 @@ console.log(starring.body.position)
             repeatY: 0.1,
         })
         scene.add(Hit08A.mesh);
-        objects.push(Hit08A.mesh);
 
         const A3 = new Illusttexture({
             texture:'img/start02.png',
@@ -1206,7 +1150,7 @@ console.log(starring.body.position)
             repeatY: 0.6,
         })
         scene.add(A3.mesh);
-        objects.push(A3.mesh);
+
 
         //Nルート
         const nStep = new Illusttexture({
@@ -1218,7 +1162,6 @@ console.log(starring.body.position)
             z: -1,
         })
         scene.add(nStep.mesh);
-        objects.push(nStep.mesh);
 
         const Hit01N = new Illusttexture({
             texture:'img/charactor.png',
@@ -1235,7 +1178,6 @@ console.log(starring.body.position)
             repeatY: 0.37,
         })
         scene.add(Hit01N.mesh);
-        objects.push(Hit01N.mesh);
 
         const Hit02N = new Illusttexture({
             texture:'img/charactor.png',
@@ -1252,7 +1194,6 @@ console.log(starring.body.position)
             repeatY: 0.362,
         })
         scene.add(Hit02N.mesh);
-        objects.push(Hit02N.mesh);
 
         const Hit03N = new Illusttexture({
             texture:'img/charactor.png',
@@ -1269,7 +1210,6 @@ console.log(starring.body.position)
             repeatY: 0.37,
         })
         scene.add(Hit03N.mesh);
-        objects.push(Hit03N.mesh);
 
         const Hit04N = new Illusttexture({
             texture:'img/charactor.png',
@@ -1286,7 +1226,6 @@ console.log(starring.body.position)
             repeatY: 0.2,
         })
         scene.add(Hit04N.mesh);
-        objects.push(Hit04N.mesh);
 
         const Hit05N = new Illusttexture({
             texture:'img/charactor.png',
@@ -1303,8 +1242,7 @@ console.log(starring.body.position)
             repeatY: 0.358,
         })
         scene.add(Hit05N.mesh);
-        objects.push(Hit05N.mesh);
-    
+
         const textureBuilldingNF = new Illusttexture({
             texture:'img/start01.png',
             width: 205,
@@ -1320,7 +1258,6 @@ console.log(starring.body.position)
             repeatY: 0.65,
         })
         scene.add(textureBuilldingNF.mesh);
-        objects.push(textureBuilldingNF.mesh);
 
         const textureN01 = new Illusttexture({
             texture:'img/start02.png',
@@ -1337,7 +1274,6 @@ console.log(starring.body.position)
             repeatY: 0.35,
         })
         scene.add(textureN01.mesh);
-        objects.push(textureN01.mesh);
 
         const textureNL = new Illusttexture({
             texture:'img/start02.png',
@@ -1354,7 +1290,6 @@ console.log(starring.body.position)
             repeatY: 0.3,
         })
         scene.add(textureNL.mesh);
-        objects.push(textureNL.mesh);
 
         const textureTotsuN = new Illusttexture({
             texture:'img/start02.png',
@@ -1371,7 +1306,6 @@ console.log(starring.body.position)
             repeatY: 0.1,
         })
         scene.add(textureTotsuN.mesh);
-        objects.push(textureTotsuN.mesh);
 
         const textureNK = new Illusttexture({
             texture:'img/start02.png',
@@ -1388,7 +1322,7 @@ console.log(starring.body.position)
             repeatY: 0.5,
         })
         scene.add(textureNK.mesh);
-        objects.push(textureNK.mesh);
+
 
         //Sルート
         const SKT1 = new Illusttexture({
@@ -1406,7 +1340,6 @@ console.log(starring.body.position)
             repeatY: 0.5,
         })
         scene.add(SKT1.mesh);
-        objects.push(SKT1.mesh);
 
         // const dentyuS = new Illusttexture({
         //     texture:'img/haikei02.png',
@@ -1423,7 +1356,6 @@ console.log(starring.body.position)
         //     repeatY: 0.45,
         // })
         // scene.add(dentyuS.mesh);
-        // objects.push(dentyuS.mesh);
 
         // const densenS = new Illusttexture({
         //     texture:'img/haikei02.png',
@@ -1440,7 +1372,6 @@ console.log(starring.body.position)
         //     repeatY: 0.35,
         // })
         // scene.add(densenS.mesh);
-        // objects.push(densenS.mesh);
 
         const dentyubtnS = new Illusttexture({
             texture:'img/haikei03.png',
@@ -1457,7 +1388,6 @@ console.log(starring.body.position)
             repeatY: 0.1,
         })
         scene.add(dentyubtnS.mesh);
-        objects.push(dentyubtnS.mesh);
 
         // const SKT2 = new Illusttexture({
         //     texture:'img/haikei01.png',
@@ -1474,7 +1404,6 @@ console.log(starring.body.position)
         //     repeatY: 0.35,
         // })
         // scene.add(SKT2.mesh);
-        // objects.push(SKT2.mesh);
 
         // const ImgBack_S1 = new Illusttexture({
         //     texture:'img/Back01.png',
@@ -1485,7 +1414,6 @@ console.log(starring.body.position)
         //     z: -10,
         // })
         // scene.add(ImgBack_S1.mesh);
-        // objects.push(ImgBack_S1.mesh);
 
         // const ImgBack_S2 = new Illusttexture({
         //     texture:'img/Back01.png',
@@ -1496,7 +1424,6 @@ console.log(starring.body.position)
         //     z: -10,
         // })
         // scene.add(ImgBack_S2.mesh);
-        // objects.push(ImgBack_S2.mesh);
 
         // const S_eye = new Illusttexture({
         //     texture:'img/haikei03.png',
@@ -1513,7 +1440,6 @@ console.log(starring.body.position)
         //     repeatY: 0.5,
         // })
         // scene.add(S_eye.mesh);
-        // objects.push(S_eye.mesh);
 
         // const S_denki = new Illusttexture({
         //     texture:'img/haikei03.png',
@@ -1530,7 +1456,6 @@ console.log(starring.body.position)
         //     repeatY: 0.5,
         // })
         // scene.add(S_denki.mesh);
-        // objects.push(S_denki.mesh);
 
         // const S_denki_light = new Illusttexture({
         //     texture:'img/haikei03.png',
@@ -1547,7 +1472,6 @@ console.log(starring.body.position)
         //     repeatY: 0.5,
         // })
         // scene.add(S_denki_light.mesh);
-        // objects.push(S_denki_light.mesh);
 
         // const S_hospital = new Illusttexture({
         //     texture:'img/haikei02.png',
@@ -1564,7 +1488,6 @@ console.log(starring.body.position)
         //     repeatY: 0.4,
         // })
         // scene.add(S_hospital.mesh);
-        // objects.push(S_hospital.mesh);
 
         // const S_hospital_b = new Illusttexture({
         //     texture:'img/start01.png',
@@ -1581,7 +1504,6 @@ console.log(starring.body.position)
         //     repeatY: 0.1,
         // })
         // scene.add(S_hospital_b.mesh);
-        // objects.push(S_hospital_b.mesh);
 
         const textureBuilldingSF = new Illusttexture({
             texture:'img/start01.png',
@@ -1598,7 +1520,6 @@ console.log(starring.body.position)
             repeatY: 1,
         })
         scene.add(textureBuilldingSF.mesh);
-        objects.push(textureBuilldingSF.mesh);
 
         const textureStartSF = new Illusttexture({
             texture:'img/start02.png',
@@ -1615,7 +1536,6 @@ console.log(starring.body.position)
             repeatY: 0.35,
         })
         scene.add(textureStartSF.mesh);
-        objects.push(textureStartSF.mesh);
 
         const textureStartSB = new Illusttexture({
             texture:'img/start02.png',
@@ -1632,7 +1552,6 @@ console.log(starring.body.position)
             repeatY: 0.35,
         })
         scene.add(textureStartSB.mesh);
-        objects.push(textureStartSB.mesh);
 
         const textureStartSL = new Illusttexture({
             texture:'img/start02.png',
@@ -1649,7 +1568,6 @@ console.log(starring.body.position)
             repeatY: 0.3,
         })
         scene.add(textureStartSL.mesh);
-        objects.push(textureStartSL.mesh);
 
         const textureTotsuS = new Illusttexture({
             texture:'img/start02.png',
@@ -1666,7 +1584,6 @@ console.log(starring.body.position)
             repeatY: 0.1,
         })
         scene.add(textureTotsuS.mesh);
-        objects.push(textureTotsuS.mesh);
 
         const textureStartSK = new Illusttexture({
             texture:'img/start02.png',
@@ -1683,7 +1600,7 @@ console.log(starring.body.position)
             repeatY: 0.5,
         })
         scene.add(textureStartSK.mesh);
-        objects.push(textureStartSK.mesh);
+
 
         //KTルート
 
@@ -1702,7 +1619,6 @@ console.log(starring.body.position)
             repeatY: 0.35,
         })
         scene.add(KT1.mesh);
-        objects.push(KT1.mesh);
 
         const KT2 = new Illusttexture({
             texture:'img/haikei02.png',
@@ -1719,7 +1635,6 @@ console.log(starring.body.position)
             repeatY: 0.3,
         })
         scene.add(KT2.mesh);
-        objects.push(KT2.mesh);
 
         const T01 = new Illusttexture({
             texture:'img/haikei01.png',
@@ -1736,7 +1651,6 @@ console.log(starring.body.position)
             repeatY: 0.23,
         })
         scene.add(T01.mesh);
-        objects.push(T01.mesh);
 
         const deskT01 = new Illusttexture({
             texture:'img/haikei03.png',
@@ -1753,7 +1667,6 @@ console.log(starring.body.position)
             repeatY: 0.25,
         })
         scene.add(deskT01.mesh);
-        objects.push(deskT01.mesh);
 
         const Hit01K = new Illusttexture({
             texture:'img/charactor.png',
@@ -1770,7 +1683,6 @@ console.log(starring.body.position)
             repeatY: 0.15,
         })
         scene.add(Hit01K.mesh);
-        objects.push(Hit01K.mesh);
 
         const Hit01aTK = new Illusttexture({
             texture:'img/charactor.png',
@@ -1787,7 +1699,6 @@ console.log(starring.body.position)
             repeatY: 0.2,
         })
         scene.add(Hit01aTK.mesh);
-        objects.push(Hit01aTK.mesh);
 
         const Hit01bTK = new Illusttexture({
             texture:'img/charactor.png',
@@ -1804,7 +1715,6 @@ console.log(starring.body.position)
             repeatY: 0.2,
         })
         scene.add(Hit01bTK.mesh);
-        objects.push(Hit01bTK.mesh);
 
         const Hit01cTK = new Illusttexture({
             texture:'img/charactor.png',
@@ -1821,7 +1731,6 @@ console.log(starring.body.position)
             repeatY: 0.2,
         })
         scene.add(Hit01cTK.mesh);
-        objects.push(Hit01cTK.mesh);
 
         const Hit02TK = new Illusttexture({
             texture:'img/charactor.png',
@@ -1838,7 +1747,6 @@ console.log(starring.body.position)
             repeatY: 0.15,
         })
         scene.add(Hit02TK.mesh);
-        objects.push(Hit02TK.mesh);
 
         const haihuTK = new Illusttexture({
             texture:'img/charactor.png',
@@ -1855,7 +1763,6 @@ console.log(starring.body.position)
             repeatY: 0.15,
         })
         scene.add(haihuTK.mesh);
-        objects.push(haihuTK.mesh);
 
         const Hit03TK = new Illusttexture({
             texture:'img/charactor.png',
@@ -1872,7 +1779,6 @@ console.log(starring.body.position)
             repeatY: 0.2,
         })
         scene.add(Hit03TK.mesh);
-        objects.push(Hit03TK.mesh);
 
         const soukoKT = new Illusttexture({
             texture:'img/haikei01.png',
@@ -1889,7 +1795,6 @@ console.log(starring.body.position)
             repeatY: 0.55,
         })
         scene.add(soukoKT.mesh);
-        objects.push(soukoKT.mesh);
 
         const Hit01T = new Illusttexture({
             texture:'img/charactor.png',
@@ -1906,7 +1811,6 @@ console.log(starring.body.position)
             repeatY: 0.1,
         })
         scene.add(Hit01T.mesh);
-        objects.push(Hit01T.mesh);
 
         const T02 = new Illusttexture({
             texture:'img/haikei01.png',
@@ -1923,7 +1827,6 @@ console.log(starring.body.position)
             repeatY: 0.23,
         })
         scene.add(T02.mesh);
-        objects.push(T02.mesh);
 
         const deskT02 = new Illusttexture({
             texture:'img/haikei03.png',
@@ -1940,7 +1843,6 @@ console.log(starring.body.position)
             repeatY: 0.25,
         })
         scene.add(deskT02.mesh);
-        objects.push(deskT02.mesh);
 
         const Hit02K = new Illusttexture({
             texture:'img/charactor.png',
@@ -1957,7 +1859,7 @@ console.log(starring.body.position)
             repeatY: 0.15,
         })
         scene.add(Hit02K.mesh);
-        objects.push(Hit02K.mesh);
+
 
         //Hルート
 
@@ -1976,7 +1878,6 @@ console.log(starring.body.position)
             repeatY: 0.5,
         })
         scene.add(redH.mesh);
-        objects.push(redH.mesh);
 
         const dentyuH = new Illusttexture({
             texture:'img/haikei02.png',
@@ -1993,7 +1894,6 @@ console.log(starring.body.position)
             repeatY: 0.45,
         })
         scene.add(dentyuH.mesh);
-        objects.push(dentyuH.mesh);
 
         const densenH = new Illusttexture({
             texture:'img/haikei02.png',
@@ -2010,7 +1910,6 @@ console.log(starring.body.position)
             repeatY: 0.15,
         })
         scene.add(densenH.mesh);
-        objects.push(densenH.mesh);
 
         const gardH = new Illusttexture({
             texture:'img/haikei03.png',
@@ -2027,7 +1926,6 @@ console.log(starring.body.position)
             repeatY: 0.15,
         })
         scene.add(gardH.mesh);
-        objects.push(gardH.mesh);
 
         const carH = new Illusttexture({
             texture:'img/charactor.png',
@@ -2044,7 +1942,6 @@ console.log(starring.body.position)
             repeatY: 0.2,
         })
         scene.add(carH.mesh);
-        objects.push(carH.mesh);
 
         const CemeteryH = new Illusttexture({
             texture:'img/haikei02.png',
@@ -2061,7 +1958,6 @@ console.log(starring.body.position)
             repeatY: 0.35,
         })
         scene.add(CemeteryH.mesh);
-        objects.push(CemeteryH.mesh);
 
         const CemeteryIriH = new Illusttexture({
             texture:'img/haikei02.png',
@@ -2078,7 +1974,6 @@ console.log(starring.body.position)
             repeatY: 0.3,
         })
         scene.add(CemeteryIriH.mesh);
-        objects.push(CemeteryIriH.mesh);
 
         const Hit01H = new Illusttexture({
             texture:'img/charactor.png',
@@ -2095,7 +1990,6 @@ console.log(starring.body.position)
             repeatY: 0.2,
         })
         scene.add(Hit01H.mesh);
-        objects.push(Hit01H.mesh);
 
         const LaboratoryH = new Illusttexture({
             texture:'img/haikei01.png',
@@ -2112,7 +2006,6 @@ console.log(starring.body.position)
             repeatY: 0.45,
         })
         scene.add(LaboratoryH.mesh);
-        objects.push(LaboratoryH.mesh);
 
         const Hit02H = new Illusttexture({
             texture:'img/charactor.png',
@@ -2129,7 +2022,6 @@ console.log(starring.body.position)
             repeatY: 0.2,
         })
         scene.add(Hit02H.mesh);
-        objects.push(Hit02H.mesh);
 
         const Hit03H = new Illusttexture({
             texture:'img/charactor.png',
@@ -2146,7 +2038,6 @@ console.log(starring.body.position)
             repeatY: 0.2,
         })
         scene.add(Hit03H.mesh);
-        objects.push(Hit03H.mesh);
 
         const Hit04H = new Illusttexture({
             texture:'img/charactor.png',
@@ -2163,7 +2054,6 @@ console.log(starring.body.position)
             repeatY: 0.2,
         })
         scene.add(Hit04H.mesh);
-        objects.push(Hit04H.mesh);
 
         const Hit05H = new Illusttexture({
             texture:'img/charactor.png',
@@ -2180,7 +2070,6 @@ console.log(starring.body.position)
             repeatY: 0.2,
         })
         scene.add(Hit05H.mesh);
-        objects.push(Hit05H.mesh);
 
         const Hit06H = new Illusttexture({
             texture:'img/charactor.png',
@@ -2197,7 +2086,6 @@ console.log(starring.body.position)
             repeatY: 0.2,
         })
         scene.add(Hit06H.mesh);
-        objects.push(Hit06H.mesh);
 
         const Hit07H = new Illusttexture({
             texture:'img/charactor.png',
@@ -2214,7 +2102,6 @@ console.log(starring.body.position)
             repeatY: 0.2,
         })
         scene.add(Hit07H.mesh);
-        objects.push(Hit07H.mesh);
 
         const Hit08H = new Illusttexture({
             texture:'img/charactor.png',
@@ -2231,7 +2118,6 @@ console.log(starring.body.position)
             repeatY: 0.12,
         })
         scene.add(Hit08H.mesh);
-        objects.push(Hit08H.mesh);
 
         const Hit09H = new Illusttexture({
             texture:'img/charactor.png',
@@ -2248,7 +2134,6 @@ console.log(starring.body.position)
             repeatY: 0.2,
         })
         scene.add(Hit09H.mesh);
-        objects.push(Hit09H.mesh);
 
         const Hit10H = new Illusttexture({
             texture:'img/charactor.png',
@@ -2265,7 +2150,6 @@ console.log(starring.body.position)
             repeatY: 0.2,
         })
         scene.add(Hit10H.mesh);
-        objects.push(Hit10H.mesh);
 
         const Hit11H = new Illusttexture({
             texture:'img/charactor.png',
@@ -2282,7 +2166,6 @@ console.log(starring.body.position)
             repeatY: 0.1,
         })
         scene.add(Hit11H.mesh);
-        objects.push(Hit11H.mesh);
 
         const Hit12H = new Illusttexture({
             texture:'img/charactor.png',
@@ -2299,7 +2182,6 @@ console.log(starring.body.position)
             repeatY: 0.1,
         })
         scene.add(Hit12H.mesh);
-        objects.push(Hit12H.mesh);
 
         const Hit13H = new Illusttexture({
             texture:'img/charactor.png',
@@ -2316,7 +2198,6 @@ console.log(starring.body.position)
             repeatY: 0.14,
         })
         scene.add(Hit13H.mesh);
-        objects.push(Hit13H.mesh);
 
         const Hit14H = new Illusttexture({
             texture:'img/charactor.png',
@@ -2333,7 +2214,6 @@ console.log(starring.body.position)
             repeatY: 0.1,
         })
         scene.add(Hit14H.mesh);
-        objects.push(Hit14H.mesh);
 
         const Hit15H = new Illusttexture({
             texture:'img/charactor.png',
@@ -2350,7 +2230,6 @@ console.log(starring.body.position)
             repeatY: 0.1,
         })
         scene.add(Hit15H.mesh);
-        objects.push(Hit15H.mesh);
 
         const Hit03aA_H = new Illusttexture({
             texture:'img/charactor.png',
@@ -2367,7 +2246,6 @@ console.log(starring.body.position)
             repeatY: 0.15,
         })
         scene.add(Hit03aA_H.mesh);
-        objects.push(Hit03aA_H.mesh);
 
         const Hit03bA_H = new Illusttexture({
             texture:'img/charactor.png',
@@ -2384,7 +2262,6 @@ console.log(starring.body.position)
             repeatY: 0.15,
         })
         scene.add(Hit03bA_H.mesh);
-        objects.push(Hit03bA_H.mesh);
 
         const Hit03cA_H = new Illusttexture({
             texture:'img/charactor.png',
@@ -2401,7 +2278,6 @@ console.log(starring.body.position)
             repeatY: 0.15,
         })
         scene.add(Hit03cA_H.mesh);
-        objects.push(Hit03cA_H.mesh);
 
         const Hit03dA_H = new Illusttexture({
             texture:'img/charactor.png',
@@ -2418,7 +2294,6 @@ console.log(starring.body.position)
             repeatY: 0.15,
         })
         scene.add(Hit03dA_H.mesh);
-        objects.push(Hit03dA_H.mesh);
 
         //---------renderer--------------------------------------
         renderer = new THREE.WebGLRenderer( { antialias: true } );
