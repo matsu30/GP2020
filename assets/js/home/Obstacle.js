@@ -15,7 +15,10 @@ class Obstacle extends THREE.Mesh {
             opacity: 0.5,
             x: 0,
             y: 0,
-            z: 0
+            z: 0,
+            onCollision: function(){},
+            //衝突中かの真偽値
+            isCollision: false
         };
 
         keydata = Object.assign({}, defaults, keydata)
@@ -38,14 +41,20 @@ class Obstacle extends THREE.Mesh {
         this.position.z = keydata.z;
 
         this.collider = keydata.collider;
-        
-    }
+        this.onCollision = keydata.onCollision;
+        this.isCollision = keydata.isCollision;
 
+        // 主人公と交差したときの処理
+        // クラスの中にある関数のことをメソッドとよぶ
+        this.collision = function(){
+            if (this.isCollision === false){
+                this.onCollision();
+            }
 
-    // 主人公と交差したときの処理
-    // クラスの中にある関数のことをメソッドとよぶ
-    onCollsion() {
-        console.log(`交差しました`);
+            
+            this.isCollision = true;
+        };
+
     }
 
 }

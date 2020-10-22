@@ -197,9 +197,13 @@ function init() {
             height: 20,
             depth: 20,
             color: 0x000000,
-            x: obstacleKeydata.width * 0,
-            y: maxY - obstacleKeydata.height * -1 + offsetY,
+            collider: false,
+            x: obstacleKeydata.width * 3,
+            y: maxY - obstacleKeydata.height * -3 + offsetY,
             z: -10,
+            onCollision: function(){
+                console.log("eventObstacle");
+            }
         });
         scene.add(eventObstacle);
         objects.push(eventObstacle);

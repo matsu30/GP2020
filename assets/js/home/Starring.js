@@ -122,7 +122,9 @@ class Starring {
 
     // 衝突しているオブジェクトの中で、一番「高い位置」のものを取得する
     for (let i = 0, len = intersectObjects.length; i < len; i++) {
+      if (intersectObjects[i].object.collider) {
       y = Math.max(y, intersectObjects[i].point.y);
+      }
     }
 
     y = y + offsetY;
@@ -210,11 +212,17 @@ class Starring {
 
     for (let i = 0, len = intersectObjects.length; i < len; i++) {
       if (
-        intersectObjects[i].object.collider &&
         intersectObjects[i].distance < collisionDistanceZ &&
         this.moveForward
       ) {
-        result.forward = true;
+        intersectObjects[i].object.collision();
+
+        if (intersectObjects[i].object.collider){
+          result.forward = true;
+        }
+       
+      } else {
+        intersectObjects[i].object.isCollision = false;
       }
     }
 
@@ -224,11 +232,17 @@ class Starring {
 
     for (let i = 0, len = intersectObjects.length; i < len; i++) {
       if (
-        intersectObjects[i].object.collider &&
         intersectObjects[i].distance < collisionDistanceZ &&
         this.moveBackward
       ) {
-        result.backward = true;
+        intersectObjects[i].object.collision();
+
+        if (intersectObjects[i].object.collider){
+          result.backward = true;
+        }
+       
+      } else {
+        intersectObjects[i].object.isCollision = false;
       }
     }
 
@@ -238,28 +252,41 @@ class Starring {
 
     for (let i = 0, len = intersectObjects.length; i < len; i++) {
       if (
-        intersectObjects[i].object.collider &&
         intersectObjects[i].distance < collisionDistanceX &&
-        this.moveLeft) {
-        result.left = true;
+        this.moveLeft
+      ) {
+        intersectObjects[i].object.collision();
+
+        if (intersectObjects[i].object.collider){
+          result.left = true;
+        }
+       
+      } else {
+        intersectObjects[i].object.isCollision = false;
       }
     }
 
     // 右方向との衝突判定
     raycaster.set(this.body.position, rightVector);
-
     intersectObjects = raycaster.intersectObjects(objects);
 
     for (let i = 0, len = intersectObjects.length; i < len; i++) {
-      console.log(intersectObjects[i].object.collider)
       if (
-        intersectObjects[i].object.collider &&
         intersectObjects[i].distance < collisionDistanceX &&
-        this.moveRight) {
-        result.right = true;
+        this.moveRight
+      ) {
+        intersectObjects[i].object.collision();
+
+        if (intersectObjects[i].object.collider){
+          result.right = true;
+        }
+       
+      } else {
+        intersectObjects[i].object.isCollision = false;
       }
     }
 
     return result;
   }
 }
+
