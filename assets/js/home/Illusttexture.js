@@ -1,7 +1,7 @@
 class Illusttexture{
 
     constructor(keydata){
-        console.log("Illusttexture constructor", keydata);
+        //console.log("Illusttexture constructor", keydata);
 
         const defaults = {
             texture: '',
