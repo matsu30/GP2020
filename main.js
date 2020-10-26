@@ -25,11 +25,11 @@ animate();
 
 function init() {
 
-        camera = new THREE.OrthographicCamera(-120, +120, +67.5, -67.5, 1, 150);
-        camera.position.z = 100;
+        // camera = new THREE.OrthographicCamera(-120, +120, +67.5, -67.5, 1, 150);
+        // camera.position.z = 100;
 
-        // camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 0.1, 1000 );
-        // camera.position.z = 500;
+        camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 0.1, 1000 );
+        camera.position.z = 500;
 
         scene = new THREE.Scene();
         scene.background = new THREE.Color( 0xffffff );
@@ -40,7 +40,7 @@ function init() {
         scene.add( light );
 
         starring.load();
-        starring.body.position.x = 50;
+        starring.body.position.x = 2300;
         starring.body.position.y = 1000;
         // starring.body.position.x = 1500;
         // starring.body.position.y = 10;
@@ -192,22 +192,6 @@ function init() {
             }
         }
 
-        const eventObstacle = new Obstacle({
-            width: 20,
-            height: 20,
-            depth: 20,
-            color: 0x000000,
-            collider: false,
-            x: obstacleKeydata.width * 3,
-            y: maxY - obstacleKeydata.height * -3 + offsetY,
-            z: -10,
-            onCollision: function(){
-                console.log("eventObstacle");
-            }
-        });
-        scene.add(eventObstacle);
-        objects.push(eventObstacle);
-
         // const Start1 = new Obstacle({
         //     height: 60,
         //     y: 230+440,
@@ -251,6 +235,124 @@ function init() {
         objects.push(Start4);
         scene.add(Start5);
         objects.push(Start5);
+
+        
+        //---------event------------------------------------
+        
+        const eventObstacle00 = new Obstacle({
+            width: 20,
+            height: 20,
+            depth: 20,
+            color: 0x000000,
+            collider: false,
+            x: obstacleKeydata.width * 3,
+            y: maxY - obstacleKeydata.height * -3 + offsetY,
+            z: -10,
+            onCollision: function(){
+                console.log("eventObstacle");
+            }
+        });
+        scene.add(eventObstacle00);
+        objects.push(eventObstacle00);
+
+        const eventObstacle01 = new Obstacle({
+            x: 340,
+            y: 650,
+            z: -10,
+            collider: false,
+            onCollision: function(){
+                console.log("eventObstacle");
+            }
+        });
+        scene.add(eventObstacle01);
+        objects.push(eventObstacle01);
+
+        const eventObstacle02 = new Obstacle({
+            x: 340,
+            y: 190,
+            z: -10,
+            collider: false,
+            onCollision: function(){
+                console.log("eventObstacle");
+            }
+        });
+        scene.add(eventObstacle02);
+        objects.push(eventObstacle02);
+
+        const eventObstacle03 = new Obstacle({
+            x: 700,
+            y: 190,
+            z: -10,
+            collider: false,
+            onCollision: function(){
+                console.log("eventObstacle");
+            }
+        });
+        scene.add(eventObstacle03);
+        objects.push(eventObstacle03);
+
+        const eventObstacle04 = new Obstacle({
+            x: 2000,
+            y: 190,
+            z: -10,
+            collider: false,
+            onCollision: function(){
+                console.log("eventObstacle");
+            }
+        });
+        scene.add(eventObstacle04);
+        objects.push(eventObstacle04);
+
+        const eventObstacle05 = new Obstacle({
+            x: 1700,
+            y: 190,
+            z: -10,
+            collider: false,
+            onCollision: function(){
+                console.log("eventObstacle");
+            }
+        });
+        scene.add(eventObstacle05);
+        objects.push(eventObstacle05);
+
+        const eventObstacle06 = new Obstacle({
+            x: 1240,
+            y: 650,
+            z: -10,
+            collider: false,
+            onCollision: function(){
+                console.log("eventObstacle");
+            }
+        });
+        scene.add(eventObstacle06);
+        objects.push(eventObstacle06);
+
+        const eventObstacle07 = new Obstacle({
+            x: 2440,
+            y: 650,
+            z: -10,
+            collider: false,
+            onCollision: function(){
+                console.log("eventObstacle");
+            }
+        });
+        scene.add(eventObstacle07);
+        objects.push(eventObstacle07);
+
+        const eventObstacle08 = new Obstacle({
+            x: 2440,
+            y: 190,
+            z: -10,
+            collider: false,
+            onCollision: function(){
+                console.log("eventObstacle");
+            }
+        });
+        scene.add(eventObstacle08);
+        objects.push(eventObstacle08);
+
+
+
 
         //---------texture------------------------------------
         const textureBuillding01F = new Illusttexture({
