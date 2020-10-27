@@ -1,7 +1,7 @@
 {
 "skeleton": {
-	"hash": "zI+vlcsveCNzLmWCzPT1LtNN/8I",
-	"spine": "3.8.97",
+	"hash": "1maDJqnSq3Ej0nc/fQUvEMOlYq8",
+	"spine": "3.8.99",
 	"x": -85,
 	"y": -160,
 	"width": 170,
@@ -132,6 +132,17 @@
 				"attachment": [
 					{ "name": null },
 					{ "time": 1.1667, "name": "008" }
+				]
+			}
+		}
+	},
+	"demo": {
+		"slots": {
+			"001": {
+				"color": [
+					{ "color": "ffffffff" },
+					{ "time": 0.8333, "color": "ffffff00" },
+					{ "time": 1.6667, "color": "ffffffff" }
 				]
 			}
 		}
