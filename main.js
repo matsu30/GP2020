@@ -25,11 +25,11 @@ animate();
 
 function init() {
 
-        // camera = new THREE.OrthographicCamera(-120, +120, +67.5, -67.5, 1, 150);
-        // camera.position.z = 100;
+        camera = new THREE.OrthographicCamera(-120, +120, +67.5, -67.5, 1, 150);
+        camera.position.z = 100;
 
-        camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 0.1, 1000 );
-        camera.position.z = 500;
+        // camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 0.1, 1000 );
+        // camera.position.z = 500;
 
         scene = new THREE.Scene();
         scene.background = new THREE.Color( 0xffffff );
@@ -40,7 +40,7 @@ function init() {
         scene.add( light );
 
         starring.load();
-        starring.body.position.x = 2300;
+        starring.body.position.x = 100;
         starring.body.position.y = 1000;
         // starring.body.position.x = 1500;
         // starring.body.position.y = 10;
@@ -250,6 +250,7 @@ function init() {
             z: -10,
             onCollision: function(){
                 console.log("eventObstacle");
+                starring.changePose("demo");
             }
         });
         scene.add(eventObstacle00);

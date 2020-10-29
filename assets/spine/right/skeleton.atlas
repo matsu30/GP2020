@@ -1,62 +1,62 @@
 
 skeleton.png
-size: 1274,313
+size: 161,609
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 001
   rotate: true
-  xy: 639, 149
-  size: 162, 313
-  orig: 170, 320
-  offset: 7, 0
+  xy: 2, 240
+  size: 73, 157
+  orig: 80, 170
+  offset: 2, 3
   index: -1
 002
   rotate: true
-  xy: 954, 2
-  size: 146, 313
-  orig: 170, 320
-  offset: 7, 0
+  xy: 2, 389
+  size: 72, 157
+  orig: 80, 170
+  offset: 0, 3
   index: -1
 003
-  rotate: true
-  xy: 318, 149
-  size: 162, 319
-  orig: 170, 320
-  offset: 7, 0
+  rotate: false
+  xy: 2, 2
+  size: 78, 159
+  orig: 80, 170
+  offset: 2, 5
   index: -1
 004
-  rotate: true
-  xy: 954, 150
-  size: 161, 318
-  orig: 170, 320
-  offset: 8, 0
+  rotate: false
+  xy: 82, 2
+  size: 73, 159
+  orig: 80, 170
+  offset: 3, 5
   index: -1
 005
   rotate: true
-  xy: 2, 2
-  size: 144, 313
-  orig: 170, 320
-  offset: 7, 0
+  xy: 2, 536
+  size: 71, 157
+  orig: 80, 170
+  offset: 0, 3
   index: -1
 006
   rotate: true
-  xy: 2, 148
-  size: 163, 314
-  orig: 170, 320
-  offset: 6, 0
+  xy: 2, 163
+  size: 75, 157
+  orig: 80, 170
+  offset: 2, 4
   index: -1
 007
   rotate: true
-  xy: 633, 3
-  size: 144, 313
-  orig: 170, 320
-  offset: 8, 0
+  xy: 2, 315
+  size: 72, 157
+  orig: 80, 170
+  offset: 0, 3
   index: -1
 008
   rotate: true
-  xy: 318, 2
-  size: 145, 313
-  orig: 170, 320
-  offset: 7, 0
+  xy: 2, 463
+  size: 71, 157
+  orig: 80, 170
+  offset: 0, 3
   index: -1
