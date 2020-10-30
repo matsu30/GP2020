@@ -92,7 +92,7 @@ class Starring {
       }
     );
 
-    this.skeletonMesh.state.setAnimation(0, "animation", true);
+    this.skeletonMesh.state.setAnimation(0, "walk", true);
     this.body.add(this.skeletonMesh);
 
     console.log("[Starring] Spine Aseets Load Complete.");

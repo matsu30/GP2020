@@ -249,7 +249,7 @@ function init() {
             y: maxY - obstacleKeydata.height * -3 + offsetY,
             z: -10,
             onCollision: function(){
-                console.log("eventObstacle");
+                console.log("demo");
                 starring.changePose("demo");
             }
         });
@@ -262,7 +262,8 @@ function init() {
             z: -10,
             collider: false,
             onCollision: function(){
-                console.log("eventObstacle");
+                console.log("fall");
+                starring.changePose("fall");
             }
         });
         scene.add(eventObstacle01);
@@ -274,7 +275,8 @@ function init() {
             z: -10,
             collider: false,
             onCollision: function(){
-                console.log("eventObstacle");
+                console.log("crash");
+                starring.changePose("crash");
             }
         });
         scene.add(eventObstacle02);
@@ -286,7 +288,7 @@ function init() {
             z: -10,
             collider: false,
             onCollision: function(){
-                console.log("eventObstacle");
+                console.log(Hit01A);
             }
         });
         scene.add(eventObstacle03);
@@ -298,7 +300,8 @@ function init() {
             z: -10,
             collider: false,
             onCollision: function(){
-                console.log("eventObstacle");
+                console.log("sit");
+                starring.changePose("sit");
             }
         });
         scene.add(eventObstacle04);
@@ -310,7 +313,7 @@ function init() {
             z: -10,
             collider: false,
             onCollision: function(){
-                console.log("eventObstacle");
+                console.log(Hit08A);
             }
         });
         scene.add(eventObstacle05);
@@ -322,7 +325,7 @@ function init() {
             z: -10,
             collider: false,
             onCollision: function(){
-                console.log("eventObstacle");
+                console.log(camera);
             }
         });
         scene.add(eventObstacle06);
@@ -334,7 +337,8 @@ function init() {
             z: -10,
             collider: false,
             onCollision: function(){
-                console.log("eventObstacle");
+                console.log("fall");
+                starring.changePose("fall");
             }
         });
         scene.add(eventObstacle07);
@@ -346,7 +350,8 @@ function init() {
             z: -10,
             collider: false,
             onCollision: function(){
-                console.log("eventObstacle");
+                console.log("crash");
+                starring.changePose("crash");
             }
         });
         scene.add(eventObstacle08);

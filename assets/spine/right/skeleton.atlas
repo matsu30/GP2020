@@ -1,19 +1,19 @@
 
 skeleton.png
-size: 161,609
+size: 161,687
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 001
   rotate: true
-  xy: 2, 240
+  xy: 2, 318
   size: 73, 157
   orig: 80, 170
   offset: 2, 3
   index: -1
 002
   rotate: true
-  xy: 2, 389
+  xy: 2, 467
   size: 72, 157
   orig: 80, 170
   offset: 0, 3
@@ -34,29 +34,117 @@ repeat: none
   index: -1
 005
   rotate: true
-  xy: 2, 536
+  xy: 2, 614
   size: 71, 157
   orig: 80, 170
   offset: 0, 3
   index: -1
 006
   rotate: true
-  xy: 2, 163
+  xy: 2, 241
   size: 75, 157
+  orig: 80, 170
+  offset: 2, 4
+  index: -1
+006.1
+  rotate: true
+  xy: 2, 163
+  size: 76, 157
   orig: 80, 170
   offset: 2, 4
   index: -1
 007
   rotate: true
-  xy: 2, 315
+  xy: 2, 393
   size: 72, 157
   orig: 80, 170
   offset: 0, 3
   index: -1
 008
   rotate: true
-  xy: 2, 463
+  xy: 2, 541
   size: 71, 157
   orig: 80, 170
   offset: 0, 3
+  index: -1
+
+skeleton2.png
+size: 179,269
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+crash/crash01
+  rotate: false
+  xy: 25, 33
+  size: 75, 157
+  orig: 300, 170
+  offset: 109, 5
+  index: -1
+crash/crash02
+  rotate: true
+  xy: 25, 192
+  size: 75, 129
+  orig: 300, 170
+  offset: 109, 5
+  index: -1
+crash/crash03
+  rotate: false
+  xy: 102, 87
+  size: 75, 103
+  orig: 300, 170
+  offset: 109, 5
+  index: -1
+crash/crash04
+  rotate: false
+  xy: 102, 30
+  size: 75, 55
+  orig: 300, 170
+  offset: 109, 5
+  index: -1
+crash/crash05
+  rotate: false
+  xy: 25, 2
+  size: 113, 26
+  orig: 300, 170
+  offset: 91, 5
+  index: -1
+crash/crash06
+  rotate: true
+  xy: 2, 2
+  size: 265, 21
+  orig: 300, 170
+  offset: 18, 6
+  index: -1
+
+skeleton3.png
+size: 84,141
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+sit/sit
+  rotate: false
+  xy: 2, 2
+  size: 80, 137
+  orig: 107, 170
+  offset: 22, 1
+  index: -1
+
+skeleton4.png
+size: 163,79
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+stand/standBody
+  rotate: true
+  xy: 2, 2
+  size: 75, 144
+  orig: 80, 170
+  offset: 2, 17
+  index: -1
+stand/standFoot
+  rotate: true
+  xy: 148, 48
+  size: 29, 13
+  orig: 80, 170
+  offset: 31, 4
   index: -1
