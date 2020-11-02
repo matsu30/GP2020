@@ -41,7 +41,9 @@ function init() {
 
         starring.load();
         starring.body.position.x = 100;
-        starring.body.position.y = 1000;
+        starring.body.position.y = 700;
+        // starring.body.position.x = 400;
+        // starring.body.position.y = 190;
         // starring.body.position.x = 1500;
         // starring.body.position.y = 10;
         starring.body.position.z = 0;
@@ -66,6 +68,7 @@ function init() {
                 case 37: // left
                 case 65: // a
                     starring.moveLeft = true;
+                    starring.changePose("back");
                     break;
 
                 // case 40: // down
@@ -76,6 +79,7 @@ function init() {
                 case 39: // right
                 case 68: // d
                     starring.moveRight = true;
+                    starring.changePose("walk");
                     break;
 
                 case 32: // space
@@ -99,6 +103,7 @@ function init() {
                 case 37: // left
                 case 65: // a
                     starring.moveLeft = false;
+                    // starring.changePose("demo");
                     break;
 
                 // case 40: // down
@@ -109,6 +114,7 @@ function init() {
                 case 39: // right
                 case 68: // d
                     starring.moveRight = false;
+                    // starring.changePose("demo");
                     break;
 
             }
@@ -239,6 +245,36 @@ function init() {
         
         //---------event------------------------------------
         
+        const Demo = new Illusttexture({
+            texture:'img/charactor.png',
+            width: 24,
+            height: 40,
+            x: 50,
+            y: 660,
+            z: -1,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 1,
+            centerY: 0,
+            repeatX: 0.09,
+            repeatY: 0.15,
+        })
+        scene.add(Demo.mesh);
+        // Demo.timeline
+        //     .to(Demo.mesh.position, {
+        //         duration: 1,
+        //         x: "+=100",
+        //         y: "+=100",
+        //     })
+        //     .to(Demo.mesh.rotation, {
+        //         duration: 10,
+        //         z: "+=360",
+        //     })
+        //     .to(Demo.mesh.material, {
+        //         duration: 1,
+        //         opacity: 0,
+        //     });
+        
         const eventObstacle00 = new Obstacle({
             width: 20,
             height: 20,
@@ -249,34 +285,42 @@ function init() {
             y: maxY - obstacleKeydata.height * -3 + offsetY,
             z: -10,
             onCollision: function(){
-                console.log("demo");
-                starring.changePose("demo");
+                console.log("back");
+                starring.changePose("back");
+                Demo.timeline.play();
             }
         });
         scene.add(eventObstacle00);
         objects.push(eventObstacle00);
 
         const eventObstacle01 = new Obstacle({
-            x: 340,
+            width: 100,
+            height: 100,
+            x: 380,
             y: 650,
             z: -10,
             collider: false,
             onCollision: function(){
                 console.log("fall");
                 starring.changePose("fall");
+                starring.skeletonMesh.state.tracks[0].loop = false;
             }
         });
         scene.add(eventObstacle01);
         objects.push(eventObstacle01);
 
         const eventObstacle02 = new Obstacle({
+            width: 50,
             x: 340,
             y: 190,
             z: -10,
+            rotation: Math.PI / 2,
             collider: false,
             onCollision: function(){
+                console.log(eventObstacle02.rotation);
                 console.log("crash");
                 starring.changePose("crash");
+                starring.skeletonMesh.state.tracks[0].loop = false;
             }
         });
         scene.add(eventObstacle02);
@@ -361,24 +405,6 @@ function init() {
 
 
         //---------texture------------------------------------
-
-        const Demo = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 24,
-            height: 40,
-            x: 50,
-            y: 660,
-            z: -1,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 1,
-            centerY: 0,
-            repeatX: 0.09,
-            repeatY: 0.15,
-        })
-        scene.add(Demo.mesh);
-
-
         const textureBuillding01F = new Illusttexture({
             texture:'img/start01.png',
             width: 205,

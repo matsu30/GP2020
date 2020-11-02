@@ -16,6 +16,7 @@ class Obstacle extends THREE.Mesh {
             x: 0,
             y: 0,
             z: 0,
+            rotation: 0,
             onCollision: function(){},
             //衝突中かの真偽値
             isCollision: false
@@ -39,6 +40,8 @@ class Obstacle extends THREE.Mesh {
         this.position.x = keydata.x;
         this.position.y = keydata.y;
         this.position.z = keydata.z;
+
+        this.rotation.z = keydata.rotation;
 
         this.collider = keydata.collider;
         this.onCollision = keydata.onCollision;
