@@ -361,6 +361,24 @@ function init() {
 
 
         //---------texture------------------------------------
+
+        const Demo = new Illusttexture({
+            texture:'img/charactor.png',
+            width: 24,
+            height: 40,
+            x: 50,
+            y: 660,
+            z: -1,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 1,
+            centerY: 0,
+            repeatX: 0.09,
+            repeatY: 0.15,
+        })
+        scene.add(Demo.mesh);
+
+
         const textureBuillding01F = new Illusttexture({
             texture:'img/start01.png',
             width: 205,
