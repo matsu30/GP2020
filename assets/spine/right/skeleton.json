@@ -1,11 +1,11 @@
 {
 "skeleton": {
-	"hash": "2ZFVb36jgwhgeUOXLDqg3IFdmnw",
+	"hash": "qa7+cJDvWKA7huRgeXvUT2as9Mg",
 	"spine": "3.8.99",
-	"x": -43.75,
-	"y": -84.28,
-	"width": 84.19,
-	"height": 173.77,
+	"x": -39.51,
+	"y": -85.23,
+	"width": 82.95,
+	"height": 171.37,
 	"images": "",
 	"audio": ""
 },
@@ -27,7 +27,15 @@
 	{ "name": "crash/crash01", "bone": "root" },
 	{ "name": "crash/crash04", "bone": "root" },
 	{ "name": "crash/crash05", "bone": "root" },
-	{ "name": "crash/crash06", "bone": "root" }
+	{ "name": "crash/crash06", "bone": "root" },
+	{ "name": "back/011", "bone": "root", "attachment": "back/011" },
+	{ "name": "back/012", "bone": "root", "attachment": "back/012" },
+	{ "name": "back/013", "bone": "root", "attachment": "back/013" },
+	{ "name": "back/014", "bone": "root", "attachment": "back/014" },
+	{ "name": "back/015", "bone": "root", "attachment": "back/015" },
+	{ "name": "back/016", "bone": "root", "attachment": "back/016" },
+	{ "name": "back/017", "bone": "root", "attachment": "back/017" },
+	{ "name": "back/018", "bone": "root", "attachment": "back/018" }
 ],
 "skins": [
 	{
@@ -57,6 +65,30 @@
 			"008": {
 				"008": { "x": -1.88, "y": 72.1, "width": 80, "height": 170 }
 			},
+			"back/011": {
+				"back/011": { "x": 1.35, "y": 77.54, "width": 80, "height": 170 }
+			},
+			"back/012": {
+				"back/012": { "x": 1.35, "y": 77.54, "width": 80, "height": 170 }
+			},
+			"back/013": {
+				"back/013": { "x": 1.35, "y": 77.54, "width": 80, "height": 170 }
+			},
+			"back/014": {
+				"back/014": { "x": 1.35, "y": 77.54, "width": 80, "height": 170 }
+			},
+			"back/015": {
+				"back/015": { "x": 1.35, "y": 77.54, "width": 80, "height": 170 }
+			},
+			"back/016": {
+				"back/016": { "x": 1.35, "y": 77.54, "width": 80, "height": 170 }
+			},
+			"back/017": {
+				"back/017": { "x": 1.35, "y": 77.54, "width": 80, "height": 170 }
+			},
+			"back/018": {
+				"back/018": { "x": 1.35, "y": 77.54, "width": 80, "height": 170 }
+			},
 			"crash/crash01": {
 				"crash/crash01": { "x": -1.88, "y": 72.1, "width": 300, "height": 170 }
 			},
@@ -82,8 +114,115 @@
 	}
 ],
 "animations": {
+	"back": {
+		"slots": {
+			"back/011": {
+				"attachment": [
+					{ "time": 0.1333, "name": null }
+				]
+			},
+			"back/012": {
+				"attachment": [
+					{ "name": null },
+					{ "time": 0.1333, "name": "back/012" },
+					{ "time": 0.2667, "name": null }
+				]
+			},
+			"back/013": {
+				"attachment": [
+					{ "name": null },
+					{ "time": 0.2667, "name": "back/013" },
+					{ "time": 0.4, "name": null }
+				]
+			},
+			"back/014": {
+				"attachment": [
+					{ "name": null },
+					{ "time": 0.4, "name": "back/014" },
+					{ "time": 0.5333, "name": null }
+				]
+			},
+			"back/015": {
+				"attachment": [
+					{ "name": null },
+					{ "time": 0.5333, "name": "back/015" },
+					{ "time": 0.6667, "name": null }
+				]
+			},
+			"back/016": {
+				"attachment": [
+					{ "name": null },
+					{ "time": 0.6667, "name": "back/016" },
+					{ "time": 0.8, "name": null }
+				]
+			},
+			"back/017": {
+				"attachment": [
+					{ "name": null },
+					{ "time": 0.8, "name": "back/017" },
+					{ "time": 0.9333, "name": null }
+				]
+			},
+			"back/018": {
+				"attachment": [
+					{ "name": null },
+					{ "time": 0.9333, "name": "back/018" }
+				]
+			},
+			"stand/standBody": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"stand/standFoot": {
+				"attachment": [
+					{ "name": null }
+				]
+			}
+		}
+	},
 	"crash": {
 		"slots": {
+			"back/011": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"back/012": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"back/013": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"back/014": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"back/015": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"back/016": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"back/017": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"back/018": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
 			"crash/crash01": {
 				"attachment": [
 					{ "name": "crash/crash01" },
@@ -138,6 +277,46 @@
 					{ "name": "006" }
 				]
 			},
+			"back/011": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"back/012": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"back/013": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"back/014": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"back/015": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"back/016": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"back/017": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"back/018": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
 			"sit/sit": {
 				"color": [
 					{ "color": "ffffff00" }
@@ -169,6 +348,46 @@
 			"006": {
 				"color": [
 					{ "color": "ffffff00" }
+				]
+			},
+			"back/011": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"back/012": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"back/013": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"back/014": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"back/015": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"back/016": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"back/017": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"back/018": {
+				"attachment": [
+					{ "name": null }
 				]
 			},
 			"sit/sit": {
@@ -258,6 +477,46 @@
 				],
 				"attachment": [
 					{ "time": 1.1667, "name": "008" }
+				]
+			},
+			"back/011": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"back/012": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"back/013": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"back/014": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"back/015": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"back/016": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"back/017": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"back/018": {
+				"attachment": [
+					{ "name": null }
 				]
 			},
 			"sit/sit": {
