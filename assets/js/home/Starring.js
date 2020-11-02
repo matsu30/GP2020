@@ -80,7 +80,7 @@ class Starring {
 
     const skeletonJson = new spine.SkeletonJson(atlasLoader);
 
-    skeletonJson.scale = 0.1;
+    skeletonJson.scale = 0.2;
     const skeletonData = skeletonJson.readSkeletonData(
       this.assetManager.get(this.SKELETON_FILE)
     );
@@ -92,7 +92,7 @@ class Starring {
       }
     );
 
-    this.skeletonMesh.state.setAnimation(0, "demo", true);
+    this.skeletonMesh.state.setAnimation(0, "walk", true);
     this.body.add(this.skeletonMesh);
 
     console.log("[Starring] Spine Aseets Load Complete.");
@@ -102,10 +102,16 @@ class Starring {
   };
 
 
+  //changePose
+  //引数 animetionName に渡された名前のアニメーションに変更する
+
+  changePose(animationName){
+    this.skeletonMesh.state.setAnimation(0, animationName, true);
+  };
 
   animate(objects) {
     // 1コマ前から経過した時間を取得する
-    const delta = this.clock.getDelta();
+    const delta = Math.min(this.clock.getDelta(), 0.02);
     
     // 床にめり込まないために必要なオフセット値（主人公の高さの半分）
     const offsetY = this.body.geometry.boundingBox.max.y;
