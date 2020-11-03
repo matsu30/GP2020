@@ -1,16 +1,7 @@
 {
-"skeleton": {
-	"hash": "qa7+cJDvWKA7huRgeXvUT2as9Mg",
-	"spine": "3.8.99",
-	"x": -39.51,
-	"y": -85.23,
-	"width": 82.95,
-	"height": 171.37,
-	"images": "",
-	"audio": ""
-},
+"skeleton": { "hash": "WBgO5FmIw6Xcf+Q7uNgshnKXP4M", "spine": "3.8.99", "images": "", "audio": "" },
 "bones": [
-	{ "name": "root", "x": 1.97, "y": -77.09, "shearX": 1, "shearY": 1 }
+	{ "name": "root", "shearX": 1, "shearY": 1 }
 ],
 "slots": [
 	{ "name": "001", "bone": "root", "color": "ffffff00" },
@@ -22,93 +13,149 @@
 	{ "name": "007", "bone": "root", "color": "ffffff00" },
 	{ "name": "008", "bone": "root", "color": "ffffff00" },
 	{ "name": "sit/sit", "bone": "root" },
-	{ "name": "stand/standBody", "bone": "root", "attachment": "stand/standBody" },
-	{ "name": "stand/standFoot", "bone": "root", "attachment": "stand/standFoot" },
 	{ "name": "crash/crash01", "bone": "root" },
 	{ "name": "crash/crash04", "bone": "root" },
 	{ "name": "crash/crash05", "bone": "root" },
 	{ "name": "crash/crash06", "bone": "root" },
-	{ "name": "back/011", "bone": "root", "attachment": "back/011" },
-	{ "name": "back/012", "bone": "root", "attachment": "back/012" },
-	{ "name": "back/013", "bone": "root", "attachment": "back/013" },
-	{ "name": "back/014", "bone": "root", "attachment": "back/014" },
-	{ "name": "back/015", "bone": "root", "attachment": "back/015" },
-	{ "name": "back/016", "bone": "root", "attachment": "back/016" },
-	{ "name": "back/017", "bone": "root", "attachment": "back/017" },
-	{ "name": "back/018", "bone": "root", "attachment": "back/018" }
+	{ "name": "back/011", "bone": "root" },
+	{ "name": "back/012", "bone": "root" },
+	{ "name": "back/013", "bone": "root" },
+	{ "name": "back/014", "bone": "root" },
+	{ "name": "back/015", "bone": "root" },
+	{ "name": "back/016", "bone": "root" },
+	{ "name": "back/017", "bone": "root" },
+	{ "name": "back/018", "bone": "root" },
+	{ "name": "stand/stand0001", "bone": "root" },
+	{ "name": "stand/stand0002", "bone": "root" },
+	{ "name": "stand/stand0003", "bone": "root" },
+	{ "name": "stand/stand0004", "bone": "root" },
+	{ "name": "stand/stand0005", "bone": "root" },
+	{ "name": "stand/stand0006", "bone": "root" },
+	{ "name": "stand/stand0007", "bone": "root" },
+	{ "name": "stand/stand0008", "bone": "root" },
+	{ "name": "backStand/back001", "bone": "root" },
+	{ "name": "backStand/back002", "bone": "root" },
+	{ "name": "backStand/back003", "bone": "root" },
+	{ "name": "backStand/back004", "bone": "root" },
+	{ "name": "backStand/back005", "bone": "root" },
+	{ "name": "backStand/back006", "bone": "root" },
+	{ "name": "backStand/back007", "bone": "root" },
+	{ "name": "backStand/back008", "bone": "root" }
 ],
 "skins": [
 	{
 		"name": "default",
 		"attachments": {
 			"001": {
-				"001": { "x": -1.88, "y": 72.1, "width": 80, "height": 170 }
+				"001": { "width": 80, "height": 170 }
 			},
 			"002": {
-				"002": { "x": -1.88, "y": 72.1, "width": 80, "height": 170 }
+				"002": { "x": -1.88, "width": 80, "height": 170 }
 			},
 			"003": {
-				"003": { "x": -1.88, "y": 72.1, "width": 80, "height": 170 }
+				"003": { "x": -1.88, "width": 80, "height": 170 }
 			},
 			"004": {
-				"004": { "x": -1.88, "y": 72.1, "width": 80, "height": 170 }
+				"004": { "width": 80, "height": 170 }
 			},
 			"005": {
-				"005": { "x": -1.88, "y": 72.1, "width": 80, "height": 170 }
+				"005": { "width": 80, "height": 170 }
 			},
 			"006": {
-				"006": { "x": -1.88, "y": 72.1, "width": 80, "height": 170 }
+				"006": { "width": 80, "height": 170 }
 			},
 			"007": {
-				"007": { "x": -1.88, "y": 72.1, "width": 80, "height": 170 }
+				"007": { "width": 80, "height": 170 }
 			},
 			"008": {
-				"008": { "x": -1.88, "y": 72.1, "width": 80, "height": 170 }
+				"008": { "width": 80, "height": 170 }
 			},
 			"back/011": {
-				"back/011": { "x": 1.35, "y": 77.54, "width": 80, "height": 170 }
+				"back/011": { "width": 80, "height": 170 }
 			},
 			"back/012": {
-				"back/012": { "x": 1.35, "y": 77.54, "width": 80, "height": 170 }
+				"back/012": { "width": 80, "height": 170 }
 			},
 			"back/013": {
-				"back/013": { "x": 1.35, "y": 77.54, "width": 80, "height": 170 }
+				"back/013": { "width": 80, "height": 170 }
 			},
 			"back/014": {
-				"back/014": { "x": 1.35, "y": 77.54, "width": 80, "height": 170 }
+				"back/014": { "width": 80, "height": 170 }
 			},
 			"back/015": {
-				"back/015": { "x": 1.35, "y": 77.54, "width": 80, "height": 170 }
+				"back/015": { "width": 80, "height": 170 }
 			},
 			"back/016": {
-				"back/016": { "x": 1.35, "y": 77.54, "width": 80, "height": 170 }
+				"back/016": { "width": 80, "height": 170 }
 			},
 			"back/017": {
-				"back/017": { "x": 1.35, "y": 77.54, "width": 80, "height": 170 }
+				"back/017": { "width": 80, "height": 170 }
 			},
 			"back/018": {
-				"back/018": { "x": 1.35, "y": 77.54, "width": 80, "height": 170 }
+				"back/018": { "width": 80, "height": 170 }
+			},
+			"backStand/back001": {
+				"backStand/back001": { "width": 80, "height": 170 }
+			},
+			"backStand/back002": {
+				"backStand/back002": { "width": 80, "height": 170 }
+			},
+			"backStand/back003": {
+				"backStand/back003": { "width": 80, "height": 170 }
+			},
+			"backStand/back004": {
+				"backStand/back004": { "width": 80, "height": 170 }
+			},
+			"backStand/back005": {
+				"backStand/back005": { "width": 80, "height": 170 }
+			},
+			"backStand/back006": {
+				"backStand/back006": { "width": 80, "height": 170 }
+			},
+			"backStand/back007": {
+				"backStand/back007": { "width": 80, "height": 170 }
+			},
+			"backStand/back008": {
+				"backStand/back008": { "width": 80, "height": 170 }
 			},
 			"crash/crash01": {
-				"crash/crash01": { "x": -1.88, "y": 72.1, "width": 300, "height": 170 }
+				"crash/crash01": { "width": 300, "height": 170 }
 			},
 			"crash/crash04": {
-				"crash/crash04": { "x": -1.88, "y": 72.1, "width": 300, "height": 170 }
+				"crash/crash04": { "width": 300, "height": 170 }
 			},
 			"crash/crash05": {
-				"crash/crash05": { "x": -1.88, "y": 72.1, "width": 300, "height": 170 }
+				"crash/crash05": { "width": 300, "height": 170 }
 			},
 			"crash/crash06": {
-				"crash/crash06": { "x": -1.88, "y": 72.1, "width": 300, "height": 170 }
+				"crash/crash06": { "width": 300, "height": 170 }
 			},
 			"sit/sit": {
-				"sit/sit": { "x": -10.02, "y": 71.31, "width": 107, "height": 170 }
+				"sit/sit": { "width": 107, "height": 170 }
 			},
-			"stand/standBody": {
-				"stand/standBody": { "x": -1.9, "y": 78.66, "rotation": 0.18, "width": 80, "height": 170 }
+			"stand/stand0001": {
+				"stand/stand0001": { "width": 80, "height": 170 }
 			},
-			"stand/standFoot": {
-				"stand/standFoot": { "x": -2.83, "y": 80.96, "width": 80, "height": 170 }
+			"stand/stand0002": {
+				"stand/stand0002": { "width": 80, "height": 170 }
+			},
+			"stand/stand0003": {
+				"stand/stand0003": { "width": 80, "height": 170 }
+			},
+			"stand/stand0004": {
+				"stand/stand0004": { "width": 80, "height": 170 }
+			},
+			"stand/stand0005": {
+				"stand/stand0005": { "width": 80, "height": 170 }
+			},
+			"stand/stand0006": {
+				"stand/stand0006": { "width": 80, "height": 170 }
+			},
+			"stand/stand0007": {
+				"stand/stand0007": { "width": 80, "height": 170 }
+			},
+			"stand/stand0008": {
+				"stand/stand0008": { "width": 80, "height": 170 }
 			}
 		}
 	}
@@ -118,111 +165,107 @@
 		"slots": {
 			"back/011": {
 				"attachment": [
+					{ "name": "back/011" },
 					{ "time": 0.1333, "name": null }
 				]
 			},
 			"back/012": {
 				"attachment": [
-					{ "name": null },
 					{ "time": 0.1333, "name": "back/012" },
 					{ "time": 0.2667, "name": null }
 				]
 			},
 			"back/013": {
 				"attachment": [
-					{ "name": null },
 					{ "time": 0.2667, "name": "back/013" },
 					{ "time": 0.4, "name": null }
 				]
 			},
 			"back/014": {
 				"attachment": [
-					{ "name": null },
 					{ "time": 0.4, "name": "back/014" },
 					{ "time": 0.5333, "name": null }
 				]
 			},
 			"back/015": {
 				"attachment": [
-					{ "name": null },
 					{ "time": 0.5333, "name": "back/015" },
 					{ "time": 0.6667, "name": null }
 				]
 			},
 			"back/016": {
 				"attachment": [
-					{ "name": null },
 					{ "time": 0.6667, "name": "back/016" },
 					{ "time": 0.8, "name": null }
 				]
 			},
 			"back/017": {
 				"attachment": [
-					{ "name": null },
 					{ "time": 0.8, "name": "back/017" },
 					{ "time": 0.9333, "name": null }
 				]
 			},
 			"back/018": {
 				"attachment": [
-					{ "name": null },
 					{ "time": 0.9333, "name": "back/018" }
 				]
-			},
-			"stand/standBody": {
+			}
+		}
+	},
+	"backStand": {
+		"slots": {
+			"backStand/back001": {
 				"attachment": [
-					{ "name": null }
+					{ "name": "backStand/back001" },
+					{ "time": 0.0667, "name": null }
 				]
 			},
-			"stand/standFoot": {
+			"backStand/back002": {
 				"attachment": [
-					{ "name": null }
+					{ "time": 0.0667, "name": "backStand/back002" },
+					{ "time": 0.1667, "name": null }
+				]
+			},
+			"backStand/back003": {
+				"attachment": [
+					{ "time": 0.1667, "name": "backStand/back003" },
+					{ "time": 0.3, "name": null }
+				]
+			},
+			"backStand/back004": {
+				"attachment": [
+					{ "time": 0.3, "name": "backStand/back004" },
+					{ "time": 0.4333, "name": null }
+				]
+			},
+			"backStand/back005": {
+				"attachment": [
+					{ "time": 0.4333, "name": "backStand/back005" },
+					{ "time": 0.5667, "name": null }
+				]
+			},
+			"backStand/back006": {
+				"attachment": [
+					{ "time": 0.5667, "name": "backStand/back006" },
+					{ "time": 0.7667, "name": null }
+				]
+			},
+			"backStand/back007": {
+				"attachment": [
+					{ "time": 0.7667, "name": "backStand/back007" },
+					{ "time": 0.9, "name": null }
+				]
+			},
+			"backStand/back008": {
+				"attachment": [
+					{ "time": 0.9, "name": "backStand/back008" },
+					{ "time": 1.2333, "name": "backStand/back008" }
 				]
 			}
 		}
 	},
 	"crash": {
 		"slots": {
-			"back/011": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
-			"back/012": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
-			"back/013": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
-			"back/014": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
-			"back/015": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
-			"back/016": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
-			"back/017": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
-			"back/018": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
 			"crash/crash01": {
 				"attachment": [
 					{ "name": "crash/crash01" },
@@ -246,16 +289,6 @@
 					{ "time": 0.1, "name": "crash/crash06" },
 					{ "time": 1, "name": "crash/crash06" }
 				]
-			},
-			"stand/standBody": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
-			"stand/standFoot": {
-				"attachment": [
-					{ "name": null }
-				]
 			}
 		}
 	},
@@ -277,59 +310,9 @@
 					{ "name": "006" }
 				]
 			},
-			"back/011": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
-			"back/012": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
-			"back/013": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
-			"back/014": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
-			"back/015": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
-			"back/016": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
-			"back/017": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
-			"back/018": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
 			"sit/sit": {
 				"color": [
 					{ "color": "ffffff00" }
-				]
-			},
-			"stand/standBody": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
-			"stand/standFoot": {
-				"attachment": [
-					{ "name": null }
 				]
 			}
 		},
@@ -350,64 +333,65 @@
 					{ "color": "ffffff00" }
 				]
 			},
-			"back/011": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
-			"back/012": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
-			"back/013": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
-			"back/014": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
-			"back/015": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
-			"back/016": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
-			"back/017": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
-			"back/018": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
 			"sit/sit": {
 				"attachment": [
 					{ "name": "sit/sit" }
 				]
-			},
-			"stand/standBody": {
+			}
+		}
+	},
+	"stand": {
+		"slots": {
+			"stand/stand0001": {
 				"attachment": [
-					{ "name": null }
+					{ "name": "stand/stand0001" },
+					{ "time": 0.0667, "name": null }
 				]
 			},
-			"stand/standFoot": {
+			"stand/stand0002": {
 				"attachment": [
-					{ "name": null }
+					{ "time": 0.0667, "name": "stand/stand0002" },
+					{ "time": 0.1667, "name": null }
+				]
+			},
+			"stand/stand0003": {
+				"attachment": [
+					{ "time": 0.1667, "name": "stand/stand0003" },
+					{ "time": 0.3, "name": null }
+				]
+			},
+			"stand/stand0004": {
+				"attachment": [
+					{ "time": 0.3, "name": "stand/stand0004" },
+					{ "time": 0.4333, "name": null }
+				]
+			},
+			"stand/stand0005": {
+				"attachment": [
+					{ "time": 0.4333, "name": "stand/stand0005" },
+					{ "time": 0.5667, "name": null }
+				]
+			},
+			"stand/stand0006": {
+				"attachment": [
+					{ "time": 0.5667, "name": "stand/stand0006" },
+					{ "time": 0.7667, "name": null }
+				]
+			},
+			"stand/stand0007": {
+				"attachment": [
+					{ "time": 0.7667, "name": "stand/stand0007" },
+					{ "time": 0.9, "name": null }
+				]
+			},
+			"stand/stand0008": {
+				"attachment": [
+					{ "time": 0.9, "name": "stand/stand0008" },
+					{ "time": 1.2333, "name": "stand/stand0008" }
 				]
 			}
 		}
 	},
-	"stand": {},
 	"walk": {
 		"slots": {
 			"001": {
@@ -479,59 +463,9 @@
 					{ "time": 1.1667, "name": "008" }
 				]
 			},
-			"back/011": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
-			"back/012": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
-			"back/013": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
-			"back/014": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
-			"back/015": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
-			"back/016": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
-			"back/017": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
-			"back/018": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
 			"sit/sit": {
 				"color": [
 					{ "color": "ffffff00" }
-				]
-			},
-			"stand/standBody": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
-			"stand/standFoot": {
-				"attachment": [
-					{ "name": null }
 				]
 			}
 		}

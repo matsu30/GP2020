@@ -103,7 +103,6 @@ function init() {
                 case 37: // left
                 case 65: // a
                     starring.moveLeft = false;
-                    // starring.changePose("demo");
                     break;
 
                 // case 40: // down
@@ -114,7 +113,6 @@ function init() {
                 case 39: // right
                 case 68: // d
                     starring.moveRight = false;
-                    // starring.changePose("demo");
                     break;
 
             }

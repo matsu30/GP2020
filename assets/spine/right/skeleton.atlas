@@ -131,6 +131,68 @@ back/018
   index: -1
 
 skeleton3.png
+size: 161,569
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+backStand/back001
+  rotate: true
+  xy: 2, 2
+  size: 76, 157
+  orig: 80, 170
+  offset: 3, 3
+  index: -1
+backStand/back002
+  rotate: false
+  xy: 2, 406
+  size: 76, 161
+  orig: 80, 170
+  offset: 3, 3
+  index: -1
+backStand/back003
+  rotate: false
+  xy: 2, 243
+  size: 76, 161
+  orig: 80, 170
+  offset: 3, 3
+  index: -1
+backStand/back004
+  rotate: false
+  xy: 80, 410
+  size: 76, 157
+  orig: 80, 170
+  offset: 3, 3
+  index: -1
+backStand/back005
+  rotate: false
+  xy: 2, 80
+  size: 76, 161
+  orig: 80, 170
+  offset: 3, 3
+  index: -1
+backStand/back007
+  rotate: false
+  xy: 2, 80
+  size: 76, 161
+  orig: 80, 170
+  offset: 3, 3
+  index: -1
+backStand/back006
+  rotate: false
+  xy: 80, 85
+  size: 75, 164
+  orig: 80, 170
+  offset: 4, 4
+  index: -1
+backStand/back008
+  rotate: false
+  xy: 80, 251
+  size: 76, 157
+  orig: 80, 170
+  offset: 3, 3
+  index: -1
+
+skeleton4.png
 size: 179,269
 format: RGBA8888
 filter: Linear,Linear
@@ -178,7 +240,7 @@ crash/crash06
   offset: 18, 6
   index: -1
 
-skeleton4.png
+skeleton5.png
 size: 84,141
 format: RGBA8888
 filter: Linear,Linear
@@ -191,22 +253,64 @@ sit/sit
   offset: 22, 1
   index: -1
 
-skeleton5.png
-size: 163,79
+skeleton6.png
+size: 979,79
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
-stand/standBody
+stand/stand0001
   rotate: true
   xy: 2, 2
-  size: 75, 144
+  size: 75, 157
   orig: 80, 170
-  offset: 2, 17
+  offset: 2, 4
   index: -1
-stand/standFoot
+stand/stand0004
   rotate: true
-  xy: 148, 48
-  size: 29, 13
+  xy: 2, 2
+  size: 75, 157
   orig: 80, 170
-  offset: 31, 4
+  offset: 2, 4
+  index: -1
+stand/stand0008
+  rotate: true
+  xy: 2, 2
+  size: 75, 157
+  orig: 80, 170
+  offset: 2, 4
+  index: -1
+stand/stand0002
+  rotate: true
+  xy: 161, 2
+  size: 75, 161
+  orig: 80, 170
+  offset: 2, 4
+  index: -1
+stand/stand0003
+  rotate: true
+  xy: 324, 2
+  size: 75, 161
+  orig: 80, 170
+  offset: 2, 4
+  index: -1
+stand/stand0005
+  rotate: true
+  xy: 487, 2
+  size: 75, 161
+  orig: 80, 170
+  offset: 2, 4
+  index: -1
+stand/stand0006
+  rotate: true
+  xy: 650, 2
+  size: 75, 164
+  orig: 80, 170
+  offset: 2, 5
+  index: -1
+stand/stand0007
+  rotate: true
+  xy: 816, 2
+  size: 75, 161
+  orig: 80, 170
+  offset: 2, 4
   index: -1
