@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "WBgO5FmIw6Xcf+Q7uNgshnKXP4M", "spine": "3.8.99", "images": "", "audio": "" },
+"skeleton": { "hash": "nBJG7IAojmlrsJO3ezeQOdr/E/I", "spine": "3.8.99", "images": "", "audio": "" },
 "bones": [
 	{ "name": "root", "shearX": 1, "shearY": 1 }
 ],
@@ -12,7 +12,6 @@
 	{ "name": "006", "bone": "root" },
 	{ "name": "007", "bone": "root", "color": "ffffff00" },
 	{ "name": "008", "bone": "root", "color": "ffffff00" },
-	{ "name": "sit/sit", "bone": "root" },
 	{ "name": "crash/crash01", "bone": "root" },
 	{ "name": "crash/crash04", "bone": "root" },
 	{ "name": "crash/crash05", "bone": "root" },
@@ -40,7 +39,17 @@
 	{ "name": "backStand/back005", "bone": "root" },
 	{ "name": "backStand/back006", "bone": "root" },
 	{ "name": "backStand/back007", "bone": "root" },
-	{ "name": "backStand/back008", "bone": "root" }
+	{ "name": "backStand/back008", "bone": "root" },
+	{ "name": "sit/sit0001", "bone": "root" },
+	{ "name": "sit/sit0002", "bone": "root" },
+	{ "name": "sit/sit0003", "bone": "root" },
+	{ "name": "sit/sit0004", "bone": "root" },
+	{ "name": "sit/sit0005", "bone": "root" },
+	{ "name": "sit/sit0006", "bone": "root" },
+	{ "name": "sit/sit0007", "bone": "root" },
+	{ "name": "sit/sit0008", "bone": "root" },
+	{ "name": "sit/sit0009", "bone": "root" },
+	{ "name": "sit/sit0010", "bone": "root" }
 ],
 "skins": [
 	{
@@ -130,8 +139,35 @@
 			"crash/crash06": {
 				"crash/crash06": { "width": 300, "height": 170 }
 			},
-			"sit/sit": {
-				"sit/sit": { "width": 107, "height": 170 }
+			"sit/sit0001": {
+				"sit/sit0001": { "width": 90, "height": 170 }
+			},
+			"sit/sit0002": {
+				"sit/sit0002": { "width": 90, "height": 170 }
+			},
+			"sit/sit0003": {
+				"sit/sit0003": { "width": 90, "height": 170 }
+			},
+			"sit/sit0004": {
+				"sit/sit0004": { "width": 90, "height": 170 }
+			},
+			"sit/sit0005": {
+				"sit/sit0005": { "width": 90, "height": 170 }
+			},
+			"sit/sit0006": {
+				"sit/sit0006": { "width": 90, "height": 170 }
+			},
+			"sit/sit0007": {
+				"sit/sit0007": { "width": 90, "height": 170 }
+			},
+			"sit/sit0008": {
+				"sit/sit0008": { "width": 90, "height": 170 }
+			},
+			"sit/sit0009": {
+				"sit/sit0009": { "width": 90, "height": 170 }
+			},
+			"sit/sit0010": {
+				"sit/sit0010": { "width": 90, "height": 170 }
 			},
 			"stand/stand0001": {
 				"stand/stand0001": { "width": 80, "height": 170 }
@@ -309,11 +345,6 @@
 				"attachment": [
 					{ "name": "006" }
 				]
-			},
-			"sit/sit": {
-				"color": [
-					{ "color": "ffffff00" }
-				]
 			}
 		},
 		"bones": {
@@ -333,9 +364,63 @@
 					{ "color": "ffffff00" }
 				]
 			},
-			"sit/sit": {
+			"sit/sit0001": {
 				"attachment": [
-					{ "name": "sit/sit" }
+					{ "name": "sit/sit0001" },
+					{ "time": 2, "name": null }
+				]
+			},
+			"sit/sit0002": {
+				"attachment": [
+					{ "time": 2, "name": "sit/sit0002" },
+					{ "time": 2.1333, "name": null }
+				]
+			},
+			"sit/sit0003": {
+				"attachment": [
+					{ "time": 2.1333, "name": "sit/sit0003" },
+					{ "time": 2.2667, "name": null }
+				]
+			},
+			"sit/sit0004": {
+				"attachment": [
+					{ "time": 2.2667, "name": "sit/sit0004" },
+					{ "time": 2.4, "name": null }
+				]
+			},
+			"sit/sit0005": {
+				"attachment": [
+					{ "time": 2.4, "name": "sit/sit0005" },
+					{ "time": 2.5333, "name": null }
+				]
+			},
+			"sit/sit0006": {
+				"attachment": [
+					{ "time": 2.5333, "name": "sit/sit0006" },
+					{ "time": 2.6667, "name": null }
+				]
+			},
+			"sit/sit0007": {
+				"attachment": [
+					{ "time": 2.6667, "name": "sit/sit0007" },
+					{ "time": 2.7667, "name": null }
+				]
+			},
+			"sit/sit0008": {
+				"attachment": [
+					{ "time": 2.7667, "name": "sit/sit0008" },
+					{ "time": 2.8667, "name": null }
+				]
+			},
+			"sit/sit0009": {
+				"attachment": [
+					{ "time": 2.8667, "name": "sit/sit0009" },
+					{ "time": 2.9667, "name": null }
+				]
+			},
+			"sit/sit0010": {
+				"attachment": [
+					{ "time": 2.9667, "name": "sit/sit0010" }
 				]
 			}
 		}
@@ -461,11 +546,6 @@
 				],
 				"attachment": [
 					{ "time": 1.1667, "name": "008" }
-				]
-			},
-			"sit/sit": {
-				"color": [
-					{ "color": "ffffff00" }
 				]
 			}
 		}

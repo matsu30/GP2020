@@ -241,16 +241,86 @@ crash/crash06
   index: -1
 
 skeleton5.png
-size: 84,141
+size: 799,166
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 sit/sit
-  rotate: false
-  xy: 2, 2
+  rotate: true
+  xy: 660, 84
   size: 80, 137
   orig: 107, 170
   offset: 22, 1
+  index: -1
+sit/sit0001
+  rotate: false
+  xy: 71, 7
+  size: 75, 157
+  orig: 90, 170
+  offset: 7, 4
+  index: -1
+sit/sit0002
+  rotate: false
+  xy: 148, 7
+  size: 73, 157
+  orig: 90, 170
+  offset: 9, 3
+  index: -1
+sit/sit0003
+  rotate: false
+  xy: 295, 9
+  size: 70, 155
+  orig: 90, 170
+  offset: 12, 4
+  index: -1
+sit/sit0004
+  rotate: false
+  xy: 367, 9
+  size: 69, 155
+  orig: 90, 170
+  offset: 11, 3
+  index: -1
+sit/sit0005
+  rotate: false
+  xy: 223, 8
+  size: 70, 156
+  orig: 90, 170
+  offset: 11, 3
+  index: -1
+sit/sit0006
+  rotate: false
+  xy: 2, 6
+  size: 67, 158
+  orig: 90, 170
+  offset: 12, 2
+  index: -1
+sit/sit0007
+  rotate: false
+  xy: 438, 12
+  size: 66, 152
+  orig: 90, 170
+  offset: 13, 2
+  index: -1
+sit/sit0008
+  rotate: false
+  xy: 506, 18
+  size: 74, 146
+  orig: 90, 170
+  offset: 8, 2
+  index: -1
+sit/sit0009
+  rotate: false
+  xy: 582, 22
+  size: 76, 142
+  orig: 90, 170
+  offset: 10, 3
+  index: -1
+sit/sit0010
+  rotate: true
+  xy: 660, 2
+  size: 80, 137
+  orig: 90, 170
+  offset: 6, 5
   index: -1
 
 skeleton6.png
