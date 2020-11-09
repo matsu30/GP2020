@@ -193,51 +193,93 @@ backStand/back008
   index: -1
 
 skeleton4.png
-size: 179,269
+size: 453,273
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 crash/crash01
   rotate: false
-  xy: 25, 33
+  xy: 158, 114
   size: 75, 157
   orig: 300, 170
   offset: 109, 5
   index: -1
-crash/crash02
+crash/crash010
   rotate: true
-  xy: 25, 192
+  xy: 268, 7
+  size: 112, 106
+  orig: 300, 170
+  offset: 111, 6
+  index: -1
+crash/crash011
+  rotate: true
+  xy: 140, 2
+  size: 109, 126
+  orig: 300, 170
+  offset: 117, 6
+  index: -1
+crash/crash012
+  rotate: false
+  xy: 76, 113
+  size: 80, 158
+  orig: 300, 170
+  offset: 105, 5
+  index: -1
+crash/crash02
+  rotate: false
+  xy: 376, 142
   size: 75, 129
   orig: 300, 170
   offset: 109, 5
   index: -1
 crash/crash03
   rotate: false
-  xy: 102, 87
+  xy: 376, 37
   size: 75, 103
   orig: 300, 170
   offset: 109, 5
   index: -1
 crash/crash04
-  rotate: false
-  xy: 102, 30
+  rotate: true
+  xy: 76, 36
   size: 75, 55
   orig: 300, 170
   offset: 109, 5
   index: -1
 crash/crash05
   rotate: false
-  xy: 25, 2
+  xy: 25, 4
   size: 113, 26
   orig: 300, 170
   offset: 91, 5
   index: -1
 crash/crash06
   rotate: true
-  xy: 2, 2
+  xy: 2, 6
   size: 265, 21
   orig: 300, 170
   offset: 18, 6
+  index: -1
+crash/crash07
+  rotate: true
+  xy: 25, 32
+  size: 239, 49
+  orig: 300, 170
+  offset: 36, 6
+  index: -1
+crash/crash08
+  rotate: true
+  xy: 235, 121
+  size: 150, 61
+  orig: 300, 170
+  offset: 107, 7
+  index: -1
+crash/crash09
+  rotate: true
+  xy: 298, 149
+  size: 122, 75
+  orig: 300, 170
+  offset: 104, 5
   index: -1
 
 skeleton5.png
