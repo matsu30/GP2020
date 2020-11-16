@@ -11,7 +11,7 @@ class Illusttexture{
             y: 0,
             z: 0,
             transparent: true,
-            opacity: 0.5,
+            // opacity: 0.5,
             offsetX: 0, //画像に対してX方向
             offsetY: 0,
             centerX: 0, //面に対してX方向
@@ -41,9 +41,13 @@ class Illusttexture{
         this.mesh.position.y = this.keydata.y;
         this.mesh.position.z = this.keydata.z;
 
+        // アニメーション用の空のタイムラインを作成する
+        this.timeline = gsap.timeline({ paused: true });
+
         texture.offset.set( this.keydata.offsetX, this.keydata.offsetY );
         texture.repeat.set( this.keydata.repeatX, this.keydata.repeatY );
         texture.center.set( this.keydata.centerX, this.keydata.centerY );
     
     }    
 }
+

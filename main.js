@@ -25,6 +25,9 @@ animate();
 
 function init() {
 
+        // camera = new THREE.OrthographicCamera(-240, +240, +147.5, -147.5, 1, 150);
+        // camera.position.z = 100;
+
         camera = new THREE.OrthographicCamera(-120, +120, +67.5, -67.5, 1, 150);
         camera.position.z = 100;
 
@@ -40,8 +43,10 @@ function init() {
         scene.add( light );
 
         starring.load();
-        starring.body.position.x = 100;
-        starring.body.position.y = 1000;
+        // starring.body.position.x = 2000;
+        // starring.body.position.y = 300;
+        starring.body.position.x = 400;
+        starring.body.position.y = 190;
         // starring.body.position.x = 1500;
         // starring.body.position.y = 10;
         starring.body.position.z = 0;
@@ -66,6 +71,7 @@ function init() {
                 case 37: // left
                 case 65: // a
                     starring.moveLeft = true;
+                    starring.changePose("back");
                     break;
 
                 // case 40: // down
@@ -76,6 +82,7 @@ function init() {
                 case 39: // right
                 case 68: // d
                     starring.moveRight = true;
+                    starring.changePose("walk");
                     break;
 
                 case 32: // space
@@ -239,44 +246,67 @@ function init() {
         
         //---------event------------------------------------
         
-        const eventObstacle00 = new Obstacle({
-            width: 20,
-            height: 20,
-            depth: 20,
-            color: 0x000000,
-            collider: false,
-            x: obstacleKeydata.width * 3,
-            y: maxY - obstacleKeydata.height * -3 + offsetY,
-            z: -10,
-            onCollision: function(){
-                console.log("demo");
-                starring.changePose("demo");
-            }
-        });
-        scene.add(eventObstacle00);
-        objects.push(eventObstacle00);
+        // const Demo = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 24,
+        //     height: 40,
+        //     x: 50,
+        //     y: 660,
+        //     z: -1,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 1,
+        //     centerY: 0,
+        //     repeatX: 0.09,
+        //     repeatY: 0.15,
+        // })
+        // scene.add(Demo.mesh);
+        
+        // const eventObstacle00 = new Obstacle({
+        //     width: 20,
+        //     height: 20,
+        //     depth: 20,
+        //     color: 0x000000,
+        //     collider: false,
+        //     x: obstacleKeydata.width * 3,
+        //     y: maxY - obstacleKeydata.height * -3 + offsetY,
+        //     z: -10,
+        //     onCollision: function(){
+        //         console.log("back");
+        //         starring.changePose("back");
+        //         Demo.timeline.play();
+        //     }
+        // });
+        // scene.add(eventObstacle00);
+        // objects.push(eventObstacle00);
 
         const eventObstacle01 = new Obstacle({
-            x: 340,
+            width: 100,
+            height: 100,
+            x: 390,
             y: 650,
             z: -10,
             collider: false,
             onCollision: function(){
                 console.log("fall");
                 starring.changePose("fall");
+                starring.skeletonMesh.state.tracks[0].loop = false;
             }
         });
         scene.add(eventObstacle01);
         objects.push(eventObstacle01);
 
         const eventObstacle02 = new Obstacle({
-            x: 340,
+            width: 100,
+            x: 380,
             y: 190,
             z: -10,
             collider: false,
             onCollision: function(){
+                console.log(eventObstacle02.rotation);
                 console.log("crash");
                 starring.changePose("crash");
+                starring.skeletonMesh.state.tracks[0].loop = false;
             }
         });
         scene.add(eventObstacle02);
@@ -288,20 +318,21 @@ function init() {
             z: -10,
             collider: false,
             onCollision: function(){
-                console.log(Hit01A);
+                Hit03A.timeline.play();
             }
         });
         scene.add(eventObstacle03);
         objects.push(eventObstacle03);
 
         const eventObstacle04 = new Obstacle({
-            x: 2000,
+            x: 2010,
             y: 190,
             z: -10,
             collider: false,
             onCollision: function(){
                 console.log("sit");
                 starring.changePose("sit");
+                starring.skeletonMesh.state.tracks[0].loop = false;
             }
         });
         scene.add(eventObstacle04);
@@ -314,6 +345,7 @@ function init() {
             collider: false,
             onCollision: function(){
                 console.log(Hit08A);
+                Hit08A.timeline.play();
             }
         });
         scene.add(eventObstacle05);
@@ -332,30 +364,49 @@ function init() {
         objects.push(eventObstacle06);
 
         const eventObstacle07 = new Obstacle({
-            x: 2440,
+            width: 100,
+            width: 100,
+            x: 2480,
             y: 650,
             z: -10,
             collider: false,
             onCollision: function(){
                 console.log("fall");
                 starring.changePose("fall");
+                starring.skeletonMesh.state.tracks[0].loop = false;
             }
         });
         scene.add(eventObstacle07);
         objects.push(eventObstacle07);
 
         const eventObstacle08 = new Obstacle({
-            x: 2440,
+            width: 100,
+            x: 2480,
             y: 190,
             z: -10,
             collider: false,
             onCollision: function(){
                 console.log("crash");
                 starring.changePose("crash");
+                starring.skeletonMesh.state.tracks[0].loop = false;
             }
         });
         scene.add(eventObstacle08);
         objects.push(eventObstacle08);
+
+        const eventObstacle09 = new Obstacle({
+            width: 50,
+            x: 2580,
+            y: 190,
+            z: -10,
+            collider: false,
+            onCollision: function(){
+                console.log("smile");
+                starring.changePose("smile");
+            }
+        });
+        scene.add(eventObstacle09);
+        objects.push(eventObstacle09);
 
 
 
@@ -1045,69 +1096,88 @@ function init() {
         })
         scene.add(Hit02A.mesh);
 
-        const Hit03aA = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 24,
-            height: 40,
+        const Hit03A = new Illusttexture({
+            texture:'img/HITO.png',
+            width: 90,
+            height: 30,
             x: 540,
-            y: 198,
+            y: 194,
             z: -1,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 1,
-            centerY: 0,
-            repeatX: 0.09,
-            repeatY: 0.15,
         })
-        scene.add(Hit03aA.mesh);
+        scene.add(Hit03A.mesh);
+        Hit03A.timeline
+        .to(Hit03A.mesh.position, {
+            duration: 5,
+            x: "+=800",
+        })
+        .to(Hit03A.mesh.material, {
+            duration: 1,
+            opacity: 0,
+        });
 
-        const Hit03bA = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 24,
-            height: 40,
-            x: 560,
-            y: 198,
-            z: -1,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.9,
-            centerY: 0,
-            repeatX: 0.09,
-            repeatY: 0.15,
-        })
-        scene.add(Hit03bA.mesh);
+        // const Hit03aA = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 24,
+        //     height: 40,
+        //     x: 540,
+        //     y: 198,
+        //     z: -1,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 1,
+        //     centerY: 0,
+        //     repeatX: 0.09,
+        //     repeatY: 0.15,
+        // })
+        // scene.add(Hit03aA.mesh);
 
-        const Hit03cA = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 24,
-            height: 40,
-            x: 580,
-            y: 198,
-            z: -1,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.817,
-            centerY: 0,
-            repeatX: 0.09,
-            repeatY: 0.15,
-        })
-        scene.add(Hit03cA.mesh);
+        // const Hit03bA = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 24,
+        //     height: 40,
+        //     x: 560,
+        //     y: 198,
+        //     z: -1,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0.9,
+        //     centerY: 0,
+        //     repeatX: 0.09,
+        //     repeatY: 0.15,
+        // })
+        // scene.add(Hit03bA.mesh);
 
-        const Hit03dA = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 24,
-            height: 40,
-            x: 600,
-            y: 198,
-            z: -1,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.735,
-            centerY: 0,
-            repeatX: 0.09,
-            repeatY: 0.15,
-        })
-        scene.add(Hit03dA.mesh);
+        // const Hit03cA = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 24,
+        //     height: 40,
+        //     x: 580,
+        //     y: 198,
+        //     z: -1,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0.817,
+        //     centerY: 0,
+        //     repeatX: 0.09,
+        //     repeatY: 0.15,
+        // })
+        // scene.add(Hit03cA.mesh);
+
+        // const Hit03dA = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 24,
+        //     height: 40,
+        //     x: 600,
+        //     y: 198,
+        //     z: -1,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0.735,
+        //     centerY: 0,
+        //     repeatX: 0.09,
+        //     repeatY: 0.15,
+        // })
+        // scene.add(Hit03dA.mesh);
 
         const Hit04A = new Illusttexture({
             texture:'img/charactor.png',
@@ -1177,8 +1247,8 @@ function init() {
             texture:'img/charactor.png',
             width: 45,
             height: 24,
-            x: 1800,
-            y: 183,
+            x: 1750,
+            y: 183+300,
             z: 90,
             offsetX: 0,
             offsetY: 0,
@@ -1188,17 +1258,22 @@ function init() {
             repeatY: 0.1,
         })
         scene.add(Hit08A.mesh);
+        Hit08A.timeline
+        .to(Hit08A.mesh.position, {
+            duration: 0.3,
+            y: "-=300",
+        })
 
         const A3 = new Illusttexture({
             texture:'img/start02.png',
             width: 160,
             height: 250,
-            x: 2058,
+            x: 2075,
             y: 306.5,
             z: 5,
             offsetX: 0,
             offsetY: 0,
-            centerX: 0.9,
+            centerX: 1,
             centerY: 0.4,
             repeatX: 0.5,
             repeatY: 0.6,

@@ -80,7 +80,7 @@ class Starring {
 
     const skeletonJson = new spine.SkeletonJson(atlasLoader);
 
-    skeletonJson.scale = 0.2;
+    skeletonJson.scale = 0.18;
     const skeletonData = skeletonJson.readSkeletonData(
       this.assetManager.get(this.SKELETON_FILE)
     );
@@ -92,7 +92,7 @@ class Starring {
       }
     );
 
-    this.skeletonMesh.state.setAnimation(0, "walk", true);
+    this.skeletonMesh.state.setAnimation(0, "stand", true);
     this.body.add(this.skeletonMesh);
 
     console.log("[Starring] Spine Aseets Load Complete.");
@@ -104,7 +104,6 @@ class Starring {
 
   //changePose
   //引数 animetionName に渡された名前のアニメーションに変更する
-
   changePose(animationName){
     this.skeletonMesh.state.setAnimation(0, animationName, true);
   };
@@ -130,6 +129,16 @@ class Starring {
     for (let i = 0, len = intersectObjects.length; i < len; i++) {
       if (intersectObjects[i].object.collider) {
       y = Math.max(y, intersectObjects[i].point.y);
+      } else {
+        // イベントのトリガーになっている通過できる、
+        // Obstacle のインスタンスとの処理
+        if (intersectObjects[i].distance < offsetY * 2) {
+          // 主人公の身体の一部がイベントのトリガーと触れたときの処理
+          intersectObjects[i].object.collision();
+        } else{
+          // 障害物との距離があると気に衝突判定のフラグを戻す
+          intersectObjects[i].object.isCollision = false;
+        }
       }
     }
 
@@ -204,58 +213,15 @@ class Starring {
       right: false,
     };
 
-    const backwardVector = new THREE.Vector3(0, 0, 1);
-    const forwardVector = new THREE.Vector3(0, 0, -1);
     const leftVector = new THREE.Vector3(-1, 0, 0);
     const rightVector = new THREE.Vector3(1, 0, 0);
 
     const collisionDistanceX = this.body.geometry.boundingBox.max.x;
-    const collisionDistanceZ = this.body.geometry.boundingBox.max.z;
 
-    // 前方向との衝突判定
-    const raycaster = new THREE.Raycaster(this.body.position, forwardVector);
+    const raycaster = new THREE.Raycaster(this.body.position, leftVector);
     let intersectObjects = raycaster.intersectObjects(objects);
 
-    for (let i = 0, len = intersectObjects.length; i < len; i++) {
-      if (
-        intersectObjects[i].distance < collisionDistanceZ &&
-        this.moveForward
-      ) {
-        intersectObjects[i].object.collision();
-
-        if (intersectObjects[i].object.collider){
-          result.forward = true;
-        }
-       
-      } else {
-        intersectObjects[i].object.isCollision = false;
-      }
-    }
-
-    // 後方向との衝突判定
-    raycaster.set(this.body.position, backwardVector);
-    intersectObjects = raycaster.intersectObjects(objects);
-
-    for (let i = 0, len = intersectObjects.length; i < len; i++) {
-      if (
-        intersectObjects[i].distance < collisionDistanceZ &&
-        this.moveBackward
-      ) {
-        intersectObjects[i].object.collision();
-
-        if (intersectObjects[i].object.collider){
-          result.backward = true;
-        }
-       
-      } else {
-        intersectObjects[i].object.isCollision = false;
-      }
-    }
-
     // 左方向との衝突判定
-    raycaster.set(this.body.position, leftVector);
-    intersectObjects = raycaster.intersectObjects(objects);
-
     for (let i = 0, len = intersectObjects.length; i < len; i++) {
       if (
         intersectObjects[i].distance < collisionDistanceX &&
