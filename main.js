@@ -25,6 +25,9 @@ animate();
 
 function init() {
 
+        // camera = new THREE.OrthographicCamera(-240, +240, +147.5, -147.5, 1, 150);
+        // camera.position.z = 100;
+
         camera = new THREE.OrthographicCamera(-120, +120, +67.5, -67.5, 1, 150);
         camera.position.z = 100;
 
@@ -40,10 +43,10 @@ function init() {
         scene.add( light );
 
         starring.load();
-        starring.body.position.x = 100;
-        starring.body.position.y = 700;
-        // starring.body.position.x = 400;
-        // starring.body.position.y = 190;
+        // starring.body.position.x = 2000;
+        // starring.body.position.y = 300;
+        starring.body.position.x = 400;
+        starring.body.position.y = 190;
         // starring.body.position.x = 1500;
         // starring.body.position.y = 10;
         starring.body.position.z = 0;
@@ -243,39 +246,39 @@ function init() {
         
         //---------event------------------------------------
         
-        const Demo = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 24,
-            height: 40,
-            x: 50,
-            y: 660,
-            z: -1,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 1,
-            centerY: 0,
-            repeatX: 0.09,
-            repeatY: 0.15,
-        })
-        scene.add(Demo.mesh);
+        // const Demo = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 24,
+        //     height: 40,
+        //     x: 50,
+        //     y: 660,
+        //     z: -1,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 1,
+        //     centerY: 0,
+        //     repeatX: 0.09,
+        //     repeatY: 0.15,
+        // })
+        // scene.add(Demo.mesh);
         
-        const eventObstacle00 = new Obstacle({
-            width: 20,
-            height: 20,
-            depth: 20,
-            color: 0x000000,
-            collider: false,
-            x: obstacleKeydata.width * 3,
-            y: maxY - obstacleKeydata.height * -3 + offsetY,
-            z: -10,
-            onCollision: function(){
-                console.log("back");
-                starring.changePose("back");
-                Demo.timeline.play();
-            }
-        });
-        scene.add(eventObstacle00);
-        objects.push(eventObstacle00);
+        // const eventObstacle00 = new Obstacle({
+        //     width: 20,
+        //     height: 20,
+        //     depth: 20,
+        //     color: 0x000000,
+        //     collider: false,
+        //     x: obstacleKeydata.width * 3,
+        //     y: maxY - obstacleKeydata.height * -3 + offsetY,
+        //     z: -10,
+        //     onCollision: function(){
+        //         console.log("back");
+        //         starring.changePose("back");
+        //         Demo.timeline.play();
+        //     }
+        // });
+        // scene.add(eventObstacle00);
+        // objects.push(eventObstacle00);
 
         const eventObstacle01 = new Obstacle({
             width: 100,
@@ -361,30 +364,49 @@ function init() {
         objects.push(eventObstacle06);
 
         const eventObstacle07 = new Obstacle({
-            x: 2440,
+            width: 100,
+            width: 100,
+            x: 2480,
             y: 650,
             z: -10,
             collider: false,
             onCollision: function(){
                 console.log("fall");
                 starring.changePose("fall");
+                starring.skeletonMesh.state.tracks[0].loop = false;
             }
         });
         scene.add(eventObstacle07);
         objects.push(eventObstacle07);
 
         const eventObstacle08 = new Obstacle({
-            x: 2440,
+            width: 100,
+            x: 2480,
             y: 190,
             z: -10,
             collider: false,
             onCollision: function(){
                 console.log("crash");
                 starring.changePose("crash");
+                starring.skeletonMesh.state.tracks[0].loop = false;
             }
         });
         scene.add(eventObstacle08);
         objects.push(eventObstacle08);
+
+        const eventObstacle09 = new Obstacle({
+            width: 50,
+            x: 2580,
+            y: 190,
+            z: -10,
+            collider: false,
+            onCollision: function(){
+                console.log("smile");
+                starring.changePose("smile");
+            }
+        });
+        scene.add(eventObstacle09);
+        objects.push(eventObstacle09);
 
 
 
@@ -1246,12 +1268,12 @@ function init() {
             texture:'img/start02.png',
             width: 160,
             height: 250,
-            x: 2058,
+            x: 2075,
             y: 306.5,
             z: 5,
             offsetX: 0,
             offsetY: 0,
-            centerX: 0.9,
+            centerX: 1,
             centerY: 0.4,
             repeatX: 0.5,
             repeatY: 0.6,

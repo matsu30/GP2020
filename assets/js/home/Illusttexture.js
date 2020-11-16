@@ -11,7 +11,7 @@ class Illusttexture{
             y: 0,
             z: 0,
             transparent: true,
-            opacity: 0.5,
+            // opacity: 0.5,
             offsetX: 0, //画像に対してX方向
             offsetY: 0,
             centerX: 0, //面に対してX方向

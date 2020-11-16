@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "lq2Pl36NCwHypNdTJgcI1BX7ZQ8", "spine": "3.8.99", "images": "", "audio": "" },
+"skeleton": { "hash": "DFJ0zN/hzHn/KksDmgG2mmPRxYA", "spine": "3.8.99", "images": "", "audio": "" },
 "bones": [
 	{ "name": "root", "shearX": 1, "shearY": 1 }
 ],
@@ -55,7 +55,16 @@
 	{ "name": "crash/crash09", "bone": "root" },
 	{ "name": "crash/crash010", "bone": "root" },
 	{ "name": "crash/crash011", "bone": "root" },
-	{ "name": "crash/crash012", "bone": "root" }
+	{ "name": "crash/crash012", "bone": "root" },
+	{ "name": "four/four0001", "bone": "root" },
+	{ "name": "four/four0002", "bone": "root" },
+	{ "name": "four/four0003", "bone": "root" },
+	{ "name": "four/four0004", "bone": "root" },
+	{ "name": "four/four0005", "bone": "root" },
+	{ "name": "four/four0006", "bone": "root" },
+	{ "name": "four/four0007", "bone": "root" },
+	{ "name": "smaile/smaile0001", "bone": "root" },
+	{ "name": "smaile/smaile0002", "bone": "root" }
 ],
 "skins": [
 	{
@@ -163,6 +172,27 @@
 			"crash/crash012": {
 				"crash/crash012": { "width": 300, "height": 170 }
 			},
+			"four/four0001": {
+				"four/four0001": { "width": 450, "height": 190 }
+			},
+			"four/four0002": {
+				"four/four0002": { "width": 450, "height": 190 }
+			},
+			"four/four0003": {
+				"four/four0003": { "width": 450, "height": 190 }
+			},
+			"four/four0004": {
+				"four/four0004": { "width": 450, "height": 190 }
+			},
+			"four/four0005": {
+				"four/four0005": { "width": 450, "height": 190 }
+			},
+			"four/four0006": {
+				"four/four0006": { "width": 450, "height": 190 }
+			},
+			"four/four0007": {
+				"four/four0007": { "width": 450, "height": 190 }
+			},
 			"sit/sit0001": {
 				"sit/sit0001": { "width": 90, "height": 170 }
 			},
@@ -192,6 +222,12 @@
 			},
 			"sit/sit0010": {
 				"sit/sit0010": { "width": 90, "height": 170 }
+			},
+			"smaile/smaile0001": {
+				"smaile/smaile0001": { "width": 80, "height": 170 }
+			},
+			"smaile/smaile0002": {
+				"smaile/smaile0002": { "width": 80, "height": 170 }
 			},
 			"stand/stand0001": {
 				"stand/stand0001": { "width": 80, "height": 170 }
@@ -436,6 +472,51 @@
 			}
 		}
 	},
+	"four": {
+		"slots": {
+			"four/four0001": {
+				"attachment": [
+					{ "name": "four/four0001" },
+					{ "time": 0.1333, "name": null }
+				]
+			},
+			"four/four0002": {
+				"attachment": [
+					{ "time": 0.1333, "name": "four/four0002" },
+					{ "time": 0.2667, "name": null }
+				]
+			},
+			"four/four0003": {
+				"attachment": [
+					{ "time": 0.2667, "name": "four/four0003" },
+					{ "time": 0.4, "name": null }
+				]
+			},
+			"four/four0004": {
+				"attachment": [
+					{ "time": 0.4, "name": "four/four0004" },
+					{ "time": 0.5333, "name": null }
+				]
+			},
+			"four/four0005": {
+				"attachment": [
+					{ "time": 0.5333, "name": "four/four0005" },
+					{ "time": 0.6667, "name": null }
+				]
+			},
+			"four/four0006": {
+				"attachment": [
+					{ "time": 0.6667, "name": "four/four0006" },
+					{ "time": 0.8, "name": null }
+				]
+			},
+			"four/four0007": {
+				"attachment": [
+					{ "time": 0.8, "name": "four/four0007" }
+				]
+			}
+		}
+	},
 	"sit": {
 		"slots": {
 			"006": {
@@ -500,6 +581,22 @@
 			"sit/sit0010": {
 				"attachment": [
 					{ "time": 2.9667, "name": "sit/sit0010" }
+				]
+			}
+		}
+	},
+	"smile": {
+		"slots": {
+			"smaile/smaile0001": {
+				"attachment": [
+					{ "name": "smaile/smaile0001" },
+					{ "time": 0.1333, "name": null }
+				]
+			},
+			"smaile/smaile0002": {
+				"attachment": [
+					{ "time": 0.1333, "name": "smaile/smaile0002" },
+					{ "time": 0.2667, "name": "smaile/smaile0002" }
 				]
 			}
 		}

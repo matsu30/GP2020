@@ -283,6 +283,61 @@ crash/crash09
   index: -1
 
 skeleton5.png
+size: 604,850
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+four/four0001
+  rotate: false
+  xy: 2, 513
+  size: 418, 166
+  orig: 450, 190
+  offset: 18, 7
+  index: -1
+four/four0002
+  rotate: false
+  xy: 2, 171
+  size: 411, 168
+  orig: 450, 190
+  offset: 18, 7
+  index: -1
+four/four0003
+  rotate: false
+  xy: 2, 2
+  size: 402, 167
+  orig: 450, 190
+  offset: 20, 8
+  index: -1
+four/four0004
+  rotate: true
+  xy: 419, 31
+  size: 405, 183
+  orig: 450, 190
+  offset: 23, 6
+  index: -1
+four/four0005
+  rotate: true
+  xy: 423, 438
+  size: 410, 176
+  orig: 450, 190
+  offset: 22, 8
+  index: -1
+four/four0006
+  rotate: false
+  xy: 2, 341
+  size: 415, 170
+  orig: 450, 190
+  offset: 20, 9
+  index: -1
+four/four0007
+  rotate: false
+  xy: 2, 681
+  size: 419, 167
+  orig: 450, 190
+  offset: 17, 8
+  index: -1
+
+skeleton6.png
 size: 799,166
 format: RGBA8888
 filter: Linear,Linear
@@ -365,7 +420,27 @@ sit/sit0010
   offset: 6, 5
   index: -1
 
-skeleton6.png
+skeleton7.png
+size: 324,81
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+smaile/smaile0001
+  rotate: true
+  xy: 2, 3
+  size: 76, 157
+  orig: 80, 170
+  offset: 2, 4
+  index: -1
+smaile/smaile0002
+  rotate: true
+  xy: 161, 2
+  size: 77, 161
+  orig: 80, 170
+  offset: 0, 4
+  index: -1
+
+skeleton8.png
 size: 979,79
 format: RGBA8888
 filter: Linear,Linear
