@@ -80,7 +80,7 @@ class Starring {
 
     const skeletonJson = new spine.SkeletonJson(atlasLoader);
 
-    skeletonJson.scale = 0.2;
+    skeletonJson.scale = 0.18;
     const skeletonData = skeletonJson.readSkeletonData(
       this.assetManager.get(this.SKELETON_FILE)
     );
