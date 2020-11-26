@@ -44,7 +44,7 @@ class Starring {
     this._playerVelocity = new THREE.Vector3();
 
     // 主人公の移動速度
-    this.PLAYERSPEED = 2500.0;
+    this.PLAYERSPEED = 700.0;
 
     this.clock = new THREE.Clock();
 
@@ -105,7 +105,7 @@ class Starring {
   //changePose
   //引数 animetionName に渡された名前のアニメーションに変更する
   changePose(animationName){
-    this.skeletonMesh.state.setAnimation(0, animationName, true);
+    const trackEntry = this.skeletonMesh.state.setAnimation(0, animationName, true);
   };
 
   animate(objects) {

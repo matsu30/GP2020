@@ -25,14 +25,17 @@ animate();
 
 function init() {
 
-        // camera = new THREE.OrthographicCamera(-240, +240, +147.5, -147.5, 1, 150);
+        // camera = new THREE.OrthographicCamera(-70, +200, +300, -180, 1, 150);
         // camera.position.z = 100;
 
-        camera = new THREE.OrthographicCamera(-120, +120, +67.5, -67.5, 1, 150);
-        camera.position.z = 100;
+        // camera = new THREE.OrthographicCamera(-120, +120, +67.5, -67.5, 1, 150);
+        // camera.position.z = 100;
 
         // camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 0.1, 1000 );
-        // camera.position.z = 500;
+        // camera.position.z = 100;
+
+        camera = new THREE.OrthographicCamera( window.innerWidth / - 8, window.innerWidth / 8, window.innerHeight / 7, window.innerHeight / - 9, 0.1, 1000 );
+        camera.position.z = 100;
 
         scene = new THREE.Scene();
         scene.background = new THREE.Color( 0xffffff );
@@ -106,6 +109,7 @@ function init() {
                 case 37: // left
                 case 65: // a
                     starring.moveLeft = false;
+                    starring.changePose("backStand");
                     break;
 
                 // case 40: // down
@@ -116,6 +120,7 @@ function init() {
                 case 39: // right
                 case 68: // d
                     starring.moveRight = false;
+                    starring.changePose("stand");
                     break;
 
             }
@@ -325,7 +330,8 @@ function init() {
         objects.push(eventObstacle03);
 
         const eventObstacle04 = new Obstacle({
-            x: 2010,
+            width: 20,
+            x: 2020,
             y: 190,
             z: -10,
             collider: false,
@@ -364,7 +370,6 @@ function init() {
         objects.push(eventObstacle06);
 
         const eventObstacle07 = new Obstacle({
-            width: 100,
             width: 100,
             x: 2480,
             y: 650,
@@ -408,6 +413,30 @@ function init() {
         scene.add(eventObstacle09);
         objects.push(eventObstacle09);
 
+        const eventObstacleA_txt01 = new Obstacle({
+            x: 1000,
+            y: 190,
+            z: -10,
+            collider: false,
+            onCollision: function(){
+                console.log("eventObstacleA_txt01");
+                console.log(scene);
+            }
+        });
+        scene.add(eventObstacleA_txt01);
+        objects.push(eventObstacleA_txt01);
+
+        const eventObstacleA_txt02 = new Obstacle({
+            x: 1300,
+            y: 190,
+            z: -10,
+            collider: false,
+            onCollision: function(){
+                console.log("eventObstacleA_txt02");
+            }
+        });
+        scene.add(eventObstacleA_txt02);
+        objects.push(eventObstacleA_txt02);
 
 
 
@@ -1098,7 +1127,7 @@ function init() {
 
         const Hit03A = new Illusttexture({
             texture:'img/HITO.png',
-            width: 90,
+            width: 70,
             height: 30,
             x: 540,
             y: 194,
@@ -1233,7 +1262,7 @@ function init() {
             height: 20,
             x: 1100,
             y: 184,
-            z: 98,
+            z: 90,
             offsetX: 0,
             offsetY: 0,
             centerX: 0.7,
@@ -2439,10 +2468,10 @@ function init() {
 
 function onWindowResize() {
 
-    camera.left = window.innerWidth / -2;
-    camera.right = window.innerWidth / 2;
-    camera.top = window.innerHeight / 2;
-    camera.bottom = window.innerHeight / -2;
+    camera.left = window.innerWidth / -8;
+    camera.right = window.innerWidth / 8;
+    camera.top = window.innerHeight / 7;
+    camera.bottom = window.innerHeight / -9;
 
     //camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
