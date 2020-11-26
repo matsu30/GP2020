@@ -307,10 +307,11 @@ function init() {
             y: 190,
             z: -10,
             collider: false,
+            once: true,
             onCollision: function(){
                 console.log(eventObstacle02.rotation);
                 console.log("crash");
-                starring.changePose("crash");
+                starring.changePose("crash", { isForcePlay: true });
                 starring.skeletonMesh.state.tracks[0].loop = false;
             }
         });
