@@ -46,10 +46,10 @@ function init() {
         scene.add( light );
 
         starring.load();
-        // starring.body.position.x = 2000;
-        // starring.body.position.y = 300;
-        starring.body.position.x = 400;
-        starring.body.position.y = 190;
+        starring.body.position.x = 10;
+        starring.body.position.y = 1500;
+        // starring.body.position.x = 400;
+        // starring.body.position.y = 190;
         // starring.body.position.x = 1500;
         // starring.body.position.y = 10;
         starring.body.position.z = 0;

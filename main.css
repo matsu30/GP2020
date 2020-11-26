@@ -31,9 +31,37 @@
     font-size: 14px;
     line-height: 24px;
 
-    cursor: pointer;
+    cursor: grab;
 }
 
 #start{
     font-size: 36px;
+}
+
+body{
+    position: relative;
+}
+
+.start{
+    text-align: center;
+}
+
+.setsumei{
+    position: absolute;
+    width: auto;
+    height: 12%;
+    z-index: 10;
+}
+
+.ending{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    margin-left: 7%;
+    z-index: 20;
+}
+
+.ending-return{
+    margin-top: 20px;
 }
