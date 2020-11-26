@@ -43,6 +43,9 @@ class Starring {
     // 主人公の速度ベクトル
     this._playerVelocity = new THREE.Vector3();
 
+    //アニメーションを最後まで再生中かの真偽値
+    this._isForcePlaying = false;
+
     // 主人公の移動速度
     this.PLAYERSPEED = 700.0;
 
@@ -102,11 +105,39 @@ class Starring {
   };
 
 
-  //changePose
-  //引数 animetionName に渡された名前のアニメーションに変更する
-  changePose(animationName){
-    const trackEntry = this.skeletonMesh.state.setAnimation(0, animationName, true);
+  // changePose
+  // 引数 animetionName に渡された名前のアニメーションに変更する
+  changePose(
+    animationName,
+    options = {
+       isForcePlay: false
+    }
+  ){
+    //　設定されたアニメーションを終了まで再生中であれば何もせず終了
+    if (this._isForcePlaying) return;
+
+    // アニメーションを切り替える
+    this.skeletonMesh.state.setAnimation(0, animationName, true);
+
+    if (options.isForcePlay){
+      // アニメーションを最後まで再生するフラグを立てる
+      this._isForcePlaying = true;
+      this._canJump = false;
+
+      // アニメーションが完了したときの処理をすべて廃棄する
+      this.skeletonMesh.state.clearListeners();
+
+      this.skeletonMesh.state.addListener({
+        // アニメーションが完了したときの処理
+        complete: () => {
+          // アニメーションを最後まで再生するフラグを戻す
+          this._isForcePlaying = false;
+        }
+      });
+    };
   };
+
+
 
   animate(objects) {
     // 1コマ前から経過した時間を取得する
@@ -169,11 +200,11 @@ class Starring {
         this._playerVelocity.z += this.PLAYERSPEED * delta;
       }
 
-      if (this.moveLeft) {
+      if (this.moveLeft && !this._isForcePlaying) {
         this._playerVelocity.x -= this.PLAYERSPEED * delta;
       }
 
-      if (this.moveRight) {
+      if (this.moveRight && !this._isForcePlaying) {
         this._playerVelocity.x += this.PLAYERSPEED * delta;
       }
 
@@ -186,7 +217,10 @@ class Starring {
     if (this.body.position.y < y) {
       this.body.position.y = y;
       this._playerVelocity.y = 0;
-      this._canJump = true;
+
+      if (!this._isForcePlaying){
+        this._canJump = true;
+      }
     }
 
     if (this.skeletonMesh){
