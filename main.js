@@ -46,10 +46,11 @@ function init() {
         scene.add( light );
 
         starring.load();
-        starring.body.position.x = 10;
-        starring.body.position.y = 1500;
+        //x30 y1800
+        starring.body.position.x = 30;
+        starring.body.position.y = 1800;
         // starring.body.position.x = 1500;
-        // starring.body.position.y = 190;
+        // starring.body.position.y = 1000;
         // starring.body.position.x = 1500;
         // starring.body.position.y = 10;
         starring.body.position.z = 0;
@@ -250,40 +251,25 @@ function init() {
 
         
         //---------event------------------------------------
-        
-        // const Demo = new Illusttexture({
-        //     texture:'img/charactor.png',
-        //     width: 24,
-        //     height: 40,
-        //     x: 50,
-        //     y: 660,
-        //     z: -1,
-        //     offsetX: 0,
-        //     offsetY: 0,
-        //     centerX: 1,
-        //     centerY: 0,
-        //     repeatX: 0.09,
-        //     repeatY: 0.15,
-        // })
-        // scene.add(Demo.mesh);
-        
-        // const eventObstacle00 = new Obstacle({
-        //     width: 20,
-        //     height: 20,
-        //     depth: 20,
-        //     color: 0x000000,
-        //     collider: false,
-        //     x: obstacleKeydata.width * 3,
-        //     y: maxY - obstacleKeydata.height * -3 + offsetY,
-        //     z: -10,
-        //     onCollision: function(){
-        //         console.log("back");
-        //         starring.changePose("back");
-        //         Demo.timeline.play();
-        //     }
-        // });
-        // scene.add(eventObstacle00);
-        // objects.push(eventObstacle00);
+
+        const start = document.getElementById('start');
+        const title = document.getElementById('title');
+        const op = new Obstacle({
+            width: 140,
+            height: 20,
+            depth: 20,
+            color: 0x000000,
+            collider: false,
+            x: obstacleKeydata.width * 3,
+            y: maxY - obstacleKeydata.height * -1 + offsetY,
+            z: -10,
+            onCollision: function(){
+                start.classList.add('is-show');
+                title.classList.add('is-fade');
+            }
+        });
+        scene.add(op);
+        objects.push(op);
 
         const eventObstacle01 = new Obstacle({
             width: 100,
@@ -297,6 +283,7 @@ function init() {
                 console.log("fall");
                 starring.changePose("fall", { isForcePlay: true });
                 starring.skeletonMesh.state.tracks[0].loop = false;
+                start.classList.remove('is-show');
             }
         });
         scene.add(eventObstacle01);
@@ -331,7 +318,7 @@ function init() {
         scene.add(eventObstacle03);
         objects.push(eventObstacle03);
 
-        const element = document.getElementById('ending');
+        const ed5 = document.getElementById('ed5');
         const eventObstacle04 = new Obstacle({
             width: 20,
             x: 2030,
@@ -344,7 +331,7 @@ function init() {
                 starring.changePose("sit");
                 starring.changePose("sit", { isForcePlay: true });
                 starring.skeletonMesh.state.tracks[0].loop = false;
-                element.classList.add('is-show');
+                ed5.classList.add('is-show');
             }
         });
         scene.add(eventObstacle04);
@@ -406,6 +393,7 @@ function init() {
         scene.add(eventObstacle08);
         objects.push(eventObstacle08);
 
+        const ed6 = document.getElementById('ed6');
         const eventObstacle09 = new Obstacle({
             width: 50,
             x: 2580,
@@ -415,6 +403,7 @@ function init() {
             onCollision: function(){
                 console.log("smile");
                 starring.changePose("smile", { isForcePlay: true });
+                ed6.classList.add('is-show');
             }
         });
         scene.add(eventObstacle09);

@@ -34,17 +34,29 @@
     cursor: grab;
 }
 
-#start{
-    font-size: 36px;
-}
-
 body{
     position: relative;
 }
 
-.start{
+.js-start{
     text-align: center;
     margin-right: 10em;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 5s ease-in-out 1.5s;
+}
+
+#title{
+    text-align: center;
+    margin-right: 25em;
+    z-index: 40;
+    visibility: visible;
+    transition: all 2.5s ease-in-out 1s;
+}
+
+.title{
+    margin-top: 10%;
+    position: absolute;
 }
 
 .setsumei{
@@ -52,6 +64,11 @@ body{
     width: auto;
     height: 4em;
     z-index: 30;
+}
+
+.is-fade{
+    opacity: 0;
+    visibility: hidden;
 }
 
 .js-ending{
