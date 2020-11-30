@@ -48,7 +48,7 @@ function init() {
         starring.load();
         starring.body.position.x = 10;
         starring.body.position.y = 1500;
-        // starring.body.position.x = 400;
+        // starring.body.position.x = 1500;
         // starring.body.position.y = 190;
         // starring.body.position.x = 1500;
         // starring.body.position.y = 10;
@@ -331,6 +331,7 @@ function init() {
         scene.add(eventObstacle03);
         objects.push(eventObstacle03);
 
+        const element = document.getElementById('ending');
         const eventObstacle04 = new Obstacle({
             width: 20,
             x: 2030,
@@ -343,6 +344,7 @@ function init() {
                 starring.changePose("sit");
                 starring.changePose("sit", { isForcePlay: true });
                 starring.skeletonMesh.state.tracks[0].loop = false;
+                element.classList.add('is-show');
             }
         });
         scene.add(eventObstacle04);
