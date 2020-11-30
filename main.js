@@ -292,9 +292,10 @@ function init() {
             y: 650,
             z: -10,
             collider: false,
+            once: true,
             onCollision: function(){
                 console.log("fall");
-                starring.changePose("fall");
+                starring.changePose("fall", { isForcePlay: true });
                 starring.skeletonMesh.state.tracks[0].loop = false;
             }
         });
@@ -332,13 +333,15 @@ function init() {
 
         const eventObstacle04 = new Obstacle({
             width: 20,
-            x: 2020,
+            x: 2030,
             y: 190,
             z: -10,
             collider: false,
+            once: true,
             onCollision: function(){
                 console.log("sit");
                 starring.changePose("sit");
+                starring.changePose("sit", { isForcePlay: true });
                 starring.skeletonMesh.state.tracks[0].loop = false;
             }
         });
@@ -376,9 +379,10 @@ function init() {
             y: 650,
             z: -10,
             collider: false,
+            once: true,
             onCollision: function(){
                 console.log("fall");
-                starring.changePose("fall");
+                starring.changePose("fall", { isForcePlay: true });
                 starring.skeletonMesh.state.tracks[0].loop = false;
             }
         });
@@ -392,7 +396,7 @@ function init() {
             z: -10,
             collider: false,
             onCollision: function(){
-                console.log("crash");
+                console.log("crash", { isForcePlay: true });
                 starring.changePose("crash");
                 starring.skeletonMesh.state.tracks[0].loop = false;
             }
@@ -408,7 +412,7 @@ function init() {
             collider: false,
             onCollision: function(){
                 console.log("smile");
-                starring.changePose("smile");
+                starring.changePose("smile", { isForcePlay: true });
             }
         });
         scene.add(eventObstacle09);
