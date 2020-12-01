@@ -47,7 +47,7 @@ function init() {
 
         starring.load();
         //x30 y1800
-        starring.body.position.x = 2000;
+        starring.body.position.x = 1500;
         starring.body.position.y = 1800;
         // starring.body.position.x = 1500;
         // starring.body.position.y = 1000;
@@ -262,7 +262,7 @@ function init() {
             collider: false,
             x: obstacleKeydata.width * 3,
             y: maxY - obstacleKeydata.height * -1 + offsetY,
-            z: -10,
+            z: 0,
             onCollision: function(){
                 start.classList.add('is-show');
                 title.classList.add('is-fade');
@@ -272,11 +272,10 @@ function init() {
         objects.push(op);
 
         const eventObstacle01 = new Obstacle({
-            width: 100,
-            height: 100,
-            x: 390,
-            y: 650,
-            z: -10,
+            width: 200,
+            height: 600,
+            x: 430,
+            y: 450,
             collider: false,
             once: true,
             onCollision: function(){
@@ -290,10 +289,9 @@ function init() {
         objects.push(eventObstacle01);
 
         const eventObstacle02 = new Obstacle({
-            width: 100,
+            width: 300,
             x: 380,
             y: 190,
-            z: -10,
             collider: false,
             once: true,
             onCollision: function(){
@@ -309,7 +307,6 @@ function init() {
         const eventObstacle03 = new Obstacle({
             x: 700,
             y: 190,
-            z: -10,
             collider: false,
             onCollision: function(){
                 Hit03A.timeline.play();
@@ -323,7 +320,6 @@ function init() {
             width: 20,
             x: 2030,
             y: 190,
-            z: -10,
             collider: false,
             once: true,
             onCollision: function(){
@@ -339,7 +335,6 @@ function init() {
         const eventObstacle05 = new Obstacle({
             x: 1700,
             y: 190,
-            z: -10,
             collider: false,
             onCollision: function(){
                 console.log(Hit08A);
@@ -352,7 +347,6 @@ function init() {
         const eventObstacle06 = new Obstacle({
             x: 1240,
             y: 650,
-            z: -10,
             collider: false,
             onCollision: function(){
                 console.log(camera);
@@ -362,10 +356,10 @@ function init() {
         objects.push(eventObstacle06);
 
         const eventObstacle07 = new Obstacle({
-            width: 100,
-            x: 2480,
-            y: 650,
-            z: -10,
+            width: 200,
+            height: 600,
+            x: 2528,
+            y: 450,
             collider: false,
             once: true,
             onCollision: function(){
@@ -378,10 +372,9 @@ function init() {
         objects.push(eventObstacle07);
 
         const eventObstacle08 = new Obstacle({
-            width: 100,
-            x: 2480,
+            width: 200,
+            x: 2528,
             y: 190,
-            z: -10,
             collider: false,
             once: true,
             onCollision: function(){
@@ -398,7 +391,6 @@ function init() {
             width: 50,
             x: 2680,
             y: 190,
-            z: -10,
             collider: false,
             onCollision: function(){
                 console.log("smile");
@@ -412,7 +404,6 @@ function init() {
         const eventObstacleA_txt01 = new Obstacle({
             x: 1000,
             y: 190,
-            z: -10,
             collider: false,
             onCollision: function(){
                 console.log("eventObstacleA_txt01");
@@ -425,7 +416,6 @@ function init() {
         const eventObstacleA_txt02 = new Obstacle({
             x: 1300,
             y: 190,
-            z: -10,
             collider: false,
             onCollision: function(){
                 console.log("eventObstacleA_txt02");
