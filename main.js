@@ -9,6 +9,8 @@ var vertex = new THREE.Vector3();
 var color = new THREE.Color();
 
 const starring = new Starring();
+
+let isKeydown = false;
 // const obstacle = new Obstacle({
 //     x: 20,
 //     y: 0,
@@ -46,10 +48,11 @@ function init() {
         scene.add( light );
 
         starring.load();
-        // starring.body.position.x = 2000;
-        // starring.body.position.y = 300;
-        starring.body.position.x = 400;
-        starring.body.position.y = 190;
+        //x20 y650
+        starring.body.position.x = 20;
+        starring.body.position.y = 650;
+        // starring.body.position.x = 1500;
+        // starring.body.position.y = 1000;
         // starring.body.position.x = 1500;
         // starring.body.position.y = 10;
         starring.body.position.z = 0;
@@ -73,8 +76,11 @@ function init() {
 
                 case 37: // left
                 case 65: // a
-                    starring.moveLeft = true;
-                    starring.changePose("back");
+                    if(!isKeydown){
+                        starring.moveLeft = true;
+                        starring.changePose("back");
+                        isKeydown = true;
+                    }
                     break;
 
                 // case 40: // down
@@ -84,8 +90,11 @@ function init() {
 
                 case 39: // right
                 case 68: // d
-                    starring.moveRight = true;
-                    starring.changePose("walk");
+                    if(!isKeydown){
+                        starring.moveRight = true;
+                        starring.changePose("walk");
+                        isKeydown = true;
+                    }
                     break;
 
                 case 32: // space
@@ -98,6 +107,8 @@ function init() {
 
         //ボタンを離す
         var onKeyUp = function ( event ) {
+
+            isKeydown = false;
 
             switch ( event.keyCode ) {
 
@@ -250,62 +261,47 @@ function init() {
 
         
         //---------event------------------------------------
-        
-        // const Demo = new Illusttexture({
-        //     texture:'img/charactor.png',
-        //     width: 24,
-        //     height: 40,
-        //     x: 50,
-        //     y: 660,
-        //     z: -1,
-        //     offsetX: 0,
-        //     offsetY: 0,
-        //     centerX: 1,
-        //     centerY: 0,
-        //     repeatX: 0.09,
-        //     repeatY: 0.15,
-        // })
-        // scene.add(Demo.mesh);
-        
-        // const eventObstacle00 = new Obstacle({
-        //     width: 20,
-        //     height: 20,
-        //     depth: 20,
-        //     color: 0x000000,
-        //     collider: false,
-        //     x: obstacleKeydata.width * 3,
-        //     y: maxY - obstacleKeydata.height * -3 + offsetY,
-        //     z: -10,
-        //     onCollision: function(){
-        //         console.log("back");
-        //         starring.changePose("back");
-        //         Demo.timeline.play();
-        //     }
-        // });
-        // scene.add(eventObstacle00);
-        // objects.push(eventObstacle00);
+
+        const start = document.getElementById('start');
+        const title = document.getElementById('title');
+        const op = new Obstacle({
+            width: 140,
+            height: 20,
+            depth: 20,
+            color: 0x000000,
+            collider: false,
+            x: obstacleKeydata.width * 5,
+            y: maxY - obstacleKeydata.height * -1 + offsetY,
+            z: 0,
+            onCollision: function(){
+                start.classList.add('is-show');
+                title.classList.add('is-fade');
+            }
+        });
+        scene.add(op);
+        objects.push(op);
 
         const eventObstacle01 = new Obstacle({
-            width: 100,
-            height: 100,
-            x: 390,
-            y: 650,
-            z: -10,
+            width: 200,
+            height: 600,
+            x: 430,
+            y: 450,
             collider: false,
+            once: true,
             onCollision: function(){
                 console.log("fall");
-                starring.changePose("fall");
+                starring.changePose("fall", { isForcePlay: true });
                 starring.skeletonMesh.state.tracks[0].loop = false;
+                start.classList.remove('is-show');
             }
         });
         scene.add(eventObstacle01);
         objects.push(eventObstacle01);
 
         const eventObstacle02 = new Obstacle({
-            width: 100,
+            width: 300,
             x: 380,
             y: 190,
-            z: -10,
             collider: false,
             once: true,
             onCollision: function(){
@@ -321,7 +317,6 @@ function init() {
         const eventObstacle03 = new Obstacle({
             x: 700,
             y: 190,
-            z: -10,
             collider: false,
             onCollision: function(){
                 Hit03A.timeline.play();
@@ -330,16 +325,18 @@ function init() {
         scene.add(eventObstacle03);
         objects.push(eventObstacle03);
 
+        const ed5 = document.getElementById('ed5');
         const eventObstacle04 = new Obstacle({
             width: 20,
-            x: 2020,
+            x: 2030,
             y: 190,
-            z: -10,
             collider: false,
+            once: true,
             onCollision: function(){
                 console.log("sit");
-                starring.changePose("sit");
+                starring.changePose("sit", { isForcePlay: true });
                 starring.skeletonMesh.state.tracks[0].loop = false;
+                ed5.classList.add('is-show');
             }
         });
         scene.add(eventObstacle04);
@@ -348,7 +345,6 @@ function init() {
         const eventObstacle05 = new Obstacle({
             x: 1700,
             y: 190,
-            z: -10,
             collider: false,
             onCollision: function(){
                 console.log(Hit08A);
@@ -361,7 +357,6 @@ function init() {
         const eventObstacle06 = new Obstacle({
             x: 1240,
             y: 650,
-            z: -10,
             collider: false,
             onCollision: function(){
                 console.log(camera);
@@ -371,14 +366,15 @@ function init() {
         objects.push(eventObstacle06);
 
         const eventObstacle07 = new Obstacle({
-            width: 100,
-            x: 2480,
-            y: 650,
-            z: -10,
+            width: 200,
+            height: 600,
+            x: 2528,
+            y: 450,
             collider: false,
+            once: true,
             onCollision: function(){
                 console.log("fall");
-                starring.changePose("fall");
+                starring.changePose("fall", { isForcePlay: true });
                 starring.skeletonMesh.state.tracks[0].loop = false;
             }
         });
@@ -386,29 +382,30 @@ function init() {
         objects.push(eventObstacle07);
 
         const eventObstacle08 = new Obstacle({
-            width: 100,
-            x: 2480,
+            width: 200,
+            x: 2528,
             y: 190,
-            z: -10,
             collider: false,
+            once: true,
             onCollision: function(){
                 console.log("crash");
-                starring.changePose("crash");
+                starring.changePose("crash", { isForcePlay: true });
                 starring.skeletonMesh.state.tracks[0].loop = false;
             }
         });
         scene.add(eventObstacle08);
         objects.push(eventObstacle08);
 
+        const ed6 = document.getElementById('ed6');
         const eventObstacle09 = new Obstacle({
             width: 50,
-            x: 2580,
+            x: 2680,
             y: 190,
-            z: -10,
             collider: false,
             onCollision: function(){
                 console.log("smile");
-                starring.changePose("smile");
+                starring.changePose("smile", { isForcePlay: true });
+                ed6.classList.add('is-show');
             }
         });
         scene.add(eventObstacle09);
@@ -417,7 +414,6 @@ function init() {
         const eventObstacleA_txt01 = new Obstacle({
             x: 1000,
             y: 190,
-            z: -10,
             collider: false,
             onCollision: function(){
                 console.log("eventObstacleA_txt01");
@@ -430,7 +426,6 @@ function init() {
         const eventObstacleA_txt02 = new Obstacle({
             x: 1300,
             y: 190,
-            z: -10,
             collider: false,
             onCollision: function(){
                 console.log("eventObstacleA_txt02");
@@ -728,7 +723,7 @@ function init() {
             texture:'img/start02.png',
             width: 200,
             height: 27,
-            x: 2400,
+            x: 2220,
             y: 170,
             z: 99,
             centerX: 1,
@@ -742,7 +737,7 @@ function init() {
             texture:'img/start02.png',
             width: 200,
             height: 27,
-            x: 2590,
+            x: 2410,
             y: 170,
             z: 99,
             centerX: 1,
@@ -751,6 +746,48 @@ function init() {
             repeatY: 0.145,
         })
         scene.add(yuka13.mesh);
+
+        const yuka14 = new Illusttexture({
+            texture:'img/start02.png',
+            width: 200,
+            height: 27,
+            x: 2600,
+            y: 170,
+            z: 99,
+            centerX: 1,
+            centerY: 0,
+            repeatX: 1,
+            repeatY: 0.145,
+        })
+        scene.add(yuka14.mesh);
+
+        const yuka15 = new Illusttexture({
+            texture:'img/start02.png',
+            width: 200,
+            height: 27,
+            x: 2790,
+            y: 170,
+            z: 99,
+            centerX: 1,
+            centerY: 0,
+            repeatX: 1,
+            repeatY: 0.145,
+        })
+        scene.add(yuka15.mesh);
+
+        const yuka16 = new Illusttexture({
+            texture:'img/start02.png',
+            width: 200,
+            height: 27,
+            x: 2980,
+            y: 170,
+            z: 99,
+            centerX: 1,
+            centerY: 0,
+            repeatX: 1,
+            repeatY: 0.145,
+        })
+        scene.add(yuka16.mesh);
 
         const yuka20 = new Illusttexture({
             texture:'img/start02.png',
@@ -1763,696 +1800,696 @@ function init() {
 
         //KTルート
 
-        const KT1 = new Illusttexture({
-            texture:'img/haikei01.png',
-            width: 155,
-            height: 115,
-            x: 1608,
-            y: 49,
-            z: -15,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 1,
-            centerY: 0.83,
-            repeatX: 0.45,
-            repeatY: 0.35,
-        })
-        scene.add(KT1.mesh);
+        // const KT1 = new Illusttexture({
+        //     texture:'img/haikei01.png',
+        //     width: 155,
+        //     height: 115,
+        //     x: 1608,
+        //     y: 49,
+        //     z: -15,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 1,
+        //     centerY: 0.83,
+        //     repeatX: 0.45,
+        //     repeatY: 0.35,
+        // })
+        // scene.add(KT1.mesh);
 
-        const KT2 = new Illusttexture({
-            texture:'img/haikei02.png',
-            width: 148,
-            height: 100,
-            x: 1613,
-            y: 34,
-            z: -15,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 1,
-            centerY: 0.5,
-            repeatX: 0.53,
-            repeatY: 0.3,
-        })
-        scene.add(KT2.mesh);
+        // const KT2 = new Illusttexture({
+        //     texture:'img/haikei02.png',
+        //     width: 148,
+        //     height: 100,
+        //     x: 1613,
+        //     y: 34,
+        //     z: -15,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 1,
+        //     centerY: 0.5,
+        //     repeatX: 0.53,
+        //     repeatY: 0.3,
+        // })
+        // scene.add(KT2.mesh);
 
-        const T01 = new Illusttexture({
-            texture:'img/haikei01.png',
-            width: 130,
-            height: 80,
-            x: 1608,
-            y: 39.5,
-            z: -20,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 1,
-            centerY: 0,
-            repeatX: 0.45,
-            repeatY: 0.23,
-        })
-        scene.add(T01.mesh);
+        // const T01 = new Illusttexture({
+        //     texture:'img/haikei01.png',
+        //     width: 130,
+        //     height: 80,
+        //     x: 1608,
+        //     y: 39.5,
+        //     z: -20,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 1,
+        //     centerY: 0,
+        //     repeatX: 0.45,
+        //     repeatY: 0.23,
+        // })
+        // scene.add(T01.mesh);
 
-        const deskT01 = new Illusttexture({
-            texture:'img/haikei03.png',
-            width: 60,
-            height: 40,
-            x: 1610,
-            y: 18,
-            z: -19,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0,
-            centerY: 0.3,
-            repeatX: 0.5,
-            repeatY: 0.25,
-        })
-        scene.add(deskT01.mesh);
+        // const deskT01 = new Illusttexture({
+        //     texture:'img/haikei03.png',
+        //     width: 60,
+        //     height: 40,
+        //     x: 1610,
+        //     y: 18,
+        //     z: -19,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0,
+        //     centerY: 0.3,
+        //     repeatX: 0.5,
+        //     repeatY: 0.25,
+        // })
+        // scene.add(deskT01.mesh);
 
-        const Hit01K = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 25,
-            height: 40,
-            x: 1630,
-            y: 14.5,
-            z: -19,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.1,
-            centerY: 0,
-            repeatX: 0.1,
-            repeatY: 0.15,
-        })
-        scene.add(Hit01K.mesh);
+        // const Hit01K = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 25,
+        //     height: 40,
+        //     x: 1630,
+        //     y: 14.5,
+        //     z: -19,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0.1,
+        //     centerY: 0,
+        //     repeatX: 0.1,
+        //     repeatY: 0.15,
+        // })
+        // scene.add(Hit01K.mesh);
 
-        const Hit01aTK = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 18,
-            height: 46,
-            x: 2440,
-            y: 17,
-            z: -17,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.765,
-            centerY: 0.15,
-            repeatX: 0.08,
-            repeatY: 0.2,
-        })
-        scene.add(Hit01aTK.mesh);
+        // const Hit01aTK = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 18,
+        //     height: 46,
+        //     x: 2440,
+        //     y: 17,
+        //     z: -17,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0.765,
+        //     centerY: 0.15,
+        //     repeatX: 0.08,
+        //     repeatY: 0.2,
+        // })
+        // scene.add(Hit01aTK.mesh);
 
-        const Hit01bTK = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 18,
-            height: 46,
-            x: 2430,
-            y: 17,
-            z: -17,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.765,
-            centerY: 0.15,
-            repeatX: 0.08,
-            repeatY: 0.2,
-        })
-        scene.add(Hit01bTK.mesh);
+        // const Hit01bTK = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 18,
+        //     height: 46,
+        //     x: 2430,
+        //     y: 17,
+        //     z: -17,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0.765,
+        //     centerY: 0.15,
+        //     repeatX: 0.08,
+        //     repeatY: 0.2,
+        // })
+        // scene.add(Hit01bTK.mesh);
 
-        const Hit01cTK = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 18,
-            height: 46,
-            x: 2420,
-            y: 17,
-            z: -17,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.765,
-            centerY: 0.15,
-            repeatX: 0.08,
-            repeatY: 0.2,
-        })
-        scene.add(Hit01cTK.mesh);
+        // const Hit01cTK = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 18,
+        //     height: 46,
+        //     x: 2420,
+        //     y: 17,
+        //     z: -17,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0.765,
+        //     centerY: 0.15,
+        //     repeatX: 0.08,
+        //     repeatY: 0.2,
+        // })
+        // scene.add(Hit01cTK.mesh);
 
-        const Hit02TK = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 25,
-            height: 40,
-            x: 2475,
-            y: 35,
-            z: -15,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.2,
-            centerY: 0,
-            repeatX: 0.1,
-            repeatY: 0.15,
-        })
-        scene.add(Hit02TK.mesh);
+        // const Hit02TK = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 25,
+        //     height: 40,
+        //     x: 2475,
+        //     y: 35,
+        //     z: -15,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0.2,
+        //     centerY: 0,
+        //     repeatX: 0.1,
+        //     repeatY: 0.15,
+        // })
+        // scene.add(Hit02TK.mesh);
 
-        const haihuTK = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 45,
-            height: 55,
-            x: 2470,
-            y: 18,
-            z: -15,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.37,
-            centerY: 0,
-            repeatX: 0.16,
-            repeatY: 0.15,
-        })
-        scene.add(haihuTK.mesh);
+        // const haihuTK = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 45,
+        //     height: 55,
+        //     x: 2470,
+        //     y: 18,
+        //     z: -15,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0.37,
+        //     centerY: 0,
+        //     repeatX: 0.16,
+        //     repeatY: 0.15,
+        // })
+        // scene.add(haihuTK.mesh);
 
-        const Hit03TK = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 22,
-            height: 46,
-            x: 2100,
-            y: 19,
-            z: -15,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.6,
-            centerY: 0,
-            repeatX: 0.1,
-            repeatY: 0.2,
-        })
-        scene.add(Hit03TK.mesh);
+        // const Hit03TK = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 22,
+        //     height: 46,
+        //     x: 2100,
+        //     y: 19,
+        //     z: -15,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0.6,
+        //     centerY: 0,
+        //     repeatX: 0.1,
+        //     repeatY: 0.2,
+        // })
+        // scene.add(Hit03TK.mesh);
 
-        const soukoKT = new Illusttexture({
-            texture:'img/haikei01.png',
-            width: 200,
-            height: 250,
-            x: 2600,
-            y: 120,
-            z: -15,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0,
-            centerY: 0,
-            repeatX: 0.5,
-            repeatY: 0.55,
-        })
-        scene.add(soukoKT.mesh);
+        // const soukoKT = new Illusttexture({
+        //     texture:'img/haikei01.png',
+        //     width: 200,
+        //     height: 250,
+        //     x: 2600,
+        //     y: 120,
+        //     z: -15,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0,
+        //     centerY: 0,
+        //     repeatX: 0.5,
+        //     repeatY: 0.55,
+        // })
+        // scene.add(soukoKT.mesh);
 
-        const Hit01T = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 35,
-            height: 25,
-            x: 2750,
-            y: 6,
-            z: -15,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.37,
-            centerY: 0.15,
-            repeatX: 0.15,
-            repeatY: 0.1,
-        })
-        scene.add(Hit01T.mesh);
+        // const Hit01T = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 35,
+        //     height: 25,
+        //     x: 2750,
+        //     y: 6,
+        //     z: -15,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0.37,
+        //     centerY: 0.15,
+        //     repeatX: 0.15,
+        //     repeatY: 0.1,
+        // })
+        // scene.add(Hit01T.mesh);
 
-        const T02 = new Illusttexture({
-            texture:'img/haikei01.png',
-            width: 130,
-            height: 80,
-            x: 3608,
-            y: 39.5,
-            z: -15,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 1,
-            centerY: 0,
-            repeatX: 0.45,
-            repeatY: 0.23,
-        })
-        scene.add(T02.mesh);
+        // const T02 = new Illusttexture({
+        //     texture:'img/haikei01.png',
+        //     width: 130,
+        //     height: 80,
+        //     x: 3608,
+        //     y: 39.5,
+        //     z: -15,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 1,
+        //     centerY: 0,
+        //     repeatX: 0.45,
+        //     repeatY: 0.23,
+        // })
+        // scene.add(T02.mesh);
 
-        const deskT02 = new Illusttexture({
-            texture:'img/haikei03.png',
-            width: 60,
-            height: 40,
-            x: 3610,
-            y: 18,
-            z: -14,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0,
-            centerY: 0.3,
-            repeatX: 0.5,
-            repeatY: 0.25,
-        })
-        scene.add(deskT02.mesh);
+        // const deskT02 = new Illusttexture({
+        //     texture:'img/haikei03.png',
+        //     width: 60,
+        //     height: 40,
+        //     x: 3610,
+        //     y: 18,
+        //     z: -14,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0,
+        //     centerY: 0.3,
+        //     repeatX: 0.5,
+        //     repeatY: 0.25,
+        // })
+        // scene.add(deskT02.mesh);
 
-        const Hit02K = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 25,
-            height: 40,
-            x: 3628,
-            y: 29,
-            z: -14,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.1,
-            centerY: 0,
-            repeatX: 0.1,
-            repeatY: 0.15,
-        })
-        scene.add(Hit02K.mesh);
+        // const Hit02K = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 25,
+        //     height: 40,
+        //     x: 3628,
+        //     y: 29,
+        //     z: -14,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0.1,
+        //     centerY: 0,
+        //     repeatX: 0.1,
+        //     repeatY: 0.15,
+        // })
+        // scene.add(Hit02K.mesh);
 
 
-        //Hルート
+        // //Hルート
 
-        const redH = new Illusttexture({
-            texture:'img/haikei03.png',
-            width: 30,
-            height: 100,
-            x: 703,
-            y: 50,
-            z: -0,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 1,
-            centerY: 0,
-            repeatX: 0.1,
-            repeatY: 0.5,
-        })
-        scene.add(redH.mesh);
+        // const redH = new Illusttexture({
+        //     texture:'img/haikei03.png',
+        //     width: 30,
+        //     height: 100,
+        //     x: 703,
+        //     y: 50,
+        //     z: -0,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 1,
+        //     centerY: 0,
+        //     repeatX: 0.1,
+        //     repeatY: 0.5,
+        // })
+        // scene.add(redH.mesh);
 
-        const dentyuH = new Illusttexture({
-            texture:'img/haikei02.png',
-            width: 100,
-            height: 130,
-            x: 1000,
-            y: 64,
-            z: -37,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0,
-            centerY: 0,
-            repeatX: 0.43,
-            repeatY: 0.45,
-        })
-        scene.add(dentyuH.mesh);
+        // const dentyuH = new Illusttexture({
+        //     texture:'img/haikei02.png',
+        //     width: 100,
+        //     height: 130,
+        //     x: 1000,
+        //     y: 64,
+        //     z: -37,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0,
+        //     centerY: 0,
+        //     repeatX: 0.43,
+        //     repeatY: 0.45,
+        // })
+        // scene.add(dentyuH.mesh);
 
-        const densenH = new Illusttexture({
-            texture:'img/haikei02.png',
-            width: 82,
-            height: 45,
-            x: 1005,
-            y: 101,
-            z: -36,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.2,
-            centerY: 0.55,
-            repeatX: 0.35,
-            repeatY: 0.15,
-        })
-        scene.add(densenH.mesh);
+        // const densenH = new Illusttexture({
+        //     texture:'img/haikei02.png',
+        //     width: 82,
+        //     height: 45,
+        //     x: 1005,
+        //     y: 101,
+        //     z: -36,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0.2,
+        //     centerY: 0.55,
+        //     repeatX: 0.35,
+        //     repeatY: 0.15,
+        // })
+        // scene.add(densenH.mesh);
 
-        const gardH = new Illusttexture({
-            texture:'img/haikei03.png',
-            width: 90,
-            height: 30,
-            x: 999,
-            y: 12.8,
-            z: -38,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.1,
-            centerY: 0.1,
-            repeatX: 0.6,
-            repeatY: 0.15,
-        })
-        scene.add(gardH.mesh);
+        // const gardH = new Illusttexture({
+        //     texture:'img/haikei03.png',
+        //     width: 90,
+        //     height: 30,
+        //     x: 999,
+        //     y: 12.8,
+        //     z: -38,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0.1,
+        //     centerY: 0.1,
+        //     repeatX: 0.6,
+        //     repeatY: 0.15,
+        // })
+        // scene.add(gardH.mesh);
 
-        const carH = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 60,
-            height: 50,
-            x: 1010,
-            y: 20,
-            z: -39,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.35,
-            centerY: 0.3,
-            repeatX: 0.34,
-            repeatY: 0.2,
-        })
-        scene.add(carH.mesh);
+        // const carH = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 60,
+        //     height: 50,
+        //     x: 1010,
+        //     y: 20,
+        //     z: -39,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0.35,
+        //     centerY: 0.3,
+        //     repeatX: 0.34,
+        //     repeatY: 0.2,
+        // })
+        // scene.add(carH.mesh);
 
-        const CemeteryH = new Illusttexture({
-            texture:'img/haikei02.png',
-            width: 200,
-            height: 130,
-            x: 1800,
-            y: 65,
-            z: -39,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0,
-            centerY: 1,
-            repeatX: 0.67,
-            repeatY: 0.35,
-        })
-        scene.add(CemeteryH.mesh);
+        // const CemeteryH = new Illusttexture({
+        //     texture:'img/haikei02.png',
+        //     width: 200,
+        //     height: 130,
+        //     x: 1800,
+        //     y: 65,
+        //     z: -39,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0,
+        //     centerY: 1,
+        //     repeatX: 0.67,
+        //     repeatY: 0.35,
+        // })
+        // scene.add(CemeteryH.mesh);
 
-        const CemeteryIriH = new Illusttexture({
-            texture:'img/haikei02.png',
-            width: 30,
-            height: 100,
-            x: 1715,
-            y: -3,
-            z: -38,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0,
-            centerY: 0.5,
-            repeatX: 0.1,
-            repeatY: 0.3,
-        })
-        scene.add(CemeteryIriH.mesh);
+        // const CemeteryIriH = new Illusttexture({
+        //     texture:'img/haikei02.png',
+        //     width: 30,
+        //     height: 100,
+        //     x: 1715,
+        //     y: -3,
+        //     z: -38,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0,
+        //     centerY: 0.5,
+        //     repeatX: 0.1,
+        //     repeatY: 0.3,
+        // })
+        // scene.add(CemeteryIriH.mesh);
 
-        const Hit01H = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 20,
-            height: 50,
-            x: 2060,
-            y: 22,
-            z: -39,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.61,
-            centerY: 0.25,
-            repeatX: 0.08,
-            repeatY: 0.2,
-        })
-        scene.add(Hit01H.mesh);
+        // const Hit01H = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 20,
+        //     height: 50,
+        //     x: 2060,
+        //     y: 22,
+        //     z: -39,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0.61,
+        //     centerY: 0.25,
+        //     repeatX: 0.08,
+        //     repeatY: 0.2,
+        // })
+        // scene.add(Hit01H.mesh);
 
-        const LaboratoryH = new Illusttexture({
-            texture:'img/haikei01.png',
-            width: 150,
-            height: 160,
-            x: 2200,
-            y: 75,
-            z: -39,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0,
-            centerY: 1,
-            repeatX: 0.55,
-            repeatY: 0.45,
-        })
-        scene.add(LaboratoryH.mesh);
+        // const LaboratoryH = new Illusttexture({
+        //     texture:'img/haikei01.png',
+        //     width: 150,
+        //     height: 160,
+        //     x: 2200,
+        //     y: 75,
+        //     z: -39,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0,
+        //     centerY: 1,
+        //     repeatX: 0.55,
+        //     repeatY: 0.45,
+        // })
+        // scene.add(LaboratoryH.mesh);
 
-        const Hit02H = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 15,
-            height: 50,
-            x: 2400,
-            y: 20,
-            z: -39,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.62,
-            centerY: 0.55,
-            repeatX: 0.06,
-            repeatY: 0.2,
-        })
-        scene.add(Hit02H.mesh);
+        // const Hit02H = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 15,
+        //     height: 50,
+        //     x: 2400,
+        //     y: 20,
+        //     z: -39,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0.62,
+        //     centerY: 0.55,
+        //     repeatX: 0.06,
+        //     repeatY: 0.2,
+        // })
+        // scene.add(Hit02H.mesh);
 
-        const Hit03H = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 15,
-            height: 50,
-            x: 2390,
-            y: 20,
-            z: -39,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.55,
-            centerY: 0.55,
-            repeatX: 0.06,
-            repeatY: 0.2,
-        })
-        scene.add(Hit03H.mesh);
+        // const Hit03H = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 15,
+        //     height: 50,
+        //     x: 2390,
+        //     y: 20,
+        //     z: -39,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0.55,
+        //     centerY: 0.55,
+        //     repeatX: 0.06,
+        //     repeatY: 0.2,
+        // })
+        // scene.add(Hit03H.mesh);
 
-        const Hit04H = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 13,
-            height: 49,
-            x: 2380,
-            y: 19,
-            z: -39,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.47,
-            centerY: 0.55,
-            repeatX: 0.06,
-            repeatY: 0.2,
-        })
-        scene.add(Hit04H.mesh);
+        // const Hit04H = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 13,
+        //     height: 49,
+        //     x: 2380,
+        //     y: 19,
+        //     z: -39,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0.47,
+        //     centerY: 0.55,
+        //     repeatX: 0.06,
+        //     repeatY: 0.2,
+        // })
+        // scene.add(Hit04H.mesh);
 
-        const Hit05H = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 15,
-            height: 50,
-            x: 2370,
-            y: 20,
-            z: -39,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.40,
-            centerY: 0.55,
-            repeatX: 0.064,
-            repeatY: 0.2,
-        })
-        scene.add(Hit05H.mesh);
+        // const Hit05H = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 15,
+        //     height: 50,
+        //     x: 2370,
+        //     y: 20,
+        //     z: -39,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0.40,
+        //     centerY: 0.55,
+        //     repeatX: 0.064,
+        //     repeatY: 0.2,
+        // })
+        // scene.add(Hit05H.mesh);
 
-        const Hit06H = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 15,
-            height: 51,
-            x: 2350,
-            y: 19,
-            z: -39,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.31,
-            centerY: 0.55,
-            repeatX: 0.06,
-            repeatY: 0.2,
-        })
-        scene.add(Hit06H.mesh);
+        // const Hit06H = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 15,
+        //     height: 51,
+        //     x: 2350,
+        //     y: 19,
+        //     z: -39,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0.31,
+        //     centerY: 0.55,
+        //     repeatX: 0.06,
+        //     repeatY: 0.2,
+        // })
+        // scene.add(Hit06H.mesh);
 
-        const Hit07H = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 15,
-            height: 50,
-            x: 2330,
-            y: 19,
-            z: -39,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.24,
-            centerY: 0.55,
-            repeatX: 0.06,
-            repeatY: 0.2,
-        })
-        scene.add(Hit07H.mesh);
+        // const Hit07H = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 15,
+        //     height: 50,
+        //     x: 2330,
+        //     y: 19,
+        //     z: -39,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0.24,
+        //     centerY: 0.55,
+        //     repeatX: 0.06,
+        //     repeatY: 0.2,
+        // })
+        // scene.add(Hit07H.mesh);
 
-        const Hit08H = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 14,
-            height: 28,
-            x: 2310,
-            y: 12,
-            z: -39,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.15,
-            centerY: 0.585,
-            repeatX: 0.06,
-            repeatY: 0.12,
-        })
-        scene.add(Hit08H.mesh);
+        // const Hit08H = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 14,
+        //     height: 28,
+        //     x: 2310,
+        //     y: 12,
+        //     z: -39,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0.15,
+        //     centerY: 0.585,
+        //     repeatX: 0.06,
+        //     repeatY: 0.12,
+        // })
+        // scene.add(Hit08H.mesh);
 
-        const Hit09H = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 24,
-            height: 50,
-            x: 2830,
-            y: 20,
-            z: -39,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0,
-            centerY: 0,
-            repeatX: 0.1,
-            repeatY: 0.2,
-        })
-        scene.add(Hit09H.mesh);
+        // const Hit09H = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 24,
+        //     height: 50,
+        //     x: 2830,
+        //     y: 20,
+        //     z: -39,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0,
+        //     centerY: 0,
+        //     repeatX: 0.1,
+        //     repeatY: 0.2,
+        // })
+        // scene.add(Hit09H.mesh);
 
-        const Hit10H = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 20,
-            height: 40,
-            x: 3100,
-            y: 10,
-            z: -39,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.5,
-            centerY: 1,
-            repeatX: 0.1,
-            repeatY: 0.2,
-        })
-        scene.add(Hit10H.mesh);
+        // const Hit10H = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 20,
+        //     height: 40,
+        //     x: 3100,
+        //     y: 10,
+        //     z: -39,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0.5,
+        //     centerY: 1,
+        //     repeatX: 0.1,
+        //     repeatY: 0.2,
+        // })
+        // scene.add(Hit10H.mesh);
 
-        const Hit11H = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 18,
-            height: 27,
-            x: 3150,
-            y: 15,
-            z: -39,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 1,
-            centerY: 0.58,
-            repeatX: 0.08,
-            repeatY: 0.1,
-        })
-        scene.add(Hit11H.mesh);
+        // const Hit11H = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 18,
+        //     height: 27,
+        //     x: 3150,
+        //     y: 15,
+        //     z: -39,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 1,
+        //     centerY: 0.58,
+        //     repeatX: 0.08,
+        //     repeatY: 0.1,
+        // })
+        // scene.add(Hit11H.mesh);
 
-        const Hit12H = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 18,
-            height: 27,
-            x: 3200,
-            y: 15,
-            z: -39,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.9,
-            centerY: 0.58,
-            repeatX: 0.08,
-            repeatY: 0.1,
-        })
-        scene.add(Hit12H.mesh);
+        // const Hit12H = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 18,
+        //     height: 27,
+        //     x: 3200,
+        //     y: 15,
+        //     z: -39,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0.9,
+        //     centerY: 0.58,
+        //     repeatX: 0.08,
+        //     repeatY: 0.1,
+        // })
+        // scene.add(Hit12H.mesh);
 
-        const Hit13H = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 19,
-            height: 28,
-            x: 3250,
-            y: 13,
-            z: -39,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 1,
-            centerY: 0.4,
-            repeatX: 0.1,
-            repeatY: 0.14,
-        })
-        scene.add(Hit13H.mesh);
+        // const Hit13H = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 19,
+        //     height: 28,
+        //     x: 3250,
+        //     y: 13,
+        //     z: -39,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 1,
+        //     centerY: 0.4,
+        //     repeatX: 0.1,
+        //     repeatY: 0.14,
+        // })
+        // scene.add(Hit13H.mesh);
 
-        const Hit14H = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 45,
-            height: 24,
-            x: 3300,
-            y: 7,
-            z: -39,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.8,
-            centerY: 0.6,
-            repeatX: 0.2,
-            repeatY: 0.1,
-        })
-        scene.add(Hit14H.mesh);
+        // const Hit14H = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 45,
+        //     height: 24,
+        //     x: 3300,
+        //     y: 7,
+        //     z: -39,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0.8,
+        //     centerY: 0.6,
+        //     repeatX: 0.2,
+        //     repeatY: 0.1,
+        // })
+        // scene.add(Hit14H.mesh);
 
-        const Hit15H = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 45,
-            height: 24,
-            x: 3350,
-            y: 3,
-            z: -39,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.8,
-            centerY: 0.35,
-            repeatX: 0.2,
-            repeatY: 0.1,
-        })
-        scene.add(Hit15H.mesh);
+        // const Hit15H = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 45,
+        //     height: 24,
+        //     x: 3350,
+        //     y: 3,
+        //     z: -39,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0.8,
+        //     centerY: 0.35,
+        //     repeatX: 0.2,
+        //     repeatY: 0.1,
+        // })
+        // scene.add(Hit15H.mesh);
 
-        const Hit03aA_H = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 24,
-            height: 40,
-            x: 2610,
-            y: 18,
-            z: -39,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 1,
-            centerY: 0,
-            repeatX: 0.09,
-            repeatY: 0.15,
-        })
-        scene.add(Hit03aA_H.mesh);
+        // const Hit03aA_H = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 24,
+        //     height: 40,
+        //     x: 2610,
+        //     y: 18,
+        //     z: -39,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 1,
+        //     centerY: 0,
+        //     repeatX: 0.09,
+        //     repeatY: 0.15,
+        // })
+        // scene.add(Hit03aA_H.mesh);
 
-        const Hit03bA_H = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 24,
-            height: 40,
-            x: 2620,
-            y: 18,
-            z: -39,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.9,
-            centerY: 0,
-            repeatX: 0.09,
-            repeatY: 0.15,
-        })
-        scene.add(Hit03bA_H.mesh);
+        // const Hit03bA_H = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 24,
+        //     height: 40,
+        //     x: 2620,
+        //     y: 18,
+        //     z: -39,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0.9,
+        //     centerY: 0,
+        //     repeatX: 0.09,
+        //     repeatY: 0.15,
+        // })
+        // scene.add(Hit03bA_H.mesh);
 
-        const Hit03cA_H = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 24,
-            height: 40,
-            x: 2630,
-            y: 18,
-            z: -39,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.817,
-            centerY: 0,
-            repeatX: 0.09,
-            repeatY: 0.15,
-        })
-        scene.add(Hit03cA_H.mesh);
+        // const Hit03cA_H = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 24,
+        //     height: 40,
+        //     x: 2630,
+        //     y: 18,
+        //     z: -39,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0.817,
+        //     centerY: 0,
+        //     repeatX: 0.09,
+        //     repeatY: 0.15,
+        // })
+        // scene.add(Hit03cA_H.mesh);
 
-        const Hit03dA_H = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 24,
-            height: 40,
-            x: 2640,
-            y: 18,
-            z: -39,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.735,
-            centerY: 0,
-            repeatX: 0.09,
-            repeatY: 0.15,
-        })
-        scene.add(Hit03dA_H.mesh);
+        // const Hit03dA_H = new Illusttexture({
+        //     texture:'img/charactor.png',
+        //     width: 24,
+        //     height: 40,
+        //     x: 2640,
+        //     y: 18,
+        //     z: -39,
+        //     offsetX: 0,
+        //     offsetY: 0,
+        //     centerX: 0.735,
+        //     centerY: 0,
+        //     repeatX: 0.09,
+        //     repeatY: 0.15,
+        // })
+        // scene.add(Hit03dA_H.mesh);
 
         //---------renderer--------------------------------------
         renderer = new THREE.WebGLRenderer( { antialias: true } );
