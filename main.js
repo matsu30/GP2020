@@ -9,6 +9,8 @@ var vertex = new THREE.Vector3();
 var color = new THREE.Color();
 
 const starring = new Starring();
+
+let isKeydown = false;
 // const obstacle = new Obstacle({
 //     x: 20,
 //     y: 0,
@@ -74,8 +76,11 @@ function init() {
 
                 case 37: // left
                 case 65: // a
-                    starring.moveLeft = true;
-                    starring.changePose("back");
+                    if(!isKeydown){
+                        starring.moveLeft = true;
+                        starring.changePose("back");
+                        isKeydown = true;
+                    }
                     break;
 
                 // case 40: // down
@@ -85,8 +90,11 @@ function init() {
 
                 case 39: // right
                 case 68: // d
-                    starring.moveRight = true;
-                    starring.changePose("walk");
+                    if(!isKeydown){
+                        starring.moveRight = true;
+                        starring.changePose("walk");
+                        isKeydown = true;
+                    }
                     break;
 
                 case 32: // space
@@ -99,6 +107,8 @@ function init() {
 
         //ボタンを離す
         var onKeyUp = function ( event ) {
+
+            isKeydown = false;
 
             switch ( event.keyCode ) {
 
