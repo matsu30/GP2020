@@ -337,6 +337,8 @@ function init() {
                 starring.changePose("sit", { isForcePlay: true });
                 starring.skeletonMesh.state.tracks[0].loop = false;
                 ed5.classList.add('is-show');
+                document.removeEventListener( 'keydown', onKeyDown, false );
+                document.removeEventListener( 'keyup', onKeyUp, false );
             }
         });
         scene.add(eventObstacle04);
