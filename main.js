@@ -408,6 +408,8 @@ function init() {
                 console.log("smile");
                 starring.changePose("smile", { isForcePlay: true });
                 ed6.classList.add('is-show');
+                document.removeEventListener( 'keydown', onKeyDown, false );
+                document.removeEventListener( 'keyup', onKeyUp, false );
             }
         });
         scene.add(eventObstacle09);
