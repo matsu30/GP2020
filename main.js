@@ -49,8 +49,8 @@ function init() {
 
         starring.load();
         //x30 y1800
-        starring.body.position.x = 1500;
-        starring.body.position.y = 1800;
+        starring.body.position.x = 20;
+        starring.body.position.y = 650;
         // starring.body.position.x = 1500;
         // starring.body.position.y = 1000;
         // starring.body.position.x = 1500;
@@ -270,7 +270,7 @@ function init() {
             depth: 20,
             color: 0x000000,
             collider: false,
-            x: obstacleKeydata.width * 3,
+            x: obstacleKeydata.width * 5,
             y: maxY - obstacleKeydata.height * -1 + offsetY,
             z: 0,
             onCollision: function(){
