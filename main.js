@@ -49,7 +49,7 @@ function init() {
 
         starring.load();
         //x20 y650
-        starring.body.position.x = 20;
+        starring.body.position.x = 1500;
         starring.body.position.y = 650;
         // starring.body.position.x = 1500;
         // starring.body.position.y = 1000;
@@ -410,6 +410,7 @@ function init() {
                 ed6.classList.add('is-show');
                 document.removeEventListener( 'keydown', onKeyDown, false );
                 document.removeEventListener( 'keyup', onKeyUp, false );
+
             }
         });
         scene.add(eventObstacle09);
