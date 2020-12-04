@@ -259,7 +259,6 @@ function init() {
         scene.add(Start5);
         objects.push(Start5);
 
-        
         //---------event------------------------------------
 
         const start = document.getElementById('start');
@@ -325,32 +324,18 @@ function init() {
         scene.add(eventObstacle03);
         objects.push(eventObstacle03);
 
-        const ed5 = document.getElementById('ed5');
-        const eventObstacle04 = new Obstacle({
-            width: 20,
-            x: 2030,
-            y: 190,
-            collider: false,
-            once: true,
-            onCollision: function(){
-                console.log("sit");
-                starring.changePose("sit", { isForcePlay: true });
-                starring.skeletonMesh.state.tracks[0].loop = false;
-                ed5.classList.add('is-show');
-                document.removeEventListener( 'keydown', onKeyDown, false );
-                document.removeEventListener( 'keyup', onKeyUp, false );
-            }
-        });
-        scene.add(eventObstacle04);
-        objects.push(eventObstacle04);
-
+        const kotoba03 = document.getElementById('kotoba03');
         const eventObstacle05 = new Obstacle({
+            height: 300,
             x: 1700,
             y: 190,
             collider: false,
             onCollision: function(){
                 console.log(Hit08A);
                 Hit08A.timeline.play();
+                kotoba01.classList.remove('is-show');
+                kotoba02.classList.remove('is-show');
+                kotoba03.classList.add('is-show');
             }
         });
         scene.add(eventObstacle05);
@@ -398,6 +383,65 @@ function init() {
         scene.add(eventObstacle08);
         objects.push(eventObstacle08);
 
+        const kotoba01 = document.getElementById('kotoba01');
+        const eventObstacleA_txt01 = new Obstacle({
+            x: 1000,
+            y: 190,
+            collider: false,
+            onCollision: function(){
+                kotoba01.classList.add('is-show');
+            }
+        });
+        scene.add(eventObstacleA_txt01);
+        objects.push(eventObstacleA_txt01);
+
+        const kotoba02 = document.getElementById('kotoba02');
+        const eventObstacleA_txt02 = new Obstacle({
+            x: 1300,
+            y: 190,
+            collider: false,
+            onCollision: function(){
+                kotoba03.classList.remove('is-show');
+                kotoba02.classList.add('is-show');
+            }
+        });
+        scene.add(eventObstacleA_txt02);
+        objects.push(eventObstacleA_txt02);
+
+        const eventremove_txt = new Obstacle({
+            height: 300,
+            x: 1250,
+            y: 190,
+            collider: false,
+            onCollision: function(){
+                kotoba01.classList.remove('is-show');
+                kotoba02.classList.remove('is-show');
+                kotoba03.classList.remove('is-show');
+            }
+        });
+        scene.add(eventremove_txt);
+        objects.push(eventremove_txt);
+
+        const ed5 = document.getElementById('ed5');
+        const eventObstacle04 = new Obstacle({
+            width: 20,
+            x: 2030,
+            y: 190,
+            collider: false,
+            once: true,
+            onCollision: function(){
+                console.log("sit");
+                starring.changePose("sit", { isForcePlay: true });
+                starring.skeletonMesh.state.tracks[0].loop = false;
+                ed5.classList.add('is-show');
+                kotoba03.classList.remove('is-show');
+                document.removeEventListener( 'keydown', onKeyDown, false );
+                document.removeEventListener( 'keyup', onKeyUp, false );
+            }
+        });
+        scene.add(eventObstacle04);
+        objects.push(eventObstacle04);
+
         const ed6 = document.getElementById('ed6');
         const eventObstacle09 = new Obstacle({
             width: 50,
@@ -415,29 +459,6 @@ function init() {
         });
         scene.add(eventObstacle09);
         objects.push(eventObstacle09);
-
-        const eventObstacleA_txt01 = new Obstacle({
-            x: 1000,
-            y: 190,
-            collider: false,
-            onCollision: function(){
-                console.log("eventObstacleA_txt01");
-                console.log(scene);
-            }
-        });
-        scene.add(eventObstacleA_txt01);
-        objects.push(eventObstacleA_txt01);
-
-        const eventObstacleA_txt02 = new Obstacle({
-            x: 1300,
-            y: 190,
-            collider: false,
-            onCollision: function(){
-                console.log("eventObstacleA_txt02");
-            }
-        });
-        scene.add(eventObstacleA_txt02);
-        objects.push(eventObstacleA_txt02);
 
 
 
