@@ -10,6 +10,12 @@ var color = new THREE.Color();
 
 const starring = new Starring();
 
+const pedestal = {
+    x: 0,
+    y: 0,
+    z: 0
+}
+
 let isKeydown = false;
 // const obstacle = new Obstacle({
 //     x: 20,
@@ -273,6 +279,7 @@ function init() {
             y: maxY - obstacleKeydata.height * -1 + offsetY,
             z: 0,
             onCollision: function(){
+                pedestal.y = -50;
                 start.classList.add('is-show');
                 title.classList.add('is-fade');
             }
@@ -3211,8 +3218,16 @@ function animate() {
  
     starring.animate(objects);
 
-    const cameraPosition = starring.body.position.clone().add(new THREE.Vector3(0, 30, 100));
-    camera.position.lerp(cameraPosition, 0.2);
+    const cameraPosition = starring.body.position
+        .clone()
+        .add(
+            new THREE.Vector3(
+                0 + pedestal.x,
+                30 + pedestal.y,
+                100 + pedestal.z
+            )
+        );
+    camera.position.lerp(cameraPosition, 0.1);
 
     renderer.render( scene, camera );
 
