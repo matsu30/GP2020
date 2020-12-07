@@ -1,4 +1,4 @@
-class Illusttexture{
+class Animationtexture{
 
     constructor(keydata){
         //console.log("Illusttexture constructor", keydata);
