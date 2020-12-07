@@ -707,13 +707,13 @@ function init() {
             height: 30,
             x: 540,
             y: 194,
-            z: -1,
+            z: -2,
         })
         scene.add(Hit03A.mesh);
         Hit03A.timeline
         .to(Hit03A.mesh.position, {
             duration: 5,
-            x: "+=800",
+            x: "+=600",
         })
         .to(Hit03A.mesh.material, {
             duration: 1,
