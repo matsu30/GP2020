@@ -1,53 +1,75 @@
 class Animationtexture{
 
-    constructor(keydata){
-        //console.log("Illusttexture constructor", keydata);
+    constructor() {
 
-        const defaults = {
-            texture: '',
-            width: 20,
-            height: 20,
-            x: 0,
-            y: 0,
-            z: 0,
-            transparent: true,
-            // opacity: 0.5,
-            offsetX: 0, //画像に対してX方向
-            offsetY: 0,
-            centerX: 0, //面に対してX方向
-            centerY: 0,
-            repeatX: 1, //一面に横何回繰り返すか
-            repeatY: 1,
-        };
+        this.SKELETON_FILE = "skeleton.json";
+        this.ATLAS_FILE = "skeleton.atlas";
+        this.assetManager = new spine.threejs.AssetManager("assets/spine/right/");
+        this.skeletonMesh = undefined;
 
-        this.keydata = Object.assign({}, defaults, keydata);
+        const geometry = new THREE.BoxBufferGeometry(
+                20,
+                20,
+                20
+          );
 
-        var loader = new THREE.TextureLoader();
-
-        const texture = loader.load(this.keydata.texture)
-
-        const geometry = new THREE.PlaneBufferGeometry(
-            this.keydata.width,
-            this.keydata.height,
-        );
         const material = new THREE.MeshBasicMaterial({
-            map: texture,
-            transparent: this.keydata.transparent,
-            opacity: this.keydata.opacity,
+        transparent: true, opacity: 0,
         });
-        this.mesh = new THREE.Mesh( geometry, material );
+  
+        this.body = new THREE.Mesh(geometry, material);
+        this.body.geometry.computeBoundingBox();
+        this.bodyPositionY = this.body.position.y;
 
-        this.mesh.position.x = this.keydata.x;
-        this.mesh.position.y = this.keydata.y;
-        this.mesh.position.z = this.keydata.z;
+    };
 
-        // アニメーション用の空のタイムラインを作成する
-        this.timeline = gsap.timeline({ paused: true });
-
-        texture.offset.set( this.keydata.offsetX, this.keydata.offsetY );
-        texture.repeat.set( this.keydata.repeatX, this.keydata.repeatY );
-        texture.center.set( this.keydata.centerX, this.keydata.centerY );
-    
-    }    
+        load(){
+            const promise0 = new Promise((resolve) => {
+              this.assetManager.loadText(this.SKELETON_FILE, (path) => {
+                //load成功
+                console.log(`[Animationtexture] ${path} Load Complete.`);
+                resolve();
+              });
+            });
+        
+            const promise1 = new Promise((resolve) => {
+              this.assetManager.loadTextureAtlas(this.ATLAS_FILE, (path) => {
+                // load 成功
+                console.log(`[Animationtexture] ${path} Load Complete.`);
+                resolve();
+              });
+            });
+        
+        
+          (async() => {
+            await Promise.all([promise0, promise1]);
+        
+            const atlas = this.assetManager.get(this.ATLAS_FILE);
+        
+            const atlasLoader = new spine.AtlasAttachmentLoader(atlas);
+        
+            const skeletonJson = new spine.SkeletonJson(atlasLoader);
+        
+            skeletonJson.scale = 0.18;
+            const skeletonData = skeletonJson.readSkeletonData(
+              this.assetManager.get(this.SKELETON_FILE)
+            );
+        
+            this.skeletonMesh = new spine.threejs.SkeletonMesh(
+              skeletonData,
+              (parameters) => {
+                parameters.depthTest = false;
+              }
+            );
+        
+            this.skeletonMesh.state.setAnimation(0, "four", true);
+            this.body.add(this.skeletonMesh);
+        
+            console.log("[Animationtexture] Spine Aseets Load Complete.");
+        
+        })();
+        
+    };
+      
 }
 

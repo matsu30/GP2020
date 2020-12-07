@@ -8,6 +8,7 @@ var objects = [];
 var vertex = new THREE.Vector3();
 var color = new THREE.Color();
 
+const animationtexture = new Animationtexture();
 const starring = new Starring();
 
 const pedestal = {
@@ -52,6 +53,12 @@ function init() {
         light = new THREE.HemisphereLight( 0xeeeeff, 0x777788, 0.75 );
         light.position.set( 0.5, 1, 0.75 );
         scene.add( light );
+
+        // animationtexture.load();
+        // animationtexture.body.position.x = 20;
+        // animationtexture.body.position.y = 680;
+        // animationtexture.body.position.z = 0;
+        // scene.add(animationtexture.body);
 
         starring.load();
         //x20 y650
@@ -279,7 +286,6 @@ function init() {
             y: maxY - obstacleKeydata.height * -1 + offsetY,
             z: 0,
             onCollision: function(){
-                pedestal.y = -50;
                 start.classList.add('is-show');
                 title.classList.add('is-fade');
             }
@@ -348,16 +354,41 @@ function init() {
         scene.add(eventObstacle05);
         objects.push(eventObstacle05);
 
-        const eventObstacle06 = new Obstacle({
-            x: 1240,
-            y: 650,
+        const eventObstacle06a = new Obstacle({
+            height: 100,
+            x: 1220,
+            y: 670,
             collider: false,
             onCollision: function(){
-                console.log(camera);
+                pedestal.y = 0;
             }
         });
-        scene.add(eventObstacle06);
-        objects.push(eventObstacle06);
+        scene.add(eventObstacle06a);
+        objects.push(eventObstacle06a);
+
+        const eventObstacle06b = new Obstacle({
+            height: 100,
+            x: 1250,
+            y: 670,
+            collider: false,
+            onCollision: function(){
+                pedestal.y = -100;
+            }
+        });
+        scene.add(eventObstacle06b);
+        objects.push(eventObstacle06b);
+
+        const eventObstacle06c = new Obstacle({
+            height: 100,
+            x: 2200,
+            y: 670,
+            collider: false,
+            onCollision: function(){
+                pedestal.y = 0;
+            }
+        });
+        scene.add(eventObstacle06c);
+        objects.push(eventObstacle06c);
 
         const eventObstacle07 = new Obstacle({
             width: 200,
@@ -906,9 +937,9 @@ function init() {
 
         const Hit01N = new Illusttexture({
             texture:'img/charactor.png',
-            width: 40,
-            height: 90,
-            x: 1400,
+            width: 28,
+            height: 63,
+            x: 1300,
             y: 570,
             z: 90,
             offsetX: 0,
@@ -922,8 +953,8 @@ function init() {
 
         const Hit02N = new Illusttexture({
             texture:'img/charactor.png',
-            width: 40,
-            height: 86,
+            width: 31.5,
+            height: 62.3,
             x: 1500,
             y: 568,
             z: 90,
@@ -938,9 +969,9 @@ function init() {
 
         const Hit03N = new Illusttexture({
             texture:'img/charactor.png',
-            width: 68,
-            height: 88,
-            x: 1600,
+            width: 47.6,
+            height: 61.6,
+            x: 1700,
             y: 565,
             z: 90,
             offsetX: 0,
@@ -954,9 +985,9 @@ function init() {
 
         const Hit04N = new Illusttexture({
             texture:'img/charactor.png',
-            width: 75,
-            height: 50,
-            x: 1700,
+            width: 52.5,
+            height: 35,
+            x: 1900,
             y: 560,
             z: 90,
             offsetX: 0,
@@ -970,9 +1001,9 @@ function init() {
 
         const Hit05N = new Illusttexture({
             texture:'img/charactor.png',
-            width: 55,
-            height: 90,
-            x: 1800,
+            width: 38.5,
+            height: 63,
+            x: 2100,
             y: 570,
             z: 90,
             offsetX: 0,
