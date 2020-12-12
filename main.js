@@ -43,7 +43,7 @@ function init() {
         // camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 0.1, 1000 );
         // camera.position.z = 100;
 
-        camera = new THREE.OrthographicCamera( window.innerWidth / - 8, window.innerWidth / 8, window.innerHeight / 7, window.innerHeight / - 9, 0.1, 1000 );
+        camera = new THREE.OrthographicCamera( window.innerWidth / - 15, window.innerWidth / 15, window.innerHeight / 13, window.innerHeight / - 16, 0.1, 1000 );
         camera.position.z = 100;
 
         scene = new THREE.Scene();
@@ -228,10 +228,10 @@ function init() {
             }
         }
 
-        // const Start1 = new Obstacle({
-        //     height: 60,
-        //     y: 230+440,
-        // })
+        const Start1 = new Obstacle({
+            height: 60,
+            y: 230+440,
+        })
         const Start2 = new Obstacle({
             height: 5,
             x: 119,
@@ -256,13 +256,10 @@ function init() {
             depth: 2,
             x: 89,
             y: 239+440,
-            // z: 80,
-            // opacity: 1,
-            // color: 0xfff66f,
         })
 
-        // scene.add(Start1.mesh);
-        // objects.push(Start1.mesh);
+        scene.add(Start1);
+        objects.push(Start1);
         scene.add(Start2);
         objects.push(Start2);
         scene.add(Start3);
@@ -273,6 +270,33 @@ function init() {
         objects.push(Start5);
 
         //---------event------------------------------------
+
+        const hukidashi = document.getElementById('hukidashi');
+        const dameAdd = new Obstacle({
+            color: 0xffff00,
+            collider: false,
+            x: 140,
+            y: maxY - obstacleKeydata.height * -1 + offsetY,
+            z: 0,
+            onCollision: function(){
+                hukidashi.classList.add('is-show');
+            }
+        });
+        scene.add(dameAdd);
+        objects.push(dameAdd);
+
+        const dameRemove = new Obstacle({
+            color: 0xffff00,
+            collider: false,
+            x: 120,
+            y: maxY - obstacleKeydata.height * -1 + offsetY,
+            z: 0,
+            onCollision: function(){
+                hukidashi.classList.remove('is-show');
+            }
+        });
+        scene.add(dameRemove);
+        objects.push(dameRemove);
 
         const start = document.getElementById('start');
         const title = document.getElementById('title');
@@ -3229,10 +3253,10 @@ function init() {
 
 function onWindowResize() {
 
-    camera.left = window.innerWidth / -8;
-    camera.right = window.innerWidth / 8;
-    camera.top = window.innerHeight / 7;
-    camera.bottom = window.innerHeight / -9;
+    camera.left = window.innerWidth / -15;
+    camera.right = window.innerWidth / 15;
+    camera.top = window.innerHeight / 13 ;
+    camera.bottom = window.innerHeight / -16;
 
     //camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
@@ -3265,5 +3289,6 @@ function animate() {
 };
        
 
-
+//ウィンドウの大きさ
+//文字の元サイズ
 

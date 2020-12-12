@@ -38,9 +38,26 @@ body{
     position: relative;
 }
 
+#hukidashi{
+    position: absolute;
+    z-index: 60;
+}
+
+.hukidashi{
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s;
+}
+
+.mada{
+    width: 15em;
+    height: auto;
+    margin: 25em 30em 15em 53em;
+}
+
 .js-start{
     text-align: center;
-    margin-right: 10em;
+    margin-right: 18em;
     opacity: 0;
     visibility: hidden;
     transition: all 0.5s ease-in-out .3s;
@@ -62,7 +79,7 @@ body{
 .setsumei{
     position: absolute;
     width: auto;
-    height: 4em;
+    height: 6em;
     z-index: 30;
 }
 
@@ -91,3 +108,4 @@ body{
 .ending-return{
     margin-top: 20px;
 }
+
