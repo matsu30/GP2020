@@ -26,6 +26,10 @@ let isKeydown = false;
 
 // console.log(obstacle);
 
+// var audio = new Audio('base1.mp3');
+// audio.loop = 'true';
+// audio.load();
+// audio.play();
 
 //---------素材並べた----------------------
 
