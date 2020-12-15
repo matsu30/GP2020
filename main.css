@@ -50,14 +50,14 @@ body{
 }
 
 .mada{
-    width: 15em;
+    width: 20em;
     height: auto;
-    margin: 25em 30em 15em 53em;
+    margin: 35em auto auto 70em;
 }
 
 .js-start{
     text-align: center;
-    margin-right: 18em;
+    margin-right: 20em;
     opacity: 0;
     visibility: hidden;
     transition: all 0.5s ease-in-out .3s;
@@ -65,7 +65,7 @@ body{
 
 #title{
     text-align: center;
-    margin-right: 25em;
+    margin-right: 30em;
     z-index: 40;
     visibility: visible;
     transition: all 2.5s ease-in-out 1s;
@@ -74,12 +74,13 @@ body{
 .title{
     margin-top: 10%;
     position: absolute;
+    width: 30%;
 }
 
 .setsumei{
     position: absolute;
     width: auto;
-    height: 6em;
+    height: 8em;
     z-index: 30;
 }
 
