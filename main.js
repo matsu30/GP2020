@@ -47,7 +47,7 @@ function init() {
         // camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 0.1, 1000 );
         // camera.position.z = 100;
 
-        camera = new THREE.OrthographicCamera( window.innerWidth / - 30, window.innerWidth / 30, window.innerHeight / 26, window.innerHeight / - 32, 0.1, 1000 );
+        camera = new THREE.OrthographicCamera( window.innerWidth / - 24, window.innerWidth / 24, window.innerHeight / 17.6, window.innerHeight / - 25.6, 0.1, 1000 );
         camera.position.z = 100;
 
         scene = new THREE.Scene();
@@ -3257,10 +3257,10 @@ function init() {
 
 function onWindowResize() {
 
-    camera.left = window.innerWidth / -30;
-    camera.right = window.innerWidth / 30;
-    camera.top = window.innerHeight / 26 ;
-    camera.bottom = window.innerHeight / -32;
+    camera.left = window.innerWidth / -24;
+    camera.right = window.innerWidth / 24;
+    camera.top = window.innerHeight / 17.6 ;
+    camera.bottom = window.innerHeight / -25.6;
 
     //camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
