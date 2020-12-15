@@ -65,7 +65,7 @@ body{
 
 #title{
     text-align: center;
-    margin-right: 30em;
+    margin-right: 30%;
     z-index: 40;
     visibility: visible;
     transition: all 2.5s ease-in-out 1s;
