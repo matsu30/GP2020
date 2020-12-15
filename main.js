@@ -47,7 +47,7 @@ function init() {
         // camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 0.1, 1000 );
         // camera.position.z = 100;
 
-        camera = new THREE.OrthographicCamera( window.innerWidth / - 24, window.innerWidth / 24, window.innerHeight / 17.6, window.innerHeight / - 25.6, 0.1, 1000 );
+        camera = new THREE.OrthographicCamera( window.innerWidth / - 19.2, window.innerWidth / 19.2, window.innerHeight / 14.08, window.innerHeight / - 20.48, 0.1, 1000 );
         camera.position.z = 100;
 
         scene = new THREE.Scene();
@@ -684,7 +684,7 @@ function init() {
         scene.add(textureNA1.mesh);
 
         const ImgBack = new Illusttexture({
-            texture:'img/Back01.png',
+            texture:'img/back01.png',
             width: 400,
             height: 475,
             x: 500,
@@ -694,7 +694,7 @@ function init() {
         scene.add(ImgBack.mesh);
 
         const ImgBack_2 = new Illusttexture({
-            texture:'img/Back01.png',
+            texture:'img/back01.png',
             width: 400,
             height: 475,
             x: 900,
@@ -704,7 +704,7 @@ function init() {
         scene.add(ImgBack_2.mesh);
 
         const ImgBack_3 = new Illusttexture({
-            texture:'img/Back01.png',
+            texture:'img/back01.png',
             width: 400,
             height: 475,
             x: 1300,
@@ -714,7 +714,7 @@ function init() {
         scene.add(ImgBack_3.mesh);
 
         const ImgBack_4 = new Illusttexture({
-            texture:'img/Back01.png',
+            texture:'img/back01.png',
             width: 400,
             height: 475,
             x: 1700,
@@ -724,7 +724,7 @@ function init() {
         scene.add(ImgBack_4.mesh);
 
         const ImgBack_5 = new Illusttexture({
-            texture:'img/Back01.png',
+            texture:'img/back01.png',
             width: 400,
             height: 475,
             x: 2100,
@@ -1222,7 +1222,7 @@ function init() {
         scene.add(SKT2.mesh);
 
         const ImgBack_S1 = new Illusttexture({
-            texture:'img/Back01.png',
+            texture:'img/back01.png',
             width: 700,
             height: 700,
             x: 2700,
@@ -1232,7 +1232,7 @@ function init() {
         scene.add(ImgBack_S1.mesh);
 
         const ImgBack_S2 = new Illusttexture({
-            texture:'img/Back01.png',
+            texture:'img/back01.png',
             width: 700,
             height: 700,
             x: 3400,
@@ -3257,10 +3257,10 @@ function init() {
 
 function onWindowResize() {
 
-    camera.left = window.innerWidth / -24;
-    camera.right = window.innerWidth / 24;
-    camera.top = window.innerHeight / 17.6 ;
-    camera.bottom = window.innerHeight / -25.6;
+    camera.left = window.innerWidth / -19.2;
+    camera.right = window.innerWidth / 19.2;
+    camera.top = window.innerHeight / 14.08;
+    camera.bottom = window.innerHeight / -20.48;
 
     //camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
