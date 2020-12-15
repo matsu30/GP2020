@@ -324,7 +324,7 @@ function init() {
         const eventObstacle01 = new Obstacle({
             width: 200,
             height: 600,
-            x: 430,
+            x: 438,
             y: 450,
             collider: false,
             once: true,
@@ -421,7 +421,7 @@ function init() {
         const eventObstacle07 = new Obstacle({
             width: 200,
             height: 600,
-            x: 2528,
+            x: 2535,
             y: 450,
             collider: false,
             once: true,
