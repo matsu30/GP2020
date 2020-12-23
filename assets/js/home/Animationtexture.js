@@ -72,6 +72,38 @@ class Animationtexture{
 
   };
 
+  // changePose
+  // 引数 animetionName に渡された名前のアニメーションに変更する
+  changePose(
+    animationName,
+    options = {
+       isForcePlay: false
+    }
+  ){
+    //　設定されたアニメーションを終了まで再生中であれば何もせず終了
+    if (this._isForcePlaying) return;
+
+    // アニメーションを切り替える
+    this.skeletonMesh.state.setAnimation(0, animationName, true);
+
+    if (options.isForcePlay){
+      // アニメーションを最後まで再生するフラグを立てる
+      this._isForcePlaying = true;
+      this._canJump = false;
+
+      // アニメーションが完了したときの処理をすべて廃棄する
+      this.skeletonMesh.state.clearListeners();
+
+      this.skeletonMesh.state.addListener({
+        // アニメーションが完了したときの処理
+        complete: () => {
+          // アニメーションを最後まで再生するフラグを戻す
+          this._isForcePlaying = false;
+        }
+      });
+    };
+  };
+
   animate() {
 
     const delta = Math.min(this.clock.getDelta(), 0.02);

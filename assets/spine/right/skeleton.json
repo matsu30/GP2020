@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "z2TBJ4h0cw6Lx7Li23HFvRwM6no", "spine": "3.8.99", "images": "", "audio": "" },
+"skeleton": { "hash": "VgTgG95OrKer+Eilf/h6uSBTMHw", "spine": "3.8.99", "images": "", "audio": "" },
 "bones": [
 	{ "name": "root", "shearX": 1, "shearY": 1 }
 ],
@@ -64,7 +64,8 @@
 	{ "name": "four/four0006", "bone": "root" },
 	{ "name": "four/four0007", "bone": "root" },
 	{ "name": "smaile/smaile0001", "bone": "root" },
-	{ "name": "smaile/smaile0002", "bone": "root" }
+	{ "name": "smaile/smaile0002", "bone": "root" },
+	{ "name": "stop", "bone": "root" }
 ],
 "skins": [
 	{
@@ -252,6 +253,9 @@
 			},
 			"stand/stand0008": {
 				"stand/stand0008": { "width": 80, "height": 170 }
+			},
+			"stop": {
+				"stop": { "width": 90, "height": 170 }
 			}
 		}
 	}
@@ -477,6 +481,143 @@
 			}
 		}
 	},
+	"follow": {
+		"slots": {
+			"001": {
+				"color": [
+					{ "color": "ffffffff" }
+				],
+				"attachment": [
+					{ "name": "001" },
+					{ "time": 0.1667, "name": null },
+					{ "time": 1.3, "name": "001" },
+					{ "time": 1.4667, "name": null },
+					{ "time": 2.7333, "name": "001" },
+					{ "time": 2.8667, "name": null },
+					{ "time": 4.1333, "name": "001" },
+					{ "time": 4.2667, "name": null },
+					{ "time": 5.6, "name": "001" },
+					{ "time": 5.7333, "name": null }
+				]
+			},
+			"002": {
+				"color": [
+					{ "time": 0.1333, "color": "ffffffff" }
+				],
+				"attachment": [
+					{ "time": 0.1667, "name": "002" },
+					{ "time": 0.3333, "name": null },
+					{ "time": 1.4667, "name": "002" },
+					{ "time": 1.6333, "name": null },
+					{ "time": 2.8667, "name": "002" },
+					{ "time": 3.1, "name": null },
+					{ "time": 4.2667, "name": "002" },
+					{ "time": 4.5, "name": null },
+					{ "time": 5.7333, "name": "002" },
+					{ "time": 5.9667, "name": null }
+				]
+			},
+			"003": {
+				"color": [
+					{ "color": "ffffffff" }
+				],
+				"attachment": [
+					{ "time": 0.3333, "name": "003" },
+					{ "time": 0.5, "name": null },
+					{ "time": 1.6333, "name": "003" },
+					{ "time": 1.8, "name": null },
+					{ "time": 3.1, "name": "003" },
+					{ "time": 3.2667, "name": null },
+					{ "time": 4.5, "name": "003" },
+					{ "time": 4.6667, "name": null },
+					{ "time": 5.9667, "name": "003" },
+					{ "time": 6.1333, "name": null }
+				]
+			},
+			"004": {
+				"color": [
+					{ "color": "ffffffff" }
+				],
+				"attachment": [
+					{ "time": 0.5, "name": "004" },
+					{ "time": 0.6667, "name": null },
+					{ "time": 1.8, "name": "004" },
+					{ "time": 1.9667, "name": null },
+					{ "time": 3.2667, "name": "004" },
+					{ "time": 3.4333, "name": null },
+					{ "time": 4.6667, "name": "004" },
+					{ "time": 4.8333, "name": null },
+					{ "time": 6.1333, "name": "004" },
+					{ "time": 6.3, "name": null }
+				]
+			},
+			"005": {
+				"color": [
+					{ "color": "ffffffff" }
+				],
+				"attachment": [
+					{ "time": 0.6667, "name": "005" },
+					{ "time": 0.8333, "name": null },
+					{ "time": 1.9667, "name": "005" },
+					{ "time": 2.1333, "name": null },
+					{ "time": 3.4333, "name": "005" },
+					{ "time": 3.6, "name": null },
+					{ "time": 4.8333, "name": "005" },
+					{ "time": 5, "name": null },
+					{ "time": 6.3, "name": "005" },
+					{ "time": 6.4667, "name": null }
+				]
+			},
+			"006": {
+				"attachment": [
+					{ "time": 0.8333, "name": "006" },
+					{ "time": 1, "name": null },
+					{ "time": 2.1333, "name": "006" },
+					{ "time": 2.3, "name": null },
+					{ "time": 3.6, "name": "006" },
+					{ "time": 3.7667, "name": null },
+					{ "time": 5, "name": "006" },
+					{ "time": 5.1667, "name": null },
+					{ "time": 6.4667, "name": "006" },
+					{ "time": 6.6333, "name": null }
+				]
+			},
+			"007": {
+				"color": [
+					{ "color": "ffffffff" }
+				],
+				"attachment": [
+					{ "time": 1, "name": "007" },
+					{ "time": 1.1667, "name": null },
+					{ "time": 2.3, "name": "007" },
+					{ "time": 2.4667, "name": null },
+					{ "time": 3.7667, "name": "007" },
+					{ "time": 3.9333, "name": null },
+					{ "time": 5.1667, "name": "007" },
+					{ "time": 5.3333, "name": null },
+					{ "time": 6.6333, "name": "007" },
+					{ "time": 6.8, "name": null }
+				]
+			},
+			"008": {
+				"color": [
+					{ "color": "ffffffff", "curve": "stepped" },
+					{ "time": 6.9333, "color": "ffffffff" }
+				],
+				"attachment": [
+					{ "time": 1.1667, "name": "008" },
+					{ "time": 1.3, "name": null },
+					{ "time": 2.4667, "name": "008" },
+					{ "time": 2.7333, "name": null },
+					{ "time": 3.9333, "name": "008" },
+					{ "time": 4.1333, "name": null },
+					{ "time": 5.3333, "name": "008" },
+					{ "time": 5.6, "name": null },
+					{ "time": 6.8, "name": "008" }
+				]
+			}
+		}
+	},
 	"four": {
 		"slots": {
 			"four/four0001": {
@@ -654,6 +795,60 @@
 				"attachment": [
 					{ "time": 0.9, "name": "stand/stand0008" },
 					{ "time": 1.2333, "name": "stand/stand0008" }
+				]
+			}
+		}
+	},
+	"stop": {
+		"slots": {
+			"006": {
+				"color": [
+					{ "color": "ffffff00" }
+				]
+			},
+			"sit/sit0001": {
+				"attachment": [
+					{ "name": "sit/sit0001" },
+					{ "time": 0.6667, "name": null },
+					{ "time": 2.8667, "name": "sit/sit0001" }
+				]
+			},
+			"sit/sit0002": {
+				"attachment": [
+					{ "time": 0.6667, "name": "sit/sit0002" },
+					{ "time": 0.8, "name": null },
+					{ "time": 2.7333, "name": "sit/sit0002" },
+					{ "time": 2.8667, "name": null }
+				]
+			},
+			"sit/sit0003": {
+				"attachment": [
+					{ "time": 0.8, "name": "sit/sit0003" },
+					{ "time": 0.9333, "name": null },
+					{ "time": 2.6, "name": "sit/sit0003" },
+					{ "time": 2.7333, "name": null }
+				]
+			},
+			"sit/sit0004": {
+				"attachment": [
+					{ "time": 0.9333, "name": "sit/sit0004" },
+					{ "time": 1.0667, "name": null },
+					{ "time": 2.4667, "name": "sit/sit0004" },
+					{ "time": 2.6, "name": null }
+				]
+			},
+			"sit/sit0005": {
+				"attachment": [
+					{ "time": 1.0667, "name": "sit/sit0005" },
+					{ "time": 1.2, "name": null },
+					{ "time": 2.3333, "name": "sit/sit0005" },
+					{ "time": 2.4667, "name": null }
+				]
+			},
+			"stop": {
+				"attachment": [
+					{ "time": 1.2, "name": "stop" },
+					{ "time": 2.3333, "name": null }
 				]
 			}
 		}

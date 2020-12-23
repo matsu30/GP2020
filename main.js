@@ -44,11 +44,11 @@ function init() {
         // camera = new THREE.OrthographicCamera(-120, +120, +67.5, -67.5, 1, 150);
         // camera.position.z = 100;
 
-        // camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 0.1, 1000 );
-        // camera.position.z = 100;
-
-        camera = new THREE.OrthographicCamera( window.innerWidth / - 19.2, window.innerWidth / 19.2, window.innerHeight / 14.08, window.innerHeight / - 20.48, 0.1, 1000 );
+        camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 0.1, 1000 );
         camera.position.z = 100;
+
+        // camera = new THREE.OrthographicCamera( window.innerWidth / - 19.2, window.innerWidth / 19.2, window.innerHeight / 14.08, window.innerHeight / - 20.48, 0.1, 1000 );
+        // camera.position.z = 100;
 
         scene = new THREE.Scene();
         scene.background = new THREE.Color( 0xffffff );
@@ -254,8 +254,8 @@ function init() {
             y: 239+440,
         })
 
-        scene.add(Start1);
-        objects.push(Start1);
+        // scene.add(Start1);
+        // objects.push(Start1);
         scene.add(Start2);
         objects.push(Start2);
         scene.add(Start3);
@@ -357,8 +357,9 @@ function init() {
         });
 
         const eventObstacle03 = new Obstacle({
+            height: 150,
             x: 700,
-            y: 190,
+            y: 250,
             collider: false,
             onCollision: function(){
                 fourAnimation.timeline.play();
@@ -453,9 +454,9 @@ function init() {
 
         const kotoba01 = document.getElementById('kotoba01');
         const eventObstacleA_txt01 = new Obstacle({
-            height: 300,
+            height: 150,
             x: 1000,
-            y: 190,
+            y: 250,
             collider: false,
             onCollision: function(){
                 kotoba01.classList.add('is-show');
@@ -466,9 +467,9 @@ function init() {
 
         const kotoba02 = document.getElementById('kotoba02');
         const eventObstacleA_txt02 = new Obstacle({
-            height: 300,
+            height: 150,
             x: 1300,
-            y: 190,
+            y: 250,
             collider: false,
             onCollision: function(){
                 kotoba03.classList.remove('is-show');
@@ -479,9 +480,9 @@ function init() {
         objects.push(eventObstacleA_txt02);
 
         const eventremove_txt01 = new Obstacle({
-            height: 300,
+            height: 150,
             x: 900,
-            y: 190,
+            y: 250,
             collider: false,
             onCollision: function(){
                 kotoba01.classList.remove('is-show');
@@ -493,9 +494,9 @@ function init() {
         objects.push(eventremove_txt01);
 
         const eventremove_txt02 = new Obstacle({
-            height: 300,
+            height: 150,
             x: 1250,
-            y: 190,
+            y: 250,
             collider: false,
             onCollision: function(){
                 kotoba01.classList.remove('is-show');
@@ -543,6 +544,83 @@ function init() {
         });
         scene.add(eventObstacle09);
         objects.push(eventObstacle09);
+
+        //---sita
+        const SkaraH = new Obstacle({
+            height: 100,
+            x: 700,
+            y: 50,
+            collider: false,
+            onCollision: function(){
+                console.log("SkaraH");
+                starring.body.position.x = 7700;
+            }
+        });
+        scene.add(SkaraH);
+        objects.push(SkaraH);
+
+        const HkaraS = new Obstacle({
+            height: 100,
+            x: 7700,
+            y: 50,
+            collider: false,
+            onCollision: function(){
+                console.log("HkaraS");
+                starring.body.position.x = 700;
+            }
+        });
+        scene.add(HkaraS);
+        objects.push(HkaraS);
+
+        const carMove = new Obstacle({
+            height: 100,
+            x: 8000,
+            y: 50,
+            collider: false,
+            onCollision: function(){
+                carH.timeline.play();
+            }
+        });
+        scene.add(carMove);
+        objects.push(carMove);
+
+        const stop = new Obstacle({
+            height: 100,
+            x: 8480,
+            y: 50,
+            collider: false,
+            once: true,
+            onCollision: function(){
+                console.log("stop");
+                starring.changePose("stop", { isForcePlay: true });
+                starring.skeletonMesh.state.tracks[0].loop = false;
+            }
+        });
+        scene.add(stop);
+        objects.push(stop);
+
+        starring.timeline
+        .to(starring.body.position, {
+            duration: 4,
+            x: "+=200",
+        })
+
+        const follow = new Obstacle({
+            height: 100,
+            x: 8590,
+            y: 50,
+            collider: false,
+            once: true,
+            onCollision: function(){
+                console.log("follow");
+                starring.changePose("follow", { isForcePlay: true });
+                starring.skeletonMesh.state.tracks[0].loop = false;
+                starring.timeline.play();
+                Hit01H.timeline.play();
+            }
+        });
+        scene.add(follow);
+        objects.push(follow);
 
 
 
@@ -1839,7 +1917,7 @@ function init() {
             texture:'img/charactor.png',
             width: 60,
             height: 50,
-            x: 8010,
+            x: 8150,
             y: 20,
             z: -39,
             offsetX: 0,
@@ -1850,6 +1928,15 @@ function init() {
             repeatY: 0.2,
         })
         scene.add(carH.mesh);
+        carH.timeline
+        .to(carH.mesh.position, {
+            duration: 3,
+            x: "-=400",
+        })
+        .to(carH.mesh.position, {
+            duration: 1,
+            z: "-=800",
+        })
 
         const CemeteryH = new Illusttexture({
             texture:'img/haikei02.png',
@@ -1887,7 +1974,7 @@ function init() {
             texture:'img/charactor.png',
             width: 20,
             height: 50,
-            x: 8660,
+            x: 8600,
             y: 22,
             z: -39,
             offsetX: 0,
@@ -1898,6 +1985,15 @@ function init() {
             repeatY: 0.2,
         })
         scene.add(Hit01H.mesh);
+        Hit01H.timeline
+        .to(Hit01H.mesh.rotation, {
+            duration: 10,
+            y: 180,
+        })
+        .to(Hit01H.mesh.position, {
+            duration: 4,
+            x: "+=200",
+        })
 
         const LaboratoryH = new Illusttexture({
             texture:'img/haikei01.png',
@@ -1905,7 +2001,7 @@ function init() {
             height: 160,
             x: 8800,
             y: 75,
-            z: -39,
+            z: 50,
             offsetX: 0,
             offsetY: 0,
             centerX: 0,

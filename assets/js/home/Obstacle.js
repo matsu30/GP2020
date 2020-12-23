@@ -12,7 +12,7 @@ class Obstacle extends THREE.Mesh {
             collider: true, 
             color: 0xf99fff,
             transparent: true,
-            opacity: 0,
+            opacity: 0.5,
             x: 0,
             y: 0,
             z: 0,
