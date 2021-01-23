@@ -73,9 +73,9 @@ function init() {
         fourAnimation.body.position.x = 540;
         fourAnimation.body.position.y = 194;
         fourAnimation.body.position.z = -2;
-        fourAnimationH.body.position.x = 9200;
+        fourAnimationH.body.position.x = 8400;
         fourAnimationH.body.position.y = 16;
-        fourAnimationH.body.position.z = 0;
+        fourAnimationH.body.position.z = 50;
         doctorAnimation.body.position.x = 8600;
         doctorAnimation.body.position.y = 19;
         doctorAnimation.body.position.z = -1000;
@@ -645,6 +645,16 @@ function init() {
         scene.add(follow);
         objects.push(follow);
 
+        fourAnimationH.timeline
+        .to(fourAnimationH.body.position, {
+            duration: 4,
+            x: "+=500",
+        })
+        .to(fourAnimationH.body.position, {
+            duration: 30,
+            x: "+=4000"
+        });
+
         const HitWalk = new Obstacle({
             height: 100,
             x: 8900,
@@ -659,10 +669,28 @@ function init() {
                 Hit06H.timeline.play();
                 Hit07H.timeline.play();
                 Hit08H.timeline.play();
+                fourAnimationH.timeline.play();
             }
         });
         scene.add(HitWalk);
-        objects.push(HitWalk); 
+        objects.push(HitWalk);
+
+        const ed4 = document.getElementById('ed4');
+        const eventED4 = new Obstacle({
+            height: 100,
+            x: 9970,
+            y: 50,
+            collider: false,
+            once: true,
+            onCollision: function(){
+                ed4.classList.add('is-show');
+                document.removeEventListener( 'keydown', onKeyDown, false );
+                document.removeEventListener( 'keyup', onKeyUp, false );
+                pedestal.y = 100000;
+            }
+        });
+        scene.add(eventED4);
+        objects.push(eventED4);
 
 
 
@@ -2034,7 +2062,7 @@ function init() {
             height: 160,
             x: 8800,
             y: 75,
-            z: 50,
+            z: 60,
             offsetX: 0,
             offsetY: 0,
             centerX: 0,
@@ -2332,7 +2360,7 @@ function init() {
             texture:'img/charactor.png',
             width: 18,
             height: 27,
-            x: 9750,
+            x: 9790,
             y: 15,
             z: -39,
             offsetX: 0,
@@ -2366,7 +2394,7 @@ function init() {
             height: 28,
             x: 9850,
             y: 13,
-            z: -39,
+            z: 50,
             offsetX: 0,
             offsetY: 0,
             centerX: 1,
@@ -2380,7 +2408,7 @@ function init() {
             texture:'img/charactor.png',
             width: 45,
             height: 24,
-            x: 9900,
+            x: 9840,
             y: 7,
             z: -39,
             offsetX: 0,
@@ -2396,9 +2424,9 @@ function init() {
             texture:'img/charactor.png',
             width: 45,
             height: 24,
-            x: 9950,
+            x: 10000,
             y: 3,
-            z: -39,
+            z: 50,
             offsetX: 0,
             offsetY: 0,
             centerX: 0.8,
