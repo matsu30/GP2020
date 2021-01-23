@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "VgTgG95OrKer+Eilf/h6uSBTMHw", "spine": "3.8.99", "images": "", "audio": "" },
+"skeleton": { "hash": "d3YYTFvXArSqkfS5lhYCiCfeTEY", "spine": "3.8.99", "images": "", "audio": "" },
 "bones": [
 	{ "name": "root", "shearX": 1, "shearY": 1 }
 ],
@@ -65,7 +65,30 @@
 	{ "name": "four/four0007", "bone": "root" },
 	{ "name": "smaile/smaile0001", "bone": "root" },
 	{ "name": "smaile/smaile0002", "bone": "root" },
-	{ "name": "stop", "bone": "root" }
+	{ "name": "stop", "bone": "root" },
+	{ "name": "doctor/00", "bone": "root" },
+	{ "name": "doctor/doctor0001", "bone": "root" },
+	{ "name": "doctor/doctor0002", "bone": "root" },
+	{ "name": "doctor/doctor0003", "bone": "root" },
+	{ "name": "doctor/doctor0004", "bone": "root" },
+	{ "name": "doctor/doctor0005", "bone": "root" },
+	{ "name": "doctor/doctor0006", "bone": "root" },
+	{ "name": "dance/dance0001", "bone": "root" },
+	{ "name": "dance/dance0002", "bone": "root" },
+	{ "name": "dance/dance0003", "bone": "root" },
+	{ "name": "dance/dance0004", "bone": "root" },
+	{ "name": "dance/dance0005", "bone": "root" },
+	{ "name": "dance/dance0006", "bone": "root" },
+	{ "name": "dance/dance0007", "bone": "root" },
+	{ "name": "dance/dance0008", "bone": "root" },
+	{ "name": "dance/dance0009", "bone": "root" },
+	{ "name": "dance/dance0010", "bone": "root" },
+	{ "name": "dance/dance0011", "bone": "root" },
+	{ "name": "dance/dance0012", "bone": "root" },
+	{ "name": "dance/dance0013", "bone": "root" },
+	{ "name": "dance/dance0014", "bone": "root" },
+	{ "name": "dance/dance0015", "bone": "root" },
+	{ "name": "dance/dance0016", "bone": "root" }
 ],
 "skins": [
 	{
@@ -172,6 +195,75 @@
 			},
 			"crash/crash012": {
 				"crash/crash012": { "width": 300, "height": 170 }
+			},
+			"dance/dance0001": {
+				"dance/dance0001": { "width": 400, "height": 250 }
+			},
+			"dance/dance0002": {
+				"dance/dance0002": { "width": 400, "height": 250 }
+			},
+			"dance/dance0003": {
+				"dance/dance0003": { "width": 400, "height": 250 }
+			},
+			"dance/dance0004": {
+				"dance/dance0004": { "width": 400, "height": 250 }
+			},
+			"dance/dance0005": {
+				"dance/dance0005": { "width": 400, "height": 250 }
+			},
+			"dance/dance0006": {
+				"dance/dance0006": { "width": 400, "height": 250 }
+			},
+			"dance/dance0007": {
+				"dance/dance0007": { "width": 400, "height": 250 }
+			},
+			"dance/dance0008": {
+				"dance/dance0008": { "width": 400, "height": 250 }
+			},
+			"dance/dance0009": {
+				"dance/dance0009": { "width": 400, "height": 250 }
+			},
+			"dance/dance0010": {
+				"dance/dance0010": { "width": 400, "height": 250 }
+			},
+			"dance/dance0011": {
+				"dance/dance0011": { "width": 400, "height": 250 }
+			},
+			"dance/dance0012": {
+				"dance/dance0012": { "width": 400, "height": 250 }
+			},
+			"dance/dance0013": {
+				"dance/dance0013": { "width": 400, "height": 250 }
+			},
+			"dance/dance0014": {
+				"dance/dance0014": { "width": 400, "height": 250 }
+			},
+			"dance/dance0015": {
+				"dance/dance0015": { "width": 400, "height": 250 }
+			},
+			"dance/dance0016": {
+				"dance/dance0016": { "width": 400, "height": 250 }
+			},
+			"doctor/00": {
+				"doctor/00": { "width": 100, "height": 200 }
+			},
+			"doctor/doctor0001": {
+				"doctor/doctor0001": { "width": 100, "height": 200 }
+			},
+			"doctor/doctor0002": {
+				"doctor/doctor0002": { "width": 100, "height": 200 }
+			},
+			"doctor/doctor0003": {
+				"doctor/doctor0003": { "width": 100, "height": 200 }
+			},
+			"doctor/doctor0004": {
+				"doctor/doctor0004": { "width": 100, "height": 200 }
+			},
+			"doctor/doctor0005": {
+				"doctor/doctor0005": { "width": 100, "height": 200 }
+			},
+			"doctor/doctor0006": {
+				"doctor/doctor0006": { "width": 100, "height": 200 }
 			},
 			"four/four0001": {
 				"four/four0001": { "width": 450, "height": 190 }
@@ -452,6 +544,106 @@
 			}
 		}
 	},
+	"dance": {
+		"slots": {
+			"dance/dance0001": {
+				"attachment": [
+					{ "name": "dance/dance0001" },
+					{ "time": 0.1333, "name": null },
+					{ "time": 5.3333, "name": "dance/dance0001" }
+				]
+			},
+			"dance/dance0002": {
+				"attachment": [
+					{ "time": 0.1333, "name": "dance/dance0002" },
+					{ "time": 0.2667, "name": null }
+				]
+			},
+			"dance/dance0003": {
+				"attachment": [
+					{ "time": 0.2667, "name": "dance/dance0003" },
+					{ "time": 0.4, "name": null }
+				]
+			},
+			"dance/dance0004": {
+				"attachment": [
+					{ "time": 0.4, "name": "dance/dance0004" },
+					{ "time": 0.5333, "name": null }
+				]
+			},
+			"dance/dance0005": {
+				"attachment": [
+					{ "time": 0.5333, "name": "dance/dance0005" },
+					{ "time": 0.6667, "name": null }
+				]
+			},
+			"dance/dance0006": {
+				"attachment": [
+					{ "time": 0.6667, "name": "dance/dance0006" },
+					{ "time": 0.8, "name": null }
+				]
+			},
+			"dance/dance0007": {
+				"attachment": [
+					{ "time": 0.8, "name": "dance/dance0007" },
+					{ "time": 0.9, "name": null }
+				]
+			},
+			"dance/dance0008": {
+				"attachment": [
+					{ "time": 0.9, "name": "dance/dance0008" },
+					{ "time": 1, "name": null }
+				]
+			},
+			"dance/dance0009": {
+				"attachment": [
+					{ "time": 1, "name": "dance/dance0009" },
+					{ "time": 1.1, "name": null }
+				]
+			},
+			"dance/dance0010": {
+				"attachment": [
+					{ "time": 1.1, "name": "dance/dance0010" },
+					{ "time": 1.2333, "name": null }
+				]
+			},
+			"dance/dance0011": {
+				"attachment": [
+					{ "time": 1.2333, "name": "dance/dance0011" },
+					{ "time": 1.3333, "name": null }
+				]
+			},
+			"dance/dance0012": {
+				"attachment": [
+					{ "time": 1.3333, "name": "dance/dance0012" },
+					{ "time": 1.4333, "name": null }
+				]
+			},
+			"dance/dance0013": {
+				"attachment": [
+					{ "time": 1.4333, "name": "dance/dance0013" },
+					{ "time": 1.5333, "name": null }
+				]
+			},
+			"dance/dance0014": {
+				"attachment": [
+					{ "time": 1.5333, "name": "dance/dance0014" },
+					{ "time": 1.6333, "name": null }
+				]
+			},
+			"dance/dance0015": {
+				"attachment": [
+					{ "time": 1.6333, "name": "dance/dance0015" },
+					{ "time": 1.7667, "name": null }
+				]
+			},
+			"dance/dance0016": {
+				"attachment": [
+					{ "time": 1.7667, "name": "dance/dance0016" }
+				]
+			}
+		}
+	},
 	"demo": {
 		"slots": {
 			"001": {
@@ -459,6 +651,96 @@
 					{ "color": "ffffffff" },
 					{ "time": 0.8333, "color": "ffffff00" },
 					{ "time": 1.6667, "color": "ffffffff" }
+				]
+			}
+		}
+	},
+	"doctor": {
+		"slots": {
+			"doctor/00": {
+				"attachment": [
+					{ "name": "doctor/00" },
+					{ "time": 0.6667, "name": null }
+				]
+			},
+			"doctor/doctor0001": {
+				"attachment": [
+					{ "time": 0.6667, "name": "doctor/doctor0001" },
+					{ "time": 0.8333, "name": null },
+					{ "time": 1.6667, "name": "doctor/doctor0001" },
+					{ "time": 1.8333, "name": null },
+					{ "time": 2.6667, "name": "doctor/doctor0001" },
+					{ "time": 2.8333, "name": null },
+					{ "time": 3.6667, "name": "doctor/doctor0001" },
+					{ "time": 3.8333, "name": null }
+				]
+			},
+			"doctor/doctor0002": {
+				"attachment": [
+					{ "time": 0.8333, "name": "doctor/doctor0002" },
+					{ "time": 1, "name": null },
+					{ "time": 1.8333, "name": "doctor/doctor0002" },
+					{ "time": 2, "name": null },
+					{ "time": 2.8333, "name": "doctor/doctor0002" },
+					{ "time": 3, "name": null },
+					{ "time": 3.8333, "name": "doctor/doctor0002" },
+					{ "time": 4, "name": null }
+				]
+			},
+			"doctor/doctor0003": {
+				"attachment": [
+					{ "time": 1, "name": "doctor/doctor0003" },
+					{ "time": 1.1667, "name": null },
+					{ "time": 2, "name": "doctor/doctor0003" },
+					{ "time": 2.1667, "name": null },
+					{ "time": 3, "name": "doctor/doctor0003" },
+					{ "time": 3.1667, "name": null },
+					{ "time": 4, "name": "doctor/doctor0003" },
+					{ "time": 4.1667, "name": null }
+				]
+			},
+			"doctor/doctor0004": {
+				"attachment": [
+					{ "time": 1.1667, "name": "doctor/doctor0004" },
+					{ "time": 1.3333, "name": null },
+					{ "time": 2.1667, "name": "doctor/doctor0004" },
+					{ "time": 2.3333, "name": null },
+					{ "time": 3.1667, "name": "doctor/doctor0004" },
+					{ "time": 3.3333, "name": null },
+					{ "time": 4.1667, "name": "doctor/doctor0004" },
+					{ "time": 4.3333, "name": null }
+				]
+			},
+			"doctor/doctor0005": {
+				"attachment": [
+					{ "time": 1.3333, "name": "doctor/doctor0005" },
+					{ "time": 1.5, "name": null },
+					{ "time": 2.3333, "name": "doctor/doctor0005" },
+					{ "time": 2.5, "name": null },
+					{ "time": 3.3333, "name": "doctor/doctor0005" },
+					{ "time": 3.5, "name": null },
+					{ "time": 4.3333, "name": "doctor/doctor0005" },
+					{ "time": 4.5, "name": null }
+				]
+			},
+			"doctor/doctor0006": {
+				"attachment": [
+					{ "time": 1.5, "name": "doctor/doctor0006" },
+					{ "time": 1.6667, "name": null },
+					{ "time": 2.5, "name": "doctor/doctor0006" },
+					{ "time": 2.6667, "name": null },
+					{ "time": 3.5, "name": "doctor/doctor0006" },
+					{ "time": 3.6667, "name": null },
+					{ "time": 4.5, "name": "doctor/doctor0006" }
+				]
+			}
+		},
+		"bones": {
+			"root": {
+				"scale": [
+					{},
+					{ "time": 0.2333, "x": -1, "curve": "stepped" },
+					{ "time": 0.6667 }
 				]
 			}
 		}

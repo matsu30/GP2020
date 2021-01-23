@@ -10,6 +10,7 @@ var color = new THREE.Color();
 
 const starring = new Starring();
 const fourAnimation = new Animationtexture();
+const doctorAnimation = new Animationtexture();
 
 const pedestal = {
     x: 0,
@@ -44,11 +45,11 @@ function init() {
         // camera = new THREE.OrthographicCamera(-120, +120, +67.5, -67.5, 1, 150);
         // camera.position.z = 100;
 
-        camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 0.1, 1000 );
-        camera.position.z = 100;
-
-        // camera = new THREE.OrthographicCamera( window.innerWidth / - 19.2, window.innerWidth / 19.2, window.innerHeight / 14.08, window.innerHeight / - 20.48, 0.1, 1000 );
+        // camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 0.1, 1000 );
         // camera.position.z = 100;
+
+        camera = new THREE.OrthographicCamera( window.innerWidth / - 19.2, window.innerWidth / 19.2, window.innerHeight / 14.08, window.innerHeight / - 20.48, 0.1, 1000 );
+        camera.position.z = 100;
 
         scene = new THREE.Scene();
         scene.background = new THREE.Color( 0xffffff );
@@ -59,17 +60,22 @@ function init() {
         scene.add( light );
 
         fourAnimation.load();
+        doctorAnimation.load();
 
         starring.load();
         //x20 y650
-        starring.body.position.x = 20;
-        starring.body.position.y = 650;
+        starring.body.position.x = 8590;
+        starring.body.position.y = 0;
         starring.body.position.z = 0;
         fourAnimation.body.position.x = 540;
         fourAnimation.body.position.y = 194;
         fourAnimation.body.position.z = -2;
+        doctorAnimation.body.position.x = 8600;
+        doctorAnimation.body.position.y = 19;
+        doctorAnimation.body.position.z = -1000;
         scene.add(starring.body);
         scene.add(fourAnimation.body);
+        scene.add(doctorAnimation.body);
 
         //--------開始-----------------------------------------------------------
 
@@ -605,6 +611,12 @@ function init() {
             x: "+=200",
         })
 
+        doctorAnimation.timeline
+        .to(doctorAnimation.body.position, {
+            duration: 4,
+            x: "+=200",
+        })
+
         const follow = new Obstacle({
             height: 100,
             x: 8590,
@@ -616,7 +628,11 @@ function init() {
                 starring.changePose("follow", { isForcePlay: true });
                 starring.skeletonMesh.state.tracks[0].loop = false;
                 starring.timeline.play();
-                Hit01H.timeline.play();
+                scene.remove(Hit01H.mesh);
+                doctorAnimation.changePose("doctor", { isForcePlay: true });
+                doctorAnimation.body.position.z = 0;
+                doctorAnimation.timeline.play();
+                starring.skeletonMesh.state.tracks[0].loop = false;
             }
         });
         scene.add(follow);
@@ -1972,10 +1988,10 @@ function init() {
 
         const Hit01H = new Illusttexture({
             texture:'img/charactor.png',
-            width: 20,
-            height: 50,
+            width: 17,
+            height: 45,
             x: 8600,
-            y: 22,
+            y: 20,
             z: -39,
             offsetX: 0,
             offsetY: 0,
@@ -1985,15 +2001,6 @@ function init() {
             repeatY: 0.2,
         })
         scene.add(Hit01H.mesh);
-        Hit01H.timeline
-        .to(Hit01H.mesh.rotation, {
-            duration: 10,
-            y: 180,
-        })
-        .to(Hit01H.mesh.position, {
-            duration: 4,
-            x: "+=200",
-        })
 
         const LaboratoryH = new Illusttexture({
             texture:'img/haikei01.png',
@@ -3302,6 +3309,7 @@ function animate() {
  
     starring.animate(objects);
     fourAnimation.animate();
+    doctorAnimation.animate();
 
     const cameraPosition = starring.body.position
         .clone()

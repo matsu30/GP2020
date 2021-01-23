@@ -290,6 +290,179 @@ crash/crash09
   index: -1
 
 skeleton5.png
+size: 1638,510
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+dance/dance0001
+  rotate: true
+  xy: 2, 74
+  size: 75, 157
+  orig: 400, 250
+  offset: 156, 37
+  index: -1
+dance/dance0002
+  rotate: false
+  xy: 195, 4
+  size: 160, 167
+  orig: 400, 250
+  offset: 108, 37
+  index: -1
+dance/dance0003
+  rotate: true
+  xy: 925, 31
+  size: 191, 174
+  orig: 400, 250
+  offset: 99, 38
+  index: -1
+dance/dance0004
+  rotate: true
+  xy: 1101, 2
+  size: 224, 178
+  orig: 400, 250
+  offset: 78, 39
+  index: -1
+dance/dance0005
+  rotate: true
+  xy: 1135, 245
+  size: 263, 188
+  orig: 400, 250
+  offset: 57, 37
+  index: -1
+dance/dance0006
+  rotate: true
+  xy: 765, 224
+  size: 284, 188
+  orig: 400, 250
+  offset: 49, 35
+  index: -1
+dance/dance0007
+  rotate: true
+  xy: 569, 201
+  size: 307, 194
+  orig: 400, 250
+  offset: 40, 37
+  index: -1
+dance/dance0008
+  rotate: true
+  xy: 1281, 6
+  size: 237, 178
+  orig: 400, 250
+  offset: 124, 60
+  index: -1
+dance/dance0009
+  rotate: false
+  xy: 357, 5
+  size: 275, 166
+  orig: 400, 250
+  offset: 102, 67
+  index: -1
+dance/dance0010
+  rotate: true
+  xy: 955, 228
+  size: 280, 178
+  orig: 400, 250
+  offset: 78, 35
+  index: -1
+dance/dance0011
+  rotate: true
+  xy: 1325, 259
+  size: 249, 180
+  orig: 400, 250
+  offset: 60, 37
+  index: -1
+dance/dance0012
+  rotate: true
+  xy: 1461, 12
+  size: 245, 175
+  orig: 400, 250
+  offset: 42, 30
+  index: -1
+dance/dance0013
+  rotate: false
+  xy: 634, 6
+  size: 289, 193
+  orig: 400, 250
+  offset: 29, 33
+  index: -1
+dance/dance0014
+  rotate: true
+  xy: 368, 189
+  size: 319, 199
+  orig: 400, 250
+  offset: 20, 27
+  index: -1
+dance/dance0015
+  rotate: true
+  xy: 195, 173
+  size: 335, 171
+  orig: 400, 250
+  offset: 19, 18
+  index: -1
+dance/dance0016
+  rotate: true
+  xy: 2, 151
+  size: 357, 191
+  orig: 400, 250
+  offset: 10, 8
+  index: -1
+
+skeleton6.png
+size: 422,202
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+doctor/00
+  rotate: false
+  xy: 122, 3
+  size: 58, 197
+  orig: 100, 200
+  offset: 23, 1
+  index: -1
+doctor/doctor0001
+  rotate: false
+  xy: 182, 3
+  size: 58, 197
+  orig: 100, 200
+  offset: 20, 1
+  index: -1
+doctor/doctor0002
+  rotate: false
+  xy: 2, 2
+  size: 58, 198
+  orig: 100, 200
+  offset: 20, 2
+  index: -1
+doctor/doctor0003
+  rotate: false
+  xy: 242, 4
+  size: 58, 196
+  orig: 100, 200
+  offset: 20, 2
+  index: -1
+doctor/doctor0004
+  rotate: false
+  xy: 302, 4
+  size: 58, 196
+  orig: 100, 200
+  offset: 20, 2
+  index: -1
+doctor/doctor0005
+  rotate: false
+  xy: 62, 2
+  size: 58, 198
+  orig: 100, 200
+  offset: 20, 2
+  index: -1
+doctor/doctor0006
+  rotate: false
+  xy: 362, 4
+  size: 58, 196
+  orig: 100, 200
+  offset: 20, 2
+  index: -1
+
+skeleton7.png
 size: 604,850
 format: RGBA8888
 filter: Linear,Linear
@@ -344,7 +517,7 @@ four/four0007
   offset: 17, 8
   index: -1
 
-skeleton6.png
+skeleton8.png
 size: 799,166
 format: RGBA8888
 filter: Linear,Linear
@@ -427,7 +600,7 @@ sit/sit0010
   offset: 6, 5
   index: -1
 
-skeleton7.png
+skeleton9.png
 size: 324,81
 format: RGBA8888
 filter: Linear,Linear
@@ -447,7 +620,7 @@ smaile/smaile0002
   offset: 0, 4
   index: -1
 
-skeleton8.png
+skeleton10.png
 size: 979,79
 format: RGBA8888
 filter: Linear,Linear
