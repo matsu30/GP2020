@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "d3YYTFvXArSqkfS5lhYCiCfeTEY", "spine": "3.8.99", "images": "", "audio": "" },
+"skeleton": { "hash": "s4bETTQUr3xUIOcE1SnZapf33tk", "spine": "3.8.99", "images": "", "audio": "" },
 "bones": [
 	{ "name": "root", "shearX": 1, "shearY": 1 }
 ],
@@ -548,98 +548,157 @@
 		"slots": {
 			"dance/dance0001": {
 				"attachment": [
-					{ "name": "dance/dance0001" },
-					{ "time": 0.1333, "name": null },
-					{ "time": 5.3333, "name": "dance/dance0001" }
+					{ "time": 5.2, "name": "dance/dance0001" }
 				]
 			},
 			"dance/dance0002": {
 				"attachment": [
-					{ "time": 0.1333, "name": "dance/dance0002" },
-					{ "time": 0.2667, "name": null }
+					{ "name": "dance/dance0002" },
+					{ "time": 0.1333, "name": null },
+					{ "time": 1.7333, "name": "dance/dance0002" },
+					{ "time": 1.8667, "name": null },
+					{ "time": 3.4667, "name": "dance/dance0002" },
+					{ "time": 3.6, "name": null }
 				]
 			},
 			"dance/dance0003": {
 				"attachment": [
-					{ "time": 0.2667, "name": "dance/dance0003" },
-					{ "time": 0.4, "name": null }
+					{ "time": 0.1333, "name": "dance/dance0003" },
+					{ "time": 0.2667, "name": null },
+					{ "time": 1.8667, "name": "dance/dance0003" },
+					{ "time": 2, "name": null },
+					{ "time": 3.6, "name": "dance/dance0003" },
+					{ "time": 3.7333, "name": null }
 				]
 			},
 			"dance/dance0004": {
 				"attachment": [
-					{ "time": 0.4, "name": "dance/dance0004" },
-					{ "time": 0.5333, "name": null }
+					{ "time": 0.2667, "name": "dance/dance0004" },
+					{ "time": 0.4, "name": null },
+					{ "time": 2, "name": "dance/dance0004" },
+					{ "time": 2.1333, "name": null },
+					{ "time": 3.7333, "name": "dance/dance0004" },
+					{ "time": 3.8667, "name": null }
 				]
 			},
 			"dance/dance0005": {
 				"attachment": [
-					{ "time": 0.5333, "name": "dance/dance0005" },
-					{ "time": 0.6667, "name": null }
+					{ "time": 0.4, "name": "dance/dance0005" },
+					{ "time": 0.5333, "name": null },
+					{ "time": 2.1333, "name": "dance/dance0005" },
+					{ "time": 2.2667, "name": null },
+					{ "time": 3.8667, "name": "dance/dance0005" },
+					{ "time": 4, "name": null }
 				]
 			},
 			"dance/dance0006": {
 				"attachment": [
-					{ "time": 0.6667, "name": "dance/dance0006" },
-					{ "time": 0.8, "name": null }
+					{ "time": 0.5333, "name": "dance/dance0006" },
+					{ "time": 0.6667, "name": null },
+					{ "time": 2.2667, "name": "dance/dance0006" },
+					{ "time": 2.4, "name": null },
+					{ "time": 4, "name": "dance/dance0006" },
+					{ "time": 4.1333, "name": null }
 				]
 			},
 			"dance/dance0007": {
 				"attachment": [
-					{ "time": 0.8, "name": "dance/dance0007" },
-					{ "time": 0.9, "name": null }
+					{ "time": 0.6667, "name": "dance/dance0007" },
+					{ "time": 0.7667, "name": null },
+					{ "time": 2.4, "name": "dance/dance0007" },
+					{ "time": 2.5, "name": null },
+					{ "time": 4.1333, "name": "dance/dance0007" },
+					{ "time": 4.2333, "name": null }
 				]
 			},
 			"dance/dance0008": {
 				"attachment": [
-					{ "time": 0.9, "name": "dance/dance0008" },
-					{ "time": 1, "name": null }
+					{ "time": 0.7667, "name": "dance/dance0008" },
+					{ "time": 0.8667, "name": null },
+					{ "time": 2.5, "name": "dance/dance0008" },
+					{ "time": 2.6, "name": null },
+					{ "time": 4.2333, "name": "dance/dance0008" },
+					{ "time": 4.3333, "name": null }
 				]
 			},
 			"dance/dance0009": {
 				"attachment": [
-					{ "time": 1, "name": "dance/dance0009" },
-					{ "time": 1.1, "name": null }
+					{ "time": 0.8667, "name": "dance/dance0009" },
+					{ "time": 0.9667, "name": null },
+					{ "time": 2.6, "name": "dance/dance0009" },
+					{ "time": 2.7, "name": null },
+					{ "time": 4.3333, "name": "dance/dance0009" },
+					{ "time": 4.4333, "name": null }
 				]
 			},
 			"dance/dance0010": {
 				"attachment": [
-					{ "time": 1.1, "name": "dance/dance0010" },
-					{ "time": 1.2333, "name": null }
+					{ "time": 0.9667, "name": "dance/dance0010" },
+					{ "time": 1.1, "name": null },
+					{ "time": 2.7, "name": "dance/dance0010" },
+					{ "time": 2.8333, "name": null },
+					{ "time": 4.4333, "name": "dance/dance0010" },
+					{ "time": 4.5667, "name": null }
 				]
 			},
 			"dance/dance0011": {
 				"attachment": [
-					{ "time": 1.2333, "name": "dance/dance0011" },
-					{ "time": 1.3333, "name": null }
+					{ "time": 1.1, "name": "dance/dance0011" },
+					{ "time": 1.2, "name": null },
+					{ "time": 2.8333, "name": "dance/dance0011" },
+					{ "time": 2.9333, "name": null },
+					{ "time": 4.5667, "name": "dance/dance0011" },
+					{ "time": 4.6667, "name": null }
 				]
 			},
 			"dance/dance0012": {
 				"attachment": [
-					{ "time": 1.3333, "name": "dance/dance0012" },
-					{ "time": 1.4333, "name": null }
+					{ "time": 1.2, "name": "dance/dance0012" },
+					{ "time": 1.3, "name": null },
+					{ "time": 2.9333, "name": "dance/dance0012" },
+					{ "time": 3.0333, "name": null },
+					{ "time": 4.6667, "name": "dance/dance0012" },
+					{ "time": 4.7667, "name": null }
 				]
 			},
 			"dance/dance0013": {
 				"attachment": [
-					{ "time": 1.4333, "name": "dance/dance0013" },
-					{ "time": 1.5333, "name": null }
+					{ "time": 1.3, "name": "dance/dance0013" },
+					{ "time": 1.4, "name": null },
+					{ "time": 3.0333, "name": "dance/dance0013" },
+					{ "time": 3.1333, "name": null },
+					{ "time": 4.7667, "name": "dance/dance0013" },
+					{ "time": 4.8667, "name": null }
 				]
 			},
 			"dance/dance0014": {
 				"attachment": [
-					{ "time": 1.5333, "name": "dance/dance0014" },
-					{ "time": 1.6333, "name": null }
+					{ "time": 1.4, "name": "dance/dance0014" },
+					{ "time": 1.5, "name": null },
+					{ "time": 3.1333, "name": "dance/dance0014" },
+					{ "time": 3.2333, "name": null },
+					{ "time": 4.8667, "name": "dance/dance0014" },
+					{ "time": 4.9667, "name": null }
 				]
 			},
 			"dance/dance0015": {
 				"attachment": [
-					{ "time": 1.6333, "name": "dance/dance0015" },
-					{ "time": 1.7667, "name": null }
+					{ "time": 1.5, "name": "dance/dance0015" },
+					{ "time": 1.6333, "name": null },
+					{ "time": 3.2333, "name": "dance/dance0015" },
+					{ "time": 3.3667, "name": null },
+					{ "time": 4.9667, "name": "dance/dance0015" },
+					{ "time": 5.1, "name": null }
 				]
 			},
 			"dance/dance0016": {
 				"attachment": [
-					{ "time": 1.7667, "name": "dance/dance0016" }
+					{ "time": 1.6333, "name": "dance/dance0016" },
+					{ "time": 1.7333, "name": null },
+					{ "time": 3.3667, "name": "dance/dance0016" },
+					{ "time": 3.4667, "name": null },
+					{ "time": 5.1, "name": "dance/dance0016" },
+					{ "time": 5.2, "name": null }
 				]
 			}
 		}

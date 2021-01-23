@@ -67,7 +67,7 @@ function init() {
         doctorAnimation.load();
 
         //x20 y650
-        starring.body.position.x = 8590;
+        starring.body.position.x = 20;
         starring.body.position.y = 0;
         starring.body.position.z = 0;
         fourAnimation.body.position.x = 540;
@@ -383,9 +383,9 @@ function init() {
 
         const kotoba03 = document.getElementById('kotoba03');
         const eventObstacle05 = new Obstacle({
-            height: 300,
+            height: 150,
             x: 1700,
-            y: 190,
+            y: 250,
             collider: false,
             onCollision: function(){
                 console.log(Hit08A);
@@ -558,9 +558,9 @@ function init() {
         scene.add(eventObstacle09);
         objects.push(eventObstacle09);
 
-        //---sita
+        //---H
         const SkaraH = new Obstacle({
-            height: 100,
+            height: 10,
             x: 700,
             y: 50,
             collider: false,
@@ -711,6 +711,21 @@ function init() {
         });
         scene.add(eventED4);
         objects.push(eventED4);
+
+        //---S
+        const Sdance = new Obstacle({
+            height: 100,
+            x: 2805,
+            y: 50,
+            collider: false,
+            onCollision: function(){
+                console.log("dance");
+                starring.changePose("dance", { isForcePlay: true });
+                starring.skeletonMesh.state.tracks[0].loop = false;
+            }
+        });
+        scene.add(Sdance);
+        objects.push(Sdance);
 
 
 
@@ -1273,9 +1288,9 @@ function init() {
         const densenS = new Illusttexture({
             texture:'img/haikei02.png',
             width: 70,
-            height: 110,
-            x: 1004,
-            y: 90,
+            height: 80,
+            x: 1005,
+            y: 85,
             z: -10,
             offsetX: 0,
             offsetY: 0,
