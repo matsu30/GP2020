@@ -10,6 +10,7 @@ var color = new THREE.Color();
 
 const starring = new Starring();
 const fourAnimation = new Animationtexture();
+const fourAnimationH = new Animationtexture();
 const doctorAnimation = new Animationtexture();
 
 const pedestal = {
@@ -45,11 +46,11 @@ function init() {
         // camera = new THREE.OrthographicCamera(-120, +120, +67.5, -67.5, 1, 150);
         // camera.position.z = 100;
 
-        // camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 0.1, 1000 );
-        // camera.position.z = 100;
-
-        camera = new THREE.OrthographicCamera( window.innerWidth / - 19.2, window.innerWidth / 19.2, window.innerHeight / 14.08, window.innerHeight / - 20.48, 0.1, 1000 );
+        camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 0.1, 1000 );
         camera.position.z = 100;
+
+        // camera = new THREE.OrthographicCamera( window.innerWidth / - 19.2, window.innerWidth / 19.2, window.innerHeight / 14.08, window.innerHeight / - 20.48, 0.1, 1000 );
+        // camera.position.z = 100;
 
         scene = new THREE.Scene();
         scene.background = new THREE.Color( 0xffffff );
@@ -59,10 +60,12 @@ function init() {
         light.position.set( 0.5, 1, 0.75 );
         scene.add( light );
 
+        starring.load();
+
         fourAnimation.load();
+        fourAnimationH.load();
         doctorAnimation.load();
 
-        starring.load();
         //x20 y650
         starring.body.position.x = 8590;
         starring.body.position.y = 0;
@@ -70,11 +73,15 @@ function init() {
         fourAnimation.body.position.x = 540;
         fourAnimation.body.position.y = 194;
         fourAnimation.body.position.z = -2;
+        fourAnimationH.body.position.x = 9200;
+        fourAnimationH.body.position.y = 16;
+        fourAnimationH.body.position.z = 0;
         doctorAnimation.body.position.x = 8600;
         doctorAnimation.body.position.y = 19;
         doctorAnimation.body.position.z = -1000;
         scene.add(starring.body);
         scene.add(fourAnimation.body);
+        scene.add(fourAnimationH.body);
         scene.add(doctorAnimation.body);
 
         //--------開始-----------------------------------------------------------
@@ -637,6 +644,25 @@ function init() {
         });
         scene.add(follow);
         objects.push(follow);
+
+        const HitWalk = new Obstacle({
+            height: 100,
+            x: 8900,
+            y: 50,
+            collider: false,
+            once: true,
+            onCollision: function(){
+                Hit02H.timeline.play();
+                Hit03H.timeline.play();
+                Hit04H.timeline.play();
+                Hit05H.timeline.play();
+                Hit06H.timeline.play();
+                Hit07H.timeline.play();
+                Hit08H.timeline.play();
+            }
+        });
+        scene.add(HitWalk);
+        objects.push(HitWalk); 
 
 
 
@@ -2022,7 +2048,7 @@ function init() {
             texture:'img/charactor.png',
             width: 15,
             height: 50,
-            x: 9000,
+            x: 9400,
             y: 20,
             z: -39,
             offsetX: 0,
@@ -2034,13 +2060,33 @@ function init() {
         })
         scene.add(Hit02H.mesh);
 
+        Hit02H.timeline
+        .to(Hit02H.mesh.position, {
+            duration: 0.15,
+            ease: "power2.out",
+            y: "+=1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit02H.mesh.rotation, {
+            duration: 0.5,
+            ease: "back.inOut(2)",
+            z: "-=0.1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit02H.mesh.position, {
+            duration: 10,
+            x: "-=630",
+        })
+
         const Hit03H = new Illusttexture({
             texture:'img/charactor.png',
             width: 15,
             height: 50,
-            x: 8990,
+            x: 9300,
             y: 20,
-            z: -39,
+            z: 40,
             offsetX: 0,
             offsetY: 0,
             centerX: 0.55,
@@ -2050,13 +2096,33 @@ function init() {
         })
         scene.add(Hit03H.mesh);
 
+        Hit03H.timeline
+        .to(Hit03H.mesh.position, {
+            duration: 0.3,
+            ease: "power2.out",
+            y: "+=1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit03H.mesh.rotation, {
+            duration: 0.8,
+            ease: "back.inOut(2)",
+            z: "-=0.1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit03H.mesh.position, {
+            duration: 16,
+            x: "-=530",
+        })
+
         const Hit04H = new Illusttexture({
             texture:'img/charactor.png',
             width: 13,
             height: 49,
-            x: 8980,
+            x: 9300,
             y: 19,
-            z: -39,
+            z: 40,
             offsetX: 0,
             offsetY: 0,
             centerX: 0.47,
@@ -2066,11 +2132,31 @@ function init() {
         })
         scene.add(Hit04H.mesh);
 
+        Hit04H.timeline
+        .to(Hit04H.mesh.position, {
+            duration: 0.15,
+            ease: "power2.out",
+            y: "+=1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit04H.mesh.rotation, {
+            duration: 0.5,
+            ease: "back.inOut(2)",
+            z: "-=0.1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit04H.mesh.position, {
+            duration: 13,
+            x: "-=530",
+        })
+
         const Hit05H = new Illusttexture({
             texture:'img/charactor.png',
             width: 15,
             height: 50,
-            x: 8970,
+            x: 9200,
             y: 20,
             z: -39,
             offsetX: 0,
@@ -2082,11 +2168,31 @@ function init() {
         })
         scene.add(Hit05H.mesh);
 
+        Hit05H.timeline
+        .to(Hit05H.mesh.position, {
+            duration: 0.15,
+            ease: "power2.out",
+            y: "+=1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit05H.mesh.rotation, {
+            duration: 0.5,
+            ease: "back.inOut(2)",
+            z: "-=0.1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit05H.mesh.position, {
+            duration: 10,
+            x: "-=430",
+        })
+
         const Hit06H = new Illusttexture({
             texture:'img/charactor.png',
             width: 15,
             height: 51,
-            x: 8950,
+            x: 9300,
             y: 19,
             z: -39,
             offsetX: 0,
@@ -2098,13 +2204,33 @@ function init() {
         })
         scene.add(Hit06H.mesh);
 
+        Hit06H.timeline
+        .to(Hit06H.mesh.position, {
+            duration: 0.18,
+            ease: "power2.out",
+            y: "+=1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit06H.mesh.rotation, {
+            duration: 0.5,
+            ease: "back.inOut(2)",
+            z: "-=0.1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit06H.mesh.position, {
+            duration: 16,
+            x: "-=530",
+        })
+
         const Hit07H = new Illusttexture({
             texture:'img/charactor.png',
             width: 15,
             height: 50,
-            x: 8930,
+            x: 9300,
             y: 19,
-            z: -39,
+            z: 40,
             offsetX: 0,
             offsetY: 0,
             centerX: 0.24,
@@ -2114,11 +2240,31 @@ function init() {
         })
         scene.add(Hit07H.mesh);
 
+        Hit07H.timeline
+        .to(Hit07H.mesh.position, {
+            duration: 0.15,
+            ease: "power2.out",
+            y: "+=1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit07H.mesh.rotation, {
+            duration: 0.5,
+            ease: "back.inOut(2)",
+            z: "-=0.1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit07H.mesh.position, {
+            duration: 11,
+            x: "-=500",
+        })
+
         const Hit08H = new Illusttexture({
             texture:'img/charactor.png',
             width: 14,
             height: 28,
-            x: 8910,
+            x: 9200,
             y: 12,
             z: -39,
             offsetX: 0,
@@ -2129,6 +2275,26 @@ function init() {
             repeatY: 0.12,
         })
         scene.add(Hit08H.mesh);
+
+        Hit08H.timeline
+        .to(Hit08H.mesh.position, {
+            duration: 0.15,
+            ease: "power2.out",
+            y: "+=1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit08H.mesh.rotation, {
+            duration: 0.5,
+            ease: "back.inOut(2)",
+            z: "-=0.1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit08H.mesh.position, {
+            duration: 10,
+            x: "-=400",
+        })
 
         const Hit09H = new Illusttexture({
             texture:'img/charactor.png',
@@ -2241,70 +2407,6 @@ function init() {
             repeatY: 0.1,
         })
         scene.add(Hit15H.mesh);
-
-        const Hit03aA_H = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 24,
-            height: 40,
-            x: 9210,
-            y: 18,
-            z: -39,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 1,
-            centerY: 0,
-            repeatX: 0.09,
-            repeatY: 0.15,
-        })
-        scene.add(Hit03aA_H.mesh);
-
-        const Hit03bA_H = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 24,
-            height: 40,
-            x: 9220,
-            y: 18,
-            z: -39,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.9,
-            centerY: 0,
-            repeatX: 0.09,
-            repeatY: 0.15,
-        })
-        scene.add(Hit03bA_H.mesh);
-
-        const Hit03cA_H = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 24,
-            height: 40,
-            x: 9230,
-            y: 18,
-            z: -39,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.817,
-            centerY: 0,
-            repeatX: 0.09,
-            repeatY: 0.15,
-        })
-        scene.add(Hit03cA_H.mesh);
-
-        const Hit03dA_H = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 24,
-            height: 40,
-            x: 9040,
-            y: 18,
-            z: -39,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.735,
-            centerY: 0,
-            repeatX: 0.09,
-            repeatY: 0.15,
-        })
-        scene.add(Hit03dA_H.mesh);
 
         //床----------------------------------------------------------------------------
 
@@ -3309,6 +3411,7 @@ function animate() {
  
     starring.animate(objects);
     fourAnimation.animate();
+    fourAnimationH.animate();
     doctorAnimation.animate();
 
     const cameraPosition = starring.body.position
