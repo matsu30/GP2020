@@ -75,7 +75,7 @@ function init() {
         fourAnimation.body.position.z = -2;
         fourAnimationH.body.position.x = 8400;
         fourAnimationH.body.position.y = 16;
-        fourAnimationH.body.position.z = 50;
+        fourAnimationH.body.position.z = -50;
         doctorAnimation.body.position.x = 8600;
         doctorAnimation.body.position.y = 19;
         doctorAnimation.body.position.z = -1000;
@@ -607,6 +607,7 @@ function init() {
                 console.log("stop");
                 starring.changePose("stop", { isForcePlay: true });
                 starring.skeletonMesh.state.tracks[0].loop = false;
+                kotoba04.classList.remove('is-show');
             }
         });
         scene.add(stop);
@@ -624,6 +625,7 @@ function init() {
             x: "+=200",
         })
 
+        const kotoba04 = document.getElementById('kotoba04');
         const follow = new Obstacle({
             height: 100,
             x: 8590,
@@ -640,6 +642,7 @@ function init() {
                 doctorAnimation.body.position.z = 0;
                 doctorAnimation.timeline.play();
                 starring.skeletonMesh.state.tracks[0].loop = false;
+                kotoba04.classList.add('is-show');
             }
         });
         scene.add(follow);
@@ -647,11 +650,11 @@ function init() {
 
         fourAnimationH.timeline
         .to(fourAnimationH.body.position, {
-            duration: 4,
-            x: "+=500",
+            duration: 2,
+            x: "+=400",
         })
         .to(fourAnimationH.body.position, {
-            duration: 30,
+            duration: 50,
             x: "+=4000"
         });
 
@@ -670,20 +673,37 @@ function init() {
                 Hit07H.timeline.play();
                 Hit08H.timeline.play();
                 fourAnimationH.timeline.play();
+                kotoba04.classList.remove('is-show');
+                kotoba05.classList.remove('is-show');
             }
         });
         scene.add(HitWalk);
         objects.push(HitWalk);
 
+        const kotoba05 = document.getElementById('kotoba05');
+        const eventkotoba05 = new Obstacle({
+            height: 100,
+            x: 9420,
+            y: 50,
+            collider: false,
+            once: true,
+            onCollision: function(){
+                kotoba05.classList.add('is-show');
+            }
+        });
+        scene.add(eventkotoba05);
+        objects.push(eventkotoba05);
+
         const ed4 = document.getElementById('ed4');
         const eventED4 = new Obstacle({
             height: 100,
-            x: 9970,
+            x: 10050,
             y: 50,
             collider: false,
             once: true,
             onCollision: function(){
                 ed4.classList.add('is-show');
+                kotoba05.classList.remove('is-show');
                 document.removeEventListener( 'keydown', onKeyDown, false );
                 document.removeEventListener( 'keyup', onKeyUp, false );
                 pedestal.y = 100000;
