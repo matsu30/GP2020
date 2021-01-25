@@ -67,7 +67,7 @@ function init() {
         doctorAnimation.load();
 
         //x20 y650
-        starring.body.position.x = 20;
+        starring.body.position.x = 3000;
         starring.body.position.y = 0;
         starring.body.position.z = 0;
         fourAnimation.body.position.x = 540;
@@ -241,17 +241,20 @@ function init() {
             height: 60,
             y: 230+440,
         })
+
         const Start2 = new Obstacle({
             height: 5,
             x: 119,
             y: 202+440,
         })
+
         const Start3 = new Obstacle({
             width: 5,
             height: 75,
             x: 153,
             y: 220+440,
         })
+
         const Start4 = new Obstacle({
             width: 52,
             depth: 2,
@@ -267,6 +270,12 @@ function init() {
             y: 239+440,
         })
 
+        const Sbuillding = new Obstacle({
+            height: 60,
+            x: 3280,
+            y: 670,
+        })
+
         // scene.add(Start1);
         // objects.push(Start1);
         scene.add(Start2);
@@ -277,6 +286,8 @@ function init() {
         objects.push(Start4);
         scene.add(Start5);
         objects.push(Start5);
+        scene.add(Sbuillding);
+        objects.push(Sbuillding);
 
         //---------event------------------------------------
 
@@ -715,9 +726,10 @@ function init() {
         //---S
         const Sdance = new Obstacle({
             height: 100,
-            x: 2805,
+            x: 2815,
             y: 50,
             collider: false,
+            once: true,
             onCollision: function(){
                 console.log("dance");
                 starring.changePose("dance", { isForcePlay: true });
@@ -726,6 +738,70 @@ function init() {
         });
         scene.add(Sdance);
         objects.push(Sdance);
+
+        const builldingUp = new Obstacle({
+            height: 100,
+            x: 3300,
+            y: 50,
+            collider: false,
+            onCollision: function(){
+                console.log("builldingUp");
+                starring.body.position.x = 3400;
+                starring.body.position.y = 650;
+            }
+        });
+        scene.add(builldingUp);
+        objects.push(builldingUp);
+
+        const builldingUpFall = new Obstacle({
+            width: 100,
+            height: 600,
+            x: 3540,
+            y: 340,
+            collider: false,
+            once: true,
+            onCollision: function(){
+                console.log("fall");
+                starring.changePose("fall", { isForcePlay: true });
+                starring.skeletonMesh.state.tracks[0].loop = false;
+            }
+        });
+        scene.add(builldingUpFall);
+        objects.push(builldingUpFall);
+
+        const builldingUpCrash = new Obstacle({
+            width: 100,
+            x: 3540,
+            y: 30,
+            collider: false,
+            once: true,
+            onCollision: function(){
+                console.log("crash");
+                starring.changePose("crash", { isForcePlay: true });
+                starring.skeletonMesh.state.tracks[0].loop = false;
+            }
+        });
+        scene.add(builldingUpCrash);
+        objects.push(builldingUpCrash);
+
+        const ed2 = document.getElementById('ed2');
+        const eventED2 = new Obstacle({
+            width: 10,
+            height: 100,
+            x: 3610,
+            y: 50,
+            collider: false,
+            onCollision: function(){
+                console.log("dance");
+                starring.changePose("dance", { isForcePlay: true });
+                ed2.classList.add('is-show');
+                document.removeEventListener( 'keydown', onKeyDown, false );
+                document.removeEventListener( 'keyup', onKeyUp, false );
+
+            }
+        });
+        scene.add(eventED2);
+        objects.push(eventED2);
 
 
 
@@ -1455,7 +1531,7 @@ function init() {
             height: 85,
             x: 3429,
             y: 673,
-            z: 50,
+            z: -2,
             offsetX: 0,
             offsetY: 0,
             centerX: 0,

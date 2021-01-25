@@ -47,7 +47,7 @@ class Starring {
     this._isForcePlaying = false;
 
     // 主人公の移動速度700
-    this.PLAYERSPEED = 5700.0;
+    this.PLAYERSPEED = 700.0;
 
     this.clock = new THREE.Clock();
 
