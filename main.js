@@ -67,7 +67,7 @@ function init() {
         doctorAnimation.load();
 
         //x20 y650
-        starring.body.position.x = 3000;
+        starring.body.position.x = 20;
         starring.body.position.y = 0;
         starring.body.position.z = 0;
         fourAnimation.body.position.x = 540;
@@ -724,6 +724,34 @@ function init() {
         objects.push(eventED4);
 
         //---S
+
+        const kotoba06 = document.getElementById('kotoba06');
+        const eventkotoba06 = new Obstacle({
+            height: 100,
+            x: 1700,
+            y: 50,
+            collider: false,
+            once: true,
+            onCollision: function(){
+                kotoba06.classList.add('is-show');
+            }
+        });
+        scene.add(eventkotoba06);
+        objects.push(eventkotoba06);
+
+        const eventkotoba06Remove = new Obstacle({
+            height: 100,
+            x: 2340,
+            y: 50,
+            collider: false,
+            onCollision: function(){
+                kotoba06.classList.remove('is-show');
+            }
+        });
+        scene.add(eventkotoba06Remove);
+        objects.push(eventkotoba06Remove);
+
+        const kotoba07 = document.getElementById('kotoba07');
         const Sdance = new Obstacle({
             height: 100,
             x: 2815,
@@ -732,12 +760,25 @@ function init() {
             once: true,
             onCollision: function(){
                 console.log("dance");
+                kotoba07.classList.add('is-show');
                 starring.changePose("dance", { isForcePlay: true });
                 starring.skeletonMesh.state.tracks[0].loop = false;
             }
         });
         scene.add(Sdance);
         objects.push(Sdance);
+
+        const SdanceEnd = new Obstacle({
+            height: 100,
+            x: 2850,
+            y: 50,
+            collider: false,
+            onCollision: function(){
+                kotoba07.classList.remove('is-show');
+            }
+        });
+        scene.add(SdanceEnd);
+        objects.push(SdanceEnd);
 
         const builldingUp = new Obstacle({
             height: 100,
