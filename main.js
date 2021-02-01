@@ -404,6 +404,12 @@ function init() {
             y: 50,
         })
 
+        const StoKkabe = new Obstacle({
+            height: 100,
+            x: 7300,
+            y: 50,
+        })
+
         // scene.add(Start1);
         // objects.push(Start1);
         scene.add(Start2);
@@ -446,6 +452,8 @@ function init() {
         objects.push(ed01kabe);
         scene.add(runkabeR);
         objects.push(runkabeR);
+        scene.add(StoKkabe);
+        objects.push(StoKkabe);
 
 
         //---------event------------------------------------
@@ -1213,6 +1221,7 @@ function init() {
                 starring.body.position.x = 5430;
                 starring.body.position.y = 40;
                 girlAnimation.changePose("girl")
+                kotoba09.classList.remove('is-show');
             }
         });
         scene.add(KkaraK);
@@ -1244,6 +1253,7 @@ function init() {
         scene.add(KhouseAdd);
         objects.push(KhouseAdd);
 
+        const kotoba09 = document.getElementById('kotoba09');
         const Hit03KMove = new Obstacle({
             height: 100,
             x: 6000,
@@ -1252,6 +1262,7 @@ function init() {
             once: true,
             onCollision: function(){
                 Hit03K.timeline.play();
+                kotoba09.classList.add('is-show');
             }
         });
         scene.add(Hit03KMove);
@@ -1290,6 +1301,7 @@ function init() {
             collider: false,
             once: true,
             onCollision: function(){
+                kotoba09.classList.remove('is-show');
                 starring.changePose("stand");
                 notAnimation.body.position.z = 80;
                 notAnimation.changePose("not");

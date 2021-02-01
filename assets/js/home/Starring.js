@@ -28,7 +28,6 @@ class Starring {
 
     this.body = new THREE.Mesh(geometry, material);
     this.body.geometry.computeBoundingBox();
-    // this.body.position.y = 500;
     this.bodyPositionY = this.body.position.y;
 
     // 主人公の移動方向を決定するフラグ
