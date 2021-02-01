@@ -80,8 +80,8 @@ function init() {
         runAnimation.load();
 
         //x20 y650
-        starring.body.position.x = 8000;
-        starring.body.position.y = 100;
+        starring.body.position.x = 20;
+        starring.body.position.y = 650;
         starring.body.position.z = 0;
         fourAnimation.body.position.x = 540;
         fourAnimation.body.position.y = 194;
@@ -410,8 +410,8 @@ function init() {
             y: 50,
         })
 
-        // scene.add(Start1);
-        // objects.push(Start1);
+        scene.add(Start1);
+        objects.push(Start1);
         scene.add(Start2);
         objects.push(Start2);
         scene.add(Start3);
@@ -457,33 +457,6 @@ function init() {
 
 
         //---------event------------------------------------
-
-        const hukidashi = document.getElementById('hukidashi');
-        const dameAdd = new Obstacle({
-            color: 0xffff00,
-            collider: false,
-            x: 140,
-            y: maxY - obstacleKeydata.height * -1 + offsetY,
-            z: 0,
-            onCollision: function(){
-                hukidashi.classList.add('is-show');
-            }
-        });
-        scene.add(dameAdd);
-        objects.push(dameAdd);
-
-        const dameRemove = new Obstacle({
-            color: 0xffff00,
-            collider: false,
-            x: 120,
-            y: maxY - obstacleKeydata.height * -1 + offsetY,
-            z: 0,
-            onCollision: function(){
-                hukidashi.classList.remove('is-show');
-            }
-        });
-        scene.add(dameRemove);
-        objects.push(dameRemove);
 
         const start = document.getElementById('start');
         const title = document.getElementById('title');
@@ -902,6 +875,19 @@ function init() {
         objects.push(eventED4);
 
         //---S
+
+        const startRemove = new Obstacle({
+            height: 100,
+            x: 200,
+            y: 50,
+            collider: false,
+            once: true,
+            onCollision: function(){
+                start.classList.remove('is-show');
+            }
+        });
+        scene.add(startRemove);
+        objects.push(startRemove);
 
         const kotoba06 = document.getElementById('kotoba06');
         const eventkotoba06 = new Obstacle({
