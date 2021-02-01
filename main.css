@@ -38,23 +38,6 @@ body{
     position: relative;
 }
 
-#hukidashi{
-    position: absolute;
-    z-index: 60;
-}
-
-.hukidashi{
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.2s;
-}
-
-.mada{
-    width: 20em;
-    height: auto;
-    margin: 35em auto auto 70em;
-}
-
 .js-start{
     text-align: center;
     margin-right: 20em;

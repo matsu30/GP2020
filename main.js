@@ -52,11 +52,11 @@ function init() {
         // camera = new THREE.OrthographicCamera(-120, +120, +67.5, -67.5, 1, 150);
         // camera.position.z = 100;
 
-        camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 0.1, 1000 );
-        camera.position.z = 100;
-
-        // camera = new THREE.OrthographicCamera( window.innerWidth / - 19.2, window.innerWidth / 19.2, window.innerHeight / 14.08, window.innerHeight / - 20.48, 0.1, 1000 );
+        // camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 0.1, 1000 );
         // camera.position.z = 100;
+
+        camera = new THREE.OrthographicCamera( window.innerWidth / - 19.2, window.innerWidth / 19.2, window.innerHeight / 14.08, window.innerHeight / - 20.48, 0.1, 1000 );
+        camera.position.z = 100;
 
         scene = new THREE.Scene();
         scene.background = new THREE.Color( 0xffffff );
@@ -80,7 +80,7 @@ function init() {
         runAnimation.load();
 
         //x20 y650
-        starring.body.position.x = 6065;
+        starring.body.position.x = 8000;
         starring.body.position.y = 100;
         starring.body.position.z = 0;
         fourAnimation.body.position.x = 540;
@@ -1022,6 +1022,20 @@ function init() {
         objects.push(eventED2);
 
         //--T
+        const SkaraTK  = new Obstacle({
+            width: 25,
+            height: 10,
+            x: 1559,
+            y: 50,
+            collider: false,
+            onCollision: function(){
+                starring.body.position.x = 3970;
+                starring.body.position.y = 0;
+            }
+        });
+        scene.add(SkaraTK);
+        objects.push(SkaraTK);
+
         const ThouseRemove = new Obstacle({
             width: 10,
             height: 100,
@@ -1175,6 +1189,8 @@ function init() {
             onCollision: function(){
                 starring.body.position.x = 5430;
                 starring.body.position.y = 40;
+                scene.add(girlAnimation.body);
+                girlAnimation.changePose("girl")
             }
         });
         scene.add(TkaraK);
@@ -1203,8 +1219,7 @@ function init() {
             collider: false,
             onCollision: function(){
                 starring.body.position.x = 5920;
-                starring.body.position.y = 40;                
-                scene.add(girlAnimation.body);
+                starring.body.position.y = 40; 
                 girlAnimation.changePose("girl")
             }
         });
@@ -2805,6 +2820,22 @@ function init() {
             repeatY: 0.15,
         })
         scene.add(densen02H.mesh);
+
+        const flower = new Illusttexture({
+            texture:'img/haikei03.png',
+            width: 30,
+            height: 34,
+            x: 8020,
+            y: 10,
+            z: -15,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0.6,
+            centerY: 0.25,
+            repeatX: 0.2,
+            repeatY: 0.2,
+        })
+        scene.add(flower.mesh);
 
         const gard01H = new Illusttexture({
             texture:'img/haikei03.png',
