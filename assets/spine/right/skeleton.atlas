@@ -1,75 +1,82 @@
 
 skeleton.png
-size: 378,322
+size: 161,839
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 001
-  rotate: false
-  xy: 157, 163
+  rotate: true
+  xy: 2, 397
   size: 73, 157
   orig: 80, 170
   offset: 2, 3
   index: -1
 002
-  rotate: false
-  xy: 157, 4
+  rotate: true
+  xy: 2, 546
   size: 72, 157
   orig: 80, 170
   offset: 0, 3
   index: -1
 003
   rotate: false
-  xy: 2, 161
+  xy: 2, 2
   size: 78, 159
   orig: 80, 170
   offset: 2, 5
   index: -1
 004
   rotate: false
-  xy: 82, 161
+  xy: 82, 2
   size: 73, 159
   orig: 80, 170
   offset: 3, 5
   index: -1
 005
-  rotate: false
-  xy: 232, 163
+  rotate: true
+  xy: 2, 766
   size: 71, 157
   orig: 80, 170
   offset: 0, 3
   index: -1
 006
-  rotate: false
-  xy: 80, 2
+  rotate: true
+  xy: 2, 320
   size: 75, 157
   orig: 80, 170
   offset: 2, 4
   index: -1
 006.1
-  rotate: false
-  xy: 2, 2
+  rotate: true
+  xy: 2, 242
   size: 76, 157
   orig: 80, 170
   offset: 2, 4
   index: -1
 007
-  rotate: false
-  xy: 231, 4
+  rotate: true
+  xy: 2, 472
   size: 72, 157
   orig: 80, 170
   offset: 0, 3
   index: -1
 008
-  rotate: false
-  xy: 305, 163
+  rotate: true
+  xy: 2, 693
   size: 71, 157
   orig: 80, 170
   offset: 0, 3
   index: -1
+girlR
+  rotate: true
+  xy: 2, 163
+  size: 77, 140
+  orig: 80, 179
+  offset: 2, 3
+  index: -1
 stop
-  rotate: false
-  xy: 305, 4
+  rotate: true
+  xy: 2, 620
   size: 71, 157
   orig: 90, 170
   offset: 12, 2
@@ -408,6 +415,130 @@ dance/dance0016
   index: -1
 
 skeleton6.png
+size: 866,181
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+deliver/deliver0001
+  rotate: false
+  xy: 2, 2
+  size: 142, 177
+  orig: 150, 200
+  offset: 5, 10
+  index: -1
+deliver/deliver0006
+  rotate: false
+  xy: 2, 2
+  size: 142, 177
+  orig: 150, 200
+  offset: 5, 10
+  index: -1
+deliver/deliver0002
+  rotate: false
+  xy: 146, 2
+  size: 142, 177
+  orig: 150, 200
+  offset: 5, 10
+  index: -1
+deliver/deliver0003
+  rotate: false
+  xy: 290, 2
+  size: 142, 177
+  orig: 150, 200
+  offset: 5, 10
+  index: -1
+deliver/deliver0004
+  rotate: false
+  xy: 434, 2
+  size: 142, 177
+  orig: 150, 200
+  offset: 5, 10
+  index: -1
+deliver/deliver0005
+  rotate: false
+  xy: 578, 2
+  size: 142, 177
+  orig: 150, 200
+  offset: 5, 10
+  index: -1
+deliver/deliver0007
+  rotate: false
+  xy: 722, 2
+  size: 142, 177
+  orig: 150, 200
+  offset: 5, 10
+  index: -1
+deliver/deliver0008
+  rotate: false
+  xy: 722, 2
+  size: 142, 177
+  orig: 150, 200
+  offset: 5, 10
+  index: -1
+
+skeleton7.png
+size: 1363,247
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+dinner/dinner0001
+  rotate: true
+  xy: 2, 2
+  size: 243, 195
+  orig: 256, 256
+  offset: 6, 0
+  index: -1
+dinner/dinner0002
+  rotate: true
+  xy: 199, 2
+  size: 243, 195
+  orig: 256, 256
+  offset: 6, 0
+  index: -1
+dinner/dinner0003
+  rotate: true
+  xy: 396, 2
+  size: 243, 195
+  orig: 256, 256
+  offset: 6, 0
+  index: -1
+dinner/dinner0004
+  rotate: true
+  xy: 593, 2
+  size: 243, 195
+  orig: 256, 256
+  offset: 6, 0
+  index: -1
+dinner/dinner0005
+  rotate: true
+  xy: 790, 2
+  size: 243, 189
+  orig: 256, 256
+  offset: 6, 0
+  index: -1
+dinner/dinner0006
+  rotate: true
+  xy: 981, 2
+  size: 243, 189
+  orig: 256, 256
+  offset: 6, 0
+  index: -1
+dinner/dinner0007
+  rotate: true
+  xy: 1172, 2
+  size: 243, 189
+  orig: 256, 256
+  offset: 6, 0
+  index: -1
+dinner/dinner0008
+  rotate: true
+  xy: 1172, 2
+  size: 243, 189
+  orig: 256, 256
+  offset: 6, 0
+  index: -1
+
+skeleton8.png
 size: 422,202
 format: RGBA8888
 filter: Linear,Linear
@@ -462,7 +593,48 @@ doctor/doctor0006
   offset: 20, 2
   index: -1
 
-skeleton7.png
+skeleton9.png
+size: 237,296
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+drop/drop0001
+  rotate: false
+  xy: 158, 2
+  size: 73, 153
+  orig: 500, 170
+  offset: 223, 5
+  index: -1
+drop/drop0002
+  rotate: false
+  xy: 78, 6
+  size: 78, 149
+  orig: 500, 170
+  offset: 244, 6
+  index: -1
+drop/drop0003
+  rotate: false
+  xy: 132, 157
+  size: 103, 137
+  orig: 500, 170
+  offset: 245, 9
+  index: -1
+drop/drop0004
+  rotate: false
+  xy: 2, 177
+  size: 128, 117
+  orig: 500, 170
+  offset: 245, 13
+  index: -1
+drop/drop0005
+  rotate: true
+  xy: 2, 6
+  size: 169, 74
+  orig: 500, 170
+  offset: 248, 0
+  index: -1
+
+skeleton10.png
 size: 604,850
 format: RGBA8888
 filter: Linear,Linear
@@ -517,7 +689,267 @@ four/four0007
   offset: 17, 8
   index: -1
 
-skeleton8.png
+skeleton11.png
+size: 596,161
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+furafura/furafura0001
+  rotate: false
+  xy: 2, 2
+  size: 75, 157
+  orig: 200, 170
+  offset: 65, 5
+  index: -1
+furafura/furafura0002
+  rotate: false
+  xy: 168, 6
+  size: 73, 153
+  orig: 200, 170
+  offset: 71, 5
+  index: -1
+furafura/furafura0003
+  rotate: true
+  xy: 453, 3
+  size: 73, 140
+  orig: 200, 170
+  offset: 71, 6
+  index: -1
+furafura/furafura0004
+  rotate: false
+  xy: 243, 12
+  size: 103, 147
+  orig: 200, 170
+  offset: 50, 6
+  index: -1
+furafura/furafura0006
+  rotate: false
+  xy: 243, 12
+  size: 103, 147
+  orig: 200, 170
+  offset: 38, 5
+  index: -1
+furafura/furafura0005
+  rotate: false
+  xy: 348, 12
+  size: 103, 147
+  orig: 200, 170
+  offset: 38, 13
+  index: -1
+furafura/furafura0007
+  rotate: true
+  xy: 453, 78
+  size: 81, 141
+  orig: 200, 170
+  offset: 83, 1
+  index: -1
+furafura/furafura0008
+  rotate: false
+  xy: 79, 4
+  size: 87, 155
+  orig: 200, 170
+  offset: 52, 5
+  index: -1
+
+skeleton12.png
+size: 1021,81
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+girl/girl0001
+  rotate: true
+  xy: 2, 2
+  size: 77, 141
+  orig: 80, 180
+  offset: 2, 3
+  index: -1
+girl/girl0002
+  rotate: true
+  xy: 145, 2
+  size: 77, 141
+  orig: 80, 180
+  offset: 2, 3
+  index: -1
+girl/girl0003
+  rotate: true
+  xy: 288, 2
+  size: 77, 141
+  orig: 80, 180
+  offset: 2, 3
+  index: -1
+girl/girl0004
+  rotate: true
+  xy: 431, 2
+  size: 77, 147
+  orig: 80, 180
+  offset: 2, 2
+  index: -1
+girl/girl0005
+  rotate: true
+  xy: 580, 2
+  size: 77, 147
+  orig: 80, 180
+  offset: 2, 2
+  index: -1
+girl/girl0006
+  rotate: true
+  xy: 729, 2
+  size: 77, 147
+  orig: 80, 180
+  offset: 2, 2
+  index: -1
+girl/girl0007
+  rotate: true
+  xy: 878, 2
+  size: 77, 141
+  orig: 80, 180
+  offset: 2, 3
+  index: -1
+girl/girl0008
+  rotate: true
+  xy: 878, 2
+  size: 77, 141
+  orig: 80, 180
+  offset: 2, 3
+  index: -1
+
+skeleton13.png
+size: 296,165
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+give/give0001
+  rotate: false
+  xy: 2, 6
+  size: 75, 157
+  orig: 200, 170
+  offset: 65, 5
+  index: -1
+give/give0002
+  rotate: false
+  xy: 79, 10
+  size: 73, 153
+  orig: 200, 170
+  offset: 71, 5
+  index: -1
+give/give0003
+  rotate: true
+  xy: 154, 2
+  size: 73, 140
+  orig: 200, 170
+  offset: 71, 6
+  index: -1
+give/give0004
+  rotate: true
+  xy: 154, 77
+  size: 86, 127
+  orig: 200, 170
+  offset: 69, 4
+  index: -1
+
+skeleton14.png
+size: 193,457
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+giving/giving0001
+  rotate: false
+  xy: 2, 2
+  size: 160, 87
+  orig: 200, 100
+  offset: 36, 2
+  index: -1
+giving/giving0002
+  rotate: false
+  xy: 2, 176
+  size: 163, 83
+  orig: 200, 100
+  offset: 33, 2
+  index: -1
+giving/giving0003
+  rotate: false
+  xy: 2, 91
+  size: 170, 83
+  orig: 200, 100
+  offset: 26, 2
+  index: -1
+giving/giving0004
+  rotate: false
+  xy: 2, 261
+  size: 183, 76
+  orig: 200, 100
+  offset: 13, 2
+  index: -1
+giving/giving0005
+  rotate: false
+  xy: 2, 398
+  size: 189, 57
+  orig: 200, 100
+  offset: 7, 2
+  index: -1
+giving/giving0006
+  rotate: false
+  xy: 2, 339
+  size: 189, 57
+  orig: 200, 100
+  offset: 7, 2
+  index: -1
+
+skeleton15.png
+size: 290,181
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+not/not01
+  rotate: false
+  xy: 2, 2
+  size: 142, 177
+  orig: 150, 200
+  offset: 5, 10
+  index: -1
+not/not02
+  rotate: false
+  xy: 146, 2
+  size: 142, 177
+  orig: 150, 200
+  offset: 5, 10
+  index: -1
+
+skeleton16.png
+size: 457,73
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+run/run0001
+  rotate: true
+  xy: 2, 2
+  size: 69, 150
+  orig: 80, 151
+  offset: 4, 0
+  index: -1
+run/run0002
+  rotate: true
+  xy: 154, 2
+  size: 69, 149
+  orig: 80, 151
+  offset: 4, 2
+  index: -1
+run/run0004
+  rotate: true
+  xy: 154, 2
+  size: 69, 149
+  orig: 80, 151
+  offset: 4, 2
+  index: -1
+run/run0003
+  rotate: true
+  xy: 305, 2
+  size: 69, 150
+  orig: 80, 151
+  offset: 5, 0
+  index: -1
+
+skeleton17.png
 size: 799,166
 format: RGBA8888
 filter: Linear,Linear
@@ -600,7 +1032,7 @@ sit/sit0010
   offset: 6, 5
   index: -1
 
-skeleton9.png
+skeleton18.png
 size: 324,81
 format: RGBA8888
 filter: Linear,Linear
@@ -620,7 +1052,7 @@ smaile/smaile0002
   offset: 0, 4
   index: -1
 
-skeleton10.png
+skeleton19.png
 size: 979,79
 format: RGBA8888
 filter: Linear,Linear

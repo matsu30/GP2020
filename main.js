@@ -12,6 +12,10 @@ const starring = new Starring();
 const fourAnimation = new Animationtexture();
 const fourAnimationH = new Animationtexture();
 const doctorAnimation = new Animationtexture();
+const deliverAnimation = new Animationtexture();
+const givingAnimation =new Animationtexture();
+const dinnerAnimation =new Animationtexture();
+const runAnimation =new Animationtexture();
 
 const pedestal = {
     x: 0,
@@ -46,11 +50,11 @@ function init() {
         // camera = new THREE.OrthographicCamera(-120, +120, +67.5, -67.5, 1, 150);
         // camera.position.z = 100;
 
-        camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 0.1, 1000 );
-        camera.position.z = 100;
-
-        // camera = new THREE.OrthographicCamera( window.innerWidth / - 19.2, window.innerWidth / 19.2, window.innerHeight / 14.08, window.innerHeight / - 20.48, 0.1, 1000 );
+        // camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 0.1, 1000 );
         // camera.position.z = 100;
+
+        camera = new THREE.OrthographicCamera( window.innerWidth / - 19.2, window.innerWidth / 19.2, window.innerHeight / 14.08, window.innerHeight / - 20.48, 0.1, 1000 );
+        camera.position.z = 100;
 
         scene = new THREE.Scene();
         scene.background = new THREE.Color( 0xffffff );
@@ -65,9 +69,13 @@ function init() {
         fourAnimation.load();
         fourAnimationH.load();
         doctorAnimation.load();
+        deliverAnimation.load();
+        givingAnimation.load();
+        dinnerAnimation.load();
+        runAnimation.load();
 
         //x20 y650
-        starring.body.position.x = 4505;
+        starring.body.position.x = 4860;
         starring.body.position.y = 0;
         starring.body.position.z = 0;
         fourAnimation.body.position.x = 540;
@@ -79,6 +87,12 @@ function init() {
         doctorAnimation.body.position.x = 8600;
         doctorAnimation.body.position.y = 19;
         doctorAnimation.body.position.z = -1000;
+        deliverAnimation.body.position.x = 4580;
+        deliverAnimation.body.position.y = 28;
+        deliverAnimation.body.position.z = -16;
+        givingAnimation.body.position.x = 4901;
+        givingAnimation.body.position.y = 10;
+        givingAnimation.body.position.z = -16;
         scene.add(starring.body);
         scene.add(fourAnimation.body);
         scene.add(fourAnimationH.body);
@@ -360,6 +374,13 @@ function init() {
             y: 50,
         })
 
+        const ed01kabe = new Obstacle({
+            width: 20,
+            height: 100,
+            x: 5110,
+            y: 50,
+        })
+
         // scene.add(Start1);
         // objects.push(Start1);
         scene.add(Start2);
@@ -397,6 +418,9 @@ function init() {
         objects.push(Kyuka02);
         scene.add(KyukaKabe02);
         objects.push(KyukaKabe02);
+
+        scene.add(ed01kabe);
+        objects.push(ed01kabe);
 
 
         //---------event------------------------------------
@@ -991,74 +1015,61 @@ function init() {
         scene.add(ThouseAdd);
         objects.push(ThouseAdd);
 
+        const furafura01 = new Obstacle({
+            height: 100,
+            x: 4250,
+            y: 50,
+            collider: false,
+            once: true,
+            onCollision: function(){
+                kotoba08.classList.remove('is-show');
+                starring.changePose("furafura", { isForcePlay: true })
+                starring.skeletonMesh.state.tracks[0].loop = false;
+            }
+        });
+        scene.add(furafura01);
+        objects.push(furafura01);
+
         const HitGet = new Obstacle({
+            width: 10,
             height: 100,
             x: 4505,
             y: 50,
             collider: false,
             once: true,
             onCollision: function(){
+                scene.remove(HitKubaruT.mesh);
+                scene.remove(haihuT.mesh);
+                scene.add(deliverAnimation.body);
+                deliverAnimation.changePose("deliver");
+                deliverAnimation.skeletonMesh.state.tracks[0].loop = false;
                 Hit01aT.timeline.play();
                 Hit01bT.timeline.play();
                 Hit01cT.timeline.play();
+                scene.add(Hit01atMove.mesh);
+                Hit01atMove.timeline.play();
+                scene.add(Hit02atMove.mesh);
+                Hit02atMove.timeline.play();
+                scene.add(Hit03atMove.mesh);
+                Hit03atMove.timeline.play();
+                starring.changePose("deliverStand", { isForcePlay: true });
             }
         });
         scene.add(HitGet);
         objects.push(HitGet);
 
-        const HitGet01 = new Obstacle({
-            width: 5,
-            height: 100,
-            x: 4520,
-            y: 50,
-            collider: false,
-            once: true,
-            onCollision: function(){
-                scene.add(Hit01atMove.mesh);
-                Hit01atMove.timeline.play();
-            }
-        });
-        scene.add(HitGet01);
-        objects.push(HitGet01);
-
-        const HitGet02 = new Obstacle({
-            width: 5,
-            height: 100,
-            x: 4530,
-            y: 50,
-            collider: false,
-            once: true,
-            onCollision: function(){
-                scene.add(Hit02atMove.mesh);
-                Hit02atMove.timeline.play();
-            }
-        });
-        scene.add(HitGet02);
-        objects.push(HitGet02);
-
-        const HitGet03 = new Obstacle({
-            width: 5,
-            height: 100,
-            x: 4540,
-            y: 50,
-            collider: false,
-            once: true,
-            onCollision: function(){
-                scene.add(Hit03atMove.mesh);
-                Hit03atMove.timeline.play();
-            }
-        });
-        scene.add(HitGet03);
-        objects.push(HitGet03);
-
         const StarringGet = new Obstacle({
-            width: 5,
+            width: 10,
             height: 100,
-            x: 4580,
+            x: 4575,
             y: 50,
             collider: false,
             once: true,
             onCollision: function(){
+                starring.changePose("stop", { isForcePlay: true });
+                starring.skeletonMesh.state.tracks[0].loop = false;
+                deliverAnimation.changePose("deliverOnce");
+                deliverAnimation.skeletonMesh.state.tracks[0].loop = false;
                 scene.add(Tkabe);
                 objects.push(Tkabe);
             }
@@ -1066,6 +1077,7 @@ function init() {
         scene.add(StarringGet);
         objects.push(StarringGet);
 
+        const kotoba08 = document.getElementById('kotoba08');
         const give = new Obstacle({
             height: 100,
             x: 4880,
@@ -1073,12 +1085,52 @@ function init() {
             collider: false,
             once: true,
             onCollision: function(){
-                scene.remove(HitKubaruT.mesh);
-                scene.remove(haihuT.mesh);
+                scene.remove(deliverAnimation.body);
+                scene.remove(Hit01T.mesh);
+                scene.add(givingAnimation.body);
+                kotoba08.classList.add('is-show');
+                givingAnimation.changePose("giving")
+                givingAnimation.skeletonMesh.state.tracks[0].loop = false;
+                starring.changePose("give", { isForcePlay: true })
+                starring.skeletonMesh.state.tracks[0].loop = false;
             }
         });
         scene.add(give);
         objects.push(give);
+
+        const furafura02 = new Obstacle({
+            height: 100,
+            x: 5000,
+            y: 50,
+            collider: false,
+            once: true,
+            onCollision: function(){
+                kotoba08.classList.remove('is-show');
+                starring.changePose("furafura", { isForcePlay: true })
+                starring.skeletonMesh.state.tracks[0].loop = false;
+            }
+        });
+        scene.add(furafura02);
+        objects.push(furafura02);
+
+        const ed1 = document.getElementById('ed1');
+        const eventED1 = new Obstacle({
+            width: 10,
+            height: 100,
+            x: 5100,
+            y: 50,
+            collider: false,
+            onCollision: function(){
+                console.log("drop");
+                starring.changePose("drop", { isForcePlay: true });
+                starring.skeletonMesh.state.tracks[0].loop = false;
+                ed1.classList.add('is-show');
+                document.removeEventListener( 'keydown', onKeyDown, false );
+                document.removeEventListener( 'keyup', onKeyUp, false );
+            }
+        });
+        scene.add(eventED1);
+        objects.push(eventED1);
 
         //--K
         const TkaraK = new Obstacle({
@@ -2049,7 +2101,7 @@ function init() {
             x: "+=25",
         })
         .to(Hit01aT.mesh.position, {
-            duration: 3,
+            duration: 1.3,
             x: "+=0",
         })
         .to(Hit01aT.mesh.position, {
@@ -2089,7 +2141,7 @@ function init() {
             yoyo: true
         })
         .to(Hit01bT.mesh.position, {
-            duration: 5,
+            duration: 2,
             x: "+=15",
         })
         .to(Hit01bT.mesh.rotation, {
@@ -2104,7 +2156,7 @@ function init() {
             x: "+=20",
         })
         .to(Hit01bT.mesh.position, {
-            duration: 3,
+            duration: 0.5,
             x: "+=0",
         })
         .to(Hit01bT.mesh.position, {
@@ -2144,26 +2196,26 @@ function init() {
             yoyo: true
         })
         .to(Hit01cT.mesh.position, {
-            duration: 8,
+            duration: 4,
             x: "+=18",
         })
         .to(Hit01cT.mesh.rotation, {
             duration: 0.5,
             ease: "back.inOut(2)",
-            z: "+=0.1",
-            repeat: 8,
+            z: "-=0.1",
+            repeat: 4,
             yoyo: true
         })
         .to(Hit01cT.mesh.position, {
-            duration: 3,
+            duration: 1,
             x: "+=0",
         })
         .to(Hit01cT.mesh.position, {
-            duration: 3,
+            duration: 2,
             x: "+=25",
         })
         .to(Hit01cT.mesh.position, {
-            duration: 3,
+            duration: 0.6,
             x: "+=0",
         })
         .to(Hit01cT.mesh.position, {
@@ -2177,7 +2229,7 @@ function init() {
             height: 46,
             x: 4570,
             y: 19,
-            z: 30,
+            z: -1000,
             offsetX: 0,
             offsetY: 0,
             centerX: 0.6,
@@ -2187,6 +2239,15 @@ function init() {
         })
 
         Hit01atMove.timeline
+        .to(Hit01atMove.mesh.position, {
+            duration: 4.1,
+            z: "+=0",
+        })
+        Hit01atMove.timeline
+        .to(Hit01atMove.mesh.position, {
+            duration: 0.1,
+            z: "+=1030",
+        })
         .to(Hit01atMove.mesh.position, {
             duration: 0.15,
             ease: "power2.out",
@@ -2206,7 +2267,7 @@ function init() {
             x: "-=300",
         })
         .to(Hit01atMove.mesh.position, {
-            duration: 0.1,
+            duration: 1,
             z: "-=1000",
         })
 
@@ -2216,7 +2277,7 @@ function init() {
             height: 46,
             x: 4570,
             y: 19,
-            z: 30,
+            z: -1000,
             offsetX: 0,
             offsetY: 0,
             centerX: 0.6,
@@ -2226,6 +2287,14 @@ function init() {
         })
 
         Hit02atMove.timeline
+        .to(Hit02atMove.mesh.position, {
+            duration: 6.9,
+            z: "+=0",
+        })
+        .to(Hit02atMove.mesh.position, {
+            duration: 0.1,
+            z: "+=1030",
+        })
         .to(Hit02atMove.mesh.position, {
             duration: 0.15,
             ease: "power2.out",
@@ -2245,7 +2314,7 @@ function init() {
             x: "-=300",
         })
         .to(Hit02atMove.mesh.position, {
-            duration: 0.1,
+            duration: 1,
             z: "-=1000",
         })
 
@@ -2255,7 +2324,7 @@ function init() {
             height: 46,
             x: 4570,
             y: 19,
-            z: 30,
+            z: -1000,
             offsetX: 0,
             offsetY: 0,
             centerX: 0.6,
@@ -2265,6 +2334,14 @@ function init() {
         })
 
         Hit03atMove.timeline
+        .to(Hit03atMove.mesh.position, {
+            duration: 9.2,
+            z: "+=0",
+        })
+        .to(Hit03atMove.mesh.position, {
+            duration: 0.1,
+            z: "+=1030",
+        })
         .to(Hit03atMove.mesh.position, {
             duration: 0.15,
             ease: "power2.out",
@@ -2284,15 +2361,15 @@ function init() {
             x: "-=300",
         })
         .to(Hit03atMove.mesh.position, {
-            duration: 0.1,
+            duration: 1,
             z: "-=1000",
         })
 
         const HitKubaruT = new Illusttexture({
             texture:'img/charactor.png',
-            width: 25,
-            height: 40,
-            x: 4575,
+            width: 28,
+            height: 44,
+            x: 4573,
             y: 35,
             z: -15,
             offsetX: 0,
@@ -2307,9 +2384,9 @@ function init() {
         const haihuT = new Illusttexture({
             texture:'img/charactor.png',
             width: 45,
-            height: 55,
-            x: 4570,
-            y: 18,
+            height: 46,
+            x: 4577,
+            y: 15,
             z: -15,
             offsetX: 0,
             offsetY: 0,
@@ -2338,10 +2415,10 @@ function init() {
 
         const Hit01T = new Illusttexture({//倒れている人
             texture:'img/charactor.png',
-            width: 35,
-            height: 25,
-            x: 4900,
-            y: 6,
+            width: 37,
+            height: 27,
+            x: 4901,
+            y: 7,
             z: -15,
             offsetX: 0,
             offsetY: 0,
@@ -4185,6 +4262,10 @@ function animate() {
     fourAnimation.animate();
     fourAnimationH.animate();
     doctorAnimation.animate();
+    deliverAnimation.animate();
+    givingAnimation.animate();
+    dinnerAnimation.animate();
+    runAnimation.animate();
 
     const cameraPosition = starring.body.position
         .clone()
