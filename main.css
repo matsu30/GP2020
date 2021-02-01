@@ -101,6 +101,32 @@ body{
     transition: all 5s;
 }
 
+.js-ending-ed3{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    margin-left: 7%;
+    z-index: 20;
+    opacity: 0;
+    visibility: hidden;
+    transition: 15s cubic-bezier(1,.01,.75,.02)
+}
+
+.js-white{
+    position: absolute;
+    display: flex;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: 8s cubic-bezier(1,.01,.75,.02)
+}
+
+.white{
+    height: 100vh;
+    width: 100vw;
+}
+
 .is-show {
     opacity: 1;
     visibility: visible;
@@ -109,4 +135,3 @@ body{
 .ending-return{
     margin-top: 20px;
 }
-

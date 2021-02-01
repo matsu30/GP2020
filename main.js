@@ -1277,7 +1277,12 @@ function init() {
             duration: 0.1,
             z: "+=1098",
         })
-
+        
+        const white = document.getElementById('white');
+        const ed3 = document.getElementById('ed3');
+        function setED3(){
+            white.classList.remove('is-show');
+        }
         const not = new Obstacle({
             height: 100,
             x: 6580,
@@ -1297,6 +1302,9 @@ function init() {
                 dinnerAnimation.timeline.play();
                 soukoK.timeline.play();
                 K02.timeline.play();
+                white.classList.add('is-show');
+                window.setTimeout(setED3,10000);
+                ed3.classList.add('is-show');
                 document.removeEventListener( 'keydown', onKeyDown, false );
                 document.removeEventListener( 'keyup', onKeyUp, false );
             }
