@@ -13,9 +13,11 @@ const fourAnimation = new Animationtexture();
 const fourAnimationH = new Animationtexture();
 const doctorAnimation = new Animationtexture();
 const deliverAnimation = new Animationtexture();
-const givingAnimation =new Animationtexture();
-const dinnerAnimation =new Animationtexture();
-const runAnimation =new Animationtexture();
+const givingAnimation = new Animationtexture();
+const girlAnimation = new Animationtexture();
+const notAnimation = new Animationtexture();
+const dinnerAnimation = new Animationtexture();
+const runAnimation = new Animationtexture();
 
 const pedestal = {
     x: 0,
@@ -50,11 +52,11 @@ function init() {
         // camera = new THREE.OrthographicCamera(-120, +120, +67.5, -67.5, 1, 150);
         // camera.position.z = 100;
 
-        // camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 0.1, 1000 );
-        // camera.position.z = 100;
-
-        camera = new THREE.OrthographicCamera( window.innerWidth / - 19.2, window.innerWidth / 19.2, window.innerHeight / 14.08, window.innerHeight / - 20.48, 0.1, 1000 );
+        camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 0.1, 1000 );
         camera.position.z = 100;
+
+        // camera = new THREE.OrthographicCamera( window.innerWidth / - 19.2, window.innerWidth / 19.2, window.innerHeight / 14.08, window.innerHeight / - 20.48, 0.1, 1000 );
+        // camera.position.z = 100;
 
         scene = new THREE.Scene();
         scene.background = new THREE.Color( 0xffffff );
@@ -73,10 +75,13 @@ function init() {
         givingAnimation.load();
         dinnerAnimation.load();
         runAnimation.load();
+        girlAnimation.load();
+        notAnimation.load();
+        runAnimation.load();
 
         //x20 y650
-        starring.body.position.x = 4860;
-        starring.body.position.y = 0;
+        starring.body.position.x = 6065;
+        starring.body.position.y = 100;
         starring.body.position.z = 0;
         fourAnimation.body.position.x = 540;
         fourAnimation.body.position.y = 194;
@@ -93,10 +98,23 @@ function init() {
         givingAnimation.body.position.x = 4901;
         givingAnimation.body.position.y = 10;
         givingAnimation.body.position.z = -16;
+        girlAnimation.body.position.x = 5505;
+        girlAnimation.body.position.y = 60;
+        girlAnimation.body.position.z = -2;
+        notAnimation.body.position.x = 6573;
+        notAnimation.body.position.y = 28;
+        notAnimation.body.position.z = -15;
+        runAnimation.body.position.x = 6570;
+        runAnimation.body.position.y = 15;
+        runAnimation.body.position.z = 90;
+        dinnerAnimation.body.position.x = 6570;
+        dinnerAnimation.body.position.y = 24.5;
+        dinnerAnimation.body.position.z = -1000;
         scene.add(starring.body);
         scene.add(fourAnimation.body);
         scene.add(fourAnimationH.body);
         scene.add(doctorAnimation.body);
+        scene.add(dinnerAnimation.body);
 
         //--------開始-----------------------------------------------------------
 
@@ -375,9 +393,14 @@ function init() {
         })
 
         const ed01kabe = new Obstacle({
-            width: 20,
             height: 100,
             x: 5110,
+            y: 50,
+        })
+
+        const runkabeR = new Obstacle({
+            height: 100,
+            x: 6590,
             y: 50,
         })
 
@@ -421,6 +444,8 @@ function init() {
 
         scene.add(ed01kabe);
         objects.push(ed01kabe);
+        scene.add(runkabeR);
+        objects.push(runkabeR);
 
 
         //---------event------------------------------------
@@ -1147,6 +1172,21 @@ function init() {
         scene.add(TkaraK);
         objects.push(TkaraK);
 
+        const girlR = new Obstacle({
+            height: 100,
+            x: 5515,
+            y: 40,
+            collider: false,
+            onCollision: function(){
+                scene.add(girlAnimation.body);
+                scene.add(notAnimation.body);
+                girlAnimation.changePose("girlR")
+                notAnimation.changePose("deliverNot")
+            }
+        });
+        scene.add(girlR);
+        objects.push(girlR);
+
         const room = new Obstacle({
             width: 19,
             height: 33,
@@ -1155,7 +1195,9 @@ function init() {
             collider: false,
             onCollision: function(){
                 starring.body.position.x = 5920;
-                starring.body.position.y = 40;
+                starring.body.position.y = 40;                
+                scene.add(girlAnimation.body);
+                girlAnimation.changePose("girl")
             }
         });
         scene.add(room);
@@ -1170,6 +1212,7 @@ function init() {
             onCollision: function(){
                 starring.body.position.x = 5430;
                 starring.body.position.y = 40;
+                girlAnimation.changePose("girl")
             }
         });
         scene.add(KkaraK);
@@ -1213,6 +1256,54 @@ function init() {
         });
         scene.add(Hit03KMove);
         objects.push(Hit03KMove);
+
+
+        runAnimation.timeline
+        .to(runAnimation.body.position, {
+            duration: 5,
+            x: "-=0",
+        })
+        .to(runAnimation.body.position, {
+            duration: 6,
+            x: "-=300",
+        })
+
+        dinnerAnimation.timeline
+        .to(dinnerAnimation.body.position, {
+            duration: 10,
+            z: "+=0",
+        })
+        .to(dinnerAnimation.body.position, {
+            duration: 0.1,
+            z: "+=1098",
+        })
+
+        const not = new Obstacle({
+            height: 100,
+            x: 6580,
+            y: 45,
+            collider: false,
+            once: true,
+            onCollision: function(){
+                starring.changePose("stand");
+                notAnimation.body.position.z = 80;
+                notAnimation.changePose("not");
+                notAnimation.skeletonMesh.state.tracks[0].loop = false;
+                scene.add(runAnimation.body);
+                runAnimation.changePose("run");
+                runAnimation.skeletonMesh.state.tracks[0].loop = false;
+                runAnimation.timeline.play();
+                dinnerAnimation.changePose("dinner");
+                dinnerAnimation.timeline.play();
+                soukoK.timeline.play();
+                K02.timeline.play();
+                document.removeEventListener( 'keydown', onKeyDown, false );
+                document.removeEventListener( 'keyup', onKeyUp, false );
+            }
+        });
+        scene.add(not);
+        objects.push(not);
+
 
         //---------texture------------------------------------
         const textureBuillding01F = new Illusttexture({
@@ -2463,22 +2554,6 @@ function init() {
         })
         scene.add(desk01.mesh);
 
-        const Hit01K = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 25,
-            height: 40,
-            x: 5500,
-            y: 56.8,
-            z: -19,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.1,
-            centerY: 0,
-            repeatX: 0.1,
-            repeatY: 0.15,
-        })
-        scene.add(Hit01K.mesh);
-
         const K001 = new Illusttexture({ //室内
             texture:'img/haikei01.png',
             width: 155,
@@ -2562,38 +2637,6 @@ function init() {
             repeatY: 0.35,
         })
 
-        const HitKubaruK = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 25,
-            height: 40,
-            x: 6575,
-            y: 35,
-            z: -15,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.2,
-            centerY: 0,
-            repeatX: 0.1,
-            repeatY: 0.15,
-        })
-        scene.add(HitKubaruK.mesh);
-
-        const haihuK = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 45,
-            height: 55,
-            x: 6570,
-            y: 18,
-            z: -15,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.37,
-            centerY: 0,
-            repeatX: 0.16,
-            repeatY: 0.15,
-        })
-        scene.add(haihuK.mesh);
-
         const soukoK = new Illusttexture({
             texture:'img/haikei01.png',
             width: 200,
@@ -2610,13 +2653,23 @@ function init() {
         })
         scene.add(soukoK.mesh);
 
+        soukoK.timeline
+        .to(soukoK.mesh.position, {
+            duration: 10,
+            z: "+=0",
+        })
+        .to(soukoK.mesh.position, {
+            duration: 0.1,
+            z: "-=1000",
+        })
+
         const K02 = new Illusttexture({
             texture:'img/haikei01.png',
             width: 130,
             height: 80,
-            x: 7008,
-            y: 39,
-            z: 20,
+            x: 6570,
+            y: 39.3,
+            z: -1000,
             offsetX: 0,
             offsetY: 0,
             centerX: 1,
@@ -2626,38 +2679,15 @@ function init() {
         })
         scene.add(K02.mesh);
 
-        const desk02 = new Illusttexture({
-            texture:'img/haikei03.png',
-            width: 60,
-            height: 40,
-            x: 7010,
-            y: 18,
-            z: 21,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0,
-            centerY: 0.3,
-            repeatX: 0.5,
-            repeatY: 0.25,
+        K02.timeline
+        .to(K02.mesh.position, {
+            duration: 10,
+            z: "+=0",
         })
-        scene.add(desk02.mesh);
-
-        const Hit02K = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 25,
-            height: 40,
-            x: 7028,
-            y: 29,
-            z: 22,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.1,
-            centerY: 0,
-            repeatX: 0.1,
-            repeatY: 0.15,
+        .to(K02.mesh.position, {
+            duration: 0.1,
+            z: "+=1095",
         })
-        scene.add(Hit02K.mesh);
-
 
         // //Hルート
         const SingouH = new Illusttexture({
@@ -4265,6 +4295,9 @@ function animate() {
     deliverAnimation.animate();
     givingAnimation.animate();
     dinnerAnimation.animate();
+    runAnimation.animate();
+    girlAnimation.animate();
+    notAnimation.animate();
     runAnimation.animate();
 
     const cameraPosition = starring.body.position
