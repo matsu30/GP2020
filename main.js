@@ -722,17 +722,23 @@ function init() {
             }
         });
 
-        const blinking = function(){            
-            scene.add(SkaraH);
-            objects.unshift(SkaraH);
-        }
-        setInterval(blinking, 5000);
+        const blink = (function() {
+            let toggle = true;
+            
+            return function() {
+                if (toggle) {
+                    SkaraH.position.y = 51;
+                } else {
+                    SkaraH.position.y = -100;
+                }
+                toggle = !toggle;
+            }
+        })();
 
-        const disappear = function(){            
-            scene.remove(SkaraH);
-            objects.shift();
-        }
-        setInterval(disappear, 10000);
+        setInterval(blink, 2000);
+
+        scene.add(SkaraH);
+        objects.push(SkaraH);
 
         const HkaraS = new Obstacle({
             height: 100,
@@ -4346,7 +4352,7 @@ function animate() {
                 100 + pedestal.z
             )
         );
-    camera.position.lerp(cameraPosition, 0.4);
+    camera.position.lerp(cameraPosition, 1.0);
 
     renderer.render( scene, camera );
 
