@@ -80,8 +80,8 @@ function init() {
         runAnimation.load();
 
         //x20 y650
-        starring.body.position.x = 20;
-        starring.body.position.y = 650;
+        starring.body.position.x = 610;
+        starring.body.position.y = 10;
         starring.body.position.z = 0;
         fourAnimation.body.position.x = 540;
         fourAnimation.body.position.y = 194;
@@ -724,15 +724,15 @@ function init() {
 
         const blinking = function(){            
             scene.add(SkaraH);
-            //objects.unshift(SkaraH);
+            objects.unshift(SkaraH);
         }
-        setInterval(blinking, 2500);
+        setInterval(blinking, 5000);
 
         const disappear = function(){            
             scene.remove(SkaraH);
-            //objects.shift();
+            objects.shift();
         }
-        setInterval(disappear, 5000);
+        setInterval(disappear, 10000);
 
         const HkaraS = new Obstacle({
             height: 100,
