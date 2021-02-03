@@ -80,8 +80,8 @@ function init() {
         runAnimation.load();
 
         //x20 y650
-        starring.body.position.x = 610;
-        starring.body.position.y = 10;
+        starring.body.position.x = 20;
+        starring.body.position.y = 650;
         starring.body.position.z = 0;
         fourAnimation.body.position.x = 540;
         fourAnimation.body.position.y = 194;
@@ -711,9 +711,9 @@ function init() {
 
         //---H
         const SkaraH = new Obstacle({
-            height: 100,
+            height: 80,
             x: 700,
-            y: 50,
+            y: 40,
             collider: false,
             onCollision: function(){
                 console.log("SkaraH");
@@ -727,31 +727,41 @@ function init() {
             
             return function() {
                 if (toggle) {
-                    SkaraH.position.y = 51;
+                    SkaraH.position.y = 40;
                 } else {
                     SkaraH.position.y = -100;
                 }
                 toggle = !toggle;
             }
         })();
-
         setInterval(blink, 2000);
 
         scene.add(SkaraH);
         objects.push(SkaraH);
 
-        const HkaraS = new Obstacle({
-            height: 100,
-            x: 7700,
-            y: 50,
+        const blinkObj = new Obstacle({
+            height: 10,
+            x: 700,
+            y: 85,
             collider: false,
-            onCollision: function(){
-                console.log("HkaraS");
-                starring.body.position.x = 700;
-            }
         });
-        scene.add(HkaraS);
-        objects.push(HkaraS);
+
+        const blinking = (function() {
+            let toggle = true;
+            
+            return function() {
+                if (toggle) {
+                    blinkObj.position.y = -100;
+                } else {
+                    blinkObj.position.y = 85;
+                }
+                toggle = !toggle;
+            }
+        })();
+        setInterval(blinking, 2000);
+
+        scene.add(blinkObj);
+        objects.push(blinkObj);
 
         const carMove = new Obstacle({
             height: 100,
@@ -862,6 +872,19 @@ function init() {
         scene.add(eventkotoba05);
         objects.push(eventkotoba05);
 
+        const eventkotoba05Remove = new Obstacle({
+            height: 100,
+            x: 9900,
+            y: 50,
+            collider: false,
+            once: true,
+            onCollision: function(){
+                kotoba05.classList.remove('is-show');
+            }
+        });
+        scene.add(eventkotoba05Remove);
+        objects.push(eventkotoba05Remove);
+
         const ed4 = document.getElementById('ed4');
         const eventED4 = new Obstacle({
             height: 100,
@@ -871,7 +894,6 @@ function init() {
             once: true,
             onCollision: function(){
                 ed4.classList.add('is-show');
-                kotoba05.classList.remove('is-show');
                 document.removeEventListener( 'keydown', onKeyDown, false );
                 document.removeEventListener( 'keyup', onKeyUp, false );
                 pedestal.y = 100000;
@@ -2894,7 +2916,7 @@ function init() {
         scene.add(carH.mesh);
         carH.timeline
         .to(carH.mesh.position, {
-            duration: 3,
+            duration: 4,
             x: "-=400",
         })
         .to(carH.mesh.position, {
