@@ -10,6 +10,14 @@ var color = new THREE.Color();
 
 const starring = new Starring();
 const fourAnimation = new Animationtexture();
+const fourAnimationH = new Animationtexture();
+const doctorAnimation = new Animationtexture();
+const deliverAnimation = new Animationtexture();
+const givingAnimation = new Animationtexture();
+const girlAnimation = new Animationtexture();
+const notAnimation = new Animationtexture();
+const dinnerAnimation = new Animationtexture();
+const runAnimation = new Animationtexture();
 
 const pedestal = {
     x: 0,
@@ -58,9 +66,19 @@ function init() {
         light.position.set( 0.5, 1, 0.75 );
         scene.add( light );
 
-        fourAnimation.load();
-
         starring.load();
+
+        fourAnimation.load();
+        fourAnimationH.load();
+        doctorAnimation.load();
+        deliverAnimation.load();
+        givingAnimation.load();
+        dinnerAnimation.load();
+        runAnimation.load();
+        girlAnimation.load();
+        notAnimation.load();
+        runAnimation.load();
+
         //x20 y650
         starring.body.position.x = 20;
         starring.body.position.y = 650;
@@ -68,8 +86,35 @@ function init() {
         fourAnimation.body.position.x = 540;
         fourAnimation.body.position.y = 194;
         fourAnimation.body.position.z = -2;
+        fourAnimationH.body.position.x = 8400;
+        fourAnimationH.body.position.y = 16;
+        fourAnimationH.body.position.z = -50;
+        doctorAnimation.body.position.x = 8600;
+        doctorAnimation.body.position.y = 19;
+        doctorAnimation.body.position.z = -1000;
+        deliverAnimation.body.position.x = 4580;
+        deliverAnimation.body.position.y = 28;
+        deliverAnimation.body.position.z = -16;
+        givingAnimation.body.position.x = 4901;
+        givingAnimation.body.position.y = 10;
+        givingAnimation.body.position.z = -16;
+        girlAnimation.body.position.x = 5505;
+        girlAnimation.body.position.y = 60;
+        girlAnimation.body.position.z = -2;
+        notAnimation.body.position.x = 6573;
+        notAnimation.body.position.y = 28;
+        notAnimation.body.position.z = -15;
+        runAnimation.body.position.x = 6570;
+        runAnimation.body.position.y = 15;
+        runAnimation.body.position.z = 90;
+        dinnerAnimation.body.position.x = 6570;
+        dinnerAnimation.body.position.y = 24.5;
+        dinnerAnimation.body.position.z = -1000;
         scene.add(starring.body);
         scene.add(fourAnimation.body);
+        scene.add(fourAnimationH.body);
+        scene.add(doctorAnimation.body);
+        scene.add(dinnerAnimation.body);
 
         //--------開始-----------------------------------------------------------
 
@@ -228,17 +273,20 @@ function init() {
             height: 60,
             y: 230+440,
         })
+
         const Start2 = new Obstacle({
             height: 5,
             x: 119,
             y: 202+440,
         })
+
         const Start3 = new Obstacle({
             width: 5,
             height: 75,
             x: 153,
             y: 220+440,
         })
+
         const Start4 = new Obstacle({
             width: 52,
             depth: 2,
@@ -254,6 +302,114 @@ function init() {
             y: 239+440,
         })
 
+        const Sbuillding = new Obstacle({
+            height: 60,
+            x: 3280,
+            y: 670,
+        })
+
+        const Tkabe = new Obstacle({
+            width: 10,
+            height: 100,
+            x: 4085,
+            y: 50,
+        })
+
+        const Kstep01 = new Obstacle({
+            width: 10,
+            height: 5,
+            x: 3971,
+            y: 20,
+        })
+
+        const Kstep02 = new Obstacle({
+            width: 10,
+            height: 5,
+            x: 3979,
+            y: 31,
+        })
+
+        const Kyuka01 = new Obstacle({
+            width: 28,
+            height: 5,
+            x: 3996,
+            y: 41,
+        })
+
+        const KyukaHeya = new Obstacle({
+            width: 130,
+            height: 5,
+            x: 5480,
+            y: 41,
+        })
+
+        const KyukaKabe01 = new Obstacle({
+            width: 10,
+            height: 100,
+            x: 5410,
+            y: 75,
+        })
+
+        const Kstep03 = new Obstacle({
+            width: 10,
+            height: 5,
+            x: 5842.5,
+            y: 20,
+        })
+
+        const Kstep04 = new Obstacle({
+            width: 10,
+            height: 5,
+            x: 5850,
+            y: 31,
+        })
+
+        const Kstep05 = new Obstacle({
+            width: 10,
+            height: 5,
+            x: 5933,
+            y: 31,
+        })
+
+        const Kstep06 = new Obstacle({
+            width: 10,
+            height: 5,
+            x: 5941,
+            y: 20,
+        })
+
+        const Kyuka02 = new Obstacle({
+            width: 77,
+            height: 5,
+            x: 5892,
+            y: 41,
+        })
+
+        const KyukaKabe02 = new Obstacle({
+            width: 10,
+            height: 100,
+            x: 5816,
+            y: 50,
+        })
+
+        const ed01kabe = new Obstacle({
+            height: 100,
+            x: 5110,
+            y: 50,
+        })
+
+        const runkabeR = new Obstacle({
+            height: 100,
+            x: 6590,
+            y: 50,
+        })
+
+        const StoKkabe = new Obstacle({
+            height: 100,
+            x: 7300,
+            y: 50,
+        })
+
         scene.add(Start1);
         objects.push(Start1);
         scene.add(Start2);
@@ -265,34 +421,42 @@ function init() {
         scene.add(Start5);
         objects.push(Start5);
 
+        scene.add(Sbuillding);
+        objects.push(Sbuillding);
+
+        scene.add(Kstep01);
+        objects.push(Kstep01);
+        scene.add(Kstep02);
+        objects.push(Kstep02);
+        scene.add(Kyuka01);
+        objects.push(Kyuka01);
+        scene.add(KyukaHeya);
+        objects.push(KyukaHeya);
+        scene.add(KyukaKabe01);
+        objects.push(KyukaKabe01);
+
+        scene.add(Kstep03);
+        objects.push(Kstep03);
+        scene.add(Kstep04);
+        objects.push(Kstep04);
+        scene.add(Kstep05);
+        objects.push(Kstep05);
+        scene.add(Kstep06);
+        objects.push(Kstep06);
+        scene.add(Kyuka02);
+        objects.push(Kyuka02);
+        scene.add(KyukaKabe02);
+        objects.push(KyukaKabe02);
+
+        scene.add(ed01kabe);
+        objects.push(ed01kabe);
+        scene.add(runkabeR);
+        objects.push(runkabeR);
+        scene.add(StoKkabe);
+        objects.push(StoKkabe);
+
+
         //---------event------------------------------------
-
-        const hukidashi = document.getElementById('hukidashi');
-        const dameAdd = new Obstacle({
-            color: 0xffff00,
-            collider: false,
-            x: 140,
-            y: maxY - obstacleKeydata.height * -1 + offsetY,
-            z: 0,
-            onCollision: function(){
-                hukidashi.classList.add('is-show');
-            }
-        });
-        scene.add(dameAdd);
-        objects.push(dameAdd);
-
-        const dameRemove = new Obstacle({
-            color: 0xffff00,
-            collider: false,
-            x: 120,
-            y: maxY - obstacleKeydata.height * -1 + offsetY,
-            z: 0,
-            onCollision: function(){
-                hukidashi.classList.remove('is-show');
-            }
-        });
-        scene.add(dameRemove);
-        objects.push(dameRemove);
 
         const start = document.getElementById('start');
         const title = document.getElementById('title');
@@ -357,8 +521,9 @@ function init() {
         });
 
         const eventObstacle03 = new Obstacle({
+            height: 150,
             x: 700,
-            y: 190,
+            y: 250,
             collider: false,
             onCollision: function(){
                 fourAnimation.timeline.play();
@@ -369,9 +534,9 @@ function init() {
 
         const kotoba03 = document.getElementById('kotoba03');
         const eventObstacle05 = new Obstacle({
-            height: 300,
+            height: 150,
             x: 1700,
-            y: 190,
+            y: 250,
             collider: false,
             onCollision: function(){
                 console.log(Hit08A);
@@ -453,9 +618,9 @@ function init() {
 
         const kotoba01 = document.getElementById('kotoba01');
         const eventObstacleA_txt01 = new Obstacle({
-            height: 300,
+            height: 150,
             x: 1000,
-            y: 190,
+            y: 250,
             collider: false,
             onCollision: function(){
                 kotoba01.classList.add('is-show');
@@ -466,9 +631,9 @@ function init() {
 
         const kotoba02 = document.getElementById('kotoba02');
         const eventObstacleA_txt02 = new Obstacle({
-            height: 300,
+            height: 150,
             x: 1300,
-            y: 190,
+            y: 250,
             collider: false,
             onCollision: function(){
                 kotoba03.classList.remove('is-show');
@@ -479,9 +644,9 @@ function init() {
         objects.push(eventObstacleA_txt02);
 
         const eventremove_txt01 = new Obstacle({
-            height: 300,
+            height: 150,
             x: 900,
-            y: 190,
+            y: 250,
             collider: false,
             onCollision: function(){
                 kotoba01.classList.remove('is-show');
@@ -493,9 +658,9 @@ function init() {
         objects.push(eventremove_txt01);
 
         const eventremove_txt02 = new Obstacle({
-            height: 300,
+            height: 150,
             x: 1250,
-            y: 190,
+            y: 250,
             collider: false,
             onCollision: function(){
                 kotoba01.classList.remove('is-show');
@@ -544,6 +709,649 @@ function init() {
         scene.add(eventObstacle09);
         objects.push(eventObstacle09);
 
+        //---H
+        const SkaraH = new Obstacle({
+            height: 80,
+            x: 700,
+            y: 40,
+            collider: false,
+            onCollision: function(){
+                console.log("SkaraH");
+                starring.body.position.x = 7700;
+                kotoba06.classList.remove('is-show');
+            }
+        });
+
+        const blink = (function() {
+            let toggle = true;
+            
+            return function() {
+                if (toggle) {
+                    SkaraH.position.y = 40;
+                } else {
+                    SkaraH.position.y = -100;
+                }
+                toggle = !toggle;
+            }
+        })();
+        setInterval(blink, 2000);
+
+        scene.add(SkaraH);
+        objects.push(SkaraH);
+
+        const blinkObj = new Obstacle({
+            height: 10,
+            x: 700,
+            y: 85,
+            collider: false,
+        });
+
+        const blinking = (function() {
+            let toggle = true;
+            
+            return function() {
+                if (toggle) {
+                    blinkObj.position.y = -100;
+                } else {
+                    blinkObj.position.y = 85;
+                }
+                toggle = !toggle;
+            }
+        })();
+        setInterval(blinking, 2000);
+
+        scene.add(blinkObj);
+        objects.push(blinkObj);
+
+        const carMove = new Obstacle({
+            height: 100,
+            x: 8000,
+            y: 50,
+            collider: false,
+            onCollision: function(){
+                carH.timeline.play();
+            }
+        });
+        scene.add(carMove);
+        objects.push(carMove);
+
+        const stop = new Obstacle({
+            height: 100,
+            x: 8480,
+            y: 50,
+            collider: false,
+            once: true,
+            onCollision: function(){
+                console.log("stop");
+                starring.changePose("stop", { isForcePlay: true });
+                starring.skeletonMesh.state.tracks[0].loop = false;
+                kotoba04.classList.remove('is-show');
+            }
+        });
+        scene.add(stop);
+        objects.push(stop);
+
+        starring.timeline
+        .to(starring.body.position, {
+            duration: 4,
+            x: "+=200",
+        })
+
+        doctorAnimation.timeline
+        .to(doctorAnimation.body.position, {
+            duration: 4,
+            x: "+=200",
+        })
+
+        const kotoba04 = document.getElementById('kotoba04');
+        const follow = new Obstacle({
+            height: 100,
+            x: 8590,
+            y: 50,
+            collider: false,
+            once: true,
+            onCollision: function(){
+                console.log("follow");
+                starring.changePose("follow", { isForcePlay: true });
+                starring.skeletonMesh.state.tracks[0].loop = false;
+                starring.timeline.play();
+                scene.remove(Hit01H.mesh);
+                doctorAnimation.changePose("doctor", { isForcePlay: true });
+                doctorAnimation.body.position.z = 0;
+                doctorAnimation.timeline.play();
+                starring.skeletonMesh.state.tracks[0].loop = false;
+                kotoba04.classList.add('is-show');
+            }
+        });
+        scene.add(follow);
+        objects.push(follow);
+
+        fourAnimationH.timeline
+        .to(fourAnimationH.body.position, {
+            duration: 2,
+            x: "+=400",
+        })
+        .to(fourAnimationH.body.position, {
+            duration: 50,
+            x: "+=4000"
+        });
+
+        const HitWalk = new Obstacle({
+            height: 100,
+            x: 8900,
+            y: 50,
+            collider: false,
+            once: true,
+            onCollision: function(){
+                Hit02H.timeline.play();
+                Hit03H.timeline.play();
+                Hit04H.timeline.play();
+                Hit05H.timeline.play();
+                Hit06H.timeline.play();
+                Hit07H.timeline.play();
+                Hit08H.timeline.play();
+                fourAnimationH.timeline.play();
+                kotoba04.classList.remove('is-show');
+                kotoba05.classList.remove('is-show');
+            }
+        });
+        scene.add(HitWalk);
+        objects.push(HitWalk);
+
+        const kotoba05 = document.getElementById('kotoba05');
+        const eventkotoba05 = new Obstacle({
+            height: 100,
+            x: 9420,
+            y: 50,
+            collider: false,
+            once: true,
+            onCollision: function(){
+                kotoba05.classList.add('is-show');
+            }
+        });
+        scene.add(eventkotoba05);
+        objects.push(eventkotoba05);
+
+        const eventkotoba05Remove = new Obstacle({
+            height: 100,
+            x: 9900,
+            y: 50,
+            collider: false,
+            once: true,
+            onCollision: function(){
+                kotoba05.classList.remove('is-show');
+            }
+        });
+        scene.add(eventkotoba05Remove);
+        objects.push(eventkotoba05Remove);
+
+        const ed4 = document.getElementById('ed4');
+        const eventED4 = new Obstacle({
+            height: 100,
+            x: 10050,
+            y: 50,
+            collider: false,
+            once: true,
+            onCollision: function(){
+                ed4.classList.add('is-show');
+                document.removeEventListener( 'keydown', onKeyDown, false );
+                document.removeEventListener( 'keyup', onKeyUp, false );
+                pedestal.y = 100000;
+            }
+        });
+        scene.add(eventED4);
+        objects.push(eventED4);
+
+        //---S
+
+        const startRemove = new Obstacle({
+            height: 100,
+            x: 200,
+            y: 50,
+            collider: false,
+            once: true,
+            onCollision: function(){
+                start.classList.remove('is-show');
+            }
+        });
+        scene.add(startRemove);
+        objects.push(startRemove);
+
+        const kotoba06 = document.getElementById('kotoba06');
+        const eventkotoba06 = new Obstacle({
+            height: 100,
+            x: 1700,
+            y: 50,
+            collider: false,
+            once: true,
+            onCollision: function(){
+                kotoba06.classList.add('is-show');
+            }
+        });
+        scene.add(eventkotoba06);
+        objects.push(eventkotoba06);
+
+        const eventkotoba06Remove = new Obstacle({
+            height: 100,
+            x: 2340,
+            y: 50,
+            collider: false,
+            onCollision: function(){
+                kotoba06.classList.remove('is-show');
+            }
+        });
+        scene.add(eventkotoba06Remove);
+        objects.push(eventkotoba06Remove);
+
+        const kotoba07 = document.getElementById('kotoba07');
+        const Sdance = new Obstacle({
+            height: 100,
+            x: 2815,
+            y: 50,
+            collider: false,
+            once: true,
+            onCollision: function(){
+                console.log("dance");
+                kotoba07.classList.add('is-show');
+                starring.changePose("dance", { isForcePlay: true });
+                starring.skeletonMesh.state.tracks[0].loop = false;
+            }
+        });
+        scene.add(Sdance);
+        objects.push(Sdance);
+
+        const SdanceEnd = new Obstacle({
+            height: 100,
+            x: 2850,
+            y: 50,
+            collider: false,
+            onCollision: function(){
+                kotoba07.classList.remove('is-show');
+            }
+        });
+        scene.add(SdanceEnd);
+        objects.push(SdanceEnd);
+
+        const builldingUp = new Obstacle({
+            height: 100,
+            x: 3300,
+            y: 50,
+            collider: false,
+            onCollision: function(){
+                console.log("builldingUp");
+                starring.body.position.x = 3400;
+                starring.body.position.y = 650;
+            }
+        });
+        scene.add(builldingUp);
+        objects.push(builldingUp);
+
+        const builldingUpFall = new Obstacle({
+            width: 100,
+            height: 600,
+            x: 3540,
+            y: 340,
+            collider: false,
+            once: true,
+            onCollision: function(){
+                console.log("fall");
+                starring.changePose("fall", { isForcePlay: true });
+                starring.skeletonMesh.state.tracks[0].loop = false;
+            }
+        });
+        scene.add(builldingUpFall);
+        objects.push(builldingUpFall);
+
+        const builldingUpCrash = new Obstacle({
+            width: 100,
+            x: 3540,
+            y: 30,
+            collider: false,
+            once: true,
+            onCollision: function(){
+                console.log("crash");
+                starring.changePose("crash", { isForcePlay: true });
+                starring.skeletonMesh.state.tracks[0].loop = false;
+            }
+        });
+        scene.add(builldingUpCrash);
+        objects.push(builldingUpCrash);
+
+        const ed2 = document.getElementById('ed2');
+        const eventED2 = new Obstacle({
+            width: 10,
+            height: 100,
+            x: 3610,
+            y: 50,
+            collider: false,
+            onCollision: function(){
+                console.log("dance");
+                starring.changePose("dance", { isForcePlay: true });
+                ed2.classList.add('is-show');
+                document.removeEventListener( 'keydown', onKeyDown, false );
+                document.removeEventListener( 'keyup', onKeyUp, false );
+            }
+        });
+        scene.add(eventED2);
+        objects.push(eventED2);
+
+        //--T
+        const SkaraTK  = new Obstacle({
+            width: 25,
+            height: 10,
+            x: 1559,
+            y: 50,
+            collider: false,
+            onCollision: function(){
+                starring.body.position.x = 3970;
+                starring.body.position.y = 0;
+            }
+        });
+        scene.add(SkaraTK);
+        objects.push(SkaraTK);
+
+        const ThouseRemove = new Obstacle({
+            width: 10,
+            height: 100,
+            x: 4080,
+            y: 50,
+            collider: false,
+            onCollision: function(){
+                scene.remove(Thouse.mesh)
+            }
+        });
+        scene.add(ThouseRemove);
+        objects.push(ThouseRemove);
+
+        const ThouseAdd = new Obstacle({
+            width: 10,
+            height: 100,
+            x: 4095,
+            y: 50,
+            collider: false,
+            onCollision: function(){
+                scene.add(Thouse.mesh)
+            }
+        });
+        scene.add(ThouseAdd);
+        objects.push(ThouseAdd);
+
+        const furafura01 = new Obstacle({
+            height: 100,
+            x: 4250,
+            y: 50,
+            collider: false,
+            once: true,
+            onCollision: function(){
+                kotoba08.classList.remove('is-show');
+                starring.changePose("furafura", { isForcePlay: true })
+                starring.skeletonMesh.state.tracks[0].loop = false;
+            }
+        });
+        scene.add(furafura01);
+        objects.push(furafura01);
+
+        const HitGet = new Obstacle({
+            width: 10,
+            height: 100,
+            x: 4505,
+            y: 50,
+            collider: false,
+            once: true,
+            onCollision: function(){
+                scene.remove(HitKubaruT.mesh);
+                scene.remove(haihuT.mesh);
+                scene.add(deliverAnimation.body);
+                deliverAnimation.changePose("deliver");
+                deliverAnimation.skeletonMesh.state.tracks[0].loop = false;
+                Hit01aT.timeline.play();
+                Hit01bT.timeline.play();
+                Hit01cT.timeline.play();
+                scene.add(Hit01atMove.mesh);
+                Hit01atMove.timeline.play();
+                scene.add(Hit02atMove.mesh);
+                Hit02atMove.timeline.play();
+                scene.add(Hit03atMove.mesh);
+                Hit03atMove.timeline.play();
+                starring.changePose("deliverStand", { isForcePlay: true });
+            }
+        });
+        scene.add(HitGet);
+        objects.push(HitGet);
+
+        const StarringGet = new Obstacle({
+            width: 10,
+            height: 100,
+            x: 4575,
+            y: 50,
+            collider: false,
+            once: true,
+            onCollision: function(){
+                starring.changePose("stop", { isForcePlay: true });
+                starring.skeletonMesh.state.tracks[0].loop = false;
+                deliverAnimation.changePose("deliverOnce");
+                deliverAnimation.skeletonMesh.state.tracks[0].loop = false;
+                scene.add(Tkabe);
+                objects.push(Tkabe);
+            }
+        });
+        scene.add(StarringGet);
+        objects.push(StarringGet);
+
+        const kotoba08 = document.getElementById('kotoba08');
+        const give = new Obstacle({
+            height: 100,
+            x: 4880,
+            y: 50,
+            collider: false,
+            once: true,
+            onCollision: function(){
+                scene.remove(deliverAnimation.body);
+                scene.remove(Hit01T.mesh);
+                scene.add(givingAnimation.body);
+                kotoba08.classList.add('is-show');
+                givingAnimation.changePose("giving")
+                givingAnimation.skeletonMesh.state.tracks[0].loop = false;
+                starring.changePose("give", { isForcePlay: true })
+                starring.skeletonMesh.state.tracks[0].loop = false;
+            }
+        });
+        scene.add(give);
+        objects.push(give);
+
+        const furafura02 = new Obstacle({
+            height: 100,
+            x: 5000,
+            y: 50,
+            collider: false,
+            once: true,
+            onCollision: function(){
+                kotoba08.classList.remove('is-show');
+                starring.changePose("furafura", { isForcePlay: true })
+                starring.skeletonMesh.state.tracks[0].loop = false;
+            }
+        });
+        scene.add(furafura02);
+        objects.push(furafura02);
+
+        const ed1 = document.getElementById('ed1');
+        const eventED1 = new Obstacle({
+            width: 10,
+            height: 100,
+            x: 5100,
+            y: 50,
+            collider: false,
+            onCollision: function(){
+                console.log("drop");
+                starring.changePose("drop", { isForcePlay: true });
+                starring.skeletonMesh.state.tracks[0].loop = false;
+                ed1.classList.add('is-show');
+                document.removeEventListener( 'keydown', onKeyDown, false );
+                document.removeEventListener( 'keyup', onKeyUp, false );
+            }
+        });
+        scene.add(eventED1);
+        objects.push(eventED1);
+
+        //--K
+        const TkaraK = new Obstacle({
+            width: 10,
+            height: 30,
+            x: 4005,
+            y: 58,
+            collider: false,
+            onCollision: function(){
+                starring.body.position.x = 5430;
+                starring.body.position.y = 40;
+                scene.add(girlAnimation.body);
+                girlAnimation.changePose("girl")
+            }
+        });
+        scene.add(TkaraK);
+        objects.push(TkaraK);
+
+        const girlR = new Obstacle({
+            height: 100,
+            x: 5515,
+            y: 40,
+            collider: false,
+            onCollision: function(){
+                scene.add(girlAnimation.body);
+                scene.add(notAnimation.body);
+                girlAnimation.changePose("girlR")
+                notAnimation.changePose("deliverNot")
+            }
+        });
+        scene.add(girlR);
+        objects.push(girlR);
+
+        const room = new Obstacle({
+            width: 19,
+            height: 33,
+            x: 5521,
+            y: 60,
+            collider: false,
+            onCollision: function(){
+                starring.body.position.x = 5920;
+                starring.body.position.y = 40; 
+                girlAnimation.changePose("girl")
+            }
+        });
+        scene.add(room);
+        objects.push(room);
+
+        const KkaraK = new Obstacle({
+            width: 13,
+            height: 30,
+            x: 5871,
+            y: 58,
+            collider: false,
+            onCollision: function(){
+                starring.body.position.x = 5430;
+                starring.body.position.y = 40;
+                girlAnimation.changePose("girl")
+                kotoba09.classList.remove('is-show');
+            }
+        });
+        scene.add(KkaraK);
+        objects.push(KkaraK);
+
+        const KhouseRemove = new Obstacle({
+            width: 10,
+            height: 100,
+            x: 5956,
+            y: 50,
+            collider: false,
+            onCollision: function(){
+                scene.remove(Khouse.mesh)
+            }
+        });
+        scene.add(KhouseRemove);
+        objects.push(KhouseRemove);
+
+        const KhouseAdd = new Obstacle({
+            width: 10,
+            height: 100,
+            x: 5966,
+            y: 50,
+            collider: false,
+            onCollision: function(){
+                scene.add(Khouse.mesh)
+            }
+        });
+        scene.add(KhouseAdd);
+        objects.push(KhouseAdd);
+
+        const kotoba09 = document.getElementById('kotoba09');
+        const Hit03KMove = new Obstacle({
+            height: 100,
+            x: 6000,
+            y: 50,
+            collider: false,
+            once: true,
+            onCollision: function(){
+                Hit03K.timeline.play();
+                kotoba09.classList.add('is-show');
+            }
+        });
+        scene.add(Hit03KMove);
+        objects.push(Hit03KMove);
+
+
+        runAnimation.timeline
+        .to(runAnimation.body.position, {
+            duration: 5,
+            x: "-=0",
+        })
+        .to(runAnimation.body.position, {
+            duration: 6,
+            x: "-=300",
+        })
+
+        dinnerAnimation.timeline
+        .to(dinnerAnimation.body.position, {
+            duration: 10,
+            z: "+=0",
+        })
+        .to(dinnerAnimation.body.position, {
+            duration: 0.1,
+            z: "+=1098",
+        })
+        
+        const white = document.getElementById('white');
+        const ed3 = document.getElementById('ed3');
+        function setED3(){
+            white.classList.remove('is-show');
+        }
+        const not = new Obstacle({
+            height: 100,
+            x: 6580,
+            y: 45,
+            collider: false,
+            once: true,
+            onCollision: function(){
+                kotoba09.classList.remove('is-show');
+                starring.changePose("stand");
+                notAnimation.body.position.z = 80;
+                notAnimation.changePose("not");
+                notAnimation.skeletonMesh.state.tracks[0].loop = false;
+                scene.add(runAnimation.body);
+                runAnimation.changePose("run");
+                runAnimation.skeletonMesh.state.tracks[0].loop = false;
+                runAnimation.timeline.play();
+                dinnerAnimation.changePose("dinner");
+                dinnerAnimation.timeline.play();
+                soukoK.timeline.play();
+                K02.timeline.play();
+                white.classList.add('is-show');
+                window.setTimeout(setED3,10000);
+                ed3.classList.add('is-show');
+                document.removeEventListener( 'keydown', onKeyDown, false );
+                document.removeEventListener( 'keyup', onKeyUp, false );
+            }
+        });
+        scene.add(not);
+        objects.push(not);
 
 
         //---------texture------------------------------------
@@ -1105,9 +1913,9 @@ function init() {
         const densenS = new Illusttexture({
             texture:'img/haikei02.png',
             width: 70,
-            height: 110,
-            x: 1004,
-            y: 90,
+            height: 80,
+            x: 1005,
+            y: 85,
             z: -10,
             offsetX: 0,
             offsetY: 0,
@@ -1272,7 +2080,7 @@ function init() {
             height: 85,
             x: 3429,
             y: 673,
-            z: 50,
+            z: -2,
             offsetX: 0,
             offsetY: 0,
             centerX: 0,
@@ -1353,7 +2161,7 @@ function init() {
             texture:'img/haikei01.png',
             width: 155,
             height: 115,
-            x: 4008,
+            x: 4017,
             y: 49,
             z: -15,
             offsetX: 0,
@@ -1367,9 +2175,9 @@ function init() {
 
         const KT2 = new Illusttexture({ //室内階段
             texture:'img/haikei02.png',
-            width: 148,
+            width: 130,
             height: 100,
-            x: 4013,
+            x: 4022,
             y: 34,
             z: -15,
             offsetX: 0,
@@ -1382,6 +2190,20 @@ function init() {
         scene.add(KT2.mesh);
 
         //Tルート
+        const Thouse = new Illusttexture({
+            texture:'img/haikei01.png',
+            width: 172,
+            height: 115,
+            x: 4009,
+            y: 50,
+            z: 10,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 1,
+            centerY: 0.33,
+            repeatX: 0.5,
+            repeatY: 0.35,
+        })
 
         const Hit01aT = new Illusttexture({
             texture:'img/charactor.png',
@@ -1389,7 +2211,7 @@ function init() {
             height: 46,
             x: 4540,
             y: 17,
-            z: -17,
+            z: 15,
             offsetX: 0,
             offsetY: 0,
             centerX: 0.765,
@@ -1399,13 +2221,41 @@ function init() {
         })
         scene.add(Hit01aT.mesh);
 
+        Hit01aT.timeline
+        .to(Hit01aT.mesh.position, {
+            duration: 0.15,
+            ease: "power2.out",
+            y: "+=1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit01aT.mesh.rotation, {
+            duration: 0.5,
+            ease: "back.inOut(2)",
+            z: "-=0.1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit01aT.mesh.position, {
+            duration: 2,
+            x: "+=25",
+        })
+        .to(Hit01aT.mesh.position, {
+            duration: 1.3,
+            x: "+=0",
+        })
+        .to(Hit01aT.mesh.position, {
+            duration: 0.1,
+            z: "-=1000",
+        })
+
         const Hit01bT = new Illusttexture({
             texture:'img/charactor.png',
             width: 18,
             height: 46,
             x: 4530,
             y: 17,
-            z: -17,
+            z: 14,
             offsetX: 0,
             offsetY: 0,
             centerX: 0.765,
@@ -1415,13 +2265,52 @@ function init() {
         })
         scene.add(Hit01bT.mesh);
 
+        Hit01bT.timeline
+        .to(Hit01bT.mesh.position, {
+            duration: 0.2,
+            ease: "power2.out",
+            y: "+=1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit01bT.mesh.rotation, {
+            duration: 0.5,
+            ease: "back.inOut(2)",
+            z: "-=0.1",
+            repeat: 10,
+            yoyo: true
+        })
+        .to(Hit01bT.mesh.position, {
+            duration: 2,
+            x: "+=15",
+        })
+        .to(Hit01bT.mesh.rotation, {
+            duration: 0.5,
+            ease: "back.inOut(2)",
+            z: "+=0.1",
+            repeat: 8,
+            yoyo: true
+        })
+        .to(Hit01bT.mesh.position, {
+            duration: 3,
+            x: "+=20",
+        })
+        .to(Hit01bT.mesh.position, {
+            duration: 0.5,
+            x: "+=0",
+        })
+        .to(Hit01bT.mesh.position, {
+            duration: 0.1,
+            z: "-=1000",
+        })
+
         const Hit01cT = new Illusttexture({
             texture:'img/charactor.png',
             width: 18,
             height: 46,
             x: 4520,
             y: 17,
-            z: -17,
+            z: 13,
             offsetX: 0,
             offsetY: 0,
             centerX: 0.765,
@@ -1431,11 +2320,196 @@ function init() {
         })
         scene.add(Hit01cT.mesh);
 
+        Hit01cT.timeline
+        .to(Hit01cT.mesh.position, {
+            duration: 0.2,
+            ease: "power2.out",
+            y: "+=1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit01cT.mesh.rotation, {
+            duration: 0.8,
+            ease: "back.inOut(2)",
+            z: "-=0.1",
+            repeat: 12,
+            yoyo: true
+        })
+        .to(Hit01cT.mesh.position, {
+            duration: 4,
+            x: "+=18",
+        })
+        .to(Hit01cT.mesh.rotation, {
+            duration: 0.5,
+            ease: "back.inOut(2)",
+            z: "-=0.1",
+            repeat: 4,
+            yoyo: true
+        })
+        .to(Hit01cT.mesh.position, {
+            duration: 1,
+            x: "+=0",
+        })
+        .to(Hit01cT.mesh.position, {
+            duration: 2,
+            x: "+=25",
+        })
+        .to(Hit01cT.mesh.position, {
+            duration: 0.6,
+            x: "+=0",
+        })
+        .to(Hit01cT.mesh.position, {
+            duration: 0.1,
+            z: "-=1000",
+        })
+
+        const Hit01atMove = new Illusttexture({
+            texture:'img/charactor.png',
+            width: 22,
+            height: 46,
+            x: 4570,
+            y: 19,
+            z: -1000,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0.6,
+            centerY: 0,
+            repeatX: 0.1,
+            repeatY: 0.2,
+        })
+
+        Hit01atMove.timeline
+        .to(Hit01atMove.mesh.position, {
+            duration: 4.1,
+            z: "+=0",
+        })
+        Hit01atMove.timeline
+        .to(Hit01atMove.mesh.position, {
+            duration: 0.1,
+            z: "+=1030",
+        })
+        .to(Hit01atMove.mesh.position, {
+            duration: 0.15,
+            ease: "power2.out",
+            y: "+=1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit01atMove.mesh.rotation, {
+            duration: 0.5,
+            ease: "back.inOut(2)",
+            z: "-=0.1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit01atMove.mesh.position, {
+            duration: 10,
+            x: "-=300",
+        })
+        .to(Hit01atMove.mesh.position, {
+            duration: 1,
+            z: "-=1000",
+        })
+
+        const Hit02atMove = new Illusttexture({
+            texture:'img/charactor.png',
+            width: 22,
+            height: 46,
+            x: 4570,
+            y: 19,
+            z: -1000,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0.6,
+            centerY: 0,
+            repeatX: 0.1,
+            repeatY: 0.2,
+        })
+
+        Hit02atMove.timeline
+        .to(Hit02atMove.mesh.position, {
+            duration: 6.9,
+            z: "+=0",
+        })
+        .to(Hit02atMove.mesh.position, {
+            duration: 0.1,
+            z: "+=1030",
+        })
+        .to(Hit02atMove.mesh.position, {
+            duration: 0.15,
+            ease: "power2.out",
+            y: "+=1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit02atMove.mesh.rotation, {
+            duration: 0.5,
+            ease: "back.inOut(2)",
+            z: "-=0.1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit02atMove.mesh.position, {
+            duration: 10,
+            x: "-=300",
+        })
+        .to(Hit02atMove.mesh.position, {
+            duration: 1,
+            z: "-=1000",
+        })
+
+        const Hit03atMove = new Illusttexture({
+            texture:'img/charactor.png',
+            width: 22,
+            height: 46,
+            x: 4570,
+            y: 19,
+            z: -1000,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0.6,
+            centerY: 0,
+            repeatX: 0.1,
+            repeatY: 0.2,
+        })
+
+        Hit03atMove.timeline
+        .to(Hit03atMove.mesh.position, {
+            duration: 9.2,
+            z: "+=0",
+        })
+        .to(Hit03atMove.mesh.position, {
+            duration: 0.1,
+            z: "+=1030",
+        })
+        .to(Hit03atMove.mesh.position, {
+            duration: 0.15,
+            ease: "power2.out",
+            y: "+=1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit03atMove.mesh.rotation, {
+            duration: 0.5,
+            ease: "back.inOut(2)",
+            z: "-=0.1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit03atMove.mesh.position, {
+            duration: 10,
+            x: "-=300",
+        })
+        .to(Hit03atMove.mesh.position, {
+            duration: 1,
+            z: "-=1000",
+        })
+
         const HitKubaruT = new Illusttexture({
             texture:'img/charactor.png',
-            width: 25,
-            height: 40,
-            x: 4575,
+            width: 28,
+            height: 44,
+            x: 4573,
             y: 35,
             z: -15,
             offsetX: 0,
@@ -1450,9 +2524,9 @@ function init() {
         const haihuT = new Illusttexture({
             texture:'img/charactor.png',
             width: 45,
-            height: 55,
-            x: 4570,
-            y: 18,
+            height: 46,
+            x: 4577,
+            y: 15,
             z: -15,
             offsetX: 0,
             offsetY: 0,
@@ -1481,10 +2555,10 @@ function init() {
 
         const Hit01T = new Illusttexture({//倒れている人
             texture:'img/charactor.png',
-            width: 35,
-            height: 25,
-            x: 4900,
-            y: 6,
+            width: 37,
+            height: 27,
+            x: 4901,
+            y: 7,
             z: -15,
             offsetX: 0,
             offsetY: 0,
@@ -1501,8 +2575,8 @@ function init() {
             texture:'img/haikei01.png',
             width: 130,
             height: 80,
-            x: 5608,
-            y: 39.5,
+            x: 5472,
+            y: 81,
             z: -20,
             offsetX: 0,
             offsetY: 0,
@@ -1517,8 +2591,8 @@ function init() {
             texture:'img/haikei03.png',
             width: 60,
             height: 40,
-            x: 5610,
-            y: 18,
+            x: 5470,
+            y: 60,
             z: -19,
             offsetX: 0,
             offsetY: 0,
@@ -1528,22 +2602,6 @@ function init() {
             repeatY: 0.25,
         })
         scene.add(desk01.mesh);
-
-        const Hit01K = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 25,
-            height: 40,
-            x: 5630,
-            y: 14.5,
-            z: -19,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.1,
-            centerY: 0,
-            repeatX: 0.1,
-            repeatY: 0.15,
-        })
-        scene.add(Hit01K.mesh);
 
         const K001 = new Illusttexture({ //室内
             texture:'img/haikei01.png',
@@ -1563,7 +2621,7 @@ function init() {
 
         const K002 = new Illusttexture({ //室内階段
             texture:'img/haikei02.png',
-            width: 148,
+            width: 130,
             height: 100,
             x: 5893,
             y: 34,
@@ -1583,7 +2641,7 @@ function init() {
             height: 46,
             x: 6500,
             y: 19,
-            z: -15,
+            z: -30,
             offsetX: 0,
             offsetY: 0,
             centerX: 0.6,
@@ -1593,37 +2651,40 @@ function init() {
         })
         scene.add(Hit03K.mesh);
 
-        const HitKubaruK = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 25,
-            height: 40,
-            x: 6575,
-            y: 35,
-            z: -15,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.2,
-            centerY: 0,
-            repeatX: 0.1,
-            repeatY: 0.15,
+        Hit03K.timeline
+        .to(Hit03K.mesh.position, {
+            duration: 0.15,
+            ease: "power2.out",
+            y: "+=1",
+            repeat: -1,
+            yoyo: true
         })
-        scene.add(HitKubaruK.mesh);
+        .to(Hit03K.mesh.rotation, {
+            duration: 0.5,
+            ease: "back.inOut(2)",
+            z: "-=0.1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit03K.mesh.position, {
+            duration: 30,
+            x: "-=830",
+        })
 
-        const haihuK = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 45,
-            height: 55,
-            x: 6570,
-            y: 18,
-            z: -15,
+        const Khouse = new Illusttexture({
+            texture:'img/haikei01.png',
+            width: 172,
+            height: 115,
+            x: 5880,
+            y: 50,
+            z: 10,
             offsetX: 0,
             offsetY: 0,
-            centerX: 0.37,
-            centerY: 0,
-            repeatX: 0.16,
-            repeatY: 0.15,
+            centerX: 1,
+            centerY: 0.33,
+            repeatX: 0.5,
+            repeatY: 0.35,
         })
-        scene.add(haihuK.mesh);
 
         const soukoK = new Illusttexture({
             texture:'img/haikei01.png',
@@ -1641,13 +2702,23 @@ function init() {
         })
         scene.add(soukoK.mesh);
 
+        soukoK.timeline
+        .to(soukoK.mesh.position, {
+            duration: 10,
+            z: "+=0",
+        })
+        .to(soukoK.mesh.position, {
+            duration: 0.1,
+            z: "-=1000",
+        })
+
         const K02 = new Illusttexture({
             texture:'img/haikei01.png',
             width: 130,
             height: 80,
-            x: 7008,
-            y: 39.5,
-            z: -15,
+            x: 6570,
+            y: 39.3,
+            z: -1000,
             offsetX: 0,
             offsetY: 0,
             centerX: 1,
@@ -1657,38 +2728,15 @@ function init() {
         })
         scene.add(K02.mesh);
 
-        const desk02 = new Illusttexture({
-            texture:'img/haikei03.png',
-            width: 60,
-            height: 40,
-            x: 7010,
-            y: 18,
-            z: -14,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0,
-            centerY: 0.3,
-            repeatX: 0.5,
-            repeatY: 0.25,
+        K02.timeline
+        .to(K02.mesh.position, {
+            duration: 10,
+            z: "+=0",
         })
-        scene.add(desk02.mesh);
-
-        const Hit02K = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 25,
-            height: 40,
-            x: 7028,
-            y: 29,
-            z: -14,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.1,
-            centerY: 0,
-            repeatX: 0.1,
-            repeatY: 0.15,
+        .to(K02.mesh.position, {
+            duration: 0.1,
+            z: "+=1095",
         })
-        scene.add(Hit02K.mesh);
-
 
         // //Hルート
         const SingouH = new Illusttexture({
@@ -1787,6 +2835,22 @@ function init() {
         })
         scene.add(densen02H.mesh);
 
+        const flower = new Illusttexture({
+            texture:'img/haikei03.png',
+            width: 30,
+            height: 34,
+            x: 8020,
+            y: 10,
+            z: -15,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0.6,
+            centerY: 0.25,
+            repeatX: 0.2,
+            repeatY: 0.2,
+        })
+        scene.add(flower.mesh);
+
         const gard01H = new Illusttexture({
             texture:'img/haikei03.png',
             width: 90,
@@ -1839,7 +2903,7 @@ function init() {
             texture:'img/charactor.png',
             width: 60,
             height: 50,
-            x: 8010,
+            x: 8150,
             y: 20,
             z: -39,
             offsetX: 0,
@@ -1850,6 +2914,15 @@ function init() {
             repeatY: 0.2,
         })
         scene.add(carH.mesh);
+        carH.timeline
+        .to(carH.mesh.position, {
+            duration: 4,
+            x: "-=400",
+        })
+        .to(carH.mesh.position, {
+            duration: 1,
+            z: "-=800",
+        })
 
         const CemeteryH = new Illusttexture({
             texture:'img/haikei02.png',
@@ -1885,10 +2958,10 @@ function init() {
 
         const Hit01H = new Illusttexture({
             texture:'img/charactor.png',
-            width: 20,
-            height: 50,
-            x: 8660,
-            y: 22,
+            width: 17,
+            height: 45,
+            x: 8600,
+            y: 20,
             z: -39,
             offsetX: 0,
             offsetY: 0,
@@ -1905,7 +2978,7 @@ function init() {
             height: 160,
             x: 8800,
             y: 75,
-            z: -39,
+            z: 60,
             offsetX: 0,
             offsetY: 0,
             centerX: 0,
@@ -1919,7 +2992,7 @@ function init() {
             texture:'img/charactor.png',
             width: 15,
             height: 50,
-            x: 9000,
+            x: 9400,
             y: 20,
             z: -39,
             offsetX: 0,
@@ -1931,13 +3004,33 @@ function init() {
         })
         scene.add(Hit02H.mesh);
 
+        Hit02H.timeline
+        .to(Hit02H.mesh.position, {
+            duration: 0.15,
+            ease: "power2.out",
+            y: "+=1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit02H.mesh.rotation, {
+            duration: 0.5,
+            ease: "back.inOut(2)",
+            z: "-=0.1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit02H.mesh.position, {
+            duration: 10,
+            x: "-=630",
+        })
+
         const Hit03H = new Illusttexture({
             texture:'img/charactor.png',
             width: 15,
             height: 50,
-            x: 8990,
+            x: 9300,
             y: 20,
-            z: -39,
+            z: 40,
             offsetX: 0,
             offsetY: 0,
             centerX: 0.55,
@@ -1947,13 +3040,33 @@ function init() {
         })
         scene.add(Hit03H.mesh);
 
+        Hit03H.timeline
+        .to(Hit03H.mesh.position, {
+            duration: 0.3,
+            ease: "power2.out",
+            y: "+=1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit03H.mesh.rotation, {
+            duration: 0.8,
+            ease: "back.inOut(2)",
+            z: "-=0.1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit03H.mesh.position, {
+            duration: 16,
+            x: "-=530",
+        })
+
         const Hit04H = new Illusttexture({
             texture:'img/charactor.png',
             width: 13,
             height: 49,
-            x: 8980,
+            x: 9300,
             y: 19,
-            z: -39,
+            z: 40,
             offsetX: 0,
             offsetY: 0,
             centerX: 0.47,
@@ -1963,11 +3076,31 @@ function init() {
         })
         scene.add(Hit04H.mesh);
 
+        Hit04H.timeline
+        .to(Hit04H.mesh.position, {
+            duration: 0.15,
+            ease: "power2.out",
+            y: "+=1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit04H.mesh.rotation, {
+            duration: 0.5,
+            ease: "back.inOut(2)",
+            z: "-=0.1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit04H.mesh.position, {
+            duration: 13,
+            x: "-=530",
+        })
+
         const Hit05H = new Illusttexture({
             texture:'img/charactor.png',
             width: 15,
             height: 50,
-            x: 8970,
+            x: 9200,
             y: 20,
             z: -39,
             offsetX: 0,
@@ -1979,11 +3112,31 @@ function init() {
         })
         scene.add(Hit05H.mesh);
 
+        Hit05H.timeline
+        .to(Hit05H.mesh.position, {
+            duration: 0.15,
+            ease: "power2.out",
+            y: "+=1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit05H.mesh.rotation, {
+            duration: 0.5,
+            ease: "back.inOut(2)",
+            z: "-=0.1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit05H.mesh.position, {
+            duration: 10,
+            x: "-=430",
+        })
+
         const Hit06H = new Illusttexture({
             texture:'img/charactor.png',
             width: 15,
             height: 51,
-            x: 8950,
+            x: 9300,
             y: 19,
             z: -39,
             offsetX: 0,
@@ -1995,13 +3148,33 @@ function init() {
         })
         scene.add(Hit06H.mesh);
 
+        Hit06H.timeline
+        .to(Hit06H.mesh.position, {
+            duration: 0.18,
+            ease: "power2.out",
+            y: "+=1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit06H.mesh.rotation, {
+            duration: 0.5,
+            ease: "back.inOut(2)",
+            z: "-=0.1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit06H.mesh.position, {
+            duration: 16,
+            x: "-=530",
+        })
+
         const Hit07H = new Illusttexture({
             texture:'img/charactor.png',
             width: 15,
             height: 50,
-            x: 8930,
+            x: 9300,
             y: 19,
-            z: -39,
+            z: 40,
             offsetX: 0,
             offsetY: 0,
             centerX: 0.24,
@@ -2011,11 +3184,31 @@ function init() {
         })
         scene.add(Hit07H.mesh);
 
+        Hit07H.timeline
+        .to(Hit07H.mesh.position, {
+            duration: 0.15,
+            ease: "power2.out",
+            y: "+=1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit07H.mesh.rotation, {
+            duration: 0.5,
+            ease: "back.inOut(2)",
+            z: "-=0.1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit07H.mesh.position, {
+            duration: 11,
+            x: "-=500",
+        })
+
         const Hit08H = new Illusttexture({
             texture:'img/charactor.png',
             width: 14,
             height: 28,
-            x: 8910,
+            x: 9200,
             y: 12,
             z: -39,
             offsetX: 0,
@@ -2026,6 +3219,26 @@ function init() {
             repeatY: 0.12,
         })
         scene.add(Hit08H.mesh);
+
+        Hit08H.timeline
+        .to(Hit08H.mesh.position, {
+            duration: 0.15,
+            ease: "power2.out",
+            y: "+=1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit08H.mesh.rotation, {
+            duration: 0.5,
+            ease: "back.inOut(2)",
+            z: "-=0.1",
+            repeat: -1,
+            yoyo: true
+        })
+        .to(Hit08H.mesh.position, {
+            duration: 10,
+            x: "-=400",
+        })
 
         const Hit09H = new Illusttexture({
             texture:'img/charactor.png',
@@ -2063,7 +3276,7 @@ function init() {
             texture:'img/charactor.png',
             width: 18,
             height: 27,
-            x: 9750,
+            x: 9790,
             y: 15,
             z: -39,
             offsetX: 0,
@@ -2097,7 +3310,7 @@ function init() {
             height: 28,
             x: 9850,
             y: 13,
-            z: -39,
+            z: 50,
             offsetX: 0,
             offsetY: 0,
             centerX: 1,
@@ -2111,7 +3324,7 @@ function init() {
             texture:'img/charactor.png',
             width: 45,
             height: 24,
-            x: 9900,
+            x: 9840,
             y: 7,
             z: -39,
             offsetX: 0,
@@ -2127,9 +3340,9 @@ function init() {
             texture:'img/charactor.png',
             width: 45,
             height: 24,
-            x: 9950,
+            x: 10000,
             y: 3,
-            z: -39,
+            z: 50,
             offsetX: 0,
             offsetY: 0,
             centerX: 0.8,
@@ -2138,70 +3351,6 @@ function init() {
             repeatY: 0.1,
         })
         scene.add(Hit15H.mesh);
-
-        const Hit03aA_H = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 24,
-            height: 40,
-            x: 9210,
-            y: 18,
-            z: -39,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 1,
-            centerY: 0,
-            repeatX: 0.09,
-            repeatY: 0.15,
-        })
-        scene.add(Hit03aA_H.mesh);
-
-        const Hit03bA_H = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 24,
-            height: 40,
-            x: 9220,
-            y: 18,
-            z: -39,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.9,
-            centerY: 0,
-            repeatX: 0.09,
-            repeatY: 0.15,
-        })
-        scene.add(Hit03bA_H.mesh);
-
-        const Hit03cA_H = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 24,
-            height: 40,
-            x: 9230,
-            y: 18,
-            z: -39,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.817,
-            centerY: 0,
-            repeatX: 0.09,
-            repeatY: 0.15,
-        })
-        scene.add(Hit03cA_H.mesh);
-
-        const Hit03dA_H = new Illusttexture({
-            texture:'img/charactor.png',
-            width: 24,
-            height: 40,
-            x: 9040,
-            y: 18,
-            z: -39,
-            offsetX: 0,
-            offsetY: 0,
-            centerX: 0.735,
-            centerY: 0,
-            repeatX: 0.09,
-            repeatY: 0.15,
-        })
-        scene.add(Hit03dA_H.mesh);
 
         //床----------------------------------------------------------------------------
 
@@ -2811,7 +3960,7 @@ function init() {
             texture:'img/start02.png',
             width: 200,
             height: 27,
-            x: 5180,
+            x: 5178,
             y: -9,
             z: 91,
             centerX: 1,
@@ -2823,10 +3972,10 @@ function init() {
 
         const yuka228 = new Illusttexture({
             texture:'img/start02.png',
-            width: 200,
+            width: 120.5,
             height: 27,
-            x: 5470,
-            y: -9,
+            x: 5474.4,
+            y: 33.3,
             z: 91,
             centerX: 1,
             centerY: 0,
@@ -2839,7 +3988,7 @@ function init() {
             texture:'img/start02.png',
             width: 200,
             height: 27,
-            x: 5660,
+            x: 5780,
             y: -9,
             z: 91,
             centerX: 1,
@@ -3206,6 +4355,15 @@ function animate() {
  
     starring.animate(objects);
     fourAnimation.animate();
+    fourAnimationH.animate();
+    doctorAnimation.animate();
+    deliverAnimation.animate();
+    givingAnimation.animate();
+    dinnerAnimation.animate();
+    runAnimation.animate();
+    girlAnimation.animate();
+    notAnimation.animate();
+    runAnimation.animate();
 
     const cameraPosition = starring.body.position
         .clone()
@@ -3216,7 +4374,7 @@ function animate() {
                 100 + pedestal.z
             )
         );
-    camera.position.lerp(cameraPosition, 0.1);
+    camera.position.lerp(cameraPosition, 1.0);
 
     renderer.render( scene, camera );
 
