@@ -2154,6 +2154,21 @@ function init() {
         })
         scene.add(textureStartSK.mesh);
 
+        const textureEnd = new Illusttexture({
+            texture:'img/start01.png',
+            width: 205,
+            height: 665,
+            x: 3713,
+            y: 330,
+            z: 0,
+            offsetX: 0,
+            offsetY: 0,
+            centerX: 0,
+            centerY: 0.8,
+            repeatX: 0.35,
+            repeatY: 1,
+        })
+        scene.add(textureEnd.mesh);
 
         //KTルート
 

@@ -10,7 +10,7 @@ class Obstacle extends THREE.Mesh {
             // 障害物として機能するかの真偽値
             // false の場合は交差の判定はするが、通過できる
             collider: true, 
-            color: 0xf99fff,
+            color: 0x000000,
             transparent: true,
             opacity: 0,
             x: 0,
