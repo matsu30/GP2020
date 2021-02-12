@@ -72,6 +72,19 @@ body{
     visibility: hidden;
 }
 
+
+.up-button{
+    width: 90px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin: 60vh 48vw;
+    z-index: 20;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
 .js-ending{
     position: absolute;
     display: flex;

@@ -80,8 +80,8 @@ function init() {
         runAnimation.load();
 
         //x20 y650
-        starring.body.position.x = 300;
-        starring.body.position.y = 0;
+        starring.body.position.x = 20;
+        starring.body.position.y = 650;
         starring.body.position.z = 0;
         fourAnimation.body.position.x = 540;
         fourAnimation.body.position.y = 194;
@@ -194,6 +194,15 @@ function init() {
 
         document.addEventListener( 'keydown', onKeyDown, false );
         document.addEventListener( 'keyup', onKeyUp, false );
+
+        var KeyDownUp = function ( event ) {
+            switch ( event.keyCode ) {
+                case 38: // up
+                starring.body.position.x = 3970;
+                starring.body.position.y = 0;
+                break;
+            }
+        };
 
         const obstacleKeydata = {
             width: 20,
@@ -686,6 +695,7 @@ function init() {
                 kotoba03.classList.remove('is-show');
                 document.removeEventListener( 'keydown', onKeyDown, false );
                 document.removeEventListener( 'keyup', onKeyUp, false );
+                document.removeEventListener( 'keydown', KeyDownUp, false );
             }
         });
         scene.add(eventObstacle04);
@@ -703,6 +713,7 @@ function init() {
                 ed6.classList.add('is-show');
                 document.removeEventListener( 'keydown', onKeyDown, false );
                 document.removeEventListener( 'keyup', onKeyUp, false );
+                document.removeEventListener( 'keydown', KeyDownUp, false );
 
             }
         });
@@ -896,6 +907,7 @@ function init() {
                 ed4.classList.add('is-show');
                 document.removeEventListener( 'keydown', onKeyDown, false );
                 document.removeEventListener( 'keyup', onKeyUp, false );
+                document.removeEventListener( 'keydown', KeyDownUp, false );
                 pedestal.y = 100000;
             }
         });
@@ -1030,25 +1042,83 @@ function init() {
                 ed2.classList.add('is-show');
                 document.removeEventListener( 'keydown', onKeyDown, false );
                 document.removeEventListener( 'keyup', onKeyUp, false );
+                document.removeEventListener( 'keydown', KeyDownUp, false );
             }
         });
         scene.add(eventED2);
         objects.push(eventED2);
 
         //--T
+        const up_button = document.getElementById('up-button');
         const SkaraTK  = new Obstacle({
             width: 25,
-            height: 10,
+            height: 100,
             x: 1559,
             y: 50,
             collider: false,
             onCollision: function(){
-                starring.body.position.x = 3970;
-                starring.body.position.y = 0;
+                up_button.classList.add('is-show');
+                document.addEventListener( 'keydown', KeyDownUp, false );
             }
         });
         scene.add(SkaraTK);
         objects.push(SkaraTK);
+
+        const up_buttonRemove01  = new Obstacle({
+            width: 25,
+            height: 100,
+            x: 1534,
+            y: 50,
+            collider: false,
+            onCollision: function(){
+                up_button.classList.remove('is-show');
+                document.removeEventListener( 'keydown', KeyDownUp, false );
+            }
+        });
+        scene.add(up_buttonRemove01);
+        objects.push(up_buttonRemove01);
+
+        const up_buttonRemove02  = new Obstacle({
+            width: 25,
+            height: 100,
+            x: 1584,
+            y: 50,
+            collider: false,
+            onCollision: function(){
+                up_button.classList.remove('is-show');
+                document.removeEventListener( 'keydown', KeyDownUp, false );
+            }
+        });
+        scene.add(up_buttonRemove02);
+        objects.push(up_buttonRemove02);
+
+        const up_buttonRemove03  = new Obstacle({
+            width: 5,
+            height: 100,
+            x: 3975,
+            y: 50,
+            collider: false,
+            onCollision: function(){
+                up_button.classList.remove('is-show');
+                document.removeEventListener( 'keydown', KeyDownUp, false );
+            }
+        });
+        scene.add(up_buttonRemove03);
+        objects.push(up_buttonRemove03);
+
+        const up_buttonRemove04  = new Obstacle({
+            width: 5,
+            height: 100,
+            x: 3965,
+            y: 50,
+            collider: false,
+            onCollision: function(){
+                up_button.classList.remove('is-show');
+                document.removeEventListener( 'keydown', KeyDownUp, false );
+            }
+        });
+        scene.add(up_buttonRemove04);
+        objects.push(up_buttonRemove04);
 
         const ThouseRemove = new Obstacle({
             width: 10,
@@ -1188,6 +1258,7 @@ function init() {
                 ed1.classList.add('is-show');
                 document.removeEventListener( 'keydown', onKeyDown, false );
                 document.removeEventListener( 'keyup', onKeyUp, false );
+                document.removeEventListener( 'keydown', KeyDownUp, false );
             }
         });
         scene.add(eventED1);
@@ -1348,6 +1419,7 @@ function init() {
                 ed3.classList.add('is-show');
                 document.removeEventListener( 'keydown', onKeyDown, false );
                 document.removeEventListener( 'keyup', onKeyUp, false );
+                document.removeEventListener( 'keydown', KeyDownUp, false );
             }
         });
         scene.add(not);
