@@ -45,8 +45,8 @@ class Starring {
     //アニメーションを最後まで再生中かの真偽値
     this._isForcePlaying = false;
 
-    // 主人公の移動速度700
-    this.PLAYERSPEED = 700.0;
+    // 主人公の移動速度400
+    this.PLAYERSPEED = 400.0;
 
     this.clock = new THREE.Clock();
 
@@ -232,7 +232,7 @@ class Starring {
 
   jump() {
     if (this._canJump) {
-      this._playerVelocity.y += 300;
+      this._playerVelocity.y += 280;
     }
 
     this._canJump = false;
