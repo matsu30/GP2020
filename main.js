@@ -80,8 +80,8 @@ function init() {
         runAnimation.load();
 
         //x20 y650
-        starring.body.position.x = 20;
-        starring.body.position.y = 650;
+        starring.body.position.x = 300;
+        starring.body.position.y = 0;
         starring.body.position.z = 0;
         fourAnimation.body.position.x = 540;
         fourAnimation.body.position.y = 194;
@@ -712,7 +712,7 @@ function init() {
         //---H
         const SkaraH = new Obstacle({
             height: 80,
-            x: 700,
+            x: 500,
             y: 40,
             collider: false,
             onCollision: function(){
@@ -741,7 +741,7 @@ function init() {
 
         const blinkObj = new Obstacle({
             height: 10,
-            x: 700,
+            x: 500,
             y: 85,
             collider: false,
         });
@@ -1866,7 +1866,7 @@ function init() {
             texture:'img/haikei03.png',
             width: 50,
             height: 100,
-            x: 700,
+            x: 500,
             y: 50,
             z: -10,
             offsetX: 0,
@@ -1882,7 +1882,7 @@ function init() {
             texture:'img/haikei03.png',
             width: 30,
             height: 100,
-            x: 703,
+            x: 503,
             y: 50,
             z: -0,
             offsetX: 0,
