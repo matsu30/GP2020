@@ -41,8 +41,7 @@ body{
 .js-start{
     text-align: center;
     margin-right: 20em;
-    opacity: 0;
-    visibility: hidden;
+    visibility: visible;
     transition: all 0.5s ease-in-out .3s;
 }
 

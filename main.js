@@ -479,7 +479,6 @@ function init() {
             y: maxY - obstacleKeydata.height * -1 + offsetY,
             z: 0,
             onCollision: function(){
-                start.classList.add('is-show');
                 title.classList.add('is-fade');
             }
         });
@@ -497,7 +496,7 @@ function init() {
                 console.log("fall");
                 starring.changePose("fall", { isForcePlay: true });
                 starring.skeletonMesh.state.tracks[0].loop = false;
-                start.classList.remove('is-show');
+                start.classList.add('is-fade');
             }
         });
         scene.add(eventObstacle01);
@@ -923,7 +922,7 @@ function init() {
             collider: false,
             once: true,
             onCollision: function(){
-                start.classList.remove('is-show');
+                start.classList.add('is-fade');
             }
         });
         scene.add(startRemove);
